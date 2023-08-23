@@ -15,6 +15,7 @@ import { AaveV3Sepolia } from "@bgd-labs/aave-address-book";
 import { sepolia } from "viem/chains";
 import { CHAIN_ID_CLIENT_MAP } from "./clients";
 import { Hex } from "viem";
+import { generateProposal } from "./generateProposal";
 
 const payloadStateCachePath = "./cache/payload-states.json";
 
@@ -41,6 +42,7 @@ function isPayloadFinal(state: number) {
     PayloadState.Cancelled,
     PayloadState.Executed,
     PayloadState.Expired,
+    -1, // error
   ].includes(state);
 }
 
@@ -60,6 +62,12 @@ function getPayloadFileName(
   const storagePath = `./reports/payloads/${chain}/${payloadsController}`;
   if (!existsSync(storagePath)) mkdirSync(storagePath, { recursive: true });
   return path.join(storagePath, `${payloadId}.md`);
+}
+
+function getProposalFileName(proposalId: number) {
+  const storagePath = `./reports/proposals`;
+  if (!existsSync(storagePath)) mkdirSync(storagePath, { recursive: true });
+  return path.join(storagePath, `${proposalId}.md`);
 }
 
 async function main() {
@@ -86,8 +94,16 @@ async function main() {
     for (const proposalId of proposalsToCheck) {
       logInfo("Ci", `Checking proposal ${proposalId}`);
       const proposal = await governance.getProposal(BigInt(proposalId), logs);
-      console.log(proposal.proposal.payloads);
+      const payloadsSection: string[] = [];
+
       for (const payload of proposal.proposal.payloads) {
+        const fileName = getPayloadFileName(
+          CHAIN_ID_CLIENT_MAP[
+            Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+          ].client.chain.id,
+          payload.payloadsController,
+          payload.payloadId
+        );
         try {
           if (
             isPayloadFinal(
@@ -137,17 +153,16 @@ async function main() {
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
                 ].client,
             });
-            writeFileSync(
-              getPayloadFileName(
+            writeFileSync(fileName, report);
+            payloadsSection.push(
+              `- [Network: ${
                 CHAIN_ID_CLIENT_MAP[
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].client.chain.id,
-                payload.payloadsController,
+                ].client.chain.name
+              }, PayloadsController: ${payload.payloadsController}, ID: ${
                 payload.payloadId
-              ),
-              report
+              }](${fileName.replace("./", "/")})`
             );
-
             // update cache
             if (!cache[Number(payload.chain)])
               cache[Number(payload.chain)] = {};
@@ -171,6 +186,15 @@ async function main() {
           cache[Number(payload.chain)][payload.payloadsController][
             payload.payloadId
           ] = -1;
+          payloadsSection.push(
+            `- Network: ${
+              CHAIN_ID_CLIENT_MAP[
+                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+              ].client.chain.name
+            }, PayloadsController: ${payload.payloadsController}, ID: ${
+              payload.payloadId
+            } - ERROR`
+          );
         }
       }
       // if all payloads are final, it means the proposal no longer needs to be simulated
@@ -185,6 +209,12 @@ async function main() {
       if (allPayloadsAreFinal || willNeverBeFinal) {
         cache.proposals[proposalId] = true;
       }
+      const template = await generateProposal(
+        proposalId,
+        proposal,
+        payloadsSection
+      );
+      writeFileSync(getProposalFileName(proposalId), template);
     }
   } catch (error) {
     logError("Error", "Stopping simulation due to an error");
