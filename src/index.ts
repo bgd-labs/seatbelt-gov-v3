@@ -161,7 +161,7 @@ async function main() {
                 ].client.chain.name
               }, PayloadsController: ${payload.payloadsController}, ID: ${
                 payload.payloadId
-              }](${fileName.replace("./", "/")})`
+              }](/${fileName})`
             );
             // update cache
             if (!cache[Number(payload.chain)])
