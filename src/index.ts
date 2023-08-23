@@ -3,6 +3,7 @@ import { existsSync, writeFileSync, readFileSync, mkdirSync } from "fs";
 import path from "path";
 import {
   PayloadState,
+  ProposalState,
   generateReport,
   getGovernance,
   getPayloadsController,
@@ -19,7 +20,9 @@ const payloadStateCachePath = "./cache/payload-states.json";
 
 type Cache = {
   proposals: { [id: number]: boolean };
-  [chainId: number]: { [payloadAddress: number]: number };
+  [chainId: number]: {
+    [payloadsController: Hex]: { [payloadId: number]: number };
+  };
 };
 
 function getCache() {
@@ -38,6 +41,14 @@ function isPayloadFinal(state: number) {
     PayloadState.Cancelled,
     PayloadState.Executed,
     PayloadState.Expired,
+  ].includes(state);
+}
+
+function isProposalStuck(state: number) {
+  return [
+    ProposalState.Expired,
+    ProposalState.Cancelled,
+    ProposalState.Failed,
   ].includes(state);
 }
 
@@ -68,76 +79,110 @@ async function main() {
   const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
     (proposalId) => !cache.proposals[proposalId]
   );
-  logInfo("Info", `Checking proposals ${proposalsToCheck}`);
+  logInfo("Ci", `Checking proposals ${proposalsToCheck}`);
 
   try {
     // check each proposal
     for (const proposalId of proposalsToCheck) {
-      logInfo("Info", `Checking proposal ${proposalId}`);
+      logInfo("Ci", `Checking proposal ${proposalId}`);
       const proposal = await governance.getProposal(BigInt(proposalId), logs);
+      console.log(proposal.proposal.payloads);
       for (const payload of proposal.proposal.payloads) {
-        if (isPayloadFinal(cache[Number(payload.chain)]?.[payload.payloadId])) {
-          logWarning(
-            "Warning",
-            `Skipping ${payload.payloadId} on ${payload.chain} as it was simulated in it's final state`
-          );
-        } else {
-          logInfo(
-            CHAIN_ID_CLIENT_MAP[
-              Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-            ].client.name,
-            `Simulating payload ${payload.payloadId}`
-          );
-          const controllerContract = getPayloadsController(
-            payload.payloadsController,
-            CHAIN_ID_CLIENT_MAP[
-              Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-            ].client,
-            CHAIN_ID_CLIENT_MAP[
-              Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-            ].blockCreated
-          );
-          const logs = await controllerContract.cacheLogs();
-          const config = await controllerContract.getPayload(
-            payload.payloadId,
-            logs
-          );
-          const result =
-            await controllerContract.simulatePayloadExecutionOnTenderly(
-              payload.payloadId,
-              config
+        try {
+          if (
+            isPayloadFinal(
+              cache[Number(payload.chain)]?.[payload.payloadsController]?.[
+                payload.payloadId
+              ]
+            )
+          ) {
+            logWarning(
+              CHAIN_ID_CLIENT_MAP[
+                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+              ].client.chain.name,
+              `Skipping ${payload.payloadId} as it was simulated in it's final state before`
             );
-          const report = await generateReport({
-            payloadId: payload.payloadId,
-            payloadInfo: config,
-            simulation: result,
-            publicClient:
+          } else {
+            logInfo(
+              CHAIN_ID_CLIENT_MAP[
+                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+              ].client.chain.name,
+              `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
+            );
+            const controllerContract = getPayloadsController(
+              payload.payloadsController,
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
               ].client,
-          });
-          writeFileSync(
-            getPayloadFileName(
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.id,
-              payload.payloadsController,
-              payload.payloadId
-            ),
-            report
-          );
+              ].blockCreated
+            );
+            const logs = await controllerContract.cacheLogs();
+            const config = await controllerContract.getPayload(
+              payload.payloadId,
+              logs
+            );
+            const result =
+              await controllerContract.simulatePayloadExecutionOnTenderly(
+                payload.payloadId,
+                config
+              );
+            const report = await generateReport({
+              payloadId: payload.payloadId,
+              payloadInfo: config,
+              simulation: result,
+              publicClient:
+                CHAIN_ID_CLIENT_MAP[
+                  Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+                ].client,
+            });
+            writeFileSync(
+              getPayloadFileName(
+                CHAIN_ID_CLIENT_MAP[
+                  Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+                ].client.chain.id,
+                payload.payloadsController,
+                payload.payloadId
+              ),
+              report
+            );
 
-          // update cache
+            // update cache
+            if (!cache[Number(payload.chain)])
+              cache[Number(payload.chain)] = {};
+            if (!cache[Number(payload.chain)][payload.payloadsController])
+              cache[Number(payload.chain)][payload.payloadsController] = {};
+            cache[Number(payload.chain)][payload.payloadsController][
+              payload.payloadId
+            ] = config.payload.state;
+          }
+        } catch (e) {
+          logError(
+            CHAIN_ID_CLIENT_MAP[
+              Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
+            ].client.chain.name,
+            `Simulating payload ${payload.payloadId} on ${payload.payloadsController} failed`
+          );
+          console.log(e);
           if (!cache[Number(payload.chain)]) cache[Number(payload.chain)] = {};
-          cache[Number(payload.chain)][payload.payloadId] =
-            config.payload.state;
+          if (!cache[Number(payload.chain)][payload.payloadsController])
+            cache[Number(payload.chain)][payload.payloadsController] = {};
+          cache[Number(payload.chain)][payload.payloadsController][
+            payload.payloadId
+          ] = -1;
         }
       }
       // if all payloads are final, it means the proposal no longer needs to be simulated
+      const willNeverBeFinal = isProposalStuck(proposal.proposal.state);
       const allPayloadsAreFinal = proposal.proposal.payloads.every((payload) =>
-        isPayloadFinal(cache[Number(payload.chain)]?.[payload.payloadId])
+        isPayloadFinal(
+          cache[Number(payload.chain)][payload.payloadsController]?.[
+            payload.payloadId
+          ]
+        )
       );
-      if (allPayloadsAreFinal) {
+      if (allPayloadsAreFinal || willNeverBeFinal) {
         cache.proposals[proposalId] = true;
       }
     }
