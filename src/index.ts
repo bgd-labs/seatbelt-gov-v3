@@ -2,8 +2,10 @@ import "dotenv/config";
 import { existsSync, writeFileSync, readFileSync, mkdirSync } from "fs";
 import path from "path";
 import {
+  CHAIN_ID_CLIENT_MAP,
   PayloadState,
   ProposalState,
+  generateProposalReport,
   generateReport,
   getGovernance,
   getPayloadsController,
@@ -11,9 +13,8 @@ import {
   logInfo,
   logWarning,
 } from "@bgd-labs/aave-cli";
-import { AaveV3Sepolia } from "@bgd-labs/aave-address-book";
-import { sepolia } from "viem/chains";
-import { CHAIN_ID_CLIENT_MAP } from "./clients";
+import { GovernanceV3Goerli } from "@bgd-labs/aave-address-book";
+import { goerli } from "viem/chains";
 import { Hex } from "viem";
 import { generateProposal } from "./generateProposal";
 
@@ -70,13 +71,16 @@ function getProposalFileName(proposalId: number) {
   return path.join(storagePath, `${proposalId}.md`);
 }
 
+const GOVERNANCE_NETWORK = goerli.id;
+
 async function main() {
   // construct governance
   const cache = getCache();
-  const governance = getGovernance(
-    AaveV3Sepolia.GOVERNANCE,
-    CHAIN_ID_CLIENT_MAP[sepolia.id].client
-  );
+  const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
+  const governance = getGovernance({
+    address: GovernanceV3Goerli.GOVERNANCE,
+    publicClient,
+  });
 
   // populate cache
   const logs = await governance.cacheLogs();
@@ -94,13 +98,18 @@ async function main() {
     for (const proposalId of proposalsToCheck) {
       logInfo("Ci", `Checking proposal ${proposalId}`);
       const proposal = await governance.getProposal(BigInt(proposalId), logs);
+      const proposalSimulation =
+        await governance.simulateProposalExecutionOnTenderly(
+          BigInt(proposalId),
+          proposal
+        );
       const payloadsSection: string[] = [];
 
       for (const payload of proposal.proposal.payloads) {
         const fileName = getPayloadFileName(
           CHAIN_ID_CLIENT_MAP[
             Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-          ].client.chain.id,
+          ].chain.id,
           payload.payloadsController,
           payload.payloadId
         );
@@ -115,24 +124,21 @@ async function main() {
             logWarning(
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name,
+              ].chain.name,
               `Skipping ${payload.payloadId} as it was simulated in it's final state before`
             );
           } else {
             logInfo(
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name,
+              ].chain.name,
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
             );
             const controllerContract = getPayloadsController(
               payload.payloadsController,
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client,
-              CHAIN_ID_CLIENT_MAP[
-                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].blockCreated
+              ]
             );
             const logs = await controllerContract.cacheLogs();
             const config = await controllerContract.getPayload(
@@ -151,14 +157,14 @@ async function main() {
               publicClient:
                 CHAIN_ID_CLIENT_MAP[
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].client,
+                ],
             });
             writeFileSync(fileName, report);
             payloadsSection.push(
               `- [Network: ${
                 CHAIN_ID_CLIENT_MAP[
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].client.chain.name
+                ].chain.name
               }, PayloadsController: ${payload.payloadsController}, ID: ${
                 payload.payloadId
               }](/${fileName})`
@@ -176,7 +182,7 @@ async function main() {
           logError(
             CHAIN_ID_CLIENT_MAP[
               Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-            ].client.chain.name,
+            ].chain.name,
             `Simulating payload ${payload.payloadId} on ${payload.payloadsController} failed`
           );
           console.log(e);
@@ -190,7 +196,7 @@ async function main() {
             `- Network: ${
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name
+              ].chain.name
             }, PayloadsController: ${payload.payloadsController}, ID: ${
               payload.payloadId
             } - ERROR`
@@ -214,7 +220,13 @@ async function main() {
         proposal,
         payloadsSection
       );
-      writeFileSync(getProposalFileName(proposalId), template);
+      const report = await generateProposalReport({
+        proposalId: BigInt(proposalId),
+        proposalInfo: proposal,
+        simulation: proposalSimulation,
+        publicClient,
+      });
+      writeFileSync(getProposalFileName(proposalId), template + report);
     }
   } catch (error) {
     logError("Error", "Stopping simulation due to an error");

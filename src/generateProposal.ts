@@ -1,5 +1,6 @@
 import { Governance } from "@bgd-labs/aave-cli";
 import { getProposalMetadata } from "./ipfs";
+import { PublicClient } from "viem";
 
 export async function generateProposal(
   proposalId: number,
@@ -10,12 +11,7 @@ export async function generateProposal(
     proposal.proposal.ipfsHash,
     process.env.IPFS_GATEWAY
   );
-  const template = `## Proposal ${proposalId}
-
-- State: ${proposal.proposal.state}
-- Access Level: ${proposal.proposal.accessLevel}
-
-### Ipfs
+  const template = `### Ipfs
 
 <details>
   <summary>Proposal text</summary>
