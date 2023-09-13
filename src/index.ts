@@ -13,8 +13,8 @@ import {
   logInfo,
   logWarning,
 } from "@bgd-labs/aave-cli";
-import { GovernanceV3Goerli } from "@bgd-labs/aave-address-book";
-import { goerli } from "viem/chains";
+import { GovernanceV3Ethereum } from "@bgd-labs/aave-address-book";
+import { mainnet } from "viem/chains";
 import { Hex } from "viem";
 
 const payloadStateCachePath = "./cache/payload-states.json";
@@ -70,25 +70,28 @@ function getProposalFileName(proposalId: number) {
   return path.join(storagePath, `${proposalId}.md`);
 }
 
-const GOVERNANCE_NETWORK = goerli.id;
+const DEFAULT_NETWORK = mainnet.id;
+const DEFAULT_GOVERNANCE = GovernanceV3Ethereum.GOVERNANCE;
 
 async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
   // construct governance
-  const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
+  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
   const governance = getGovernance({
-    address: GovernanceV3Goerli.GOVERNANCE,
+    address: DEFAULT_GOVERNANCE,
     publicClient,
   });
 
   // populate cache
   const logs = await governance.cacheLogs();
 
-  logInfo("Ci", `Checking proposals ${proposalsToCheck}`);
+  if (proposalsToCheck.length > 0)
+    logInfo("Preparation", `Checking proposals ${proposalsToCheck}`);
+  else logWarning("Preparation", `No proposals found`);
 
   try {
     // check each proposal
     for (const proposalId of proposalsToCheck) {
-      logInfo("Ci", `Checking proposal ${proposalId}`);
+      logInfo("Check", `Checking proposal ${proposalId}`);
       const proposal = await governance.getProposal(BigInt(proposalId), logs);
       const proposalSimulation =
         await governance.simulateProposalExecutionOnTenderly(
@@ -227,9 +230,9 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
 
 async function simulateAll() {
   const cache = getCache();
-  const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
+  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
   const governance = getGovernance({
-    address: GovernanceV3Goerli.GOVERNANCE,
+    address: DEFAULT_GOVERNANCE,
     publicClient,
   });
   // figure out which proposals to check
