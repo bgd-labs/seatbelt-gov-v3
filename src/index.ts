@@ -213,7 +213,13 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
         simulation: proposalSimulation,
         publicClient,
       });
-      writeFileSync(getProposalFileName(proposalId), proposalReport);
+      writeFileSync(
+        getProposalFileName(proposalId),
+        `# Payloads
+      ${payloadsSection.join("\n")}
+      
+      ${proposalReport}`
+      );
     }
   } catch (error) {
     logError("Error", "Stopping simulation due to an error");
