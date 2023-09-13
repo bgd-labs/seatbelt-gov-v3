@@ -2,8 +2,10 @@ import "dotenv/config";
 import { existsSync, writeFileSync, readFileSync, mkdirSync } from "fs";
 import path from "path";
 import {
+  CHAIN_ID_CLIENT_MAP,
   PayloadState,
   ProposalState,
+  generateProposalReport,
   generateReport,
   getGovernance,
   getPayloadsController,
@@ -11,11 +13,9 @@ import {
   logInfo,
   logWarning,
 } from "@bgd-labs/aave-cli";
-import { AaveV3Sepolia } from "@bgd-labs/aave-address-book";
-import { sepolia } from "viem/chains";
-import { CHAIN_ID_CLIENT_MAP } from "./clients";
+import { GovernanceV3Ethereum } from "@bgd-labs/aave-address-book";
+import { mainnet } from "viem/chains";
 import { Hex } from "viem";
-import { generateProposal } from "./generateProposal";
 
 const payloadStateCachePath = "./cache/payload-states.json";
 
@@ -70,37 +70,41 @@ function getProposalFileName(proposalId: number) {
   return path.join(storagePath, `${proposalId}.md`);
 }
 
-async function main() {
+const DEFAULT_NETWORK = mainnet.id;
+const DEFAULT_GOVERNANCE = GovernanceV3Ethereum.GOVERNANCE;
+
+async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
   // construct governance
-  const cache = getCache();
-  const governance = getGovernance(
-    AaveV3Sepolia.GOVERNANCE,
-    CHAIN_ID_CLIENT_MAP[sepolia.id].client
-  );
+  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
+  const governance = getGovernance({
+    address: DEFAULT_GOVERNANCE,
+    publicClient,
+  });
 
   // populate cache
   const logs = await governance.cacheLogs();
 
-  // figure out which
-  const proposalCount =
-    await governance.governanceContract.read.getProposalsCount();
-  const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
-    (proposalId) => !cache.proposals[proposalId]
-  );
-  logInfo("Ci", `Checking proposals ${proposalsToCheck}`);
+  if (proposalsToCheck.length > 0)
+    logInfo("Preparation", `Checking proposals ${proposalsToCheck}`);
+  else logWarning("Preparation", `No proposals found`);
 
   try {
     // check each proposal
     for (const proposalId of proposalsToCheck) {
-      logInfo("Ci", `Checking proposal ${proposalId}`);
+      logInfo("Check", `Checking proposal ${proposalId}`);
       const proposal = await governance.getProposal(BigInt(proposalId), logs);
+      const proposalSimulation =
+        await governance.simulateProposalExecutionOnTenderly(
+          BigInt(proposalId),
+          proposal
+        );
       const payloadsSection: string[] = [];
 
       for (const payload of proposal.proposal.payloads) {
         const fileName = getPayloadFileName(
           CHAIN_ID_CLIENT_MAP[
             Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-          ].client.chain.id,
+          ].chain.id,
           payload.payloadsController,
           payload.payloadId
         );
@@ -115,24 +119,21 @@ async function main() {
             logWarning(
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name,
+              ].chain.name,
               `Skipping ${payload.payloadId} as it was simulated in it's final state before`
             );
           } else {
             logInfo(
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name,
+              ].chain.name,
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
             );
             const controllerContract = getPayloadsController(
               payload.payloadsController,
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client,
-              CHAIN_ID_CLIENT_MAP[
-                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].blockCreated
+              ]
             );
             const logs = await controllerContract.cacheLogs();
             const config = await controllerContract.getPayload(
@@ -151,14 +152,14 @@ async function main() {
               publicClient:
                 CHAIN_ID_CLIENT_MAP[
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].client,
+                ],
             });
             writeFileSync(fileName, report);
             payloadsSection.push(
               `- [Network: ${
                 CHAIN_ID_CLIENT_MAP[
                   Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].client.chain.name
+                ].chain.name
               }, PayloadsController: ${payload.payloadsController}, ID: ${
                 payload.payloadId
               }](/${fileName})`
@@ -176,7 +177,7 @@ async function main() {
           logError(
             CHAIN_ID_CLIENT_MAP[
               Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-            ].client.chain.name,
+            ].chain.name,
             `Simulating payload ${payload.payloadId} on ${payload.payloadsController} failed`
           );
           console.log(e);
@@ -190,7 +191,7 @@ async function main() {
             `- Network: ${
               CHAIN_ID_CLIENT_MAP[
                 Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].client.chain.name
+              ].chain.name
             }, PayloadsController: ${payload.payloadsController}, ID: ${
               payload.payloadId
             } - ERROR`
@@ -209,12 +210,16 @@ async function main() {
       if (allPayloadsAreFinal || willNeverBeFinal) {
         cache.proposals[proposalId] = true;
       }
-      const template = await generateProposal(
-        proposalId,
-        proposal,
-        payloadsSection
+      const proposalReport = await generateProposalReport({
+        proposalId: BigInt(proposalId),
+        proposalInfo: proposal,
+        simulation: proposalSimulation,
+        publicClient,
+      });
+      writeFileSync(
+        getProposalFileName(proposalId),
+        `# Payloads\n\n${payloadsSection.join("\n")}\n\n${proposalReport}`
       );
-      writeFileSync(getProposalFileName(proposalId), template);
     }
   } catch (error) {
     logError("Error", "Stopping simulation due to an error");
@@ -223,4 +228,28 @@ async function main() {
   storeCache(cache);
 }
 
-main();
+async function simulateAll() {
+  const cache = getCache();
+  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
+  const governance = getGovernance({
+    address: DEFAULT_GOVERNANCE,
+    publicClient,
+  });
+  // figure out which proposals to check
+  const proposalCount =
+    await governance.governanceContract.read.getProposalsCount();
+  const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
+    (proposalId) => !cache.proposals[proposalId]
+  );
+  return simulateProposals(proposalsToCheck, cache);
+}
+
+async function simulateSome(proposals: number[]) {
+  const cache = getCache();
+  return simulateProposals(proposals, cache);
+}
+if (process.argv.length > 2) {
+  simulateSome(process.argv.slice(2).map((v) => Number(v)));
+} else {
+  simulateAll();
+}
