@@ -16,7 +16,6 @@ import {
 import { GovernanceV3Goerli } from "@bgd-labs/aave-address-book";
 import { goerli } from "viem/chains";
 import { Hex } from "viem";
-import { generateProposal } from "./generateProposal";
 
 const payloadStateCachePath = "./cache/payload-states.json";
 
@@ -73,9 +72,8 @@ function getProposalFileName(proposalId: number) {
 
 const GOVERNANCE_NETWORK = goerli.id;
 
-async function main() {
+async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
   // construct governance
-  const cache = getCache();
   const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
   const governance = getGovernance({
     address: GovernanceV3Goerli.GOVERNANCE,
@@ -85,12 +83,6 @@ async function main() {
   // populate cache
   const logs = await governance.cacheLogs();
 
-  // figure out which
-  const proposalCount =
-    await governance.governanceContract.read.getProposalsCount();
-  const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
-    (proposalId) => !cache.proposals[proposalId]
-  );
   logInfo("Ci", `Checking proposals ${proposalsToCheck}`);
 
   try {
@@ -215,18 +207,13 @@ async function main() {
       if (allPayloadsAreFinal || willNeverBeFinal) {
         cache.proposals[proposalId] = true;
       }
-      const template = await generateProposal(
-        proposalId,
-        proposal,
-        payloadsSection
-      );
-      const report = await generateProposalReport({
+      const proposalReport = await generateProposalReport({
         proposalId: BigInt(proposalId),
         proposalInfo: proposal,
         simulation: proposalSimulation,
         publicClient,
       });
-      writeFileSync(getProposalFileName(proposalId), template + report);
+      writeFileSync(getProposalFileName(proposalId), proposalReport);
     }
   } catch (error) {
     logError("Error", "Stopping simulation due to an error");
@@ -235,4 +222,19 @@ async function main() {
   storeCache(cache);
 }
 
+async function main() {
+  const cache = getCache();
+  const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
+  const governance = getGovernance({
+    address: GovernanceV3Goerli.GOVERNANCE,
+    publicClient,
+  });
+  // figure out which proposals to check
+  const proposalCount =
+    await governance.governanceContract.read.getProposalsCount();
+  const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
+    (proposalId) => !cache.proposals[proposalId]
+  );
+  return simulateProposals(proposalsToCheck, cache);
+}
 main();
