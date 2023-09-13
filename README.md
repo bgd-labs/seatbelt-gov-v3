@@ -4,7 +4,7 @@ This repository contains tools that make on-chain governance safer,
 including automated scripts that apply checks to live proposals to allow
 for better informed voting.
 
-[![Governance Checks](https://github.com/bgd-labs/seatbelt-for-ghosts/actions/workflows/governance-checks.yaml/badge.svg)](https://github.com/bgd-labs/seatbelt-for-ghosts/actions/workflows/governance-checks.yaml)
+[![Governance Checks](https://github.com/bgd-labs/seatbelt-gov-v3/actions/workflows/cron.yaml/badge.svg)](https://github.com/bgd-labs/seatbelt-gov-v3/actions/workflows/cron.yaml)
 
 ## How it works
 
