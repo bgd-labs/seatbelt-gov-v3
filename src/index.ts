@@ -215,10 +215,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
       });
       writeFileSync(
         getProposalFileName(proposalId),
-        `# Payloads
-      ${payloadsSection.join("\n")}
-      
-      ${proposalReport}`
+        `# Payloads\n\n${payloadsSection.join("\n")}\n\n${proposalReport}`
       );
     }
   } catch (error) {
@@ -228,7 +225,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
   storeCache(cache);
 }
 
-async function main() {
+async function simulateAll() {
   const cache = getCache();
   const publicClient = CHAIN_ID_CLIENT_MAP[GOVERNANCE_NETWORK];
   const governance = getGovernance({
@@ -243,4 +240,13 @@ async function main() {
   );
   return simulateProposals(proposalsToCheck, cache);
 }
-main();
+
+async function simulateSome(proposals: number[]) {
+  const cache = getCache();
+  return simulateProposals(proposals, cache);
+}
+if (process.argv.length > 2) {
+  simulateSome(process.argv.slice(2).map((v) => Number(v)));
+} else {
+  simulateAll();
+}
