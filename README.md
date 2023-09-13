@@ -1,3 +1,5 @@
+<p align="center"><img width="200" src="./seatbelt_logo.png" alt="Aave logo"></a></p>
+
 # Aave seatbelt for Aave Governance V3
 
 This repository contains tools that make on-chain governance safer,
@@ -19,6 +21,8 @@ The generated report will contain:
 - A list of all touched contracts and their verification status.
 
 Some of those checks are initially generic, but in addition, we also added extra “interpretations” for particularities of the Aave ecosystem. For example, when an Aave Pool contract is affected, we can automate a deeper interpretation of the effect, making it more human-readable.
+
+![diagram](seatbelt_diagram.jpg)
 
 ## Setup
 
