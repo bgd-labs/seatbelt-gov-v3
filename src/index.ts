@@ -375,5 +375,7 @@ async function simulateSome(proposals: number[]) {
 if (process.argv.length > 2) {
   simulateSome(process.argv.slice(2).map((v) => Number(v)));
 } else {
-  simulatePayloads().then(simulateAll);
+  simulatePayloads();
+  // skipping simulation as the 2.5 interface is not v3 compatible
+  // .then(simulateAll);
 }
