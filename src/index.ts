@@ -302,7 +302,17 @@ async function simulatePayloads() {
       logInfo(pc.publicClient.chain!.name, "No payloads found");
       continue;
     }
-    const logs = await controllerContract.cacheLogs();
+    let firstBlockToSearch: bigint | undefined = undefined;
+    // if it's the first time we see the payloadscontroller we optimize the log searching
+    // to do so we fetch the creation block of the first proposal
+    if (!cache[chain]?.[pc.address]) {
+      logWarning(
+        pc.publicClient.chain!.name,
+        "It's the first time we see this controller. So it might take some time."
+      );
+      // const firstProposal = await controllerContract.controllerContract.read.getPayloadById([0]);
+    }
+    const logs = await controllerContract.cacheLogs(firstBlockToSearch);
     const payloadsToCheck = [...Array(Number(payloadsCount)).keys()].filter(
       (payloadId) => {
         if (isPayloadFinal(cache[chain]?.[pc.address]?.[payloadId])) {
