@@ -8,6 +8,7 @@ import {
   arbitrumClient,
   avalancheClient,
   baseClient,
+  bnbClient,
   generateProposalReport,
   generateReport,
   getGovernance,
@@ -24,6 +25,7 @@ import {
 import {
   GovernanceV3Arbitrum,
   GovernanceV3Avalanche,
+  GovernanceV3BNB,
   GovernanceV3Base,
   GovernanceV3Ethereum,
   GovernanceV3Gnosis,
@@ -272,10 +274,10 @@ async function simulatePayloads() {
       publicClient: arbitrumClient,
       address: GovernanceV3Arbitrum.PAYLOADS_CONTROLLER,
     },
-    {
-      publicClient: metisClient,
-      address: GovernanceV3Metis.PAYLOADS_CONTROLLER,
-    },
+    // {
+    //   publicClient: metisClient,
+    //   address: GovernanceV3Metis.PAYLOADS_CONTROLLER,
+    // },
     {
       publicClient: baseClient,
       address: GovernanceV3Base.PAYLOADS_CONTROLLER,
@@ -284,6 +286,7 @@ async function simulatePayloads() {
       publicClient: gnosisClient,
       address: GovernanceV3Gnosis.PAYLOADS_CONTROLLER,
     },
+    { publicClient: bnbClient, address: GovernanceV3BNB.PAYLOADS_CONTROLLER },
   ];
   for (const pc of PAYLOAD_CONTROLLERS) {
     const chain = Number(pc.publicClient.chain!.id);
