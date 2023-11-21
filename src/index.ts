@@ -59,7 +59,7 @@ function isPayloadFinal(state: number) {
     PayloadState.Cancelled,
     PayloadState.Executed,
     PayloadState.Expired,
-    -1, // error
+    // -1, // error
   ].includes(state);
 }
 
