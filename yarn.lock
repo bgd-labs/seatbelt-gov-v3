@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@adraffy/ens-normalize@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.10.0.tgz#d2a39395c587e092d77cbbc80acf956a54f38bf7"
+  integrity sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==
+
 "@adraffy/ens-normalize@1.9.4":
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.9.4.tgz#aae21cb858bbb0411949d5b7b3051f4209043f62"
@@ -39,15 +44,15 @@
   resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.10.0.tgz#19873ec0edf9ee1f1a5539162e6092b0a2b2c4b4"
   integrity sha512-DVglkDCYUf7etb6mnCziIY2HPgap4X3AnC/1tC0ZqpXFrhO0lQzWBiMeWy20r1x/b81iHMQa02ULaco3LhdeVw==
 
-"@bgd-labs/aave-address-book@2.8.0":
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.8.0.tgz#6d4169c5b8e70bc9b847f5173b4ea2ca59f7a21b"
-  integrity sha512-oBcoPtwxnMZ310iYZHLqViuKAy4Q8hvwq6enW33LdqDL5Y+iU7c8TptKl6KdsojxwlluNZ1sahW5PfKNUT0jIQ==
+"@bgd-labs/aave-address-book@2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.12.0.tgz#749ca3b00cbe0438501c95a18cea7829396e76cc"
+  integrity sha512-VZ/6wEi5MHCy8ayDr1IFzRpLyeQGWRtuLBeHG8TWrPVPJJN8HA7Iau3FfJ+kFtkV1Amv2oCOm0vhajJsnP3QRg==
 
-"@bgd-labs/aave-cli@0.1.1-3a3a49218a0d58268bb7b56bf8f8e46aa93a18b4.0":
-  version "0.1.1-3a3a49218a0d58268bb7b56bf8f8e46aa93a18b4.0"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.1.1-3a3a49218a0d58268bb7b56bf8f8e46aa93a18b4.0.tgz#640940d9850f4ac911382a7bc0b991f53c32f10f"
-  integrity sha512-D5X1Ckb3BLHLxgT+3F3d1DzE1V+kMKjz1O5xc0EYBWcujrj3F8cUqoBcBOVwST92JwneitJcZ2OyLYRQw+rI6Q==
+"@bgd-labs/aave-cli@0.1.2-bd038efe0121500750cce9d4e669477bb2411428.0":
+  version "0.1.2-bd038efe0121500750cce9d4e669477bb2411428.0"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.1.2-bd038efe0121500750cce9d4e669477bb2411428.0.tgz#1a890beba9fdbaa21e762a54fb06bdb137183e47"
+  integrity sha512-G4c6JwnqqG9pRP80OXAUTgHKZjrfUMiomS6fUsj/9Ekls2+F7NwHLfDoM0GdCWr1g892tEFnYg93KRd8Q8Q8JA==
   dependencies:
     "@bgd-labs/aave-address-book" "2.10.0"
     "@commander-js/extra-typings" "^11.1.0"
@@ -1510,10 +1515,10 @@ varint@^6.0.0:
   resolved "https://registry.yarnpkg.com/varint/-/varint-6.0.0.tgz#9881eb0ce8feaea6512439d19ddf84bf551661d0"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
-viem@^1.16.6:
-  version "1.16.6"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-1.16.6.tgz#78118c9269506a59e2bc4deab13f1646e113d3fc"
-  integrity sha512-jcWcFQ+xzIfDwexwPJRvCuCRJKEkK9iHTStG7mpU5MmuSBpACs4nATBDyXNFtUiyYTFzLlVEwWkt68K0nCSImg==
+viem@^1.18.9:
+  version "1.18.9"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-1.18.9.tgz#8be8fe3148b1c6c3bccc853001df98f91a8aeb30"
+  integrity sha512-eAXtoTwAFA3YEgjTYMb5ZTQrDC0UPx5qyZ4sv90TirVKepcM9mBPksTkC1SSWya0UdxhBmhEBL/CiYMjmGCTWg==
   dependencies:
     "@adraffy/ens-normalize" "1.9.4"
     "@noble/curves" "1.2.0"
@@ -1524,12 +1529,12 @@ viem@^1.16.6:
     isows "1.0.3"
     ws "8.13.0"
 
-viem@^1.18.9:
-  version "1.18.9"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-1.18.9.tgz#8be8fe3148b1c6c3bccc853001df98f91a8aeb30"
-  integrity sha512-eAXtoTwAFA3YEgjTYMb5ZTQrDC0UPx5qyZ4sv90TirVKepcM9mBPksTkC1SSWya0UdxhBmhEBL/CiYMjmGCTWg==
+viem@^1.19.9:
+  version "1.19.9"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-1.19.9.tgz#a11f3ad4a3323994ebd2010dbc659d1a2b12e583"
+  integrity sha512-Sf9U2x4jU0S/FALqYypcspWOGene0NZyD470oUripNhE0Ta6uOE/OgE4toTDVfRxov8qw0JFinr/wPGxYE3+HQ==
   dependencies:
-    "@adraffy/ens-normalize" "1.9.4"
+    "@adraffy/ens-normalize" "1.10.0"
     "@noble/curves" "1.2.0"
     "@noble/hashes" "1.3.2"
     "@scure/bip32" "1.3.2"
