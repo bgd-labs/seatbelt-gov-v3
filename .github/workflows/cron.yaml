@@ -37,6 +37,7 @@ jobs:
         run: pip3 install slither-analyzer
 
       - name: Run checks
+        id: test
         run: yarn start
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
