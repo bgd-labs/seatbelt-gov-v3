@@ -49,10 +49,10 @@
   resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.13.0.tgz#1c2dc3f8fdcb6d37e74715bc04261f9eed71c5ca"
   integrity sha512-Ai1q9nW6WpY+R9EtfAaN4Qz8vRQZCIksvQler4Jr7XotyhRNBK9j8kMl4wCK9iO2jOKdEX3n7I0IB+xxAOCzLQ==
 
-"@bgd-labs/aave-cli@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.2.0.tgz#8c6facbaf702a446bee4ba8ef52da0f07dc61d34"
-  integrity sha512-TbW2BR/phdhMsuaUBtLn4j8pw84/S/yHNVuSzy47eNN9s71AYirFpC38/SF9XB0phm3HjvvJxNklb7fxsg8T0Q==
+"@bgd-labs/aave-cli@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.2.1.tgz#a9424c13107a6641caf5b8da3dc5c9d959c3d9c4"
+  integrity sha512-UAwPXZvFaqXtkP1GW2C8cI09ZdPR7xYNTHe+FqAyPelb7gd755xNnl3/VXXekAln8uiiiKIH2+4zKzEsAS9sCw==
   dependencies:
     "@bgd-labs/aave-address-book" "2.10.0"
     "@commander-js/extra-typings" "^11.1.0"
@@ -1510,10 +1510,10 @@ viem@^1.18.9:
     isows "1.0.3"
     ws "8.13.0"
 
-viem@^1.19.11:
-  version "1.19.11"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-1.19.11.tgz#de4ee7537ee036894bd818aa316a8faecaf017e9"
-  integrity sha512-dbsXEWDBZkByuzJXAs/e01j7dpUJ5ICF5WcyntFwf8Y97n5vnC/91lAleSa6DA5V4WJvYZbhDpYeTctsMAQnhA==
+viem@^1.19.13:
+  version "1.19.13"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-1.19.13.tgz#3a018720bd2abf54a039c751fc2bcd473838c523"
+  integrity sha512-DizIwJAecLedI+nq6c5LIqCLAnYXUhQX5BnH6o1H2ln6isPyJVf+v4H1IfMlRHgR5KRlC+wGI/mCjarr3tW6eg==
   dependencies:
     "@adraffy/ens-normalize" "1.10.0"
     "@noble/curves" "1.2.0"
