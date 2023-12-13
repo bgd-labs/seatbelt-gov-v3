@@ -306,22 +306,24 @@ async function simulatePayloads() {
       continue;
     }
     let firstBlockToSearch: bigint | undefined = undefined;
-    // if it's the first time we see the payloadscontroller we optimize the log searching
-    // to do so we fetch the creation block of the first proposal
     if (!cache[chain]?.[pc.address]) {
       logWarning(
         pc.publicClient.chain!.name,
         "It's the first time we see this controller. So it might take some time."
       );
-      // const firstProposal = await controllerContract.controllerContract.read.getPayloadById([0]);
+      // TODO: it's not so trivial as onchain the block is not stored - just the timestamp
+      // if it's the first time we see the payloadscontroller we optimize the log searching
+      // to do so we fetch the creation block of the first proposal
+      // const firstProposal =
+      //   await controllerContract.controllerContract.read.getPayloadById([0]);
     }
     const logs = await controllerContract.cacheLogs(firstBlockToSearch);
     const payloadsToCheck = [...Array(Number(payloadsCount)).keys()].filter(
       (payloadId) => {
-        if (isPayloadFinal(cache[chain]?.[pc.address]?.[payloadId])) {
+        if (cache[chain]?.[pc.address]?.[payloadId]) {
           logWarning(
             pc.publicClient.chain!.name,
-            `Skipping ${payloadId} as it was simulated in it's final state before`
+            `Skipping ${payloadId} as the payload was simulated before`
           );
           return false;
         }
@@ -388,7 +390,5 @@ async function simulateSome(proposals: number[]) {
 if (process.argv.length > 2) {
   simulateSome(process.argv.slice(2).map((v) => Number(v)));
 } else {
-  simulatePayloads();
-  // skipping simulation as the 2.5 interface is not v3 compatible
-  // .then(simulateAll);
+  simulateAll().then(simulatePayloads);
 }
