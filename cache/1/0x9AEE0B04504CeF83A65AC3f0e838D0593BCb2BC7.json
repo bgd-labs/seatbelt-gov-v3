@@ -44,5 +44,29 @@
     },
     "eventName": "VotingActivated",
     "timestamp": 1704575039
+  },
+  {
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "blockHash": "0x9a7709a82af7223f3c0c669fcfb6d46919cb4630ba4b541b3d9aab7c08d08b78",
+    "blockNumber": "18959200",
+    "data": "0x552721cffc5278357af7de0861cbf8a493488c64ec112cf573b9a33623602b90",
+    "logIndex": 127,
+    "removed": false,
+    "topics": [
+      "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+      "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "transactionHash": "0xd5c3f2e3879fe7b5429df9068877cf41d3e18eeca7a064ce8ba7399bacc86d5d",
+    "transactionIndex": 31,
+    "args": {
+      "proposalId": "1",
+      "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+      "accessLevel": 1,
+      "ipfsHash": "0x552721cffc5278357af7de0861cbf8a493488c64ec112cf573b9a33623602b90"
+    },
+    "eventName": "ProposalCreated",
+    "timestamp": 1704679079
   }
 ]
