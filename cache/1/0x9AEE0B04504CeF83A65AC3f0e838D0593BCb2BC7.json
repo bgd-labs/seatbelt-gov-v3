@@ -68,5 +68,53 @@
     },
     "eventName": "ProposalCreated",
     "timestamp": 1704679079
+  },
+  {
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "blockHash": "0x0ece7597e00fa9991b3b50915f04fd1475c008b2db638d002aedd6d0a00520a5",
+    "blockNumber": "18962268",
+    "data": "0x7daf1c990ca47b29e121845efc40ac7e4384b70536f2dee46dd06d4e03920d4c",
+    "logIndex": 90,
+    "removed": false,
+    "topics": [
+      "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+      "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "transactionHash": "0x3b67066fe02ab1a19c13496de00eb016a30eed6466e8df8a5752dcd120b027bb",
+    "transactionIndex": 34,
+    "args": {
+      "proposalId": "2",
+      "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+      "accessLevel": 1,
+      "ipfsHash": "0x7daf1c990ca47b29e121845efc40ac7e4384b70536f2dee46dd06d4e03920d4c"
+    },
+    "eventName": "ProposalCreated",
+    "timestamp": 1704716531
+  },
+  {
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "topics": [
+      "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+      "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "data": "0xa9b79871f27b840c5d04672f5b2ef16c753938cb80c6809087c1a47ad0fa2880",
+    "blockNumber": "18962278",
+    "transactionHash": "0x1268c69d1eb569604864b112de9eff69ba2fbfa81f7156a6e55db444226f620a",
+    "transactionIndex": 25,
+    "blockHash": "0xf77a4fb8cc53916a1063f05956d68241d3d9b4f9e9d3e408336673fce45af90a",
+    "logIndex": 54,
+    "removed": false,
+    "args": {
+      "proposalId": "3",
+      "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+      "accessLevel": 1,
+      "ipfsHash": "0xa9b79871f27b840c5d04672f5b2ef16c753938cb80c6809087c1a47ad0fa2880"
+    },
+    "eventName": "ProposalCreated",
+    "timestamp": 1704716675
   }
 ]
