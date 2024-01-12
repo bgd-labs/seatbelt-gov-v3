@@ -52,7 +52,6 @@ jobs:
           TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
           TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
-          IPFS_GATEWAY: ${{secrets.IPFS_GATEWAY}}
 
       - name: check diff
         run: |
