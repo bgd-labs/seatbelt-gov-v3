@@ -2,27 +2,6 @@ import "dotenv/config";
 import { existsSync, writeFileSync, readFileSync, mkdirSync } from "fs";
 import path from "path";
 import {
-  CHAIN_ID_CLIENT_MAP,
-  PayloadState,
-  ProposalState,
-  arbitrumClient,
-  avalancheClient,
-  baseClient,
-  bnbClient,
-  generateProposalReport,
-  generateReport,
-  getGovernance,
-  getPayloadsController,
-  gnosisClient,
-  logError,
-  logInfo,
-  logWarning,
-  mainnetClient,
-  metisClient,
-  optimismClient,
-  polygonClient,
-} from "@bgd-labs/aave-cli";
-import {
   GovernanceV3Arbitrum,
   GovernanceV3Avalanche,
   GovernanceV3BNB,
@@ -32,9 +11,35 @@ import {
   GovernanceV3Metis,
   GovernanceV3Optimism,
   GovernanceV3Polygon,
+  GovernanceV3Scroll,
+  GovernanceV3PolygonZkEvm,
 } from "@bgd-labs/aave-address-book";
 import { mainnet } from "viem/chains";
 import { Hex, PublicClient } from "viem";
+import {
+  PayloadState,
+  ProposalState,
+  generateProposalReport,
+  generateReport,
+  getGovernance,
+  getPayloadsController,
+  logError,
+  logInfo,
+  logWarning,
+} from "@bgd-labs/aave-cli";
+import {
+  CHAIN_ID_CLIENT_MAP,
+  arbitrumClient,
+  avalancheClient,
+  baseClient,
+  bnbClient,
+  gnosisClient,
+  mainnetClient,
+  optimismClient,
+  polygonClient,
+  scrollClient,
+  zkEVMClient,
+} from "@bgd-labs/js-utils";
 
 const payloadStateCachePath = "./cache/payload-states.json";
 
@@ -287,6 +292,14 @@ async function simulatePayloads() {
       address: GovernanceV3Gnosis.PAYLOADS_CONTROLLER,
     },
     { publicClient: bnbClient, address: GovernanceV3BNB.PAYLOADS_CONTROLLER },
+    {
+      publicClient: zkEVMClient,
+      address: GovernanceV3PolygonZkEvm.PAYLOADS_CONTROLLER,
+    },
+    {
+      publicClient: scrollClient,
+      address: GovernanceV3Scroll.PAYLOADS_CONTROLLER,
+    },
   ];
   for (const pc of PAYLOAD_CONTROLLERS) {
     const chain = Number(pc.publicClient.chain!.id);
