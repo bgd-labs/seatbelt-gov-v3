@@ -1,0 +1,24 @@
+{
+  "state": 4,
+  "accessLevel": 1,
+  "creationTime": 1704716531,
+  "votingDuration": 259200,
+  "votingActivationTime": 1704803027,
+  "queuingTime": 1705064471,
+  "cancelTimestamp": 0,
+  "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+  "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+  "snapshotBlockHash": "0x12b5f578215d90926b15aee1a2abfc6d99389994a7cee94befe43c6370c95867",
+  "ipfsHash": "0x7daf1c990ca47b29e121845efc40ac7e4384b70536f2dee46dd06d4e03920d4c",
+  "forVotes": "368492319727737618002185",
+  "againstVotes": "0",
+  "cancellationFee": "50000000000000000",
+  "payloads": [
+    {
+      "chain": "43114",
+      "accessLevel": 1,
+      "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+      "payloadId": 11
+    }
+  ]
+}
