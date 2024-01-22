@@ -35,6 +35,7 @@ import {
   bnbClient,
   gnosisClient,
   mainnetClient,
+  metisClient,
   optimismClient,
   polygonClient,
   scrollClient,
@@ -279,10 +280,10 @@ async function simulatePayloads() {
       publicClient: arbitrumClient,
       address: GovernanceV3Arbitrum.PAYLOADS_CONTROLLER,
     },
-    // {
-    //   publicClient: metisClient,
-    //   address: GovernanceV3Metis.PAYLOADS_CONTROLLER,
-    // },
+    {
+      publicClient: metisClient,
+      address: GovernanceV3Metis.PAYLOADS_CONTROLLER,
+    },
     {
       publicClient: baseClient,
       address: GovernanceV3Base.PAYLOADS_CONTROLLER,
@@ -345,9 +346,10 @@ async function simulatePayloads() {
     );
     logInfo(pc.publicClient.chain!.name, `Simulating ${payloadsToCheck}`);
     for (const payloadId of payloadsToCheck) {
+      const fileName = getPayloadFileName(chain, pc.address, payloadId);
+      const config = await controllerContract.getPayload(payloadId, logs);
+      // tenderly
       try {
-        const fileName = getPayloadFileName(chain, pc.address, payloadId);
-        const config = await controllerContract.getPayload(payloadId, logs);
         const result =
           await controllerContract.simulatePayloadExecutionOnTenderly(
             payloadId,
@@ -373,6 +375,20 @@ async function simulatePayloads() {
         if (!cache[chain]) cache[chain] = {};
         if (!cache[chain][pc.address]) cache[chain][pc.address] = {};
         cache[chain][pc.address][payloadId] = -1;
+      }
+
+      // foundry
+      // on foundry we only want to simulate non executed payloads
+      try {
+        if (!isPayloadFinal(config.payload.state))
+          execSync(
+            `forge script script/E2EPayload.s.sol:E2EPayload --rpc-url ${pc
+              .publicClient.transport
+              .url!} --sig "run(uint40)" -- ${payloadId}`,
+            { stdio: "inherit" }
+          );
+      } catch (e) {
+        console.log("simulating on foundry failed");
       }
     }
     storeCache(cache);
@@ -404,4 +420,7 @@ if (process.argv.length > 2) {
   simulateSome(process.argv.slice(2).map((v) => Number(v)));
 } else {
   simulateAll().then(simulatePayloads);
+}
+function execSync(arg0: string, arg1: { stdio: string }) {
+  throw new Error("Function not implemented.");
 }
