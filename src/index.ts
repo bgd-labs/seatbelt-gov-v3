@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { existsSync, writeFileSync, readFileSync, mkdirSync } from "fs";
+import { execSync } from "child_process";
 import path from "path";
 import {
   GovernanceV3Arbitrum,
@@ -420,7 +421,4 @@ if (process.argv.length > 2) {
   simulateSome(process.argv.slice(2).map((v) => Number(v)));
 } else {
   simulateAll().then(simulatePayloads);
-}
-function execSync(arg0: string, arg1: { stdio: string }) {
-  throw new Error("Function not implemented.");
 }
