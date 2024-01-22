@@ -1,41 +1,66 @@
-<p align="center"><img width="200" src="./seatbelt_logo.png" alt="Aave logo"></a></p>
+## Foundry
 
-# Aave seatbelt for Aave Governance V3
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-This repository contains tools that make on-chain governance safer,
-including automated scripts that apply checks to live proposals to allow
-for better informed voting.
+Foundry consists of:
 
-[![Governance Checks](https://github.com/bgd-labs/seatbelt-gov-v3/actions/workflows/cron.yaml/badge.svg)](https://github.com/bgd-labs/seatbelt-gov-v3/actions/workflows/cron.yaml)
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## How it works
+## Documentation
 
-Aave Seatbelt is a tool for executing and interpreting governance simulations: it forks Ethereum mainnet (where the Aave governance lives), it simulates the execution of a proposal, and finally generates a report containing human-readable information on what effects a proposal will have. If the proposal targets different networks it will also fork these networks & simulate the changes specified in the proposal.
+https://book.getfoundry.sh/
 
-The generated report will contain:
+## Usage
 
-- The ipfs content.
-- All the state changes were caused by the proposal execution.
-- Events triggered.
-- Checks for SELFDESTRUCT calls.
-- A list of all touched contracts and their verification status.
+### Build
 
-Some of those checks are initially generic, but in addition, we also added extra “interpretations” for particularities of the Aave ecosystem. For example, when an Aave Pool contract is affected, we can automate a deeper interpretation of the effect, making it more human-readable.
-
-![diagram](seatbelt_diagram.jpg)
-
-## Setup
-
-```
-cp .env.example .env
-yarn
+```shell
+$ forge build
 ```
 
-## Running locally
+### Test
 
+```shell
+$ forge test
 ```
-# run simulation for all proposals
-yarn start
-# run simulation for specific proposals
-yarn start 1 2 3 would run proposals 1,2 & 3
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
 ```
