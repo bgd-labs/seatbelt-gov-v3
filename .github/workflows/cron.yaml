@@ -18,6 +18,8 @@ jobs:
   generate-reports:
     name: Check all live proposals
     runs-on: ubuntu-latest
+    env:
+      FOUNDRY_PROFILE: ci
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,11 +32,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install solc-select
-        run: pip3 install solc-select
-
-      - name: Install Slither
-        run: pip3 install slither-analyzer
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
 
       - name: Run checks
         id: test
