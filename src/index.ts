@@ -351,7 +351,7 @@ async function simulatePayloads() {
       const config = await controllerContract.getPayload(payloadId, logs);
       // tenderly
       try {
-        const result =
+        const tenderlyPayload =
           await controllerContract.simulatePayloadExecutionOnTenderly(
             payloadId,
             config
@@ -359,7 +359,7 @@ async function simulatePayloads() {
         const report = await generateReport({
           payloadId: payloadId,
           payloadInfo: config,
-          simulation: result,
+          simulation: tenderlyPayload,
           publicClient: pc.publicClient,
         });
         writeFileSync(fileName, report);
@@ -381,13 +381,16 @@ async function simulatePayloads() {
       // foundry
       // on foundry we only want to simulate non executed payloads
       try {
-        if (!isPayloadFinal(config.payload.state))
-          execSync(
-            `forge script script/E2EPayload.s.sol:E2EPayload --rpc-url ${pc
-              .publicClient.transport
-              .url!} --sig "run(uint40)" -- ${payloadId}`,
-            { stdio: "inherit" }
-          );
+        let blockNumber = BigInt(0); // current
+        if (config.executedLog)
+          blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
+        execSync(
+          `forge script script/E2EPayload.s.sol:E2EPayload --rpc-url ${pc
+            .publicClient.transport.url!} ${
+            blockNumber != BigInt(0) ? `--block-number ${blockNumber}` : ""
+          } --sig "run(uint40)" -- ${payloadId}`,
+          { stdio: "inherit" }
+        );
       } catch (e) {
         console.log("simulating on foundry failed");
       }
