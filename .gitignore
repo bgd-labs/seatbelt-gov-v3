@@ -7,4 +7,5 @@ reports/*
 !reports/payloads
 !reports/proposals
 
-.out
+cache/solidity-files-cache.json
+out
