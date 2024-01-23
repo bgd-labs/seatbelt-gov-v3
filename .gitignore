@@ -6,3 +6,5 @@ node_modules
 reports/*
 !reports/payloads
 !reports/proposals
+
+.out
