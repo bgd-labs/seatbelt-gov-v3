@@ -130,10 +130,12 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
       const payloadsSection: string[] = [];
 
       for (const payload of proposal.proposal.payloads) {
-        const fileName = getPayloadFileName(
+        const client =
           CHAIN_ID_CLIENT_MAP[
             Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-          ].chain!.id,
+          ];
+        const fileName = getPayloadFileName(
+          client.chain!.id,
           payload.payloadsController,
           payload.payloadId
         );
@@ -146,61 +148,71 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
             )
           ) {
             logWarning(
-              CHAIN_ID_CLIENT_MAP[
-                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].chain!.name,
+              client.chain!.name,
               `Skipping ${payload.payloadId} as it was simulated in it's final state before`
             );
           } else {
             logInfo(
-              CHAIN_ID_CLIENT_MAP[
-                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ].chain!.name,
+              client.chain!.name,
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
             );
             const controllerContract = getPayloadsController(
               payload.payloadsController,
-              CHAIN_ID_CLIENT_MAP[
-                Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-              ]
+              client
             );
             const logs = await controllerContract.cacheLogs();
             const config = await controllerContract.getPayload(
               payload.payloadId,
               logs
             );
-            const result =
-              await controllerContract.simulatePayloadExecutionOnTenderly(
-                payload.payloadId,
-                config
+            try {
+              const result =
+                await controllerContract.simulatePayloadExecutionOnTenderly(
+                  payload.payloadId,
+                  config
+                );
+              const report = await generateReport({
+                payloadId: payload.payloadId,
+                payloadInfo: config,
+                simulation: result,
+                publicClient: client,
+              });
+              writeFileSync(fileName, report);
+              payloadsSection.push(
+                `- [Network: ${client.chain!.name}, PayloadsController: ${
+                  payload.payloadsController
+                }, ID: ${payload.payloadId}](/${fileName})`
               );
-            const report = await generateReport({
-              payloadId: payload.payloadId,
-              payloadInfo: config,
-              simulation: result,
-              publicClient:
-                CHAIN_ID_CLIENT_MAP[
-                  Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ],
-            });
-            writeFileSync(fileName, report);
-            payloadsSection.push(
-              `- [Network: ${
-                CHAIN_ID_CLIENT_MAP[
-                  Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP
-                ].chain!.name
-              }, PayloadsController: ${payload.payloadsController}, ID: ${
+              // update cache
+              if (!cache[Number(payload.chain)])
+                cache[Number(payload.chain)] = {};
+              if (!cache[Number(payload.chain)][payload.payloadsController])
+                cache[Number(payload.chain)][payload.payloadsController] = {};
+              cache[Number(payload.chain)][payload.payloadsController][
                 payload.payloadId
-              }](/${fileName})`
-            );
-            // update cache
-            if (!cache[Number(payload.chain)])
-              cache[Number(payload.chain)] = {};
-            if (!cache[Number(payload.chain)][payload.payloadsController])
-              cache[Number(payload.chain)][payload.payloadsController] = {};
-            cache[Number(payload.chain)][payload.payloadsController][
-              payload.payloadId
-            ] = config.payload.state;
+              ] = config.payload.state;
+            } catch (e) {
+              console.log("error simulating on tenderly");
+            }
+            // foundry
+            // on foundry we only want to simulate non executed payloads
+            try {
+              let blockNumber = BigInt(0); // current
+              if (config.executedLog)
+                blockNumber =
+                  BigInt(config.executedLog.blockNumber) - BigInt(1);
+              execSync(
+                `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client
+                  .transport.url!}${
+                  blockNumber != BigInt(0)
+                    ? ` --fork-block-number ${blockNumber}`
+                    : ""
+                } --sig "run(uint40)" -- ${payload.payloadId}`,
+                { stdio: "inherit" }
+              );
+            } catch (e) {
+              console.log("error simulating on foundry");
+            }
           }
         } catch (e) {
           logError(
@@ -385,9 +397,11 @@ async function simulatePayloads() {
         if (config.executedLog)
           blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
         execSync(
-          `forge script script/E2EPayload.s.sol:E2EPayload --rpc-url ${pc
-            .publicClient.transport.url!} ${
-            blockNumber != BigInt(0) ? `--block-number ${blockNumber}` : ""
+          `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${pc
+            .publicClient.transport.url!}${
+            blockNumber != BigInt(0)
+              ? ` --fork-block-number ${blockNumber}`
+              : ""
           } --sig "run(uint40)" -- ${payloadId}`,
           { stdio: "inherit" }
         );
@@ -398,6 +412,8 @@ async function simulatePayloads() {
     storeCache(cache);
   }
 }
+
+function simulateOnFoundry() {}
 
 async function simulateAll() {
   const cache = getCache();
