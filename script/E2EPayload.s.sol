@@ -19,7 +19,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
   function run(uint40 payloadId) public {
     IPool pool = _getPool();
     if (address(pool) == address(0)) return;
-    defaultTest(vm.toString(payloadId), pool, payloadId, true);
+    defaultTest(vm.toString(payloadId), pool, payloadId, false);
   }
 
   function defaultTest(

@@ -163,6 +163,26 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                     payload.payloadsController
                   }, ID: ${payload.payloadId}](/${fileName})`
                 );
+              } catch (e) {
+                console.log('error simulating on tenderly');
+              }
+            }
+            // foundry
+            if (
+              cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] !=
+              config.payload.state
+            ) {
+              try {
+                let blockNumber = BigInt(0); // current
+                if (config.executedLog)
+                  blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
+                execSync(
+                  `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
+                    .url!}${
+                    blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
+                  } --sig "run(uint40)" -- ${payload.payloadId}`,
+                  {stdio: 'inherit'}
+                );
                 // update cache
                 if (!cache[Number(payload.chain)]) cache[Number(payload.chain)] = {};
                 if (!cache[Number(payload.chain)][payload.payloadsController])
@@ -170,30 +190,8 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                 cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] =
                   config.payload.state;
               } catch (e) {
-                console.log('error simulating on tenderly');
+                throw new Error('Error simulating on foundry');
               }
-            }
-            // foundry
-            // on foundry we only want to simulate non executed payloads
-            try {
-              let blockNumber = BigInt(0); // current
-              if (config.executedLog)
-                blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
-              execSync(
-                `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
-                  .url!}${
-                  blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
-                } --sig "run(uint40)" -- ${payload.payloadId}`,
-                {stdio: 'inherit'}
-              );
-              // update cache
-              if (!cache[Number(payload.chain)]) cache[Number(payload.chain)] = {};
-              if (!cache[Number(payload.chain)][payload.payloadsController])
-                cache[Number(payload.chain)][payload.payloadsController] = {};
-              cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] =
-                config.payload.state;
-            } catch (e) {
-              throw new Error('Error simulating on foundry');
             }
           }
         } catch (e) {
@@ -355,7 +353,6 @@ async function simulatePayloads() {
       }
 
       // foundry
-      // on foundry we only want to simulate non executed payloads
       try {
         let blockNumber = BigInt(0); // current
         if (config.executedLog) blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
