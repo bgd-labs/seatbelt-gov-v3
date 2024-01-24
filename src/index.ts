@@ -16,10 +16,12 @@ import {
   GovernanceV3PolygonZkEvm,
 } from '@bgd-labs/aave-address-book';
 import {mainnet} from 'viem/chains';
-import {Hex, PublicClient} from 'viem';
+import {Client, Hex} from 'viem';
 import {
   PayloadState,
   ProposalState,
+  cacheGovernance,
+  cachePayloadsController,
   generateProposalReport,
   generateReport,
   getGovernance,
@@ -27,6 +29,8 @@ import {
   logError,
   logInfo,
   logWarning,
+  readBookKeepingCache,
+  writeBookKeepingCache,
 } from '@bgd-labs/aave-cli';
 import {
   CHAIN_ID_CLIENT_MAP,
@@ -92,18 +96,19 @@ function getProposalFileName(proposalId: number) {
 const DEFAULT_NETWORK = mainnet.id;
 const DEFAULT_GOVERNANCE = GovernanceV3Ethereum.GOVERNANCE;
 
-const CHAIN_NOT_SUPPORTED_ON_TENDERLY = [ChainId.metis];
+const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis];
 
 async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
+  const bookKeeping = readBookKeepingCache();
   // construct governance
-  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
+  const client = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
   const governance = getGovernance({
     address: DEFAULT_GOVERNANCE,
-    publicClient,
+    client,
   });
 
   // populate cache
-  const logs = await governance.cacheLogs();
+  const {eventsCache} = await cacheGovernance(client, DEFAULT_GOVERNANCE, bookKeeping);
 
   if (proposalsToCheck.length > 0) logInfo('Preparation', `Checking proposals ${proposalsToCheck}`);
   else logWarning('Preparation', `No proposals found`);
@@ -112,7 +117,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
     // check each proposal
     for (const proposalId of proposalsToCheck) {
       logInfo('Check', `Checking proposal ${proposalId}`);
-      const proposal = await governance.getProposalAndLogs(BigInt(proposalId), logs);
+      const proposal = await governance.getProposalAndLogs(BigInt(proposalId), eventsCache);
       const proposalSimulation = await governance.simulateProposalExecutionOnTenderly(
         BigInt(proposalId),
         proposal
@@ -143,8 +148,13 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
             );
             const controllerContract = getPayloadsController(payload.payloadsController, client);
-            const logs = await controllerContract.cacheLogs();
-            const config = await controllerContract.getPayload(payload.payloadId, logs);
+            const {eventsCache} = await cachePayloadsController(
+              client,
+              payload.payloadsController,
+              bookKeeping
+            );
+
+            const config = await controllerContract.getPayload(payload.payloadId, eventsCache);
             if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(client.chain!.id)) {
               try {
                 const result = await controllerContract.simulatePayloadExecutionOnTenderly(
@@ -155,7 +165,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                   payloadId: payload.payloadId,
                   payloadInfo: config,
                   simulation: result,
-                  publicClient: client,
+                  client,
                 });
                 writeFileSync(fileName, report);
                 payloadsSection.push(
@@ -169,7 +179,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
             }
             // foundry
             if (
-              cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] !=
+              cache[Number(payload.chain)]?.[payload.payloadsController]?.[payload.payloadId] !=
               config.payload.state
             ) {
               try {
@@ -227,7 +237,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
         proposalId: BigInt(proposalId),
         proposalInfo: proposal,
         simulation: proposalSimulation,
-        publicClient,
+        client,
       });
       writeFileSync(
         getProposalFileName(proposalId),
@@ -239,68 +249,69 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
     console.log(error);
   }
   storeCache(cache);
+  writeBookKeepingCache(bookKeeping);
 }
 
 async function simulatePayloads() {
+  const bookKeeping = readBookKeepingCache();
   const cache = getCache();
 
-  const PAYLOAD_CONTROLLERS: {publicClient: PublicClient; address: Hex}[] = [
+  const PAYLOAD_CONTROLLERS: {client: Client; address: Hex}[] = [
     {
-      publicClient: mainnetClient,
+      client: mainnetClient,
       address: GovernanceV3Ethereum.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: polygonClient,
+      client: polygonClient,
       address: GovernanceV3Polygon.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: avalancheClient,
+      client: avalancheClient,
       address: GovernanceV3Avalanche.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: optimismClient,
+      client: optimismClient,
       address: GovernanceV3Optimism.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: arbitrumClient,
+      client: arbitrumClient,
       address: GovernanceV3Arbitrum.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: metisClient,
+      client: metisClient,
       address: GovernanceV3Metis.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: baseClient,
+      client: baseClient,
       address: GovernanceV3Base.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: gnosisClient,
+      client: gnosisClient,
       address: GovernanceV3Gnosis.PAYLOADS_CONTROLLER,
     },
-    {publicClient: bnbClient, address: GovernanceV3BNB.PAYLOADS_CONTROLLER},
+    {client: bnbClient, address: GovernanceV3BNB.PAYLOADS_CONTROLLER},
     {
-      publicClient: zkEVMClient,
+      client: zkEVMClient,
       address: GovernanceV3PolygonZkEvm.PAYLOADS_CONTROLLER,
     },
     {
-      publicClient: scrollClient,
+      client: scrollClient,
       address: GovernanceV3Scroll.PAYLOADS_CONTROLLER,
     },
   ];
-  for (const pc of PAYLOAD_CONTROLLERS) {
-    const chain = Number(pc.publicClient.chain!.id);
-    logInfo(pc.publicClient.chain!.name, `Simulating payloads on ${pc.address}`);
-    const controllerContract = getPayloadsController(pc.address, pc.publicClient);
+  for (const {client, address} of PAYLOAD_CONTROLLERS) {
+    const chain = Number(client.chain!.id);
+    logInfo(client.chain!.name, `Simulating payloads on ${address}`);
+    const controllerContract = getPayloadsController(address, client);
 
     const payloadsCount = await controllerContract.controllerContract.read.getPayloadsCount();
     if (payloadsCount == 0) {
-      logInfo(pc.publicClient.chain!.name, 'No payloads found');
+      logInfo(client.chain!.name, 'No payloads found');
       continue;
     }
-    let firstBlockToSearch: bigint | undefined = undefined;
-    if (!cache[chain]?.[pc.address]) {
+    if (!cache[chain]?.[address]) {
       logWarning(
-        pc.publicClient.chain!.name,
+        client.chain!.name,
         "It's the first time we see this controller. So it might take some time."
       );
       // TODO: it's not so trivial as onchain the block is not stored - just the timestamp
@@ -309,21 +320,18 @@ async function simulatePayloads() {
       // const firstProposal =
       //   await controllerContract.controllerContract.read.getPayloadById([0]);
     }
-    const logs = await controllerContract.cacheLogs(firstBlockToSearch);
+    const {eventsCache} = await cachePayloadsController(client, address, bookKeeping);
     const payloadsToCheck = [...Array(Number(payloadsCount)).keys()].filter((payloadId) => {
-      if (cache[chain]?.[pc.address]?.[payloadId]) {
-        logWarning(
-          pc.publicClient.chain!.name,
-          `Skipping ${payloadId} as the payload was simulated before`
-        );
+      if (cache[chain]?.[address]?.[payloadId]) {
+        logWarning(client.chain!.name, `Skipping ${payloadId} as the payload was simulated before`);
         return false;
       }
       return true;
     });
-    logInfo(pc.publicClient.chain!.name, `Simulating ${payloadsToCheck}`);
+    logInfo(client.chain!.name, `Simulating ${payloadsToCheck}`);
     for (const payloadId of payloadsToCheck) {
-      const fileName = getPayloadFileName(chain, pc.address, payloadId);
-      const config = await controllerContract.getPayload(payloadId, logs);
+      const fileName = getPayloadFileName(chain, address, payloadId);
+      const config = await controllerContract.getPayload(payloadId, eventsCache);
       // tenderly
       try {
         const tenderlyPayload = await controllerContract.simulatePayloadExecutionOnTenderly(
@@ -334,22 +342,19 @@ async function simulatePayloads() {
           payloadId: payloadId,
           payloadInfo: config,
           simulation: tenderlyPayload,
-          publicClient: pc.publicClient,
+          client,
         });
         writeFileSync(fileName, report);
         // update cache
         if (!cache[chain]) cache[chain] = {};
-        if (!cache[chain][pc.address]) cache[chain][pc.address] = {};
-        cache[chain][pc.address][payloadId] = config.payload.state;
+        if (!cache[chain][address]) cache[chain][address] = {};
+        cache[chain][address][payloadId] = config.payload.state;
       } catch (e) {
-        logError(
-          pc.publicClient.chain!.name,
-          `Simulating payload ${payloadId} on ${pc.address} failed`
-        );
+        logError(client.chain!.name, `Simulating payload ${payloadId} on ${address} failed`);
         console.log(e);
         if (!cache[chain]) cache[chain] = {};
-        if (!cache[chain][pc.address]) cache[chain][pc.address] = {};
-        cache[chain][pc.address][payloadId] = -1;
+        if (!cache[chain][address]) cache[chain][address] = {};
+        cache[chain][address][payloadId] = -1;
       }
 
       // foundry
@@ -357,8 +362,7 @@ async function simulatePayloads() {
         let blockNumber = BigInt(0); // current
         if (config.executedLog) blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
         execSync(
-          `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${pc.publicClient.transport
-            .url!}${
+          `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport.url!}${
             blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
           } --sig "run(uint40)" -- ${payloadId}`,
           {stdio: 'inherit'}
@@ -367,18 +371,17 @@ async function simulatePayloads() {
         console.log('simulating on foundry failed');
       }
     }
-    storeCache(cache);
   }
+  storeCache(cache);
+  writeBookKeepingCache(bookKeeping);
 }
-
-function simulateOnFoundry() {}
 
 async function simulateAll() {
   const cache = getCache();
-  const publicClient = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
+  const client = CHAIN_ID_CLIENT_MAP[DEFAULT_NETWORK];
   const governance = getGovernance({
     address: DEFAULT_GOVERNANCE,
-    publicClient,
+    client,
   });
   // figure out which proposals to check
   const proposalCount = await governance.governanceContract.read.getProposalsCount();

@@ -6,6 +6,8 @@ node_modules
 reports/*
 !reports/payloads
 !reports/proposals
+!reports/foundry
+reports/foundry/*.json
 
 cache/solidity-files-cache.json
 out

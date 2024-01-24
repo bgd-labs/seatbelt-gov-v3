@@ -34,23 +34,18 @@
     chalk "^2.4.2"
     js-tokens "^4.0.0"
 
-"@bgd-labs/aave-address-book@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.15.0.tgz#d083d749d0ae9b052b5a4b7c6ce5f418bc1180e2"
-  integrity sha512-VKFmRHPZ+bckubh242PGoiZbGzV7OzygWvr8O9qv+TSgrdhJrDxbVJjCTZKSCGRG3PZQFvZdok345fArGsp+rw==
+"@bgd-labs/aave-address-book@2.18.0", "@bgd-labs/aave-address-book@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.18.0.tgz#f0e62da3935246c70d0f6dd07d394448dd505852"
+  integrity sha512-REfTbwYLnazYALXOC1eiuBELirYypk3vXPv2Ale5ZnyD+uQhemc7ya6y75iKGm3BuYC6jLIsGwSHczX8D10UEQ==
 
-"@bgd-labs/aave-address-book@2.15.3-89c77b1d7ee3574250b9bef36599806dd7a3bb94.0":
-  version "2.15.3-89c77b1d7ee3574250b9bef36599806dd7a3bb94.0"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-address-book/-/aave-address-book-2.15.3-89c77b1d7ee3574250b9bef36599806dd7a3bb94.0.tgz#bf60390fcd003a38dbcce1f4e5267f4e80198fda"
-  integrity sha512-XaHIcMFt2dbAVjD2oJGYY7EGhh+iumQWhmmZjRwERsBadWJtYfMlfsHw+nShPFuHp1AR0F8Xvb3phRVlicRibg==
-
-"@bgd-labs/aave-cli@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.3.1.tgz#d75b9736b253895155eb48a20f22ddfbf1667505"
-  integrity sha512-lTndoYX3ujqt/maWjTKqSufWK4O7UgkJ1zfVaNMBrn3hq43MsJQXahqjN0MK6PrqblW9wwJJ8+6jAP8sZ6HsJQ==
+"@bgd-labs/aave-cli@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-cli/-/aave-cli-0.3.2.tgz#062b7453a95b98b39355169ee77d7a03d70cd84b"
+  integrity sha512-XKHRbXVVR0xZMt3AlrkfxfoKd9UlcWav0PyrTeu5sJ92/UVI4EWKi5zz1ydwnJb9nzjGvHCYpfi3GmhTu3Xx2Q==
   dependencies:
-    "@bgd-labs/aave-address-book" "2.15.3-89c77b1d7ee3574250b9bef36599806dd7a3bb94.0"
-    "@bgd-labs/js-utils" "^1.0.3"
+    "@bgd-labs/aave-address-book" "2.18.0"
+    "@bgd-labs/js-utils" "^1.1.1"
     "@commander-js/extra-typings" "^11.1.0"
     "@inquirer/prompts" "^3.3.0"
     chalk "^4.1.2"
@@ -62,14 +57,15 @@
     ipfs-only-hash "^4.0.0"
     json-bigint "^1.0.0"
     object-hash "^3.0.0"
-    viem "^2.0.6"
+    viem "^2.5.0"
     zod "^3.22.4"
 
-"@bgd-labs/js-utils@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@bgd-labs/js-utils/-/js-utils-1.0.3.tgz#8f641b5581ba0fac23b80ab80fbd7299a4bfcb98"
-  integrity sha512-/YlB7vyDibLazOfDCgGCRmjyU9ehjfrBDGiqbt/OOiKhXk6B8N/kuMcMNpnA9MWsLkWymolwB9ihl7dA2gzavQ==
+"@bgd-labs/js-utils@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/js-utils/-/js-utils-1.1.1.tgz#0e400061169cd38d1dd44b401dc3c05b904cbd76"
+  integrity sha512-CWzoY+3IWpu/YhDgVYbnZhBEGQ8kGJwAgqZexrIkD9+GJh5raEcOWByV8psWapOwttWO4ppxS/RgmMdJQ5Hhxg==
   dependencies:
+    "@supercharge/promise-pool" "^3.1.0"
     bs58 "^5.0.0"
     gray-matter "^4.0.3"
     tsx "^4.4.0"
@@ -422,6 +418,11 @@
   dependencies:
     antlr4ts "^0.5.0-alpha.4"
 
+"@supercharge/promise-pool@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@supercharge/promise-pool/-/promise-pool-3.1.0.tgz#308b9f4d4bf1d607695f916d9454a3556cd4c2b4"
+  integrity sha512-gB3NukbIcYzRtPoE6dx9svQYPodxvnfQlaaQd8N/z87E6WaMfRE7o5HwB+LZ+KeM0nsNAq1n4TmBtfz1VCUR+Q==
+
 "@types/long@^4.0.1":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
@@ -461,10 +462,10 @@
   resolved "https://registry.yarnpkg.com/@types/wrap-ansi/-/wrap-ansi-3.0.0.tgz#18b97a972f94f60a679fd5c796d96421b9abb9fd"
   integrity sha512-ltIpx+kM7g/MLRZfkbL7EsCEjfzCcScLpkg37eXEtx5kmrAKBkTJwd1GIAjDSL8wTpM6Hzn5YO4pSb91BEwu1g==
 
-abitype@0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-0.10.0.tgz#d3504747cc81df2acaa6c460250ef7bc9219a77c"
-  integrity sha512-QvMHEUzgI9nPj9TWtUGnS2scas80/qaL5PBxGdwWhhvzqXfOph+IEiiiWrzuisu3U3JgDQVruW9oLbJoQ3oZ3A==
+abitype@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.0.0.tgz#237176dace81d90d018bebf3a45cb42f2a2d9e97"
+  integrity sha512-NMeMah//6bJ56H5XRj8QCV4AwuW6hB6zqz2LnhhLdcWVQOsXki6/Pn3APeqxCma62nXIcmZWdu1DlHWS74umVQ==
 
 ansi-escapes@^4.3.2:
   version "4.3.2"
@@ -1542,17 +1543,17 @@ varint@^6.0.0:
   resolved "https://registry.yarnpkg.com/varint/-/varint-6.0.0.tgz#9881eb0ce8feaea6512439d19ddf84bf551661d0"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
-viem@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.0.6.tgz#1472054eb767c8e74db2e6fab11a8ad8db7387d0"
-  integrity sha512-u7P/RCHufWZW2x2d1MB9O9S9xAopXlWpWEThxfD7FKKzyFGw0lN3QYC3FG0KHKziRDieeu4lkVzAkdag7W+S6g==
+viem@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-2.5.0.tgz#1d7bd5333a6b9387d42c1c2d368d0b88c2961ee1"
+  integrity sha512-ytHXIWtlgPs4mcsGxXjJrQ25v+N4dE2hBzgCU8CVv4iXNh3PRFRgyYa7igZlmxiMVzkfSHHADOtivS980JhilA==
   dependencies:
     "@adraffy/ens-normalize" "1.10.0"
     "@noble/curves" "1.2.0"
     "@noble/hashes" "1.3.2"
     "@scure/bip32" "1.3.2"
     "@scure/bip39" "1.2.1"
-    abitype "0.10.0"
+    abitype "1.0.0"
     isows "1.0.3"
     ws "8.13.0"
 
