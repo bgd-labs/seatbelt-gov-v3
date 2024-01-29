@@ -53,6 +53,7 @@ jobs:
           RPC_BASE: ${{ secrets.RPC_BASE }}
           RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
           RPC_BNB: ${{ secrets.RPC_BNB }}
+          RPC_SCROLL: ${{ secrets.RPC_SCROLL }}
           TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
           TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
