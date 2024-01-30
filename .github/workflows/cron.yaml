@@ -42,7 +42,7 @@ jobs:
 
       - name: Run checks
         id: test
-        run: yarn start
+        run: yarn start --type proposal
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
