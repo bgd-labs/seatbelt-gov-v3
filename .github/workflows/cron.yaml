@@ -13,6 +13,17 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      type:
+        type: choice
+        options:
+          - proposal
+          - payload
+        default: proposal
+      chainId:
+        type: string
+      ids:
+        type: string
 
 jobs:
   generate-reports:
@@ -42,7 +53,7 @@ jobs:
 
       - name: Run checks
         id: test
-        run: yarn start --type proposal
+        run: yarn start --type ${{ inputs.type || 'proposal' }} --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
