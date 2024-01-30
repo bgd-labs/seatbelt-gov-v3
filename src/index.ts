@@ -231,11 +231,21 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
   const address = findPayloadsController(chainId)!;
   if (!address) throw new Error(`payloadsController on ${chainId} not found`);
   logInfo(client.chain!.name, `Simulating payloads on ${address}`);
+  const controllerContract = getPayloadsController(address, client);
   const {eventsCache} = await cachePayloadsController(client, address, bookKeeping);
+  if (!payloadIds || payloadIds.length === 0) {
+    const payloadsCount = await controllerContract.controllerContract.read.getPayloadsCount();
+    payloadIds = [...Array(Number(payloadsCount)).keys()].filter((payloadId) => {
+      if (cache[chainId]?.[address]?.[payloadId]) {
+        logWarning(client.chain!.name, `Skipping ${payloadId} as the payload was simulated before`);
+        return false;
+      }
+      return true;
+    });
+  }
   for (const payloadId of payloadIds) {
     logInfo(client.chain!.name, `Simulating ${payloadId}`);
     const fileName = getPayloadFileName(chainId, address, payloadId);
-    const controllerContract = getPayloadsController(address, client);
     const config = await controllerContract.getPayload(payloadId, eventsCache);
     // tenderly
     try {
@@ -316,7 +326,7 @@ program
       if (!options.chainId) throw new Error('chainId required when simulating payloads');
       return simulatePayload(
         Number(options.chainId),
-        options.ids.map((id: string) => Number(id))
+        options.ids && options.ids.length > 0 && options.ids.map((id: string) => Number(id))
       );
     }
   })
