@@ -51,7 +51,7 @@ jobs:
         with:
           version: nightly
 
-      - name: Dedicated test
+      - name: Trigger
         id: external-trigger
         run: yarn start --type ${{ inputs.type || 'proposal' }} --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
         if: ${{ github.event_name != 'schedule' }}
@@ -70,8 +70,8 @@ jobs:
           TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
 
-      - name: Run checks
-        id: test
+      - name: scheduled-all
+        id: all
         run: yarn start --type ${{ inputs.type || 'proposal' }}
         if: ${{ github.event_name == 'schedule' }}
         env:
@@ -90,7 +90,7 @@ jobs:
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
 
       ## metis has no tenderly support to we need to trigger the runs manually
-      - name: metis
+      - name: scheduled-metis
         id: metis
         run: yarn start --type payload --chainId 1088
         if: ${{ github.event_name == 'schedule' }}

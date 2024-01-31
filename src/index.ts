@@ -324,7 +324,8 @@ program
         return simulateProposals(proposalsToCheck, cache);
       }
     } else {
-      if (!options.chainId) throw new Error('chainId required when simulating payloads');
+      if (!options.chainId || typeof options.chainId === 'boolean')
+        throw new Error('chainId required when simulating payloads');
       return simulatePayload(
         Number(options.chainId),
         options.ids && options.ids.length > 0 && options.ids.map((id: string) => Number(id))
