@@ -302,6 +302,7 @@ program
   )
   .addOption(new Option('-i, --ids [ids...]', 'the ids of the payloads/proposals'))
   .action(async (options) => {
+    console.log(options);
     const cache = getCache();
     if (options.type === 'proposal') {
       if (options.ids && options.ids.length > 0)
