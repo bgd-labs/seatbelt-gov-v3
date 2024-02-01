@@ -1874,5 +1874,49 @@
     "transactionHash": "0x2e013fac6bc5b0795a50520dbea72e5049d93c4d59dcf2d5633145abca89c613",
     "transactionIndex": 22,
     "timestamp": 1706778059
+  },
+  {
+    "eventName": "VotingActivated",
+    "args": {
+      "proposalId": "13",
+      "snapshotBlockHash": "0xb05a404254f2d83ce34cc848b8fdbcdc31694d2ffbf63707c8126cf1d294ba9d",
+      "votingDuration": 259200
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "blockHash": "0xd37fd70f72179f062abdd7f0ff89699385c753ccda4441ed686d5221fd445432",
+    "blockNumber": "19134492",
+    "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+    "logIndex": 497,
+    "removed": false,
+    "topics": [
+      "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+      "0x000000000000000000000000000000000000000000000000000000000000000d",
+      "0xb05a404254f2d83ce34cc848b8fdbcdc31694d2ffbf63707c8126cf1d294ba9d"
+    ],
+    "transactionHash": "0xe836494b0d705da647c77a62ee191dec64a665aa89be79be99361650492be42c",
+    "transactionIndex": 200,
+    "timestamp": 1706801579
+  },
+  {
+    "eventName": "VotingActivated",
+    "args": {
+      "proposalId": "14",
+      "snapshotBlockHash": "0x17061e004c819860ab75df3c85fd1af282a40df0bde08bad31e7e1a23a39d85b",
+      "votingDuration": 259200
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "blockHash": "0x1b02fd4355c2f31225ee706dd2a396cf97eb8b639e5d8217c334539d25495145",
+    "blockNumber": "19134631",
+    "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+    "logIndex": 51,
+    "removed": false,
+    "topics": [
+      "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+      "0x000000000000000000000000000000000000000000000000000000000000000e",
+      "0x17061e004c819860ab75df3c85fd1af282a40df0bde08bad31e7e1a23a39d85b"
+    ],
+    "transactionHash": "0xab0773f18c9e5c150c8b176572c3e810e2707081089842c2d7a91805a7513130",
+    "transactionIndex": 17,
+    "timestamp": 1706803259
   }
 ]
