@@ -68,7 +68,7 @@ function getProposalFileName(proposalId: number) {
   return path.join(storagePath, `${proposalId}.md`);
 }
 
-const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis];
+const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis, ChainId.scroll, ChainId.zkEVM];
 
 async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
   const bookKeeping = readBookKeepingCache();
