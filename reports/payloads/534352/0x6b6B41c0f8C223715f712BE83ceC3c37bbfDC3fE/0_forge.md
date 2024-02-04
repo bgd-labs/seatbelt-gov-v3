@@ -18,7 +18,7 @@
 | oracle | [0x43d12Fb3AfCAd5347fA764EeAB105478337b7200](https://scrollscan.com/address/0x43d12Fb3AfCAd5347fA764EeAB105478337b7200) |
 | oracleDecimals | 8 |
 | oracleDescription | USDC / USD |
-| oracleLatestAnswer | 1.000146 |
+| oracleLatestAnswer | 1.0001198 |
 | usageAsCollateralEnabled | true |
 | ltv | 77 % |
 | liquidationThreshold | 80 % |
@@ -71,7 +71,7 @@
 | oracle | [0x6bF14CB0A831078629D993FDeBcB182b21A8774C](https://scrollscan.com/address/0x6bF14CB0A831078629D993FDeBcB182b21A8774C) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2299.8624 |
+| oracleLatestAnswer | 2301.16 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % |
 | liquidationThreshold | 78 % |
@@ -129,7 +129,7 @@
 | oracle | [0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c](https://scrollscan.com/address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) |
 | oracleDecimals | 8 |
 | oracleDescription | wstETH/ETH/USD |
-| oracleLatestAnswer | 2657.86165933 |
+| oracleLatestAnswer | 2659.86043897 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % |
 | liquidationThreshold | 78 % |
@@ -215,7 +215,7 @@
         "oracle": "0x43d12Fb3AfCAd5347fA764EeAB105478337b7200",
         "oracleDecimals": 8,
         "oracleDescription": "USDC / USD",
-        "oracleLatestAnswer": 100014600,
+        "oracleLatestAnswer": 100011980,
         "reserveFactor": 1000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x59F359aA263f7Ac09876E869AF1F75b558904ed4",
@@ -258,7 +258,7 @@
         "oracle": "0x6bF14CB0A831078629D993FDeBcB182b21A8774C",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": 229986240000,
+        "oracleLatestAnswer": 230116000000,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x117d9cF336287F46DBE509a43925cFF115Aa563c",
@@ -301,7 +301,7 @@
         "oracle": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
         "oracleDecimals": 8,
         "oracleDescription": "wstETH/ETH/USD",
-        "oracleLatestAnswer": 265786165933,
+        "oracleLatestAnswer": 265986043897,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x18e3f125ce85e8D65AD2bb4f6b5fff110772A078",
