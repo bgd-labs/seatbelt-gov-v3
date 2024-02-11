@@ -46,10 +46,10 @@
   "2": {
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 3,
     "createdAt": 1706817371,
-    "queuedAt": 0,
-    "executedAt": 0,
+    "queuedAt": 1707165781,
+    "executedAt": 1707252185,
     "cancelledAt": 0,
     "expirationTime": 1709841371,
     "delay": 86400,

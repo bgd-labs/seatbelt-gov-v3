@@ -18,7 +18,7 @@
 | oracle | [0x390180e80058A8499930F0c13963AD3E0d86Bfc9](https://bscscan.com/address/0x390180e80058A8499930F0c13963AD3E0d86Bfc9) |
 | oracleDecimals | 8 |
 | oracleDescription | FDUSD / USD |
-| oracleLatestAnswer | 0.99897852 |
+| oracleLatestAnswer | 0.99908072 |
 | usageAsCollateralEnabled | true |
 | ltv | 70 % |
 | liquidationThreshold | 75 % |
@@ -86,7 +86,7 @@
         "oracle": "0x390180e80058A8499930F0c13963AD3E0d86Bfc9",
         "oracleDecimals": 8,
         "oracleDescription": "FDUSD / USD",
-        "oracleLatestAnswer": 99897852,
+        "oracleLatestAnswer": 99908072,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x5543d347bfae77A5FF913e589aB6D6ad520f1C73",

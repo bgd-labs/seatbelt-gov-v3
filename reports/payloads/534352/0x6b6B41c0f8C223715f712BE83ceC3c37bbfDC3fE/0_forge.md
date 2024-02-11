@@ -18,7 +18,7 @@
 | oracle | [0x43d12Fb3AfCAd5347fA764EeAB105478337b7200](https://scrollscan.com/address/0x43d12Fb3AfCAd5347fA764EeAB105478337b7200) |
 | oracleDecimals | 8 |
 | oracleDescription | USDC / USD |
-| oracleLatestAnswer | 1.0001198 |
+| oracleLatestAnswer | 1.00008261 |
 | usageAsCollateralEnabled | true |
 | ltv | 77 % |
 | liquidationThreshold | 80 % |
@@ -71,7 +71,7 @@
 | oracle | [0x6bF14CB0A831078629D993FDeBcB182b21A8774C](https://scrollscan.com/address/0x6bF14CB0A831078629D993FDeBcB182b21A8774C) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2301.16 |
+| oracleLatestAnswer | 2517.99638899 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % |
 | liquidationThreshold | 78 % |
@@ -87,7 +87,7 @@
 | borrowingEnabled | true |
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | false |
-| interestRateStrategy | [0xD828F2f9Da85b190721797bEaD5Eb0acC4150f05](https://scrollscan.com/address/0xD828F2f9Da85b190721797bEaD5Eb0acC4150f05) |
+| interestRateStrategy | [0x1044186cC4d83F5b466FA4572CE28E838FCB3E3c](https://scrollscan.com/address/0x1044186cC4d83F5b466FA4572CE28E838FCB3E3c) |
 | aTokenName | Aave Scroll WETH |
 | aTokenSymbol | aScrWETH |
 | isPaused | false |
@@ -129,7 +129,7 @@
 | oracle | [0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c](https://scrollscan.com/address/0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c) |
 | oracleDecimals | 8 |
 | oracleDescription | wstETH/ETH/USD |
-| oracleLatestAnswer | 2659.86043897 |
+| oracleLatestAnswer | 2911.83042992 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % |
 | liquidationThreshold | 78 % |
@@ -215,7 +215,7 @@
         "oracle": "0x43d12Fb3AfCAd5347fA764EeAB105478337b7200",
         "oracleDecimals": 8,
         "oracleDescription": "USDC / USD",
-        "oracleLatestAnswer": 100011980,
+        "oracleLatestAnswer": 100008261,
         "reserveFactor": 1000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x59F359aA263f7Ac09876E869AF1F75b558904ed4",
@@ -244,7 +244,7 @@
         "debtCeiling": 0,
         "decimals": 18,
         "eModeCategory": 1,
-        "interestRateStrategy": "0xD828F2f9Da85b190721797bEaD5Eb0acC4150f05",
+        "interestRateStrategy": "0x1044186cC4d83F5b466FA4572CE28E838FCB3E3c",
         "isActive": true,
         "isBorrowableInIsolation": false,
         "isFlashloanable": true,
@@ -258,7 +258,7 @@
         "oracle": "0x6bF14CB0A831078629D993FDeBcB182b21A8774C",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": 230116000000,
+        "oracleLatestAnswer": 251799638899,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x117d9cF336287F46DBE509a43925cFF115Aa563c",
@@ -301,7 +301,7 @@
         "oracle": "0xdb93e2712a8B36835078f8D28c70fCC95FD6d37c",
         "oracleDecimals": 8,
         "oracleDescription": "wstETH/ETH/USD",
-        "oracleLatestAnswer": 265986043897,
+        "oracleLatestAnswer": 291183042992,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x18e3f125ce85e8D65AD2bb4f6b5fff110772A078",
@@ -320,6 +320,21 @@
     }
   },
   "strategies": {
+    "0x1044186cC4d83F5b466FA4572CE28E838FCB3E3c": {
+      "from": null,
+      "to": {
+        "baseStableBorrowRate": "53000000000000000000000000",
+        "baseVariableBorrowRate": 0,
+        "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
+        "maxExcessUsageRatio": "200000000000000000000000000",
+        "optimalStableToTotalDebtRatio": "200000000000000000000000000",
+        "optimalUsageRatio": "800000000000000000000000000",
+        "stableRateSlope1": "33000000000000000000000000",
+        "stableRateSlope2": "80000000000000000000000000",
+        "variableRateSlope1": "33000000000000000000000000",
+        "variableRateSlope2": "80000000000000000000000000"
+      }
+    },
     "0x9205B37978aC983A297dFB53b3f3D2cCC7DDDADa": {
       "from": null,
       "to": {
@@ -348,21 +363,6 @@
         "stableRateSlope2": "3000000000000000000000000000",
         "variableRateSlope1": "70000000000000000000000000",
         "variableRateSlope2": "3000000000000000000000000000"
-      }
-    },
-    "0xD828F2f9Da85b190721797bEaD5Eb0acC4150f05": {
-      "from": null,
-      "to": {
-        "baseStableBorrowRate": "53000000000000000000000000",
-        "baseVariableBorrowRate": 0,
-        "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
-        "maxExcessUsageRatio": "200000000000000000000000000",
-        "optimalStableToTotalDebtRatio": "200000000000000000000000000",
-        "optimalUsageRatio": "800000000000000000000000000",
-        "stableRateSlope1": "33000000000000000000000000",
-        "stableRateSlope2": "80000000000000000000000000",
-        "variableRateSlope1": "33000000000000000000000000",
-        "variableRateSlope2": "80000000000000000000000000"
       }
     }
   }
