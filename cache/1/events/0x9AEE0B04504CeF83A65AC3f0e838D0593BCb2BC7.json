@@ -3508,5 +3508,29 @@
     "transactionHash": "0xc2fb3fda7679fe5f89b6df3543ec03ce0b3c27c5d857fbe2d526ae971e67326d",
     "transactionIndex": 25,
     "timestamp": 1707654755
+  },
+  {
+    "eventName": "ProposalCreated",
+    "args": {
+      "proposalId": "26",
+      "creator": "0x683a4F9915D6216f73d6Df50151725036bD26C02",
+      "accessLevel": 1,
+      "ipfsHash": "0x599229f841648a3d59bfd25079ff627f2b631856d494db31e3c219a0b53818b3"
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "blockHash": "0xd2fe48c87efe3bfb46348d22f56cf4fe22e382371726e2ddd6839e8ccd85ddc6",
+    "blockNumber": "19213842",
+    "data": "0x599229f841648a3d59bfd25079ff627f2b631856d494db31e3c219a0b53818b3",
+    "logIndex": 472,
+    "removed": false,
+    "topics": [
+      "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+      "0x000000000000000000000000000000000000000000000000000000000000001a",
+      "0x000000000000000000000000683a4f9915d6216f73d6df50151725036bd26c02",
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "transactionHash": "0xfb2218bb6631a1a31aeaf9eb3d8038a60cd515e155074bd258b9ef8571370a29",
+    "transactionIndex": 189,
+    "timestamp": 1707763835
   }
 ]
