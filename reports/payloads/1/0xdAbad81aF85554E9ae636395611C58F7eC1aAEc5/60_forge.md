@@ -18,7 +18,7 @@
 | oracle | [0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1](https://etherscan.io/address/0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1) |
 | oracleDecimals | 8 |
 | oracleDescription | PYUSD / USD |
-| oracleLatestAnswer | 0.99949 |
+| oracleLatestAnswer | 0.99920103 |
 | usageAsCollateralEnabled | false |
 | ltv | 0 % |
 | liquidationThreshold | 0 % |
@@ -86,7 +86,7 @@
         "oracle": "0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "oracleDecimals": 8,
         "oracleDescription": "PYUSD / USD",
-        "oracleLatestAnswer": 99949000,
+        "oracleLatestAnswer": 99920103,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x5B393DB4c72B1Bd82CE2834F6485d61b137Bc7aC",
