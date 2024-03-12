@@ -372,5 +372,27 @@
         "callData": "0x"
       }
     ]
+  },
+  "17": {
+    "creator": "0x5B540d168E2468270a3b5C66DD1A6E4ecE6BE593",
+    "maximumAccessLevelRequired": 1,
+    "state": 1,
+    "createdAt": 1710260365,
+    "queuedAt": 0,
+    "executedAt": 0,
+    "cancelledAt": 0,
+    "expirationTime": 1713284365,
+    "delay": 86400,
+    "gracePeriod": 604800,
+    "actions": [
+      {
+        "target": "0xE2FaD8c2e3AefBB3e8FEa1E0B84463C7C06350A3",
+        "withDelegateCall": true,
+        "accessLevel": 1,
+        "value": "0",
+        "signature": "execute()",
+        "callData": "0x"
+      }
+    ]
   }
 }
