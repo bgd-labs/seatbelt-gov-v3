@@ -1,8 +1,5 @@
 name: Governance Checks
 
-concurrency:
-  group: ${{ github.workflow }}
-
 on:
   schedule:
     - cron: "0 */2 * * *"
@@ -27,6 +24,8 @@ on:
 
 jobs:
   generate-reports:
+    concurrency:
+      group: ${{ github.workflow }} ${{ inputs.type || 'proposal' }} ${{ inputs.chainId }} ${{ inputs.ids }}
     name: Check all live proposals
     runs-on: ubuntu-latest
     env:
