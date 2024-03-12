@@ -72,7 +72,7 @@ jobs:
       - name: scheduled-all
         id: all
         run: yarn start --type ${{ inputs.type || 'proposal' }}
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || inputs.ids == '' }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
@@ -92,7 +92,7 @@ jobs:
       - name: scheduled-metis
         id: metis
         run: yarn start --type payload --chainId 1088
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || inputs.ids == '' }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
@@ -112,7 +112,7 @@ jobs:
       - name: scheduled-scroll
         id: scroll
         run: yarn start --type payload --chainId 534352
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || inputs.ids == '' }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
