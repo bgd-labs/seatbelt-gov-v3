@@ -46,9 +46,9 @@
   "2": {
     "creator": "0xCF98F96CCCDE0e736f64d5D5260112ECaE3d994D",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 2,
     "createdAt": 1710260755,
-    "queuedAt": 0,
+    "queuedAt": 1710675296,
     "executedAt": 0,
     "cancelledAt": 0,
     "expirationTime": 1713284755,
