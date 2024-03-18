@@ -134,10 +134,10 @@
   "6": {
     "creator": "0x5B540d168E2468270a3b5C66DD1A6E4ecE6BE593",
     "maximumAccessLevelRequired": 1,
-    "state": 2,
+    "state": 3,
     "createdAt": 1710260373,
     "queuedAt": 1710674436,
-    "executedAt": 0,
+    "executedAt": 1710761477,
     "cancelledAt": 0,
     "expirationTime": 1713284373,
     "delay": 86400,
