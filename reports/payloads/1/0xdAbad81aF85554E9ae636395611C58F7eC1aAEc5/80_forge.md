@@ -57,7 +57,7 @@
 | oracle | [0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731](https://etherscan.io/address/0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731) | [0x6243d2F41b4ec944F731f647589E28d9745a2674](https://etherscan.io/address/0x6243d2F41b4ec944F731f647589E28d9745a2674) |
 | oracleDescription | null | Capped cbETH / ETH / USD |
 | oracleName | cbETH/ETH/USD | null |
-| oracleLatestAnswer | 3767.758534 | 3796.02609513 |
+| oracleLatestAnswer | 3796.1552585 | 3828.95256362 |
 
 
 #### rETH ([0xae78736Cd615f374D3085123A210448E74Fc6393](https://etherscan.io/address/0xae78736Cd615f374D3085123A210448E74Fc6393))
@@ -157,8 +157,8 @@
         "to": "0x6243d2F41b4ec944F731f647589E28d9745a2674"
       },
       "oracleLatestAnswer": {
-        "from": 376775853400,
-        "to": 379602609513
+        "from": 379615525850,
+        "to": 382895256362
       },
       "oracleName": {
         "from": "cbETH/ETH/USD",
