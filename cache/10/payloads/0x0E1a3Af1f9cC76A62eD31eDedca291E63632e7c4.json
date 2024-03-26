@@ -420,9 +420,9 @@
   "19": {
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 2,
     "createdAt": 1711035171,
-    "queuedAt": 0,
+    "queuedAt": 1711463817,
     "executedAt": 0,
     "cancelledAt": 0,
     "expirationTime": 1714059171,
@@ -442,9 +442,9 @@
   "20": {
     "creator": "0xEAF6183bAb3eFD3bF856Ac5C058431C8592394d6",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 2,
     "createdAt": 1711040397,
-    "queuedAt": 0,
+    "queuedAt": 1711464285,
     "executedAt": 0,
     "cancelledAt": 0,
     "expirationTime": 1714064397,
