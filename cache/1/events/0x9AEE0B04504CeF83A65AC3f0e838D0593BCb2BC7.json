@@ -7347,5 +7347,26 @@
     "logIndex": 115,
     "removed": false,
     "timestamp": 1711390751
+  },
+  {
+    "eventName": "ProposalQueued",
+    "args": {
+      "proposalId": "55",
+      "votesFor": "508531188403815322541776",
+      "votesAgainst": "0"
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "topics": [
+      "0xe39e7fc9f2013b8ab01110f66610f9fb8675d3126e69b3752f0084afc72be19a",
+      "0x0000000000000000000000000000000000000000000000000000000000000037"
+    ],
+    "data": "0x000000000000000000000000000000000000000000006baf87ed238f908cded00000000000000000000000000000000000000000000000000000000000000000",
+    "blockNumber": "19514630",
+    "transactionHash": "0xad1a5a3ad9c739b29d4abd598c8b87b3cd2096c3cb1732927b11bfcc419d84ef",
+    "transactionIndex": 4,
+    "blockHash": "0x468413fe70a99cdf24cca6573933ea27d4768025425eebc2972a3a0438d9f47c",
+    "logIndex": 44,
+    "removed": false,
+    "timestamp": 1711407887
   }
 ]

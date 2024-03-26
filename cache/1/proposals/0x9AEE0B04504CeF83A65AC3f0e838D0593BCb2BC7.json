@@ -1620,18 +1620,18 @@
     ]
   },
   "55": {
-    "state": 2,
+    "state": 3,
     "accessLevel": 1,
     "creationTime": 1711059851,
     "votingDuration": 259200,
     "votingActivationTime": 1711146275,
-    "queuingTime": 0,
+    "queuingTime": 1711407887,
     "cancelTimestamp": 0,
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
     "snapshotBlockHash": "0x5c490604aad2655494de84152c5d44e8f46d382729c2064dfb8aaa61cf89656e",
     "ipfsHash": "0x58817985af9b5d3209b397088902ea3471b5afc3ebf5846b6dac029e75ac9fa0",
-    "forVotes": "0",
+    "forVotes": "508531188403815322541776",
     "againstVotes": "0",
     "cancellationFee": "50000000000000000",
     "payloads": [
