@@ -8859,5 +8859,51 @@
     "logIndex": 176,
     "removed": false,
     "timestamp": 1712326559
+  },
+  {
+    "eventName": "VotingActivated",
+    "args": {
+      "proposalId": "68",
+      "snapshotBlockHash": "0x34b01f330b9f3a5e7300771088c47384884aa7308f88e4412141fb1e627e9f1e",
+      "votingDuration": 259200
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "topics": [
+      "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+      "0x0000000000000000000000000000000000000000000000000000000000000044",
+      "0x34b01f330b9f3a5e7300771088c47384884aa7308f88e4412141fb1e627e9f1e"
+    ],
+    "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+    "blockNumber": "19592129",
+    "transactionHash": "0xa5cc3df48e7fb35f0342f536024ce4c9a186f09608b14aa7fb232a71c5b803c6",
+    "transactionIndex": 30,
+    "blockHash": "0x91dd32d1316ade38b6fa471397337bb94a04d45c17230aac628804b7696040d6",
+    "logIndex": 142,
+    "removed": false,
+    "timestamp": 1712351471
+  },
+  {
+    "eventName": "ProposalCreated",
+    "args": {
+      "proposalId": "71",
+      "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+      "accessLevel": 1,
+      "ipfsHash": "0x293815b30e809a40f094c7a6164a60bc5d306cc915455bbbfb1c083fd1161f1d"
+    },
+    "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+    "topics": [
+      "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+      "0x0000000000000000000000000000000000000000000000000000000000000047",
+      "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "data": "0x293815b30e809a40f094c7a6164a60bc5d306cc915455bbbfb1c083fd1161f1d",
+    "blockNumber": "19592157",
+    "transactionHash": "0xd3c63e695d68a8eba19fde61a6043d987e316e3d768faf96759161f897f2111f",
+    "transactionIndex": 91,
+    "blockHash": "0xbe4a08207c83a32cbf5cb997e9745aea51d2a65fa1b08b89e2f6ac5eccb8cfaa",
+    "logIndex": 242,
+    "removed": false,
+    "timestamp": 1712351807
   }
 ]
