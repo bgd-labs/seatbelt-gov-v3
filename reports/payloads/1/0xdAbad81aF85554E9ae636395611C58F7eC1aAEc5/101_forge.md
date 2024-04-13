@@ -18,7 +18,7 @@
 | oracle | [0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3](https://etherscan.io/address/0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3755.69554945 |
+| oracleLatestAnswer | 3387.98668882 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % |
 | liquidationThreshold | 75 % |
@@ -34,7 +34,7 @@
 | borrowingEnabled | true |
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | false |
-| interestRateStrategy | [0xd56eE97960b1b2953e751151Fd84888cF3F3b521](https://etherscan.io/address/0xd56eE97960b1b2953e751151Fd84888cF3F3b521) |
+| interestRateStrategy | [0x48AF11111764E710fcDcE2750db848C63edab57B](https://etherscan.io/address/0x48AF11111764E710fcDcE2750db848C63edab57B) |
 | liquidityIndex | 1 |
 | variableBorrowIndex | 1 |
 | aTokenName | Aave Ethereum weETH |
@@ -56,7 +56,7 @@
 | baseStableBorrowRate | 7 % |
 | stableRateSlope1 | 0 % |
 | stableRateSlope2 | 0 % |
-| interestRate | ![ir](/.assets/975331647bbe35dbd37070cd8e0f29f3fd3250c9.svg) |
+| interestRate | ![ir](/.assets/aa2e8a5322392ad3d4ae80453f4e281a8da627cc.svg) |
 | eMode.label | ETH correlated |
 | eMode.ltv | 93 % |
 | eMode.liquidationThreshold | 95 % |
@@ -83,7 +83,7 @@
         "debtCeiling": 0,
         "decimals": 18,
         "eModeCategory": 1,
-        "interestRateStrategy": "0xd56eE97960b1b2953e751151Fd84888cF3F3b521",
+        "interestRateStrategy": "0x48AF11111764E710fcDcE2750db848C63edab57B",
         "isActive": true,
         "isBorrowableInIsolation": false,
         "isFlashloanable": true,
@@ -98,7 +98,7 @@
         "oracle": "0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": 375569554945,
+        "oracleLatestAnswer": 338798668882,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0xBad6eF8e76E26F39e985474aD0974FDcabF85d37",
@@ -121,7 +121,7 @@
     "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {
       "from": null,
       "to": {
-        "address": "0xd56eE97960b1b2953e751151Fd84888cF3F3b521",
+        "address": "0x48AF11111764E710fcDcE2750db848C63edab57B",
         "baseStableBorrowRate": "70000000000000000000000000",
         "baseVariableBorrowRate": 0,
         "maxExcessStableToTotalDebtRatio": "1000000000000000000000000000",
