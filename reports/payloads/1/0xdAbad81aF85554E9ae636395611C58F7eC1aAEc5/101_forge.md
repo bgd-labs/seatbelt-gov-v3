@@ -18,7 +18,7 @@
 | oracle | [0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3](https://etherscan.io/address/0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3387.98668882 |
+| oracleLatestAnswer | 3154.74216814 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % |
 | liquidationThreshold | 75 % |
@@ -98,7 +98,7 @@
         "oracle": "0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": 338798668882,
+        "oracleLatestAnswer": 315474216814,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0xBad6eF8e76E26F39e985474aD0974FDcabF85d37",
