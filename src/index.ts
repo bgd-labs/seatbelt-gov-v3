@@ -209,7 +209,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
           )
         );
         if (allPayloadsAreFinal || willNeverBeFinal) {
-          cache.proposals[proposalId] = true;
+          storeCache(1, GovernanceV3Ethereum.GOVERNANCE, proposalId, MOCK_FINAL_PROPOSAL_STATE);
         }
         const proposalReport = await generateProposalReport({
           proposalId: BigInt(proposalId),
