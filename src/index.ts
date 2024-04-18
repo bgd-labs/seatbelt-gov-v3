@@ -3,12 +3,10 @@ import {existsSync, writeFileSync, readFileSync, mkdirSync} from 'fs';
 import {execSync} from 'child_process';
 import path from 'path';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
-import {Client, Hex} from 'viem';
+import {Address, Client, Hex} from 'viem';
 import {
   PayloadState,
   ProposalState,
-  cacheGovernance,
-  cachePayloadsController,
   findPayloadsController,
   generateProposalReport,
   generateReport,
@@ -17,30 +15,47 @@ import {
   logError,
   logInfo,
   logWarning,
-  readBookKeepingCache,
-  writeBookKeepingCache,
 } from '@bgd-labs/aave-cli';
 import {CHAIN_ID_CLIENT_MAP, ChainId, mainnetClient} from '@bgd-labs/js-utils';
+import {githubHybridCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/githubHybrid';
+import {localCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/localCache';
+
 import {Option, program} from 'commander';
 
-const payloadStateCachePath = './cache/payload-states.json';
+const cachingLayer = githubHybridCacheAdapter(localCacheAdapter);
 
-type Cache = {
-  proposals: {[id: number]: boolean};
-  [chainId: number]: {
-    [payloadsController: Hex]: {[payloadId: number]: number};
-  };
-};
+const MOCK_FINAL_PROPOSAL_STATE = 1000;
 
-function getCache() {
-  let cache: Cache = {proposals: {}};
-  if (existsSync(payloadStateCachePath))
-    cache = JSON.parse(readFileSync(payloadStateCachePath, 'utf8'));
+type SimulationCache = {state: number};
+
+function getBasePath(chainId: number | bigint, address: Address) {
+  return path.join(process.cwd(), 'cache', chainId.toString(), address);
+}
+
+function getPath(chainId: number | bigint, address: Address, id: number | bigint) {
+  return path.join(getBasePath(chainId, address), `${id}.json`);
+}
+
+function getCache(
+  chainId: number | bigint,
+  address: Address,
+  id: number | bigint
+): SimulationCache {
+  let cache = {state: -1};
+  if (existsSync(getPath(chainId, address, id)))
+    cache = JSON.parse(readFileSync(getPath(chainId, address, id), 'utf8'));
   return cache;
 }
 
-function storeCache(cache: Cache) {
-  writeFileSync(payloadStateCachePath, JSON.stringify(cache, null, 2));
+function storeCache(
+  chainId: number | bigint,
+  address: Address,
+  id: number | bigint,
+  state: number
+) {
+  if (!existsSync(getBasePath(chainId, address)))
+    mkdirSync(getBasePath(chainId, address), {recursive: true});
+  writeFileSync(getPath(chainId, address, id), JSON.stringify({state}));
 }
 
 function isPayloadFinal(state: number) {
@@ -48,7 +63,7 @@ function isPayloadFinal(state: number) {
     PayloadState.Cancelled,
     PayloadState.Executed,
     PayloadState.Expired,
-    // -1, // error
+    // -1, // not yet seen
   ].includes(state);
 }
 
@@ -70,18 +85,14 @@ function getProposalFileName(proposalId: number) {
 
 const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis, ChainId.scroll, ChainId.zkEVM];
 
-async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
-  const bookKeeping = readBookKeepingCache();
-  // construct governance
-  const client = mainnetClient;
+async function simulateProposals(proposalsToCheck: number[]) {
+  const client = mainnetClient as Client;
   const governance = getGovernance({
     address: GovernanceV3Ethereum.GOVERNANCE,
     client,
   });
 
   // populate cache
-  const {eventsCache} = await cacheGovernance(client, GovernanceV3Ethereum.GOVERNANCE, bookKeeping);
-
   if (proposalsToCheck.length > 0) logInfo('Preparation', `Checking proposals ${proposalsToCheck}`);
   else logWarning('Preparation', `No proposals found`);
 
@@ -90,27 +101,31 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
     for (const proposalId of proposalsToCheck) {
       try {
         logInfo('Check', `Checking proposal ${proposalId}`);
-        const proposal = await governance.getProposalAndLogs(BigInt(proposalId), eventsCache);
+        const cache = await cachingLayer.getProposal({
+          chainId: 1,
+          governance: GovernanceV3Ethereum.GOVERNANCE,
+          proposalId,
+        });
         const proposalSimulation = await governance.simulateProposalExecutionOnTenderly(
           BigInt(proposalId),
-          proposal
+          cache.logs
         );
         const payloadsSection: string[] = [];
 
-        for (const payload of proposal.proposal.payloads) {
-          const client =
-            CHAIN_ID_CLIENT_MAP[Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP];
+        for (const payload of cache.proposal.payloads) {
+          const client = CHAIN_ID_CLIENT_MAP[Number(payload.chain)];
           const fileName = getPayloadFileName(
             client.chain!.id,
             payload.payloadsController,
             payload.payloadId
           );
+          const simulationCache = getCache(
+            payload.chain,
+            payload.payloadsController,
+            payload.payloadId
+          );
           try {
-            if (
-              isPayloadFinal(
-                cache[Number(payload.chain)]?.[payload.payloadsController]?.[payload.payloadId]
-              )
-            ) {
+            if (isPayloadFinal(simulationCache.state)) {
               logWarning(
                 client.chain!.name,
                 `Skipping ${payload.payloadId} as it was simulated in it's final state before`
@@ -121,22 +136,21 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                 `Simulating payload ${payload.payloadId} on ${payload.payloadsController}`
               );
               const controllerContract = getPayloadsController(payload.payloadsController, client);
-              const {eventsCache} = await cachePayloadsController(
-                client,
-                payload.payloadsController,
-                bookKeeping
-              );
 
-              const config = await controllerContract.getPayload(payload.payloadId, eventsCache);
+              const cache = await cachingLayer.getPayload({
+                chainId: Number(payload.chain),
+                payloadId: payload.payloadId,
+                payloadsController: payload.payloadsController,
+              });
               if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(client.chain!.id)) {
                 try {
                   const result = await controllerContract.simulatePayloadExecutionOnTenderly(
                     payload.payloadId,
-                    config
+                    cache.logs
                   );
                   const report = await generateReport({
                     payloadId: payload.payloadId,
-                    payloadInfo: config,
+                    payloadInfo: cache,
                     simulation: result,
                     client,
                   });
@@ -151,14 +165,11 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                 }
               }
               // foundry
-              if (
-                cache[Number(payload.chain)]?.[payload.payloadsController]?.[payload.payloadId] !=
-                config.payload.state
-              ) {
+              if (simulationCache.state != cache.payload.state) {
                 try {
                   let blockNumber = BigInt(0); // current
-                  if (config.executedLog)
-                    blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
+                  if (cache.logs.executedLog)
+                    blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
                   execSync(
                     `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
                       .url!}${
@@ -167,11 +178,12 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
                     {stdio: 'inherit'}
                   );
                   // update cache
-                  if (!cache[Number(payload.chain)]) cache[Number(payload.chain)] = {};
-                  if (!cache[Number(payload.chain)][payload.payloadsController])
-                    cache[Number(payload.chain)][payload.payloadsController] = {};
-                  cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] =
-                    config.payload.state;
+                  storeCache(
+                    payload.chain,
+                    payload.payloadsController,
+                    payload.payloadId,
+                    cache.payload.state
+                  );
                 } catch (e) {
                   throw new Error('Error simulating on foundry');
                 }
@@ -184,10 +196,7 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController} failed`
             );
             console.log(e);
-            if (!cache[Number(payload.chain)]) cache[Number(payload.chain)] = {};
-            if (!cache[Number(payload.chain)][payload.payloadsController])
-              cache[Number(payload.chain)][payload.payloadsController] = {};
-            cache[Number(payload.chain)][payload.payloadsController][payload.payloadId] = -1;
+            storeCache(payload.chain, payload.payloadsController, payload.payloadId, -1);
             payloadsSection.push(
               `- Network: ${
                 CHAIN_ID_CLIENT_MAP[Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP]
@@ -199,18 +208,18 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
           }
         }
         // if all payloads are final, it means the proposal no longer needs to be simulated
-        const willNeverBeFinal = isProposalStuck(proposal.proposal.state);
-        const allPayloadsAreFinal = proposal.proposal.payloads.every((payload) =>
+        const willNeverBeFinal = isProposalStuck(cache.proposal.state);
+        const allPayloadsAreFinal = cache.proposal.payloads.every((payload) =>
           isPayloadFinal(
-            cache[Number(payload.chain)][payload.payloadsController]?.[payload.payloadId]
+            getCache(payload.chain, payload.payloadsController, payload.payloadId).state
           )
         );
         if (allPayloadsAreFinal || willNeverBeFinal) {
-          cache.proposals[proposalId] = true;
+          storeCache(1, GovernanceV3Ethereum.GOVERNANCE, proposalId, MOCK_FINAL_PROPOSAL_STATE);
         }
         const proposalReport = await generateProposalReport({
           proposalId: BigInt(proposalId),
-          proposalInfo: proposal,
+          proposalInfo: cache,
           simulation: proposalSimulation,
           client,
         });
@@ -219,30 +228,26 @@ async function simulateProposals(proposalsToCheck: number[], cache: Cache) {
           `# Payloads\n\n${payloadsSection.join('\n')}\n\n${proposalReport}`
         );
       } catch (e) {
-        console.log(`error simulating proposal proposal {proposalId}`);
+        console.log(e);
+        console.log(`error simulating proposal ${proposalId}`);
       }
     }
   } catch (error) {
     logError('Error', 'Stopping simulation due to an error');
     console.log(error);
   }
-  storeCache(cache);
-  writeBookKeepingCache(bookKeeping);
 }
 
 async function simulatePayload(chainId: number, payloadIds: number[]) {
-  const bookKeeping = readBookKeepingCache();
-  const cache = getCache();
   const client = CHAIN_ID_CLIENT_MAP[chainId] as Client;
   const address = findPayloadsController(chainId)!;
   if (!address) throw new Error(`payloadsController on ${chainId} not found`);
   logInfo(client.chain!.name, `Simulating payloads on ${address}`);
   const controllerContract = getPayloadsController(address, client);
-  const {eventsCache} = await cachePayloadsController(client, address, bookKeeping);
   if (!payloadIds || payloadIds.length === 0) {
     const payloadsCount = await controllerContract.controllerContract.read.getPayloadsCount();
     payloadIds = [...Array(Number(payloadsCount)).keys()].filter((payloadId) => {
-      if (cache[chainId]?.[address]?.[payloadId]) {
+      if (getCache(chainId, address, payloadId)) {
         logWarning(client.chain!.name, `Skipping ${payloadId} as the payload was simulated before`);
         return false;
       }
@@ -252,36 +257,32 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
   for (const payloadId of payloadIds) {
     logInfo(client.chain!.name, `Simulating ${payloadId}`);
     const fileName = getPayloadFileName(chainId, address, payloadId);
-    const config = await controllerContract.getPayload(payloadId, eventsCache);
+    const cache = await cachingLayer.getPayload({chainId, payloadId, payloadsController: address});
     // tenderly
     try {
       const tenderlyPayload = await controllerContract.simulatePayloadExecutionOnTenderly(
         payloadId,
-        config
+        cache.logs
       );
       const report = await generateReport({
         payloadId: payloadId,
-        payloadInfo: config,
+        payloadInfo: cache,
         simulation: tenderlyPayload,
         client,
       });
       writeFileSync(fileName, report);
-      // update cache
-      if (!cache[chainId]) cache[chainId] = {};
-      if (!cache[chainId][address]) cache[chainId][address] = {};
-      cache[chainId][address][payloadId] = config.payload.state;
+      storeCache(chainId, address, payloadId, cache.payload.state);
     } catch (e) {
       logError(client.chain!.name, `Simulating payload ${payloadId} on ${address} failed`);
       console.log(e);
-      if (!cache[chainId]) cache[chainId] = {};
-      if (!cache[chainId][address]) cache[chainId][address] = {};
-      cache[chainId][address][payloadId] = -1;
+      storeCache(chainId, address, payloadId, -1);
     }
 
     // foundry
     try {
       let blockNumber = BigInt(0); // current
-      if (config.executedLog) blockNumber = BigInt(config.executedLog.blockNumber) - BigInt(1);
+      if (cache.logs.executedLog)
+        blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
       execSync(
         `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport.url!}${
           blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
@@ -292,8 +293,6 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
       console.log('simulating on foundry failed');
     }
   }
-  storeCache(cache);
-  writeBookKeepingCache(bookKeeping);
 }
 
 program
@@ -309,15 +308,11 @@ program
   .addOption(new Option('-i, --ids [ids...]', 'the ids of the payloads/proposals'))
   .action(async (options) => {
     console.log(options);
-    const cache = getCache();
     if (options.type === 'proposal') {
       if (options.ids && options.ids.length > 0)
-        return simulateProposals(
-          options.ids.map((id: string) => Number(id)),
-          cache
-        );
+        return simulateProposals(options.ids.map((id: string) => Number(id)));
       else {
-        const client = mainnetClient;
+        const client = mainnetClient as Client;
         const governance = getGovernance({
           address: GovernanceV3Ethereum.GOVERNANCE,
           client,
@@ -325,9 +320,11 @@ program
         // figure out which proposals to check
         const proposalCount = await governance.governanceContract.read.getProposalsCount();
         const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
-          (proposalId) => !cache.proposals[proposalId]
+          (proposalId) =>
+            getCache(1, GovernanceV3Ethereum.GOVERNANCE, proposalId).state !==
+            MOCK_FINAL_PROPOSAL_STATE
         );
-        return simulateProposals(proposalsToCheck, cache);
+        return simulateProposals(proposalsToCheck);
       }
     } else {
       if (!options.chainId || typeof options.chainId === 'boolean')

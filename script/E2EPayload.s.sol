@@ -72,7 +72,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
 
     string[] memory inputs = new string[](7);
     inputs[0] = 'npx';
-    inputs[1] = '@bgd-labs/aave-cli@^0.9.2-7fd017e59a197697f6bf6bdca3044b95f13b2a86.0';
+    inputs[1] = '@bgd-labs/aave-cli@0.10.1-bbc0f32e7957b854ed9240e26e0d169732f0bb98.0';
     inputs[2] = 'diff-snapshots';
     inputs[3] = beforePath;
     inputs[4] = afterPath;
