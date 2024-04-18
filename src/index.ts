@@ -28,8 +28,12 @@ const MOCK_FINAL_PROPOSAL_STATE = 1000;
 
 type SimulationCache = {state: number};
 
+function getBasePath(chainId: number | bigint, address: Address) {
+  return path.join(process.cwd(), 'cache', chainId.toString(), address);
+}
+
 function getPath(chainId: number | bigint, address: Address, id: number | bigint) {
-  return path.join(process.cwd(), 'cache', chainId.toString(), address, `${id}.json`);
+  return path.join(getBasePath(chainId, address), `${id}.json`);
 }
 
 function getCache(
@@ -49,6 +53,8 @@ function storeCache(
   id: number | bigint,
   state: number
 ) {
+  if (!existsSync(getBasePath(chainId, address)))
+    mkdirSync(getBasePath(chainId, address), {recursive: true});
   writeFileSync(getPath(chainId, address, id), JSON.stringify({state}));
 }
 
@@ -222,7 +228,8 @@ async function simulateProposals(proposalsToCheck: number[]) {
           `# Payloads\n\n${payloadsSection.join('\n')}\n\n${proposalReport}`
         );
       } catch (e) {
-        console.log(`error simulating proposal proposal {proposalId}`);
+        console.log(e);
+        console.log(`error simulating proposal ${proposalId}`);
       }
     }
   } catch (error) {
@@ -314,7 +321,7 @@ program
         const proposalCount = await governance.governanceContract.read.getProposalsCount();
         const proposalsToCheck = [...Array(Number(proposalCount)).keys()].filter(
           (proposalId) =>
-            getCache(1, GovernanceV3Ethereum.GOVERNANCE, proposalId).state ===
+            getCache(1, GovernanceV3Ethereum.GOVERNANCE, proposalId).state !==
             MOCK_FINAL_PROPOSAL_STATE
         );
         return simulateProposals(proposalsToCheck);
