@@ -35,24 +35,28 @@
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | false |
 | interestRateStrategy | [0xAC4f9019608f3A359Ba6a576DC4deC9561D2e514](https://etherscan.io/address/0xAC4f9019608f3A359Ba6a576DC4deC9561D2e514) |
+| liquidityIndex | 1 |
+| variableBorrowIndex | 1 |
 | aTokenName | Aave Ethereum PYUSD |
 | aTokenSymbol | aEthPYUSD |
+| currentLiquidityRate | 0 % |
+| currentVariableBorrowRate | 0 % |
 | isPaused | false |
 | stableDebtTokenName | Aave Ethereum Stable Debt PYUSD |
 | stableDebtTokenSymbol | stableDebtEthPYUSD |
 | variableDebtTokenName | Aave Ethereum Variable Debt PYUSD |
 | variableDebtTokenSymbol | variableDebtEthPYUSD |
 | optimalUsageRatio | 80 % |
+| maxExcessStableToTotalDebtRatio | 80 % |
 | maxExcessUsageRatio | 20 % |
+| optimalStableToTotalDebtRatio | 20 % |
 | baseVariableBorrowRate | 0 % |
 | variableRateSlope1 | 6 % |
 | variableRateSlope2 | 80 % |
 | baseStableBorrowRate | 9 % |
 | stableRateSlope1 | 13 % |
 | stableRateSlope2 | 300 % |
-| optimalStableToTotalDebtRatio | 20 % |
-| maxExcessStableToTotalDebtRatio | 80 % |
-| interestRate | ![ir](/.assets/7dc62027c00efdf4a27a7ad723f8f7ca99f89d77.svg) |
+| interestRate | ![ir](/.assets/c907af8377a5e8ffda3acd3fe2ac6aee00eff4ae.svg) |
 
 
 ## Raw diff
@@ -69,6 +73,8 @@
         "aTokenSymbol": "aEthPYUSD",
         "borrowCap": 9000000,
         "borrowingEnabled": true,
+        "currentLiquidityRate": 0,
+        "currentVariableBorrowRate": 0,
         "debtCeiling": 0,
         "decimals": 6,
         "eModeCategory": 0,
@@ -82,6 +88,7 @@
         "liquidationBonus": 0,
         "liquidationProtocolFee": 0,
         "liquidationThreshold": 0,
+        "liquidityIndex": "1000000000000000000000000000",
         "ltv": 0,
         "oracle": "0x8f1dF6D7F2db73eECE86a18b4381F4707b918FB1",
         "oracleDecimals": 8,
@@ -97,6 +104,7 @@
         "symbol": "PYUSD",
         "underlying": "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
         "usageAsCollateralEnabled": false,
+        "variableBorrowIndex": "1000000000000000000000000000",
         "variableDebtToken": "0x57B67e4DE077085Fd0AF2174e9c14871BE664546",
         "variableDebtTokenImpl": "0xaC725CB59D16C81061BDeA61041a8A5e73DA9EC6",
         "variableDebtTokenName": "Aave Ethereum Variable Debt PYUSD",
@@ -105,9 +113,10 @@
     }
   },
   "strategies": {
-    "0xAC4f9019608f3A359Ba6a576DC4deC9561D2e514": {
+    "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8": {
       "from": null,
       "to": {
+        "address": "0xAC4f9019608f3A359Ba6a576DC4deC9561D2e514",
         "baseStableBorrowRate": "90000000000000000000000000",
         "baseVariableBorrowRate": 0,
         "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
