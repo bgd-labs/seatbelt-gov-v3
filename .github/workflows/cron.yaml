@@ -102,6 +102,7 @@ jobs:
     strategy:
       matrix:
         chainId: [1, 10, 56, 100, 137, 1088, 8453, 42161, 43114, 534352]
+    needs: ["proposals"]
     name: Check all live payloads
     runs-on: ubuntu-latest
     env:
