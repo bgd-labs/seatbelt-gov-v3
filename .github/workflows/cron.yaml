@@ -13,17 +13,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-    inputs:
-      type:
-        type: choice
-        options:
-          - proposal
-          - payload
-        default: proposal
-      chainId:
-        type: string
-      ids:
-        type: string
 
 jobs:
   proposals:
