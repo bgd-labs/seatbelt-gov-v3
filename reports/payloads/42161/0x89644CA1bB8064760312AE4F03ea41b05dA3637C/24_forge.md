@@ -18,7 +18,7 @@
 | oracle | [0x517276B5972C4Db7E88B9F76Ee500E888a2D73C3](https://arbiscan.io/address/0x517276B5972C4Db7E88B9F76Ee500E888a2D73C3) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3214.36331688 |
+| oracleLatestAnswer | 3256.21651783 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % |
 | liquidationThreshold | 75 % |
@@ -98,7 +98,7 @@
         "oracle": "0x517276B5972C4Db7E88B9F76Ee500E888a2D73C3",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": 321436331688,
+        "oracleLatestAnswer": 325621651783,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x40B4BAEcc69B882e8804f9286b12228C27F8c9BF",
