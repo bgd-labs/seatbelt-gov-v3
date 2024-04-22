@@ -27,13 +27,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "yarn"
-
+      - uses: oven-sh/setup-bun@v1
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: bun install
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
@@ -42,7 +38,7 @@ jobs:
 
       - name: scheduled proposals
         id: all
-        run: yarn start --type proposal
+        run: bun run start --type proposal
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
@@ -114,13 +110,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "yarn"
-
+      - uses: oven-sh/setup-bun@v1
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: bun install
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
@@ -129,7 +121,7 @@ jobs:
 
       - name: scheduled ${{ matrix.chainId }}
         id: all
-        run: yarn start --type payload --chainId ${{ matrix.chainId }}
+        run: bun run start --type payload --chainId ${{ matrix.chainId }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}

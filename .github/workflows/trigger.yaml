@@ -29,13 +29,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "yarn"
-
+      - uses: oven-sh/setup-bun@v1
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: bun install
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
@@ -44,7 +40,7 @@ jobs:
 
       - name: Trigger
         id: external-trigger
-        run: yarn start --type ${{ inputs.type || 'proposal' }} --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
+        run: bun run start --type ${{ inputs.type || 'proposal' }} --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}

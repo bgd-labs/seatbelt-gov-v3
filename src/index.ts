@@ -5,8 +5,6 @@ import path from 'path';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
 import {Address, Client, Hex} from 'viem';
 import {
-  PayloadState,
-  ProposalState,
   findPayloadsController,
   generateProposalReport,
   generateReport,
@@ -21,6 +19,7 @@ import {githubHybridCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/githu
 import {localCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/localCache';
 
 import {Option, program} from 'commander';
+import {ProposalState, isPayloadFinal} from '@bgd-labs/aave-v3-governance-cache';
 
 const cachingLayer = githubHybridCacheAdapter(localCacheAdapter);
 
@@ -56,15 +55,6 @@ function storeCache(
   if (!existsSync(getBasePath(chainId, address)))
     mkdirSync(getBasePath(chainId, address), {recursive: true});
   writeFileSync(getPath(chainId, address, id), JSON.stringify({state}));
-}
-
-function isPayloadFinal(state: number) {
-  return [
-    PayloadState.Cancelled,
-    PayloadState.Executed,
-    PayloadState.Expired,
-    // -1, // not yet seen
-  ].includes(state);
 }
 
 function isProposalStuck(state: number) {
@@ -104,7 +94,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
         const cache = await cachingLayer.getProposal({
           chainId: 1,
           governance: GovernanceV3Ethereum.GOVERNANCE,
-          proposalId,
+          proposalId: BigInt(proposalId),
         });
         const proposalSimulation = await governance.simulateProposalExecutionOnTenderly(
           BigInt(proposalId),
