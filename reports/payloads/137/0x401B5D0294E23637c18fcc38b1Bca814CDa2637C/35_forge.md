@@ -6,7 +6,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| supplyCap | 62,000,000 MaticX | 75,000,000 MaticX |
+| supplyCap | 82,500,000 MaticX | 75,000,000 MaticX |
 
 
 ## Raw diff
@@ -16,7 +16,7 @@
   "reserves": {
     "0xfa68FB4628DFF1028CFEc22b4162FCcd0d45efb6": {
       "supplyCap": {
-        "from": 62000000,
+        "from": 82500000,
         "to": 75000000
       }
     }

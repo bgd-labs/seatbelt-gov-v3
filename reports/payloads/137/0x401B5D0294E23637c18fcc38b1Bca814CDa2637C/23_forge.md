@@ -35,24 +35,28 @@
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | false |
 | interestRateStrategy | [0x53b13a6D43F647D788411Abfd28D229C274AfBF9](https://polygonscan.com/address/0x53b13a6D43F647D788411Abfd28D229C274AfBF9) |
+| liquidityIndex | 1 |
+| variableBorrowIndex | 1 |
 | aTokenName | Aave Polygon USDCn |
 | aTokenSymbol | aPolUSDCn |
+| currentLiquidityRate | 0 % |
+| currentVariableBorrowRate | 0 % |
 | isPaused | false |
 | stableDebtTokenName | Aave Polygon Stable Debt USDCn |
 | stableDebtTokenSymbol | stableDebtPolUSDCn |
 | variableDebtTokenName | Aave Polygon Variable Debt USDCn |
 | variableDebtTokenSymbol | variableDebtPolUSDCn |
 | optimalUsageRatio | 90 % |
+| maxExcessStableToTotalDebtRatio | 100 % |
 | maxExcessUsageRatio | 10 % |
+| optimalStableToTotalDebtRatio | 0 % |
 | baseVariableBorrowRate | 0 % |
 | variableRateSlope1 | 5 % |
 | variableRateSlope2 | 60 % |
 | baseStableBorrowRate | 5 % |
 | stableRateSlope1 | 5 % |
 | stableRateSlope2 | 60 % |
-| optimalStableToTotalDebtRatio | 0 % |
-| maxExcessStableToTotalDebtRatio | 100 % |
-| interestRate | ![ir](/.assets/84c6523d74f61d0ba00e446918a767fdc26e571b.svg) |
+| interestRate | ![ir](/.assets/5c916bd4a4f8cdafb497248e4b80704e95d2c2f5.svg) |
 | eMode.label | Stablecoins |
 | eMode.ltv | 93 % |
 | eMode.liquidationThreshold | 95 % |
@@ -76,7 +80,7 @@
 | variableRateSlope1 | 5 % | 7 % |
 | variableRateSlope2 | 60 % | 80 % |
 | baseStableBorrowRate | 6 % | 8 % |
-| interestRate | ![before](/.assets/2054bce529b78cac463f95dc79fc18b65a0c1f44.svg) | ![after](/.assets/08d9252b4f8f8c9e59638a9a35a34e736f126166.svg) |
+| interestRate | ![before](/.assets/1ec3d2568dae6d724981c1d411bbea83fca6b9f8.svg) | ![after](/.assets/8dca23d950316194bae32289f94123f87abf1dcf.svg) |
 
 ## Raw diff
 
@@ -122,6 +126,8 @@
         "aTokenSymbol": "aPolUSDCn",
         "borrowCap": 45000000,
         "borrowingEnabled": true,
+        "currentLiquidityRate": 0,
+        "currentVariableBorrowRate": 0,
         "debtCeiling": 0,
         "decimals": 6,
         "eModeCategory": 1,
@@ -135,6 +141,7 @@
         "liquidationBonus": 10500,
         "liquidationProtocolFee": 1000,
         "liquidationThreshold": 8000,
+        "liquidityIndex": "1000000000000000000000000000",
         "ltv": 7700,
         "oracle": "0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7",
         "oracleDecimals": 8,
@@ -150,6 +157,7 @@
         "symbol": "USDC",
         "underlying": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
         "usageAsCollateralEnabled": true,
+        "variableBorrowIndex": "1000000000000000000000000000",
         "variableDebtToken": "0xE701126012EC0290822eEA17B794454d1AF8b030",
         "variableDebtTokenImpl": "0x79b5e91037AE441dE0d9e6fd3Fd85b96B83d4E93",
         "variableDebtTokenName": "Aave Polygon Variable Debt USDCn",
@@ -158,9 +166,28 @@
     }
   },
   "strategies": {
-    "0x53b13a6D43F647D788411Abfd28D229C274AfBF9": {
+    "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174": {
+      "address": {
+        "from": "0x9a158802cD924747EF336cA3F9DE3bdb60Cf43D3",
+        "to": "0x588b62C84533232E3A881e096E5D639Fa754F093"
+      },
+      "baseStableBorrowRate": {
+        "from": "60000000000000000000000000",
+        "to": "80000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": "50000000000000000000000000",
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": "600000000000000000000000000",
+        "to": "800000000000000000000000000"
+      }
+    },
+    "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359": {
       "from": null,
       "to": {
+        "address": "0x53b13a6D43F647D788411Abfd28D229C274AfBF9",
         "baseStableBorrowRate": "50000000000000000000000000",
         "baseVariableBorrowRate": 0,
         "maxExcessStableToTotalDebtRatio": "1000000000000000000000000000",
@@ -171,21 +198,6 @@
         "stableRateSlope2": "600000000000000000000000000",
         "variableRateSlope1": "50000000000000000000000000",
         "variableRateSlope2": "600000000000000000000000000"
-      }
-    },
-    "0x588b62C84533232E3A881e096E5D639Fa754F093": {
-      "from": null,
-      "to": {
-        "baseStableBorrowRate": "80000000000000000000000000",
-        "baseVariableBorrowRate": 0,
-        "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
-        "maxExcessUsageRatio": "100000000000000000000000000",
-        "optimalStableToTotalDebtRatio": "200000000000000000000000000",
-        "optimalUsageRatio": "900000000000000000000000000",
-        "stableRateSlope1": "5000000000000000000000000",
-        "stableRateSlope2": "600000000000000000000000000",
-        "variableRateSlope1": "70000000000000000000000000",
-        "variableRateSlope2": "800000000000000000000000000"
       }
     }
   }
