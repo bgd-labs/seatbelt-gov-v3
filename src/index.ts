@@ -155,7 +155,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
                 }
               }
               // foundry
-              if (simulationCache.state != cache.payload.state) {
+              if (simulationCache.state !== cache.payload.state) {
                 try {
                   let blockNumber = BigInt(0); // current
                   if (cache.logs.executedLog)

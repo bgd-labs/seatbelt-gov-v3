@@ -72,7 +72,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
 
     string[] memory inputs = new string[](7);
     inputs[0] = 'npx';
-    inputs[1] = '@bgd-labs/aave-cli@0.11.4';
+    inputs[1] = '@bgd-labs/aave-cli@0.12.0';
     inputs[2] = 'diff-snapshots';
     inputs[3] = beforePath;
     inputs[4] = afterPath;
@@ -91,5 +91,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     if (block.chainid == ChainIds.BNB) return AaveV3BNB.POOL;
     if (block.chainid == ChainIds.ZK_EVM) return AaveV3PolygonZkEvm.POOL;
     if (block.chainid == ChainIds.SCROLL) return AaveV3Scroll.POOL;
+    if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
   }
 }
