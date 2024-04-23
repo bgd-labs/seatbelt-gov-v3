@@ -35,24 +35,28 @@
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | false |
 | interestRateStrategy | [0x44CaDF6E49895640D9De85ac01d97D44429Ad0A4](https://etherscan.io/address/0x44CaDF6E49895640D9De85ac01d97D44429Ad0A4) |
+| liquidityIndex | 1 |
+| variableBorrowIndex | 1 |
 | aTokenName | Aave Ethereum crvUSD |
 | aTokenSymbol | aEthcrvUSD |
+| currentLiquidityRate | 0 % |
+| currentVariableBorrowRate | 0 % |
 | isPaused | false |
 | stableDebtTokenName | Aave Ethereum Stable Debt crvUSD |
 | stableDebtTokenSymbol | stableDebtEthcrvUSD |
 | variableDebtTokenName | Aave Ethereum Variable Debt crvUSD |
 | variableDebtTokenSymbol | variableDebtEthcrvUSD |
 | optimalUsageRatio | 80 % |
+| maxExcessStableToTotalDebtRatio | 80 % |
 | maxExcessUsageRatio | 20 % |
+| optimalStableToTotalDebtRatio | 20 % |
 | baseVariableBorrowRate | 0 % |
 | variableRateSlope1 | 5 % |
 | variableRateSlope2 | 80 % |
 | baseStableBorrowRate | 8 % |
 | stableRateSlope1 | 13 % |
 | stableRateSlope2 | 300 % |
-| optimalStableToTotalDebtRatio | 20 % |
-| maxExcessStableToTotalDebtRatio | 80 % |
-| interestRate | ![ir](/.assets/ee0b6581b78f686087dd5f50440a7a76f4dd607d.svg) |
+| interestRate | ![ir](/.assets/964205bd85f6f4e4de171c694a4116a90a534cac.svg) |
 
 
 ## Raw diff
@@ -69,6 +73,8 @@
         "aTokenSymbol": "aEthcrvUSD",
         "borrowCap": 50000000,
         "borrowingEnabled": true,
+        "currentLiquidityRate": 0,
+        "currentVariableBorrowRate": 0,
         "debtCeiling": 0,
         "decimals": 18,
         "eModeCategory": 0,
@@ -82,6 +88,7 @@
         "liquidationBonus": 0,
         "liquidationProtocolFee": 0,
         "liquidationThreshold": 0,
+        "liquidityIndex": "1000000000000000000000000000",
         "ltv": 0,
         "oracle": "0xEEf0C605546958c1f899b6fB336C20671f9cD49F",
         "oracleDecimals": 8,
@@ -97,6 +104,7 @@
         "symbol": "crvUSD",
         "underlying": "0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E",
         "usageAsCollateralEnabled": false,
+        "variableBorrowIndex": "1000000000000000000000000000",
         "variableDebtToken": "0x028f7886F3e937f8479efaD64f31B3fE1119857a",
         "variableDebtTokenImpl": "0xaC725CB59D16C81061BDeA61041a8A5e73DA9EC6",
         "variableDebtTokenName": "Aave Ethereum Variable Debt crvUSD",
@@ -105,9 +113,10 @@
     }
   },
   "strategies": {
-    "0x44CaDF6E49895640D9De85ac01d97D44429Ad0A4": {
+    "0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E": {
       "from": null,
       "to": {
+        "address": "0x44CaDF6E49895640D9De85ac01d97D44429Ad0A4",
         "baseStableBorrowRate": "80000000000000000000000000",
         "baseVariableBorrowRate": 0,
         "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
