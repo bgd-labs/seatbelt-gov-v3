@@ -35,24 +35,28 @@
 | stableBorrowRateEnabled | false |
 | isBorrowableInIsolation | true |
 | interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://optimistic.etherscan.io/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) |
+| liquidityIndex | 1 |
+| variableBorrowIndex | 1 |
 | aTokenName | Aave Optimism USDCn |
 | aTokenSymbol | aOptUSDCn |
+| currentLiquidityRate | 0 % |
+| currentVariableBorrowRate | 0 % |
 | isPaused | false |
 | stableDebtTokenName | Aave Optimism Stable Debt USDCn |
 | stableDebtTokenSymbol | stableDebtOptUSDCn |
 | variableDebtTokenName | Aave Optimism Variable Debt USDCn |
 | variableDebtTokenSymbol | variableDebtOptUSDCn |
 | optimalUsageRatio | 90 % |
+| maxExcessStableToTotalDebtRatio | 80 % |
 | maxExcessUsageRatio | 10 % |
+| optimalStableToTotalDebtRatio | 20 % |
 | baseVariableBorrowRate | 0 % |
 | variableRateSlope1 | 3.5 % |
 | variableRateSlope2 | 60 % |
 | baseStableBorrowRate | 4.5 % |
 | stableRateSlope1 | 3.5 % |
 | stableRateSlope2 | 60 % |
-| optimalStableToTotalDebtRatio | 20 % |
-| maxExcessStableToTotalDebtRatio | 80 % |
-| interestRate | ![ir](/.assets/d89ecf5f1ccbeb07b104da02d99f5a5862da4efa.svg) |
+| interestRate | ![ir](/.assets/a2869b3619b2202bec0a784d699d25ba40b9a69d.svg) |
 | eMode.label | Stablecoins |
 | eMode.ltv | 93 % |
 | eMode.liquidationThreshold | 95 % |
@@ -99,6 +103,8 @@
         "aTokenSymbol": "aOptUSDCn",
         "borrowCap": 20000000,
         "borrowingEnabled": true,
+        "currentLiquidityRate": 0,
+        "currentVariableBorrowRate": 0,
         "debtCeiling": 0,
         "decimals": 6,
         "eModeCategory": 1,
@@ -112,6 +118,7 @@
         "liquidationBonus": 10500,
         "liquidationProtocolFee": 1000,
         "liquidationThreshold": 8500,
+        "liquidityIndex": "1000000000000000000000000000",
         "ltv": 8000,
         "oracle": "0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3",
         "oracleDecimals": 8,
@@ -127,6 +134,7 @@
         "symbol": "USDC",
         "underlying": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
         "usageAsCollateralEnabled": true,
+        "variableBorrowIndex": "1000000000000000000000000000",
         "variableDebtToken": "0x5D557B07776D12967914379C71a1310e917C7555",
         "variableDebtTokenImpl": "0x04a8D477eE202aDCE1682F5902e1160455205b12",
         "variableDebtTokenName": "Aave Optimism Variable Debt USDCn",
@@ -135,9 +143,10 @@
     }
   },
   "strategies": {
-    "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4": {
+    "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85": {
       "from": null,
       "to": {
+        "address": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
         "baseStableBorrowRate": "45000000000000000000000000",
         "baseVariableBorrowRate": 0,
         "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
