@@ -15,7 +15,7 @@
 | variableRateSlope1 | 5 % | 7 % |
 | variableRateSlope2 | 60 % | 80 % |
 | baseStableBorrowRate | 6 % | 8 % |
-| interestRate | ![before](/.assets/2054bce529b78cac463f95dc79fc18b65a0c1f44.svg) | ![after](/.assets/08d9252b4f8f8c9e59638a9a35a34e736f126166.svg) |
+| interestRate | ![before](/.assets/f026f669632b38618fe2f5e520b460247c827ccb.svg) | ![after](/.assets/7387a2f081b5c6aaea817fa3774fd472edbae392.svg) |
 
 #### USDC ([0xaf88d065e77c8cC2239327C5EDb3A432268e5831](https://arbiscan.io/address/0xaf88d065e77c8cC2239327C5EDb3A432268e5831))
 
@@ -68,19 +68,22 @@
     }
   },
   "strategies": {
-    "0x642a8DAcC59b73491Dcaa3BCeF046D660901fCc1": {
-      "from": null,
-      "to": {
-        "baseStableBorrowRate": "80000000000000000000000000",
-        "baseVariableBorrowRate": 0,
-        "maxExcessStableToTotalDebtRatio": "800000000000000000000000000",
-        "maxExcessUsageRatio": "100000000000000000000000000",
-        "optimalStableToTotalDebtRatio": "200000000000000000000000000",
-        "optimalUsageRatio": "900000000000000000000000000",
-        "stableRateSlope1": "5000000000000000000000000",
-        "stableRateSlope2": "600000000000000000000000000",
-        "variableRateSlope1": "70000000000000000000000000",
-        "variableRateSlope2": "800000000000000000000000000"
+    "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8": {
+      "address": {
+        "from": "0x53b13a6D43F647D788411Abfd28D229C274AfBF9",
+        "to": "0x642a8DAcC59b73491Dcaa3BCeF046D660901fCc1"
+      },
+      "baseStableBorrowRate": {
+        "from": "60000000000000000000000000",
+        "to": "80000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": "50000000000000000000000000",
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": "600000000000000000000000000",
+        "to": "800000000000000000000000000"
       }
     }
   }
