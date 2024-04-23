@@ -237,7 +237,7 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
   if (!payloadIds || payloadIds.length === 0) {
     const payloadsCount = await controllerContract.controllerContract.read.getPayloadsCount();
     payloadIds = [...Array(Number(payloadsCount)).keys()].filter((payloadId) => {
-      if (getCache(chainId, address, payloadId)) {
+      if (getCache(chainId, address, payloadId).state !== -1) {
         logWarning(client.chain!.name, `Skipping ${payloadId} as the payload was simulated before`);
         return false;
       }
