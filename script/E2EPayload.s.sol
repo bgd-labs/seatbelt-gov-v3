@@ -4,6 +4,7 @@ pragma solidity ^0.8.13;
 import {Script, console} from 'forge-std/Script.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
 import {ProtocolV3TestBase, ReserveConfig, IPool} from 'aave-helpers/ProtocolV3TestBase.sol';
+import {AaveV3Gnosis} from 'aave-address-book/AaveV3Gnosis.sol';
 import {AaveV3Metis} from 'aave-address-book/AaveV3Metis.sol';
 import {AaveV3Ethereum} from 'aave-address-book/AaveV3Ethereum.sol';
 import {AaveV3Polygon} from 'aave-address-book/AaveV3Polygon.sol';
