@@ -279,6 +279,7 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
         } --sig "run(uint40)" -- ${payloadId}`,
         {stdio: 'inherit'}
       );
+      console.log('foundry simulation finished');
     } catch (e) {
       console.log('simulating on foundry failed');
     }
