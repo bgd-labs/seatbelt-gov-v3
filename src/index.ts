@@ -157,16 +157,17 @@ async function simulateProposals(proposalsToCheck: number[]) {
               // foundry
               if (simulationCache.state !== cache.payload.state) {
                 try {
-                  let blockNumber = BigInt(0); // current
+                  let blockNumber = 0n; // current
                   if (cache.logs.executedLog)
                     blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
                   execSync(
                     `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
                       .url!}${
-                      blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
+                      blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : ''
                     } --sig "run(uint40)" -- ${payload.payloadId}`,
                     {stdio: 'inherit'}
                   );
+                  console.log('foundry simulation finished');
                   // update cache
                   storeCache(
                     payload.chain,
