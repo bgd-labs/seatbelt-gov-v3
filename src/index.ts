@@ -15,13 +15,18 @@ import {
   logWarning,
 } from '@bgd-labs/aave-cli';
 import {CHAIN_ID_CLIENT_MAP, ChainId, mainnetClient} from '@bgd-labs/js-utils';
-import {githubHybridCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/githubHybrid';
-import {localCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/localCache';
+import {fallbackProvider} from '@bgd-labs/aave-v3-governance-cache/fallbackProvider';
+import {githubPagesProvider} from '@bgd-labs/aave-v3-governance-cache/githubPagesProvider';
+import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/customStorageProvider';
 
 import {Option, program} from 'commander';
 import {ProposalState, isPayloadFinal} from '@bgd-labs/aave-v3-governance-cache';
+import {fileSystemStorageAdapter} from '@bgd-labs/aave-v3-governance-cache/fileSystemStorageAdapter';
 
-const cachingLayer = githubHybridCacheAdapter(localCacheAdapter);
+const cachingLayer = fallbackProvider(
+  githubPagesProvider,
+  customStorageProvider(fileSystemStorageAdapter)
+);
 
 const MOCK_FINAL_PROPOSAL_STATE = 1000;
 
