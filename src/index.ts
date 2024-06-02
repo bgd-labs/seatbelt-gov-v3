@@ -255,23 +255,25 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
     const fileName = getPayloadFileName(chainId, address, payloadId);
     const cache = await cachingLayer.getPayload({chainId, payloadId, payloadsController: address});
     // tenderly
-    try {
-      const tenderlyPayload = await controllerContract.simulatePayloadExecutionOnTenderly(
-        payloadId,
-        cache.logs
-      );
-      const report = await generateReport({
-        payloadId: payloadId,
-        payloadInfo: cache,
-        simulation: tenderlyPayload,
-        client,
-      });
-      writeFileSync(fileName, report);
-      storeCache(chainId, address, payloadId, cache.payload.state);
-    } catch (e) {
-      logError(client.chain!.name, `Simulating payload ${payloadId} on ${address} failed`);
-      console.log(e);
-      storeCache(chainId, address, payloadId, -1);
+    if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
+      try {
+        const tenderlyPayload = await controllerContract.simulatePayloadExecutionOnTenderly(
+          payloadId,
+          cache.logs
+        );
+        const report = await generateReport({
+          payloadId: payloadId,
+          payloadInfo: cache,
+          simulation: tenderlyPayload,
+          client,
+        });
+        writeFileSync(fileName, report);
+        storeCache(chainId, address, payloadId, cache.payload.state);
+      } catch (e) {
+        logError(client.chain!.name, `Simulating payload ${payloadId} on ${address} failed`);
+        console.log(e);
+        storeCache(chainId, address, payloadId, -1);
+      }
     }
 
     // foundry
