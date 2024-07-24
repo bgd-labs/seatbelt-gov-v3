@@ -160,7 +160,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
                 }
               }
               // foundry
-              if (simulationCache.state !== cache.payload.state) {
+              if (simulationCache.state !== cache.payload.state || process.env.RUN_FORGE_ALWAYS) {
                 try {
                   let blockNumber = 0n; // current
                   if (cache.logs.executedLog)

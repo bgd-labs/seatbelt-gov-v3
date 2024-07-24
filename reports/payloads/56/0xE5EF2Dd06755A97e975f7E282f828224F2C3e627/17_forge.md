@@ -7,10 +7,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.002 | 1.002 |
-| variableBorrowIndex | 1.01 | 1.01 |
-| currentLiquidityRate | 0.104 % | 0.104 % |
-| currentVariableBorrowRate | 1.421 % | 1.421 % |
+| liquidityIndex | 1.0017 % [1001709910096888729598167860] | 1.0017 % [1001710228617774727302888301] |
+| variableBorrowIndex | 1.0103 % [1010334607825543329255155762] | 1.0103 % [1010339023127284446166486043] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 0.1029 % [1029435186040020161389927] | 0.1029 % [1029443394092104126968931] |
+| currentVariableBorrowRate | 1.4148 % [14148072407261528833024804] | 1.4148 % [14148128810950318356337631] |
+| virtual accounting active | false | true |
+| virtual balance | / | 504579.856538536616856915 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -25,10 +28,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x34E8e73bFB04454bd203410b009124527A57Ea3F](https://bscscan.com/address/0x34E8e73bFB04454bd203410b009124527A57Ea3F) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.002 | 1.002 |
-| variableBorrowIndex | 1.006 | 1.006 |
-| currentLiquidityRate | 0.484 % | 0.484 % |
-| currentVariableBorrowRate | 1.387 % | 1.387 % |
+| liquidityIndex | 1.0018 % [1001871908672749475574746341] | 1.0018 % [1001874093206221940266092160] |
+| variableBorrowIndex | 1.0056 % [1005685989878284743141075534] | 1.0056 % [1005692271745179027552385919] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 0.4838 % [4838357024833130386371390] | 0.4838 % [4838392665557506053123700] |
+| currentVariableBorrowRate | 1.3860 % [13860419719819121168041520] | 1.3860 % [13860470769636931750046723] |
+| virtual accounting active | false | true |
+| virtual balance | / | 1638.976171191948381889 |
 | maxVariableBorrowRate | / | 82.7 % |
 | baseStableBorrowRate | 4.7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -43,10 +49,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0xD161Cd855089c33c00F7D30C56452e5B4B8a8599](https://bscscan.com/address/0xD161Cd855089c33c00F7D30C56452e5B4B8a8599) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.037 | 1.037 |
-| variableBorrowIndex | 1.049 | 1.049 |
-| currentLiquidityRate | 5.645 % | 5.645 % |
-| currentVariableBorrowRate | 7.92 % | 7.92 % |
+| liquidityIndex | 1.0373 % [1037339709331636462961949347] | 1.0373 % [1037342317131064979227076591] |
+| variableBorrowIndex | 1.0492 % [1049275863814630785063657698] | 1.0492 % [1049279474653980315720979368] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 5.9296 % [59296407536507831568570004] | 5.9296 % [59296490982611322012347088] |
+| currentVariableBorrowRate | 8.1169 % [81169512295434225752040693] | 8.1169 % [81169569409156807895759998] |
+| virtual accounting active | false | true |
+| virtual balance | / | 1870722.173714108155311133 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -61,10 +70,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1 | 1 |
-| variableBorrowIndex | 1.002 | 1.002 |
-| currentLiquidityRate | 0.019 % | 0.019 % |
-| currentVariableBorrowRate | 0.61 % | 0.61 % |
+| liquidityIndex | 1.0004 % [1000429658927992873344724682] | 1.0004 % [1000429672405205600889834738] |
+| variableBorrowIndex | 1.0022 % [1002292373557668652263605981] | 1.0022 % [1002292813070185002451104569] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 0.0183 % [183513972566369411834997] | 0.0183 % [183514127333706367145502] |
+| currentVariableBorrowRate | 0.5973 % [5973547726724941717105027] | 0.5973 % [5973550245633627495670442] |
+| virtual accounting active | false | true |
+| virtual balance | / | 453.391116689654184686 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -79,10 +91,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x4e4B860383B9C35615f2dc0C3b78F83009A46720](https://bscscan.com/address/0x4e4B860383B9C35615f2dc0C3b78F83009A46720) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.034 | 1.034 |
-| variableBorrowIndex | 1.046 | 1.046 |
-| currentLiquidityRate | 5.22 % | 5.22 % |
-| currentVariableBorrowRate | 7.616 % | 7.616 % |
+| liquidityIndex | 1.0347 % [1034739372811181876031327747] | 1.0347 % [1034740103416536144681578505] |
+| variableBorrowIndex | 1.0465 % [1046527044192544287433392312] | 1.0465 % [1046528017929513754731260244] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 6.3985 % [63985156851345800280748079] | 6.3985 % [63985198162055444016455228] |
+| currentVariableBorrowRate | 8.4317 % [84317624921316157686833799] | 8.4317 % [84317652140287948667240752] |
+| virtual accounting active | false | true |
+| virtual balance | / | 514319.754860972025424359 |
 | maxVariableBorrowRate | / | 69 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -97,10 +112,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.019 | 1.019 |
-| variableBorrowIndex | 1.052 | 1.052 |
-| currentLiquidityRate | 0.219 % | 0.219 % |
-| currentVariableBorrowRate | 2.065 % | 2.065 % |
+| liquidityIndex | 1.0194 % [1019457620871760693218262278] | 1.0194 % [1019457833929676232322586447] |
+| variableBorrowIndex | 1.0520 % [1052049661792721260373977372] | 1.0520 % [1052051767876217092371962346] |
+| aToken underlying balance |  | 49.593402769074735412 |
+| currentLiquidityRate | 0.2119 % [2119213514868891884967270] | 0.2119 % [2119221246314222955530565] |
+| currentVariableBorrowRate | 2.0299 % [20299490007333683966687162] | 2.0299 % [20299527036225061796782513] |
+| virtual accounting active | false | true |
+| virtual balance | / | 10529.871140444615910348 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -115,10 +133,13 @@
 | description | value before | value after |
 | --- | --- | --- |
 | interestRateStrategy | [0x6415754564745A50adB508D3B94d10870FE220eb](https://bscscan.com/address/0x6415754564745A50adB508D3B94d10870FE220eb) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
-| liquidityIndex | 1.037 | 1.037 |
-| variableBorrowIndex | 1.056 | 1.056 |
-| currentLiquidityRate | 3.388 % | 3.388 % |
-| currentVariableBorrowRate | 6.508 % | 6.508 % |
+| liquidityIndex | 1.0373 % [1037364415266853693226278509] | 1.0373 % [1037364770729093476345695301] |
+| variableBorrowIndex | 1.0561 % [1056150959031808535791809171] | 1.0561 % [1056151685135316588332237725] |
+| aToken underlying balance |  | 0. |
+| currentLiquidityRate | 3.1051 % [31051993727037770581284990] | 3.1052 % [31052039922393300469042386] |
+| currentVariableBorrowRate | 6.2301 % [62301679077531460401328000] | 6.2301 % [62301725419920454708895380] |
+| virtual accounting active | false | true |
+| virtual balance | / | 2300959.386778601731451703 |
 | maxVariableBorrowRate | / | 84 % |
 | baseStableBorrowRate | 12 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -148,157 +169,241 @@
   },
   "reserves": {
     "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "1037991832456512356804226",
-        "to": "1038009239238866831464388"
+        "from": "1029435186040020161389927",
+        "to": "1029443394092104126968931"
       },
       "currentVariableBorrowRate": {
-        "from": "14206749987237665284074669",
-        "to": "14206869108005531416903276"
+        "from": "14148072407261528833024804",
+        "to": "14148128810950318356337631"
       },
       "interestRateStrategy": {
         "from": "0x9A945631004d0452642bC61cEd2871f428F2543f",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1001704298143210555293931808",
-        "to": "1001704972359034861130470599"
+        "from": "1001709910096888729598167860",
+        "to": "1001710228617774727302888301"
       },
       "variableBorrowIndex": {
-        "from": "1010257313240851619851681226",
-        "to": "1010266619908584834520896370"
+        "from": "1010334607825543329255155762",
+        "to": "1010339023127284446166486043"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "504579.856538536616856915"
       }
     },
     "0x2170Ed0880ac9A755fd29B2688956BD959F933F8": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "4844353871817735753374484",
-        "to": "4844364267591966600831666"
+        "from": "4838357024833130386371390",
+        "to": "4838392665557506053123700"
       },
       "currentVariableBorrowRate": {
-        "from": "13869006630267724264178160",
-        "to": "13869021511404424736326588"
+        "from": "13860419719819121168041520",
+        "to": "13860470769636931750046723"
       },
       "interestRateStrategy": {
         "from": "0x34E8e73bFB04454bd203410b009124527A57Ea3F",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1001848740007173324611708517",
-        "to": "1001849376219210575697128180"
+        "from": "1001871908672749475574746341",
+        "to": "1001874093206221940266092160"
       },
       "variableBorrowIndex": {
-        "from": "1005619968696947981762538209",
-        "to": "1005621796980298896587822657"
+        "from": "1005685989878284743141075534",
+        "to": "1005692271745179027552385919"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "1638.976171191948381889"
       }
     },
     "0x55d398326f99059fF775485246999027B3197955": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "56451206997868922135150625",
-        "to": "56451291367366082212995407"
+        "from": "59296407536507831568570004",
+        "to": "59296490982611322012347088"
       },
       "currentVariableBorrowRate": {
-        "from": "79198209153342267376221690",
-        "to": "79198268336404428268055301"
+        "from": "81169512295434225752040693",
+        "to": "81169569409156807895759998"
       },
       "interestRateStrategy": {
         "from": "0xD161Cd855089c33c00F7D30C56452e5B4B8a8599",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1037033300074077847107695449",
-        "to": "1037035761591145663401383164"
+        "from": "1037339709331636462961949347",
+        "to": "1037342317131064979227076591"
       },
       "variableBorrowIndex": {
-        "from": "1048847883555172898003981003",
-        "to": "1048851376289135741684997836"
+        "from": "1049275863814630785063657698",
+        "to": "1049279474653980315720979368"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "1870722.173714108155311133"
       }
     },
     "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "191596961243699160346052",
-        "to": "191597252825823862175188"
+        "from": "183513972566369411834997",
+        "to": "183514127333706367145502"
       },
       "currentVariableBorrowRate": {
-        "from": "6103684517262899682638153",
-        "to": "6103689161711880975677956"
+        "from": "5973547726724941717105027",
+        "to": "5973550245633627495670442"
       },
       "interestRateStrategy": {
         "from": "0x9A945631004d0452642bC61cEd2871f428F2543f",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1000428666754593357933426789",
-        "to": "1000428691626195541921827538"
+        "from": "1000429658927992873344724682",
+        "to": "1000429672405205600889834738"
       },
       "variableBorrowIndex": {
-        "from": "1002261451765856747239921599",
-        "to": "1002262245549773570042510652"
+        "from": "1002292373557668652263605981",
+        "to": "1002292813070185002451104569"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "453.391116689654184686"
       }
     },
     "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "52202283689746080098567888",
-        "to": "52202539917784671177070827"
+        "from": "63985156851345800280748079",
+        "to": "63985198162055444016455228"
       },
       "currentVariableBorrowRate": {
-        "from": "76159396946831977990353239",
-        "to": "76159583855790504748193113"
+        "from": "84317624921316157686833799",
+        "to": "84317652140287948667240752"
       },
       "interestRateStrategy": {
         "from": "0x4e4B860383B9C35615f2dc0C3b78F83009A46720",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1034440649577170876543303110",
-        "to": "1034447435556715539840514810"
+        "from": "1034739372811181876031327747",
+        "to": "1034740103416536144681578505"
       },
       "variableBorrowIndex": {
-        "from": "1046100772168292162048839078",
-        "to": "1046110784069655058658002936"
+        "from": "1046527044192544287433392312",
+        "to": "1046528017929513754731260244"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "514319.754860972025424359"
       }
     },
     "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "49.593402769074735412"
+      },
       "currentLiquidityRate": {
-        "from": "2193308876362521196055433",
-        "to": "2193328024990764287899406"
+        "from": "2119213514868891884967270",
+        "to": "2119221246314222955530565"
       },
       "currentVariableBorrowRate": {
-        "from": "20651312935486187180766447",
-        "to": "20651403083174753689351444"
+        "from": "20299490007333683966687162",
+        "to": "20299527036225061796782513"
       },
       "interestRateStrategy": {
         "from": "0x9A945631004d0452642bC61cEd2871f428F2543f",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1019445858966276230996056775",
-        "to": "1019446393353259136769109916"
+        "from": "1019457620871760693218262278",
+        "to": "1019457833929676232322586447"
       },
       "variableBorrowIndex": {
-        "from": "1051936518534609506739752809",
-        "to": "1051941710480764643677417372"
+        "from": "1052049661792721260373977372",
+        "to": "1052051767876217092371962346"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "10529.871140444615910348"
       }
     },
     "0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409": {
+      "aToken underlying balance": {
+        "from": "",
+        "to": "0."
+      },
       "currentLiquidityRate": {
-        "from": "33882044575868056704769238",
-        "to": "33882526893198374277543542"
+        "from": "31051993727037770581284990",
+        "to": "31052039922393300469042386"
       },
       "currentVariableBorrowRate": {
-        "from": "65078841200374082014969981",
-        "to": "65079304403549034742605110"
+        "from": "62301679077531460401328000",
+        "to": "62301725419920454708895380"
       },
       "interestRateStrategy": {
         "from": "0x6415754564745A50adB508D3B94d10870FE220eb",
         "to": "0x51D86C833fC4F300196F028FEaC899a94eb82eFb"
       },
       "liquidityIndex": {
-        "from": "1037181114851995804515934661",
-        "to": "1037191330004022060461465371"
+        "from": "1037364415266853693226278509",
+        "to": "1037364770729093476345695301"
       },
       "variableBorrowIndex": {
-        "from": "1055787692987666329443782851",
-        "to": "1055807665888159623721426914"
+        "from": "1056150959031808535791809171",
+        "to": "1056151685135316588332237725"
+      },
+      "virtual accounting active": {
+        "from": false,
+        "to": true
+      },
+      "virtual balance": {
+        "from": "/",
+        "to": "2300959.386778601731451703"
       }
     }
   },
