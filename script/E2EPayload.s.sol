@@ -73,7 +73,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
 
     string[] memory inputs = new string[](7);
     inputs[0] = 'npx';
-    inputs[1] = '@bgd-labs/aave-cli@0.12.0';
+    inputs[1] = '@bgd-labs/aave-cli@0.16.0';
     inputs[2] = 'diff-snapshots';
     inputs[3] = beforePath;
     inputs[4] = afterPath;
@@ -82,7 +82,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     vm.ffi(inputs);
   }
 
-  function _getPool() internal returns (IPool pool) {
+  function _getPool() internal view returns (IPool pool) {
     if (block.chainid == ChainIds.MAINNET) return AaveV3Ethereum.POOL;
     if (block.chainid == ChainIds.OPTIMISM) return AaveV3Optimism.POOL;
     if (block.chainid == ChainIds.ARBITRUM) return AaveV3Arbitrum.POOL;
