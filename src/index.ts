@@ -78,6 +78,10 @@ function getProposalFileName(proposalId: number) {
   return path.join(storagePath, `${proposalId}.md`);
 }
 
+function getChainName(chainId: number) {
+  return Object.keys(ChainId).find((key) => ChainId[key as keyof typeof ChainId] === chainId);
+}
+
 const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis, ChainId.scroll, ChainId.zkEVM];
 
 async function simulateProposals(proposalsToCheck: number[]) {
@@ -166,7 +170,9 @@ async function simulateProposals(proposalsToCheck: number[]) {
                   if (cache.logs.executedLog)
                     blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
                   execSync(
-                    `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
+                    `FOUNDRY_PROFILE=${getChainName(
+                      Number(payload.chain)
+                    )} forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
                       .url!}${
                       blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : ''
                     } --sig "run(uint40)" -- ${payload.payloadId}`,
@@ -282,7 +288,9 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
       if (cache.logs.executedLog)
         blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
       execSync(
-        `forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport.url!}${
+        `FOUNDRY_PROFILE=${getChainName(
+          chainId
+        )} forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport.url!}${
           blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
         } --sig "run(uint40)" -- ${payloadId}`,
         {stdio: 'inherit'}
