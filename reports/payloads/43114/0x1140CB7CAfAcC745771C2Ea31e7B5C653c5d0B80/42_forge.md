@@ -2,18 +2,24 @@
 
 ### Reserve altered
 
-#### BTC.b ([0x152b9d0FdC40C096757F570A51E494bd4b943E50](https://snowscan.xyz/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50))
+#### BTC.b ([0x152b9d0FdC40C096757F570A51E494bd4b943E50](https://snowtrace.io/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0031 % [1003124374919198461594965289] | 1.0031 % [1003124382468871885730030329] |
-| variableBorrowIndex | 1.0198 % [1019865989528623469226300620] | 1.0198 % [1019866278244387157526732550] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 0.0137 % [137431931966104945694035] | 0.0137 % [137432168563280917980853] |
-| currentVariableBorrowRate | 0.5169 % [5169417342416450885049560] | 0.5169 % [5169421792142947281333400] |
-| virtual accounting active | false | true |
-| virtual balance | / | 2172.29824367 |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 BTC.b [0] | 2,205.5669 BTC.b [220556690787] |
+| address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
+| baseStableBorrowRate | null | 90000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 0 |
+| stableRateSlope2 | null | 0 |
+| variableRateSlope1 | null | 70000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -23,14 +29,24 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### sAVAX ([0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE](https://snowscan.xyz/address/0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE))
+#### sAVAX ([0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE](https://snowtrace.io/address/0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| aToken underlying balance |  | 0. |
-| virtual accounting active | false | true |
-| virtual balance | / | 1333399.261179704155724358 |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 sAVAX [0] | 1,378,974.8232 sAVAX [1378974823288902397805252] |
+| address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
+| baseStableBorrowRate | null | 90000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 0 |
+| stableRateSlope2 | null | 0 |
+| variableRateSlope1 | null | 70000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -40,18 +56,24 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### WETH.e ([0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB](https://snowscan.xyz/address/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB))
+#### WETH.e ([0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB](https://snowtrace.io/address/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowscan.xyz/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0124 % [1012406525291490451914037053] | 1.0124 % [1012406877379533621485677765] |
-| variableBorrowIndex | 1.0541 % [1054132239853008374165332560] | 1.0541 % [1054133829286825572743632213] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 0.4418 % [4418767701148333512392022] | 0.4418 % [4418774876605724365978959] |
-| currentVariableBorrowRate | 1.9158 % [19158074391906975212240571] | 1.9158 % [19158084453577717506664116] |
-| virtual accounting active | false | true |
-| virtual balance | / | 7456.613314340699719242 |
+| interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 WETH.e [0] | 6,885.0826 WETH.e [6885082604489815067744] |
+| address | null | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) |
+| baseStableBorrowRate | null | 57000000000000000000000000 |
+| baseVariableBorrowRate | null | 10000000000000000000000000 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 200000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 800000000000000000000000000 |
+| stableRateSlope1 | null | 40000000000000000000000000 |
+| stableRateSlope2 | null | 800000000000000000000000000 |
+| variableRateSlope1 | null | 27000000000000000000000000 |
+| variableRateSlope2 | null | 800000000000000000000000000 |
 | maxVariableBorrowRate | / | 83.7 % |
 | baseStableBorrowRate | 5.7 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -61,18 +83,24 @@
 | stableRateSlope2 | 80 % | / |
 | interestRate | ![before](/.assets/a4877f5866751d4c748b2860e175e398fd8b0f20.svg) | ![after](/.assets/916bad2a371ec778f6a1fbad323bf3b1bf3d2631.svg) |
 
-#### WBTC.e ([0x50b7545627a5162F82A992c33b87aDc75187B218](https://snowscan.xyz/address/0x50b7545627a5162F82A992c33b87aDc75187B218))
+#### WBTC.e ([0x50b7545627a5162F82A992c33b87aDc75187B218](https://snowtrace.io/address/0x50b7545627a5162F82A992c33b87aDc75187B218))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowscan.xyz/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0026 % [1002633905451041188666774995] | 1.0026 % [1002634871170776669646445972] |
-| variableBorrowIndex | 1.0232 % [1023261897343827412547863876] | 1.0232 % [1023276494025458577466749505] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 0.0506 % [506578157082917772372091] | 0.0506 % [506591389946691895081848] |
-| currentVariableBorrowRate | 0.7502 % [7502430399417376523929638] | 0.7502 % [7502528388236801558090176] |
-| virtual accounting active | false | true |
-| virtual balance | / | 161.83475972 |
+| interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 WBTC.e [0] | 161.8347 WBTC.e [16183475972] |
+| address | null | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) |
+| baseStableBorrowRate | null | 60000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 0 |
+| stableRateSlope2 | null | 0 |
+| variableRateSlope1 | null | 40000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 304 % |
 | baseStableBorrowRate | 6 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -82,18 +110,24 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/2ace6324c7b225c2db54343eb84fccde0310d6db.svg) | ![after](/.assets/d96341be65a8deb48a568fc7bd8b8bb67541c2a9.svg) |
 
-#### LINK.e ([0x5947BB275c521040051D82396192181b413227A3](https://snowscan.xyz/address/0x5947BB275c521040051D82396192181b413227A3))
+#### LINK.e ([0x5947BB275c521040051D82396192181b413227A3](https://snowtrace.io/address/0x5947BB275c521040051D82396192181b413227A3))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0024 % [1002493532343437974918585786] | 1.0024 % [1002493644353667662692144373] |
-| variableBorrowIndex | 1.0235 % [1023595509150816373611558275] | 1.0235 % [1023599841500858585804390387] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 0.0135 % [135506228953799913266108] | 0.0135 % [135507338160482960257118] |
-| currentVariableBorrowRate | 0.5133 % [5133072511438282465090402] | 0.5133 % [5133093520165064711846849] |
-| virtual accounting active | false | true |
-| virtual balance | / | 153303.213778645518696923 |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 LINK.e [0] | 153,303.2137 LINK.e [153303213778645518696923] |
+| address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
+| baseStableBorrowRate | null | 90000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 0 |
+| stableRateSlope2 | null | 0 |
+| variableRateSlope1 | null | 70000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -103,18 +137,24 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### MAI ([0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b](https://snowscan.xyz/address/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b))
+#### MAI ([0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b](https://snowtrace.io/address/0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowscan.xyz/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0435 % [1043566083559529807498838675] | 1.0440 % [1044001239745580418896118836] |
-| variableBorrowIndex | 1.3554 % [1355435615666615109225430125] | 1.3785 % [1378553046167027330940148706] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 0.8021 % [8021432168922842354772656] | 0.8664 % [8664434274489078200961859] |
-| currentVariableBorrowRate | 32.5319 % [325319435472803880756933588] | 34.8406 % [348406799413161819175107567] |
-| virtual accounting active | false | true |
-| virtual balance | / | 5104.086260133476165213 |
+| interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 MAI [0] | 5,104.0830 MAI [5104083097517086030587] |
+| address | null | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) |
+| baseStableBorrowRate | null | 100000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 5000000000000000000000000 |
+| stableRateSlope2 | null | 750000000000000000000000000 |
+| variableRateSlope1 | null | 90000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 309 % |
 | baseStableBorrowRate | 10 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -124,14 +164,24 @@
 | stableRateSlope2 | 75 % | / |
 | interestRate | ![before](/.assets/1adefa34e2a0ce0e7fdcc0467a1c415fce66b76d.svg) | ![after](/.assets/7886c194f50d7b55c5321771b14a13c4690bbbc0.svg) |
 
-#### AAVE.e ([0x63a72806098Bd3D9520cC43356dD78afe5D386D9](https://snowscan.xyz/address/0x63a72806098Bd3D9520cC43356dD78afe5D386D9))
+#### AAVE.e ([0x63a72806098Bd3D9520cC43356dD78afe5D386D9](https://snowtrace.io/address/0x63a72806098Bd3D9520cC43356dD78afe5D386D9))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowscan.xyz/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| aToken underlying balance |  | 0. |
-| virtual accounting active | false | true |
-| virtual balance | / | 5192.5508676034921223 |
+| interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 AAVE.e [0] | 5,193.6708 AAVE.e [5193670833089033839616] |
+| address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
+| baseStableBorrowRate | null | 90000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 550000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 450000000000000000000000000 |
+| stableRateSlope1 | null | 0 |
+| stableRateSlope2 | null | 0 |
+| variableRateSlope1 | null | 70000000000000000000000000 |
+| variableRateSlope2 | null | 3000000000000000000000000000 |
 | maxVariableBorrowRate | / | 307 % |
 | baseStableBorrowRate | 9 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -141,39 +191,52 @@
 | stableRateSlope2 | 0 % | / |
 | interestRate | ![before](/.assets/ca504343ed8d68f4d30637e0b6c66bd2a655ef70.svg) | ![after](/.assets/1175f8a0498d1ea4887afbacbc457fd177b93138.svg) |
 
-#### USDt ([0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7](https://snowscan.xyz/address/0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7))
+#### USDt ([0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7](https://snowtrace.io/address/0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.1270 % [1127085520468273300569304428] | 1.1270 % [1127085851697476374699402012] |
-| variableBorrowIndex | 1.1691 % [1169159481316441267375232595] | 1.1691 % [1169159954631264296703191775] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 5.9030 % [59030804731810636015992610] | 5.9030 % [59030883074310444285973443] |
-| currentVariableBorrowRate | 8.1317 % [81317349942762628930708220] | 8.1317 % [81317404296259304215778302] |
-| virtual accounting active | false | true |
-| virtual balance | / | 6860449.550863 |
-| maxVariableBorrowRate | / | 84 % |
-| baseStableBorrowRate | 10 % | / |
+| interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 USDt [0] | 8,013,615.9173 USDt [8013615917309] |
+| address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
+| baseStableBorrowRate | null | 75000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 100000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 900000000000000000000000000 |
+| stableRateSlope1 | null | 5000000000000000000000000 |
+| stableRateSlope2 | null | 750000000000000000000000000 |
+| variableRateSlope1 | null | 65000000000000000000000000 |
+| variableRateSlope2 | null | 750000000000000000000000000 |
+| maxVariableBorrowRate | / | 81.5 % |
+| baseStableBorrowRate | 7.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
 | maxExcessUsageRatio | 10 % | / |
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/e36150e52440137ed8c69d49f8f7002df1889e3d.svg) | ![after](/.assets/14fa89e5545fb4bd870978aecbbb0e7ee276a551.svg) |
+| interestRate | ![before](/.assets/73a758e2afff3b8c4f243164244164416cf2b273.svg) | ![after](/.assets/5bbcb1a6932fed3bbf04d7077987b653f2697867.svg) |
 
-#### WAVAX ([0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7](https://snowscan.xyz/address/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7))
+#### WAVAX ([0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7](https://snowtrace.io/address/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowscan.xyz/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0497 % [1049777191942942870853175173] | 1.0497 % [1049777595796133174790629902] |
-| variableBorrowIndex | 1.1349 % [1134901485916146419873287092] | 1.1349 % [1134902623490330422441867366] |
-| aToken underlying balance |  | 38.315233931291647159 |
-| currentLiquidityRate | 1.7208 % [17208534036404668418220267] | 1.7208 % [17208549982623343424499727] |
-| currentVariableBorrowRate | 4.4837 % [44837236314164385001325746] | 4.4837 % [44837254480907446229538392] |
-| virtual accounting active | false | true |
-| virtual balance | / | 1920773.239956561453007763 |
+| interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| aTokenUnderlyingBalance | 0 WAVAX [0] | 38.3152 WAVAX [38315233931291647159] |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 WAVAX [0] | 1,781,349.7335 WAVAX [1781349733587961517115765] |
+| address | null | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) |
+| baseStableBorrowRate | null | 87200000000000000000000000 |
+| baseVariableBorrowRate | null | 10000000000000000000000000 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 350000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 650000000000000000000000000 |
+| stableRateSlope1 | null | 47200000000000000000000000 |
+| stableRateSlope2 | null | 1442800000000000000000000000 |
+| variableRateSlope1 | null | 47200000000000000000000000 |
+| variableRateSlope2 | null | 1442800000000000000000000000 |
 | maxVariableBorrowRate | / | 150 % |
 | baseStableBorrowRate | 8.72 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
@@ -183,68 +246,86 @@
 | stableRateSlope2 | 144.28 % | / |
 | interestRate | ![before](/.assets/90c9040ea1e92b7dfc3e47bcd8c55425d6424517.svg) | ![after](/.assets/0613c4d8451d75c86c61059a89fcadae7bb75bbb.svg) |
 
-#### USDC ([0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowscan.xyz/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E))
+#### USDC ([0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowtrace.io/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x769EbC5106bF09D9A665CCb691e1907612b57F16](https://snowscan.xyz/address/0x769EbC5106bF09D9A665CCb691e1907612b57F16) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.1035 % [1103572445911443933664363481] | 1.1035 % [1103572823476792160025599553] |
-| variableBorrowIndex | 1.1406 % [1140644434153776825146504894] | 1.1406 % [1140644940801803557430479183] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 6.6192 % [66192728505682012773771176] | 6.6192 % [66192761846969828524595202] |
-| currentVariableBorrowRate | 8.5935 % [85935968638526085656168802] | 8.5935 % [85935990313972521673210528] |
-| virtual accounting active | false | true |
-| virtual balance | / | 12350404.423981 |
-| maxVariableBorrowRate | / | 69 % |
-| baseStableBorrowRate | 10 % | / |
+| interestRateStrategy | [0x5F58C62077b667370879D6580a59f47C30f96a74](https://snowtrace.io/address/0x5F58C62077b667370879D6580a59f47C30f96a74) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 USDC [0] | 14,985,221.1500 USDC [14985221150005] |
+| address | null | [0x5F58C62077b667370879D6580a59f47C30f96a74](https://snowtrace.io/address/0x5F58C62077b667370879D6580a59f47C30f96a74) |
+| baseStableBorrowRate | null | 75000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 100000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 900000000000000000000000000 |
+| stableRateSlope1 | null | 5000000000000000000000000 |
+| stableRateSlope2 | null | 600000000000000000000000000 |
+| variableRateSlope1 | null | 65000000000000000000000000 |
+| variableRateSlope2 | null | 600000000000000000000000000 |
+| maxVariableBorrowRate | / | 66.5 % |
+| baseStableBorrowRate | 7.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
 | maxExcessUsageRatio | 10 % | / |
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 60 % | / |
-| interestRate | ![before](/.assets/092eee7f9fd487a7bf2aa3faa1516f84952932b6.svg) | ![after](/.assets/74eb64f7a04e3f76a1187118c8430cd0143274eb.svg) |
+| interestRate | ![before](/.assets/bfd6f87543ed786a5918b5803fe1906cf8be5866.svg) | ![after](/.assets/168c2ef82ae6b76d58bbf510d3cc1f33ddda7ab4.svg) |
 
-#### FRAX ([0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64](https://snowscan.xyz/address/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64))
+#### FRAX ([0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64](https://snowtrace.io/address/0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.1632 % [1163209649648029667318535827] | 1.1633 % [1163345062447187805944095229] |
-| variableBorrowIndex | 1.2154 % [1215432210330560583691609419] | 1.2156 % [1215627635881652360393434564] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 9.2857 % [92857203055970379544147354] | 9.2947 % [92947358190778035757105682] |
-| currentVariableBorrowRate | 12.8241 % [128241790079132438021362223] | 12.8363 % [128363989379739086520812138] |
-| virtual accounting active | false | true |
-| virtual balance | / | 2845.274253611369927556 |
-| maxVariableBorrowRate | / | 84 % |
-| baseStableBorrowRate | 10 % | / |
+| interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 FRAX [0] | 4,113.7536 FRAX [4113753669766476432623] |
+| address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
+| baseStableBorrowRate | null | 75000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 100000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 900000000000000000000000000 |
+| stableRateSlope1 | null | 5000000000000000000000000 |
+| stableRateSlope2 | null | 750000000000000000000000000 |
+| variableRateSlope1 | null | 65000000000000000000000000 |
+| variableRateSlope2 | null | 750000000000000000000000000 |
+| maxVariableBorrowRate | / | 81.5 % |
+| baseStableBorrowRate | 7.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
 | maxExcessUsageRatio | 10 % | / |
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/e36150e52440137ed8c69d49f8f7002df1889e3d.svg) | ![after](/.assets/14fa89e5545fb4bd870978aecbbb0e7ee276a551.svg) |
+| interestRate | ![before](/.assets/73a758e2afff3b8c4f243164244164416cf2b273.svg) | ![after](/.assets/5bbcb1a6932fed3bbf04d7077987b653f2697867.svg) |
 
-#### DAI.e ([0xd586E7F844cEa2F87f50152665BCbc2C279D8d70](https://snowscan.xyz/address/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70))
+#### DAI.e ([0xd586E7F844cEa2F87f50152665BCbc2C279D8d70](https://snowtrace.io/address/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70))
 
 | description | value before | value after |
 | --- | --- | --- |
-| interestRateStrategy | [0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4](https://snowscan.xyz/address/0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowscan.xyz/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
-| liquidityIndex | 1.0960 % [1096095154368373500525125835] | 1.0961 % [1096104878963539453388394194] |
-| variableBorrowIndex | 1.1422 % [1142239187199781201777596379] | 1.1422 % [1142254189582894267854334899] |
-| aToken underlying balance |  | 0. |
-| currentLiquidityRate | 6.5662 % [65662640887876642025479210] | 6.5668 % [65668659078316372683189108] |
-| currentVariableBorrowRate | 9.7206 % [97206524906069123706972038] | 9.7215 % [97215311646617566971605655] |
-| virtual accounting active | false | true |
-| virtual balance | / | 344263.717694859668130599 |
-| maxVariableBorrowRate | / | 84 % |
-| baseStableBorrowRate | 10 % | / |
+| interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
+| virtualAccountingActive | false | true |
+| virtualBalance | 0 DAI.e [0] | 347,461.6840 DAI.e [347461684019390436337863] |
+| address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
+| baseStableBorrowRate | null | 75000000000000000000000000 |
+| baseVariableBorrowRate | null | 0 |
+| maxExcessStableToTotalDebtRatio | null | 800000000000000000000000000 |
+| maxExcessUsageRatio | null | 100000000000000000000000000 |
+| optimalStableToTotalDebtRatio | null | 200000000000000000000000000 |
+| optimalUsageRatio | null | 900000000000000000000000000 |
+| stableRateSlope1 | null | 5000000000000000000000000 |
+| stableRateSlope2 | null | 750000000000000000000000000 |
+| variableRateSlope1 | null | 65000000000000000000000000 |
+| variableRateSlope2 | null | 750000000000000000000000000 |
+| maxVariableBorrowRate | / | 81.5 % |
+| baseStableBorrowRate | 7.5 % | / |
 | maxExcessStableToTotalDebtRatio | 80 % | / |
 | maxExcessUsageRatio | 10 % | / |
 | optimalStableToTotalDebtRatio | 20 % | / |
 | stableRateSlope1 | 0.5 % | / |
 | stableRateSlope2 | 75 % | / |
-| interestRate | ![before](/.assets/e36150e52440137ed8c69d49f8f7002df1889e3d.svg) | ![after](/.assets/14fa89e5545fb4bd870978aecbbb0e7ee276a551.svg) |
+| interestRate | ![before](/.assets/73a758e2afff3b8c4f243164244164416cf2b273.svg) | ![after](/.assets/5bbcb1a6932fed3bbf04d7077987b653f2697867.svg) |
 
 ## Raw diff
 
@@ -266,379 +347,703 @@
   },
   "reserves": {
     "0x152b9d0FdC40C096757F570A51E494bd4b943E50": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "137431931966104945694035",
-        "to": "137432168563280917980853"
-      },
-      "currentVariableBorrowRate": {
-        "from": "5169417342416450885049560",
-        "to": "5169421792142947281333400"
-      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1003124374919198461594965289",
-        "to": "1003124382468871885730030329"
-      },
-      "variableBorrowIndex": {
-        "from": "1019865989528623469226300620",
-        "to": "1019866278244387157526732550"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "2172.29824367"
+      "virtualBalance": {
+        "from": 0,
+        "to": 220556690787
+      },
+      "address": {
+        "from": null,
+        "to": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "90000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "0"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "0"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x2b2C81e08f1Af8835a78Bb2A90AE924ACE0eA4bE": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "1333399.261179704155724358"
+      "virtualBalance": {
+        "from": 0,
+        "to": "1378974823288902397805252"
+      },
+      "address": {
+        "from": null,
+        "to": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "90000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "0"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "0"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "4418767701148333512392022",
-        "to": "4418774876605724365978959"
-      },
-      "currentVariableBorrowRate": {
-        "from": "19158074391906975212240571",
-        "to": "19158084453577717506664116"
-      },
       "interestRateStrategy": {
         "from": "0xd5CA18a70189309664e34FB8150799ff13722308",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1012406525291490451914037053",
-        "to": "1012406877379533621485677765"
-      },
-      "variableBorrowIndex": {
-        "from": "1054132239853008374165332560",
-        "to": "1054133829286825572743632213"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "7456.613314340699719242"
+      "virtualBalance": {
+        "from": 0,
+        "to": "6885082604489815067744"
+      },
+      "address": {
+        "from": null,
+        "to": "0xd5CA18a70189309664e34FB8150799ff13722308"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "57000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "10000000000000000000000000"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "40000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "27000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "800000000000000000000000000"
       }
     },
     "0x50b7545627a5162F82A992c33b87aDc75187B218": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "506578157082917772372091",
-        "to": "506591389946691895081848"
-      },
-      "currentVariableBorrowRate": {
-        "from": "7502430399417376523929638",
-        "to": "7502528388236801558090176"
-      },
       "interestRateStrategy": {
         "from": "0x354E84ec43aCD91e1C0135c3e691960E881DB4b7",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1002633905451041188666774995",
-        "to": "1002634871170776669646445972"
-      },
-      "variableBorrowIndex": {
-        "from": "1023261897343827412547863876",
-        "to": "1023276494025458577466749505"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "161.83475972"
+      "virtualBalance": {
+        "from": 0,
+        "to": 16183475972
+      },
+      "address": {
+        "from": null,
+        "to": "0x354E84ec43aCD91e1C0135c3e691960E881DB4b7"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "60000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "0"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "0"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "40000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x5947BB275c521040051D82396192181b413227A3": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "135506228953799913266108",
-        "to": "135507338160482960257118"
-      },
-      "currentVariableBorrowRate": {
-        "from": "5133072511438282465090402",
-        "to": "5133093520165064711846849"
-      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1002493532343437974918585786",
-        "to": "1002493644353667662692144373"
-      },
-      "variableBorrowIndex": {
-        "from": "1023595509150816373611558275",
-        "to": "1023599841500858585804390387"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "153303.213778645518696923"
+      "virtualBalance": {
+        "from": 0,
+        "to": "153303213778645518696923"
+      },
+      "address": {
+        "from": null,
+        "to": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "90000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "0"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "0"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "8021432168922842354772656",
-        "to": "8664434274489078200961859"
-      },
-      "currentVariableBorrowRate": {
-        "from": "325319435472803880756933588",
-        "to": "348406799413161819175107567"
-      },
       "interestRateStrategy": {
         "from": "0xB57Ff919A953424d6B143ABfD6740A225eab953e",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1043566083559529807498838675",
-        "to": "1044001239745580418896118836"
-      },
-      "variableBorrowIndex": {
-        "from": "1355435615666615109225430125",
-        "to": "1378553046167027330940148706"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "5104.086260133476165213"
+      "virtualBalance": {
+        "from": 0,
+        "to": "5104083097517086030587"
+      },
+      "address": {
+        "from": null,
+        "to": "0xB57Ff919A953424d6B143ABfD6740A225eab953e"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "100000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "5000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "90000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x63a72806098Bd3D9520cC43356dD78afe5D386D9": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
       "interestRateStrategy": {
         "from": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "5192.5508676034921223"
+      "virtualBalance": {
+        "from": 0,
+        "to": "5193670833089033839616"
+      },
+      "address": {
+        "from": null,
+        "to": "0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "90000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "550000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "450000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "0"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "0"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "70000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "3000000000000000000000000000"
       }
     },
     "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "59030804731810636015992610",
-        "to": "59030883074310444285973443"
-      },
-      "currentVariableBorrowRate": {
-        "from": "81317349942762628930708220",
-        "to": "81317404296259304215778302"
-      },
       "interestRateStrategy": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1127085520468273300569304428",
-        "to": "1127085851697476374699402012"
-      },
-      "variableBorrowIndex": {
-        "from": "1169159481316441267375232595",
-        "to": "1169159954631264296703191775"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "6860449.550863"
+      "virtualBalance": {
+        "from": 0,
+        "to": 8013615917309
+      },
+      "address": {
+        "from": null,
+        "to": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "75000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "100000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "900000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "5000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "65000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
       }
     },
     "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "38.315233931291647159"
-      },
-      "currentLiquidityRate": {
-        "from": "17208534036404668418220267",
-        "to": "17208549982623343424499727"
-      },
-      "currentVariableBorrowRate": {
-        "from": "44837236314164385001325746",
-        "to": "44837254480907446229538392"
+      "aTokenUnderlyingBalance": {
+        "from": 0,
+        "to": "38315233931291647159"
       },
       "interestRateStrategy": {
         "from": "0xc76EF342898f1AE7E6C4632627Df683FAD8563DD",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1049777191942942870853175173",
-        "to": "1049777595796133174790629902"
-      },
-      "variableBorrowIndex": {
-        "from": "1134901485916146419873287092",
-        "to": "1134902623490330422441867366"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "1920773.239956561453007763"
+      "virtualBalance": {
+        "from": 0,
+        "to": "1781349733587961517115765"
+      },
+      "address": {
+        "from": null,
+        "to": "0xc76EF342898f1AE7E6C4632627Df683FAD8563DD"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "87200000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "10000000000000000000000000"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "350000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "650000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "47200000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "1442800000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "47200000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "1442800000000000000000000000"
       }
     },
     "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "66192728505682012773771176",
-        "to": "66192761846969828524595202"
-      },
-      "currentVariableBorrowRate": {
-        "from": "85935968638526085656168802",
-        "to": "85935990313972521673210528"
-      },
       "interestRateStrategy": {
-        "from": "0x769EbC5106bF09D9A665CCb691e1907612b57F16",
+        "from": "0x5F58C62077b667370879D6580a59f47C30f96a74",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1103572445911443933664363481",
-        "to": "1103572823476792160025599553"
-      },
-      "variableBorrowIndex": {
-        "from": "1140644434153776825146504894",
-        "to": "1140644940801803557430479183"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "12350404.423981"
+      "virtualBalance": {
+        "from": 0,
+        "to": 14985221150005
+      },
+      "address": {
+        "from": null,
+        "to": "0x5F58C62077b667370879D6580a59f47C30f96a74"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "75000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "100000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "900000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "5000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "600000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "65000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "600000000000000000000000000"
       }
     },
     "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "92857203055970379544147354",
-        "to": "92947358190778035757105682"
-      },
-      "currentVariableBorrowRate": {
-        "from": "128241790079132438021362223",
-        "to": "128363989379739086520812138"
-      },
       "interestRateStrategy": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1163209649648029667318535827",
-        "to": "1163345062447187805944095229"
-      },
-      "variableBorrowIndex": {
-        "from": "1215432210330560583691609419",
-        "to": "1215627635881652360393434564"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "2845.274253611369927556"
+      "virtualBalance": {
+        "from": 0,
+        "to": "4113753669766476432623"
+      },
+      "address": {
+        "from": null,
+        "to": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "75000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "100000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "900000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "5000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "65000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
       }
     },
     "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70": {
-      "aToken underlying balance": {
-        "from": "",
-        "to": "0."
-      },
-      "currentLiquidityRate": {
-        "from": "65662640887876642025479210",
-        "to": "65668659078316372683189108"
-      },
-      "currentVariableBorrowRate": {
-        "from": "97206524906069123706972038",
-        "to": "97215311646617566971605655"
-      },
       "interestRateStrategy": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
-      "liquidityIndex": {
-        "from": "1096095154368373500525125835",
-        "to": "1096104878963539453388394194"
-      },
-      "variableBorrowIndex": {
-        "from": "1142239187199781201777596379",
-        "to": "1142254189582894267854334899"
-      },
-      "virtual accounting active": {
+      "virtualAccountingActive": {
         "from": false,
         "to": true
       },
-      "virtual balance": {
-        "from": "/",
-        "to": "344263.717694859668130599"
+      "virtualBalance": {
+        "from": 0,
+        "to": "347461684019390436337863"
+      },
+      "address": {
+        "from": null,
+        "to": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C"
+      },
+      "baseStableBorrowRate": {
+        "from": null,
+        "to": "75000000000000000000000000"
+      },
+      "baseVariableBorrowRate": {
+        "from": null,
+        "to": "0"
+      },
+      "maxExcessStableToTotalDebtRatio": {
+        "from": null,
+        "to": "800000000000000000000000000"
+      },
+      "maxExcessUsageRatio": {
+        "from": null,
+        "to": "100000000000000000000000000"
+      },
+      "optimalStableToTotalDebtRatio": {
+        "from": null,
+        "to": "200000000000000000000000000"
+      },
+      "optimalUsageRatio": {
+        "from": null,
+        "to": "900000000000000000000000000"
+      },
+      "stableRateSlope1": {
+        "from": null,
+        "to": "5000000000000000000000000"
+      },
+      "stableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
+      },
+      "variableRateSlope1": {
+        "from": null,
+        "to": "65000000000000000000000000"
+      },
+      "variableRateSlope2": {
+        "from": null,
+        "to": "750000000000000000000000000"
       }
     }
   },
@@ -883,11 +1288,11 @@
     },
     "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7": {
       "address": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
       "baseStableBorrowRate": {
-        "from": "100000000000000000000000000",
+        "from": "75000000000000000000000000",
         "to": null
       },
       "maxExcessStableToTotalDebtRatio": {
@@ -912,7 +1317,7 @@
       },
       "maxVariableBorrowRate": {
         "from": null,
-        "to": "840000000000000000000000000"
+        "to": "815000000000000000000000000"
       }
     },
     "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7": {
@@ -951,11 +1356,11 @@
     },
     "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E": {
       "address": {
-        "from": "0x769EbC5106bF09D9A665CCb691e1907612b57F16",
+        "from": "0x5F58C62077b667370879D6580a59f47C30f96a74",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
       "baseStableBorrowRate": {
-        "from": "100000000000000000000000000",
+        "from": "75000000000000000000000000",
         "to": null
       },
       "maxExcessStableToTotalDebtRatio": {
@@ -980,16 +1385,16 @@
       },
       "maxVariableBorrowRate": {
         "from": null,
-        "to": "690000000000000000000000000"
+        "to": "665000000000000000000000000"
       }
     },
     "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64": {
       "address": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
       "baseStableBorrowRate": {
-        "from": "100000000000000000000000000",
+        "from": "75000000000000000000000000",
         "to": null
       },
       "maxExcessStableToTotalDebtRatio": {
@@ -1014,16 +1419,16 @@
       },
       "maxVariableBorrowRate": {
         "from": null,
-        "to": "840000000000000000000000000"
+        "to": "815000000000000000000000000"
       }
     },
     "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70": {
       "address": {
-        "from": "0x5eE947d920643cCd3e2c54eAAd8F260FC8Add3b4",
+        "from": "0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C",
         "to": "0x43dD6f474e436348db037BAeA24eD02E68c475bE"
       },
       "baseStableBorrowRate": {
-        "from": "100000000000000000000000000",
+        "from": "75000000000000000000000000",
         "to": null
       },
       "maxExcessStableToTotalDebtRatio": {
@@ -1048,7 +1453,7 @@
       },
       "maxVariableBorrowRate": {
         "from": null,
-        "to": "840000000000000000000000000"
+        "to": "815000000000000000000000000"
       }
     }
   }
