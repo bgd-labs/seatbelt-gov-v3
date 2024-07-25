@@ -33,4 +33,19 @@ evm_version = 'shanghai'
 [profile.bnb]
 evm_version = 'shanghai'
 
+[rpc_endpoints]
+mainnet = "${RPC_MAINNET}"
+optimism = "${RPC_OPTIMISM}"
+avalanche = "${RPC_AVALANCHE}"
+polygon = "${RPC_POLYGON}"
+arbitrum = "${RPC_ARBITRUM}"
+fantom = "${RPC_FANTOM}"
+harmony = "${RPC_HARMONY}"
+metis = "${RPC_METIS}"
+base = "${RPC_BASE}"
+zkevm = "${RPC_ZKEVM}"
+gnosis = "${RPC_GNOSIS}"
+bnb = "${RPC_BNB}"
+scroll = "${RPC_SCROLL}"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

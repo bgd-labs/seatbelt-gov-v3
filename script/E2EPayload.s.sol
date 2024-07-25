@@ -4,6 +4,7 @@ pragma solidity ^0.8.13;
 import {Script, console} from 'forge-std/Script.sol';
 import {GovV3Helpers} from 'aave-helpers/GovV3Helpers.sol';
 import {ProtocolV3TestBase, ReserveConfig, IPool} from 'aave-helpers/ProtocolV3TestBase.sol';
+import {AaveV3Base} from 'aave-address-book/AaveV3Base.sol';
 import {AaveV3Gnosis} from 'aave-address-book/AaveV3Gnosis.sol';
 import {AaveV3Metis} from 'aave-address-book/AaveV3Metis.sol';
 import {AaveV3Ethereum} from 'aave-address-book/AaveV3Ethereum.sol';
@@ -93,5 +94,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     if (block.chainid == ChainIds.ZK_EVM) return AaveV3PolygonZkEvm.POOL;
     if (block.chainid == ChainIds.SCROLL) return AaveV3Scroll.POOL;
     if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
+    if (block.chainid == ChainIds.BASE) return AaveV3Base.POOL;
   }
 }
