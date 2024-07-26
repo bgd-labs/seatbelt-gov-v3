@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 BTC.b [0] | 2,209.5221 BTC.b [220952214195] |
+| virtualBalance | 0 BTC.b [0] | 2,185.7628 BTC.b [218576285841] |
 | address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 sAVAX [0] | 1,391,702.3892 sAVAX [1391702389204592704232383] |
+| virtualBalance | 0 sAVAX [0] | 1,395,179.0694 sAVAX [1395179069407377091619790] |
 | address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH.e [0] | 7,005.4252 WETH.e [7005425243569952770437] |
+| virtualBalance | 0 WETH.e [0] | 6,008.3512 WETH.e [6008351266889206484509] |
 | address | null | [0xd5CA18a70189309664e34FB8150799ff13722308](https://snowtrace.io/address/0xd5CA18a70189309664e34FB8150799ff13722308) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 10000000000000000000000000 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WBTC.e [0] | 161.8347 WBTC.e [16183475972] |
+| virtualBalance | 0 WBTC.e [0] | 159.8356 WBTC.e [15983569366] |
 | address | null | [0x354E84ec43aCD91e1C0135c3e691960E881DB4b7](https://snowtrace.io/address/0x354E84ec43aCD91e1C0135c3e691960E881DB4b7) |
 | baseStableBorrowRate | null | 60000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LINK.e [0] | 153,341.5248 LINK.e [153341524867009865041481] |
+| virtualBalance | 0 LINK.e [0] | 153,306.6868 LINK.e [153306686861773928132966] |
 | address | null | [0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6](https://snowtrace.io/address/0x79a906e8c998d2fb5C5D66d23c4c5416Fe0168D6) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 MAI [0] | 5,104.0830 MAI [5104083084350295975928] |
+| virtualBalance | 0 MAI [0] | 5,104.0828 MAI [5104082858206021155729] |
 | address | null | [0xB57Ff919A953424d6B143ABfD6740A225eab953e](https://snowtrace.io/address/0xB57Ff919A953424d6B143ABfD6740A225eab953e) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -197,7 +197,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDt [0] | 6,770,444.4690 USDt [6770444469094] |
+| virtualBalance | 0 USDt [0] | 8,420,487.0936 USDt [8420487093624] |
 | address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -224,7 +224,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WAVAX [0] | 1,745,557.0311 WAVAX [1745557031181852862799486] |
+| virtualBalance | 0 WAVAX [0] | 1,813,347.5401 WAVAX [1813347540162515085482605] |
 | address | null | [0xc76EF342898f1AE7E6C4632627Df683FAD8563DD](https://snowtrace.io/address/0xc76EF342898f1AE7E6C4632627Df683FAD8563DD) |
 | baseStableBorrowRate | null | 87200000000000000000000000 |
 | baseVariableBorrowRate | null | 10000000000000000000000000 |
@@ -251,7 +251,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x5F58C62077b667370879D6580a59f47C30f96a74](https://snowtrace.io/address/0x5F58C62077b667370879D6580a59f47C30f96a74) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 14,851,171.6091 USDC [14851171609173] |
+| virtualBalance | 0 USDC [0] | 10,843,629.0137 USDC [10843629013726] |
 | address | null | [0x5F58C62077b667370879D6580a59f47C30f96a74](https://snowtrace.io/address/0x5F58C62077b667370879D6580a59f47C30f96a74) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -278,7 +278,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 FRAX [0] | 4,113.7536 FRAX [4113753640923555065920] |
+| virtualBalance | 0 FRAX [0] | 4,113.7531 FRAX [4113753133564639363670] |
 | address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -305,7 +305,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) | [0x43dD6f474e436348db037BAeA24eD02E68c475bE](https://snowtrace.io/address/0x43dD6f474e436348db037BAeA24eD02E68c475bE) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 DAI.e [0] | 330,427.1505 DAI.e [330427150508783455288957] |
+| virtualBalance | 0 DAI.e [0] | 340,420.0384 DAI.e [340420038480876380635461] |
 | address | null | [0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C](https://snowtrace.io/address/0x424883C7dD9Bd129BC346A65E8455CDe9fC0c43C) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -356,7 +356,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 220952214195
+        "to": 218576285841
       },
       "address": {
         "from": null,
@@ -414,7 +414,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1391702389204592704232383"
+        "to": "1395179069407377091619790"
       },
       "address": {
         "from": null,
@@ -472,7 +472,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "7005425243569952770437"
+        "to": "6008351266889206484509"
       },
       "address": {
         "from": null,
@@ -530,7 +530,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 16183475972
+        "to": 15983569366
       },
       "address": {
         "from": null,
@@ -588,7 +588,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "153341524867009865041481"
+        "to": "153306686861773928132966"
       },
       "address": {
         "from": null,
@@ -646,7 +646,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "5104083084350295975928"
+        "to": "5104082858206021155729"
       },
       "address": {
         "from": null,
@@ -762,7 +762,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 6770444469094
+        "to": 8420487093624
       },
       "address": {
         "from": null,
@@ -820,7 +820,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1745557031181852862799486"
+        "to": "1813347540162515085482605"
       },
       "address": {
         "from": null,
@@ -878,7 +878,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 14851171609173
+        "to": 10843629013726
       },
       "address": {
         "from": null,
@@ -936,7 +936,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "4113753640923555065920"
+        "to": "4113753133564639363670"
       },
       "address": {
         "from": null,
@@ -994,7 +994,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "330427150508783455288957"
+        "to": "340420038480876380635461"
       },
       "address": {
         "from": null,

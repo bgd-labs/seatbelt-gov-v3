@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 698.6952 WETH [698695262106200178526] |
+| virtualBalance | 0 WETH [0] | 722.6884 WETH [722688414944941637168] |
 | address | null | [0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921](https://explorer.metis.io/address/0xf043D74F1CbF798D8E9a3cB19fDf2084C275f921) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 10000000000000000000000000 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 m.DAI [0] | 177,913.2354 m.DAI [177913235457587027631819] |
+| virtualBalance | 0 m.DAI [0] | 177,913.1424 m.DAI [177913142414789627760222] |
 | address | null | [0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9](https://explorer.metis.io/address/0x4a8de3E62B4a63905f62e56292ECdCfD3593d1c9) |
 | baseStableBorrowRate | null | 80000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 Metis [0] | 215,276.9392 Metis [215276939225002133958147] |
+| virtualBalance | 0 Metis [0] | 219,689.2728 Metis [219689272832130332985210] |
 | address | null | [0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1](https://explorer.metis.io/address/0xfe8FF9a19E251fe6cf2e8cBf0959ACa9624A97d1) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 m.USDC [0] | 3,153,454.6899 m.USDC [3153454689953] |
+| virtualBalance | 0 m.USDC [0] | 2,632,438.7541 m.USDC [2632438754182] |
 | address | null | [0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce](https://explorer.metis.io/address/0x463F3F7F0eD356703A9bF2Da3FB95AECBEfe60ce) |
 | baseStableBorrowRate | null | 70000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) | [0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8](https://explorer.metis.io/address/0xE263434d0c71Ff6EB089034F2aFf89e9f6F714E8) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 m.USDT [0] | 973,039.1496 m.USDT [973039149610] |
+| virtualBalance | 0 m.USDT [0] | 1,095,983.6598 m.USDT [1095983659865] |
 | address | null | [0xEDeA87920826abfE28C2D57AC7665B7031f64EfF](https://explorer.metis.io/address/0xEDeA87920826abfE28C2D57AC7665B7031f64EfF) |
 | baseStableBorrowRate | null | 70000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -167,7 +167,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "698695262106200178526"
+        "to": "722688414944941637168"
       },
       "address": {
         "from": null,
@@ -225,7 +225,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "177913235457587027631819"
+        "to": "177913142414789627760222"
       },
       "address": {
         "from": null,
@@ -283,7 +283,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "215276939225002133958147"
+        "to": "219689272832130332985210"
       },
       "address": {
         "from": null,
@@ -341,7 +341,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 3153454689953
+        "to": 2632438754182
       },
       "address": {
         "from": null,
@@ -399,7 +399,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 973039149610
+        "to": 1095983659865
       },
       "address": {
         "from": null,

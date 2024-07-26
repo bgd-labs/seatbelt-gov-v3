@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xD3120200c339f608C394CCF9cBAD4bABab63B5dD](https://gnosisscan.io/address/0xD3120200c339f608C394CCF9cBAD4bABab63B5dD) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 1,357.5271 WETH [1357527138854069025043] |
+| virtualBalance | 0 WETH [0] | 1,362.8963 WETH [1362896376902690698767] |
 | address | null | [0xD3120200c339f608C394CCF9cBAD4bABab63B5dD](https://gnosisscan.io/address/0xD3120200c339f608C394CCF9cBAD4bABab63B5dD) |
 | baseStableBorrowRate | null | 47000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b](https://gnosisscan.io/address/0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 4,235.1920 wstETH [4235192043022813174268] |
+| virtualBalance | 0 wstETH [0] | 4,218.5146 wstETH [4218514645102051953405] |
 | address | null | [0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b](https://gnosisscan.io/address/0x9E57695Dab0DCdb42BC220ff1E9eb2e22a31209b) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731](https://gnosisscan.io/address/0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 GNO [0] | 33,362.0779 GNO [33362077991336429854018] |
+| virtualBalance | 0 GNO [0] | 33,907.1728 GNO [33907172824290814056442] |
 | address | null | [0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731](https://gnosisscan.io/address/0x777fDAB3C03aA63d7d7CbCbaB22724cEe50F1731) |
 | baseStableBorrowRate | null | 170000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B](https://gnosisscan.io/address/0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 495,535.8115 USDC [495535811512] |
+| virtualBalance | 0 USDC [0] | 512,725.7704 USDC [512725770462] |
 | address | null | [0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B](https://gnosisscan.io/address/0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 sDAI [0] | 23,896,285.4116 sDAI [23896285411663508202632796] |
+| virtualBalance | 0 sDAI [0] | 23,680,382.9797 sDAI [23680382979775862893263352] |
 | address | null | [0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450](https://gnosisscan.io/address/0x6c3b7e7B8b9609D57C70C3F630228F979EAbb450) |
 | baseStableBorrowRate | null | 50000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x79CAeAcaCed9ECAccE9d36C24094C605469212C6](https://gnosisscan.io/address/0x79CAeAcaCed9ECAccE9d36C24094C605469212C6) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 EURe [0] | 1,188,026.3981 EURe [1188026398191450177470790] |
+| virtualBalance | 0 EURe [0] | 1,259,451.9159 EURe [1259451915986903995470782] |
 | address | null | [0x79CAeAcaCed9ECAccE9d36C24094C605469212C6](https://gnosisscan.io/address/0x79CAeAcaCed9ECAccE9d36C24094C605469212C6) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -170,7 +170,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B](https://gnosisscan.io/address/0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B) | [0x98619395148C348e9A09C7D34290B1E9e7715A3E](https://gnosisscan.io/address/0x98619395148C348e9A09C7D34290B1E9e7715A3E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WXDAI [0] | 1,141,721.0155 WXDAI [1141721015544489683511575] |
+| virtualBalance | 0 WXDAI [0] | 1,189,262.0365 WXDAI [1189262036586381588632041] |
 | address | null | [0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B](https://gnosisscan.io/address/0x4F29DA9DA689652827b7192B373B3eE71BC2Df2B) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -221,7 +221,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1357527138854069025043"
+        "to": "1362896376902690698767"
       },
       "address": {
         "from": null,
@@ -279,7 +279,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "4235192043022813174268"
+        "to": "4218514645102051953405"
       },
       "address": {
         "from": null,
@@ -337,7 +337,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "33362077991336429854018"
+        "to": "33907172824290814056442"
       },
       "address": {
         "from": null,
@@ -395,7 +395,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 495535811512
+        "to": 512725770462
       },
       "address": {
         "from": null,
@@ -453,7 +453,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "23896285411663508202632796"
+        "to": "23680382979775862893263352"
       },
       "address": {
         "from": null,
@@ -511,7 +511,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1188026398191450177470790"
+        "to": "1259451915986903995470782"
       },
       "address": {
         "from": null,
@@ -569,7 +569,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1141721015544489683511575"
+        "to": "1189262036586381588632041"
       },
       "address": {
         "from": null,

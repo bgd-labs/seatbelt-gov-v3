@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 Cake [0] | 504,545.3498 Cake [504545349872009262458355] |
+| virtualBalance | 0 Cake [0] | 504,350.9403 Cake [504350940366239797872464] |
 | address | null | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x34E8e73bFB04454bd203410b009124527A57Ea3F](https://bscscan.com/address/0x34E8e73bFB04454bd203410b009124527A57Ea3F) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 ETH [0] | 1,700.2036 ETH [1700203659317348977901] |
+| virtualBalance | 0 ETH [0] | 1,951.1102 ETH [1951110218729230973049] |
 | address | null | [0x34E8e73bFB04454bd203410b009124527A57Ea3F](https://bscscan.com/address/0x34E8e73bFB04454bd203410b009124527A57Ea3F) |
 | baseStableBorrowRate | null | 47000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xbD77cb6a17cCCca5D8fB634f664E4e4950c9fF89](https://bscscan.com/address/0xbD77cb6a17cCCca5D8fB634f664E4e4950c9fF89) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDT [0] | 1,615,417.9389 USDT [1615417938965725589179067] |
+| virtualBalance | 0 USDT [0] | 936,193.4859 USDT [936193485971490911462175] |
 | address | null | [0xbD77cb6a17cCCca5D8fB634f664E4e4950c9fF89](https://bscscan.com/address/0xbD77cb6a17cCCca5D8fB634f664E4e4950c9fF89) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 BTCB [0] | 458.8904 BTCB [458890408756557004165] |
+| virtualBalance | 0 BTCB [0] | 458.9019 BTCB [458901945348817486883] |
 | address | null | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x77498A4A946e0303E92B78676851f861906e6eF4](https://bscscan.com/address/0x77498A4A946e0303E92B78676851f861906e6eF4) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 554,819.2090 USDC [554819209055518829534428] |
+| virtualBalance | 0 USDC [0] | 443,888.3660 USDC [443888366024188632621709] |
 | address | null | [0x77498A4A946e0303E92B78676851f861906e6eF4](https://bscscan.com/address/0x77498A4A946e0303E92B78676851f861906e6eF4) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WBNB [0] | 10,117.2435 WBNB [10117243552992890277218] |
+| virtualBalance | 0 WBNB [0] | 10,266.0278 WBNB [10266027842303584618478] |
 | address | null | [0x9A945631004d0452642bC61cEd2871f428F2543f](https://bscscan.com/address/0x9A945631004d0452642bC61cEd2871f428F2543f) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -170,7 +170,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xcA8a1DC160f6EAF4A9CBf7f94D07895c593A3ee4](https://bscscan.com/address/0xcA8a1DC160f6EAF4A9CBf7f94D07895c593A3ee4) | [0x51D86C833fC4F300196F028FEaC899a94eb82eFb](https://bscscan.com/address/0x51D86C833fC4F300196F028FEaC899a94eb82eFb) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 FDUSD [0] | 1,363,434.3073 FDUSD [1363434307314670969038974] |
+| virtualBalance | 0 FDUSD [0] | 1,511,240.1086 FDUSD [1511240108613490224254220] |
 | address | null | [0xcA8a1DC160f6EAF4A9CBf7f94D07895c593A3ee4](https://bscscan.com/address/0xcA8a1DC160f6EAF4A9CBf7f94D07895c593A3ee4) |
 | baseStableBorrowRate | null | 95000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -221,7 +221,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "504545349872009262458355"
+        "to": "504350940366239797872464"
       },
       "address": {
         "from": null,
@@ -279,7 +279,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1700203659317348977901"
+        "to": "1951110218729230973049"
       },
       "address": {
         "from": null,
@@ -337,7 +337,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1615417938965725589179067"
+        "to": "936193485971490911462175"
       },
       "address": {
         "from": null,
@@ -395,7 +395,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "458890408756557004165"
+        "to": "458901945348817486883"
       },
       "address": {
         "from": null,
@@ -453,7 +453,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "554819209055518829534428"
+        "to": "443888366024188632621709"
       },
       "address": {
         "from": null,
@@ -511,7 +511,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "10117243552992890277218"
+        "to": "10266027842303584618478"
       },
       "address": {
         "from": null,
@@ -569,7 +569,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1363434307314670969038974"
+        "to": "1511240108613490224254220"
       },
       "address": {
         "from": null,

@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2](https://basescan.org/address/0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 weETH [0] | 16,946.0861 weETH [16946086163913736248239] |
+| virtualBalance | 0 weETH [0] | 17,108.4472 weETH [17108447271075699581501] |
 | address | null | [0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2](https://basescan.org/address/0xA31AcCd744EBdbF1b36E4556Ea09C8b34CD65bb2) |
 | baseStableBorrowRate | null | 70000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x05295489b6aE0d97ae7C49a42989497294F7F428](https://basescan.org/address/0x05295489b6aE0d97ae7C49a42989497294F7F428) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 cbETH [0] | 1,132.7912 cbETH [1132791235108555274062] |
+| virtualBalance | 0 cbETH [0] | 977.1229 cbETH [977122989737876046335] |
 | address | null | [0x05295489b6aE0d97ae7C49a42989497294F7F428](https://basescan.org/address/0x05295489b6aE0d97ae7C49a42989497294F7F428) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C](https://basescan.org/address/0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 4,334.1106 WETH [4334110618969745949929] |
+| virtualBalance | 0 WETH [0] | 4,361.0137 WETH [4361013710719050619939] |
 | address | null | [0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C](https://basescan.org/address/0x0D9e605d77Ea2ADe3eEAfa86cE353899E9D3d72C) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x8d09558a46178E28FC9703787c164C829De3FfF3](https://basescan.org/address/0x8d09558a46178E28FC9703787c164C829De3FfF3) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 2,892,969.4179 USDC [2892969417992] |
+| virtualBalance | 0 USDC [0] | 2,805,791.3180 USDC [2805791318065] |
 | address | null | [0x8d09558a46178E28FC9703787c164C829De3FfF3](https://basescan.org/address/0x8d09558a46178E28FC9703787c164C829De3FfF3) |
 | baseStableBorrowRate | null | 65000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9](https://basescan.org/address/0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 3,563.5297 wstETH [3563529730919821420177] |
+| virtualBalance | 0 wstETH [0] | 3,709.5124 wstETH [3709512470561353052932] |
 | address | null | [0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9](https://basescan.org/address/0x2f51b00eC4912874DFDBd8dC3C8e390c21e77aF9) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D](https://basescan.org/address/0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D) | [0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E](https://basescan.org/address/0x46Da028a47Ed58026aCbFbE91eeA51CcB062134E) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDbC [0] | 217,418.6684 USDbC [217418668424] |
+| virtualBalance | 0 USDbC [0] | 142,348.0346 USDbC [142348034625] |
 | address | null | [0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D](https://basescan.org/address/0x992ff76913Db79eCA51666D1e09b4F5Cf078dF7D) |
 | baseStableBorrowRate | null | 110000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -194,7 +194,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "16946086163913736248239"
+        "to": "17108447271075699581501"
       },
       "address": {
         "from": null,
@@ -252,7 +252,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1132791235108555274062"
+        "to": "977122989737876046335"
       },
       "address": {
         "from": null,
@@ -310,7 +310,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "4334110618969745949929"
+        "to": "4361013710719050619939"
       },
       "address": {
         "from": null,
@@ -368,7 +368,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 2892969417992
+        "to": 2805791318065
       },
       "address": {
         "from": null,
@@ -426,7 +426,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "3563529730919821420177"
+        "to": "3709512470561353052932"
       },
       "address": {
         "from": null,
@@ -484,7 +484,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 217418668424
+        "to": 142348034625
       },
       "address": {
         "from": null,
