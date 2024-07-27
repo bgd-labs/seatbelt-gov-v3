@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590](https://optimistic.etherscan.io/address/0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 6,617,013.5970 USDC [6617013597002] |
+| virtualBalance | 0 USDC [0] | 7,321,238.3640 USDC [7321238364084] |
 | address | null | [0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590](https://optimistic.etherscan.io/address/0xF2c62E55f33f8f5643b7C098237cEa25cEb4e590) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x6BA97468e2e6a3711a6DD05F0075d48E878c910e](https://optimistic.etherscan.io/address/0x6BA97468e2e6a3711a6DD05F0075d48E878c910e) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 20,750.1191 wstETH [20750119112725398592539] |
+| virtualBalance | 0 wstETH [0] | 20,782.8158 wstETH [20782815899296172532375] |
 | address | null | [0x6BA97468e2e6a3711a6DD05F0075d48E878c910e](https://optimistic.etherscan.io/address/0x6BA97468e2e6a3711a6DD05F0075d48E878c910e) |
 | baseStableBorrowRate | null | 55000000000000000000000000 |
 | baseVariableBorrowRate | null | 2500000000000000000000000 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LINK [0] | 193,045.6462 LINK [193045646273823590042010] |
+| virtualBalance | 0 LINK [0] | 193,294.9406 LINK [193294940631446750210925] |
 | address | null | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x129F838C3339f64a026aeb334Ffd5d55C2E94935](https://optimistic.etherscan.io/address/0x129F838C3339f64a026aeb334Ffd5d55C2E94935) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 2,830.2203 WETH [2830220335569727415382] |
+| virtualBalance | 0 WETH [0] | 3,176.1773 WETH [3176177335527995879826] |
 | address | null | [0x129F838C3339f64a026aeb334Ffd5d55C2E94935](https://optimistic.etherscan.io/address/0x129F838C3339f64a026aeb334Ffd5d55C2E94935) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 OP [0] | 7,854,474.9336 OP [7854474933611255413029620] |
+| virtualBalance | 0 OP [0] | 7,817,710.1233 OP [7817710123313144848098894] |
 | address | null | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17](https://optimistic.etherscan.io/address/0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WBTC [0] | 669.1010 WBTC [66910102120] |
+| virtualBalance | 0 WBTC [0] | 675.7855 WBTC [67578551607] |
 | address | null | [0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17](https://optimistic.etherscan.io/address/0x04daBC3C1c052AB94AA2ca80140f2b978d2F6E17) |
 | baseStableBorrowRate | null | 60000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -170,7 +170,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 AAVE [0] | 7,679.7123 AAVE [7679712374012358759781] |
+| virtualBalance | 0 AAVE [0] | 7,658.9838 AAVE [7658983857052630904905] |
 | address | null | [0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C](https://optimistic.etherscan.io/address/0xeE1BAc9355EaAfCD1B68d272d640d870bC9b4b5C) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -197,7 +197,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xBe5F42bC5A0fF77AbaBdd580bFCfBef940C2A84c](https://optimistic.etherscan.io/address/0xBe5F42bC5A0fF77AbaBdd580bFCfBef940C2A84c) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 1,520,782.4113 USDC [1520782411344] |
+| virtualBalance | 0 USDC [0] | 1,652,663.6296 USDC [1652663629672] |
 | address | null | [0xBe5F42bC5A0fF77AbaBdd580bFCfBef940C2A84c](https://optimistic.etherscan.io/address/0xBe5F42bC5A0fF77AbaBdd580bFCfBef940C2A84c) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -224,7 +224,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xe67ada67C57a51a84E85F1fE06d1F43ACa4972d3](https://optimistic.etherscan.io/address/0xe67ada67C57a51a84E85F1fE06d1F43ACa4972d3) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 sUSD [0] | 3,122,731.0261 sUSD [3122731026146177844580222] |
+| virtualBalance | 0 sUSD [0] | 61,615.3210 sUSD [61615321079849032922040] |
 | address | null | [0xe67ada67C57a51a84E85F1fE06d1F43ACa4972d3](https://optimistic.etherscan.io/address/0xe67ada67C57a51a84E85F1fE06d1F43ACa4972d3) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -251,7 +251,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xE4032E597CBE0020095B56810757443B1803f19b](https://optimistic.etherscan.io/address/0xE4032E597CBE0020095B56810757443B1803f19b) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDT [0] | 1,393,535.7738 USDT [1393535773854] |
+| virtualBalance | 0 USDT [0] | 1,542,980.2582 USDT [1542980258272] |
 | address | null | [0xE4032E597CBE0020095B56810757443B1803f19b](https://optimistic.etherscan.io/address/0xE4032E597CBE0020095B56810757443B1803f19b) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -278,7 +278,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x3B57B081dA6Af5e2759A57bD3211932Cb6176997](https://optimistic.etherscan.io/address/0x3B57B081dA6Af5e2759A57bD3211932Cb6176997) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 rETH [0] | 651.2844 rETH [651284449021842395343] |
+| virtualBalance | 0 rETH [0] | 651.2844 rETH [651284449019530949909] |
 | address | null | [0x3B57B081dA6Af5e2759A57bD3211932Cb6176997](https://optimistic.etherscan.io/address/0x3B57B081dA6Af5e2759A57bD3211932Cb6176997) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -305,7 +305,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xE4032E597CBE0020095B56810757443B1803f19b](https://optimistic.etherscan.io/address/0xE4032E597CBE0020095B56810757443B1803f19b) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 DAI [0] | 338,006.9885 DAI [338006988539083603870270] |
+| virtualBalance | 0 DAI [0] | 548,894.0043 DAI [548894004335453775711677] |
 | address | null | [0xE4032E597CBE0020095B56810757443B1803f19b](https://optimistic.etherscan.io/address/0xE4032E597CBE0020095B56810757443B1803f19b) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -332,7 +332,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x46B19314b6329CC2Dc67336723A13C1Ea74d4fcd](https://optimistic.etherscan.io/address/0x46B19314b6329CC2Dc67336723A13C1Ea74d4fcd) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LUSD [0] | 58,713.4085 LUSD [58713408570816276904737] |
+| virtualBalance | 0 LUSD [0] | 44,494.3607 LUSD [44494360797901077137524] |
 | address | null | [0x46B19314b6329CC2Dc67336723A13C1Ea74d4fcd](https://optimistic.etherscan.io/address/0x46B19314b6329CC2Dc67336723A13C1Ea74d4fcd) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -359,7 +359,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x66CD8d826b55ec5391c69E52cf86321A8b5Cd61D](https://optimistic.etherscan.io/address/0x66CD8d826b55ec5391c69E52cf86321A8b5Cd61D) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://optimistic.etherscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 MAI [0] | 1,260.3280 MAI [1260328013604702608679] |
+| virtualBalance | 0 MAI [0] | 5,544.0475 MAI [5544047541783177548269] |
 | address | null | [0x66CD8d826b55ec5391c69E52cf86321A8b5Cd61D](https://optimistic.etherscan.io/address/0x66CD8d826b55ec5391c69E52cf86321A8b5Cd61D) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -410,7 +410,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 6617013597002
+        "to": 7321238364084
       },
       "address": {
         "from": null,
@@ -468,7 +468,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "20750119112725398592539"
+        "to": "20782815899296172532375"
       },
       "address": {
         "from": null,
@@ -526,7 +526,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "193045646273823590042010"
+        "to": "193294940631446750210925"
       },
       "address": {
         "from": null,
@@ -584,7 +584,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "2830220335569727415382"
+        "to": "3176177335527995879826"
       },
       "address": {
         "from": null,
@@ -642,7 +642,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "7854474933611255413029620"
+        "to": "7817710123313144848098894"
       },
       "address": {
         "from": null,
@@ -700,7 +700,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 66910102120
+        "to": 67578551607
       },
       "address": {
         "from": null,
@@ -758,7 +758,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "7679712374012358759781"
+        "to": "7658983857052630904905"
       },
       "address": {
         "from": null,
@@ -816,7 +816,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 1520782411344
+        "to": 1652663629672
       },
       "address": {
         "from": null,
@@ -874,7 +874,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "3122731026146177844580222"
+        "to": "61615321079849032922040"
       },
       "address": {
         "from": null,
@@ -932,7 +932,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 1393535773854
+        "to": 1542980258272
       },
       "address": {
         "from": null,
@@ -990,7 +990,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "651284449021842395343"
+        "to": "651284449019530949909"
       },
       "address": {
         "from": null,
@@ -1048,7 +1048,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "338006988539083603870270"
+        "to": "548894004335453775711677"
       },
       "address": {
         "from": null,
@@ -1106,7 +1106,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "58713408570816276904737"
+        "to": "44494360797901077137524"
       },
       "address": {
         "from": null,
@@ -1164,7 +1164,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1260328013604702608679"
+        "to": "5544047541783177548269"
       },
       "address": {
         "from": null,

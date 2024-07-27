@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x24aB4C31eE3c1F5D86407Aa39a44a5b123b9449A](https://scrollscan.com/address/0x24aB4C31eE3c1F5D86407Aa39a44a5b123b9449A) | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 19,617,732.7226 USDC [19617732722650] |
+| virtualBalance | 0 USDC [0] | 16,585,534.9169 USDC [16585534916975] |
 | address | null | [0x24aB4C31eE3c1F5D86407Aa39a44a5b123b9449A](https://scrollscan.com/address/0x24aB4C31eE3c1F5D86407Aa39a44a5b123b9449A) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xE9EcAE0EDA2A97BB6a06a6244FfdFa6b1D886967](https://scrollscan.com/address/0xE9EcAE0EDA2A97BB6a06a6244FfdFa6b1D886967) | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 21,005.7393 WETH [21005739300179872962639] |
+| virtualBalance | 0 WETH [0] | 22,223.2519 WETH [22223251937637034216711] |
 | address | null | [0xE9EcAE0EDA2A97BB6a06a6244FfdFa6b1D886967](https://scrollscan.com/address/0xE9EcAE0EDA2A97BB6a06a6244FfdFa6b1D886967) |
 | baseStableBorrowRate | null | 47000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xCB032D7e38a10503c0b2F9f7bE8c1A81bBBEe2A8](https://scrollscan.com/address/0xCB032D7e38a10503c0b2F9f7bE8c1A81bBBEe2A8) | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 15,586.0085 wstETH [15586008540951162591608] |
+| virtualBalance | 0 wstETH [0] | 15,510.8633 wstETH [15510863331048179269159] |
 | address | null | [0xCB032D7e38a10503c0b2F9f7bE8c1A81bBBEe2A8](https://scrollscan.com/address/0xCB032D7e38a10503c0b2F9f7bE8c1A81bBBEe2A8) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -113,7 +113,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 19617732722650
+        "to": 16585534916975
       },
       "address": {
         "from": null,
@@ -171,7 +171,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "21005739300179872962639"
+        "to": "22223251937637034216711"
       },
       "address": {
         "from": null,
@@ -229,7 +229,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "15586008540951162591608"
+        "to": "15510863331048179269159"
       },
       "address": {
         "from": null,

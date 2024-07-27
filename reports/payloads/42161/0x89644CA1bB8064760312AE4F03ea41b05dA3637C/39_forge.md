@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 FRAX [0] | 35,864.0064 FRAX [35864006479534801235410] |
+| virtualBalance | 0 FRAX [0] | 34,389.0049 FRAX [34389004949404322106195] |
 | address | null | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x8F183Ee74C790CB558232a141099b316D6C8Ba6E](https://arbiscan.io/address/0x8F183Ee74C790CB558232a141099b316D6C8Ba6E) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WBTC [0] | 3,839.1203 WBTC [383912034974] |
+| virtualBalance | 0 WBTC [0] | 3,853.1423 WBTC [385314234927] |
 | address | null | [0x8F183Ee74C790CB558232a141099b316D6C8Ba6E](https://arbiscan.io/address/0x8F183Ee74C790CB558232a141099b316D6C8Ba6E) |
 | baseStableBorrowRate | null | 60000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x4011fcd421b9E90f131B164EC1d162DBE269621C](https://arbiscan.io/address/0x4011fcd421b9E90f131B164EC1d162DBE269621C) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 weETH [0] | 66,081.0021 weETH [66081002185179927333304] |
+| virtualBalance | 0 weETH [0] | 66,081.3008 weETH [66081300854233668594776] |
 | address | null | [0x4011fcd421b9E90f131B164EC1d162DBE269621C](https://arbiscan.io/address/0x4011fcd421b9E90f131B164EC1d162DBE269621C) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xA7D9302346d4C35724821cf98966B2257c9683c6](https://arbiscan.io/address/0xA7D9302346d4C35724821cf98966B2257c9683c6) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 MAI [0] | 14,364.2996 MAI [14364299686213277889638] |
+| virtualBalance | 0 MAI [0] | 14,364.2996 MAI [14364299683510853261488] |
 | address | null | [0xA7D9302346d4C35724821cf98966B2257c9683c6](https://arbiscan.io/address/0xA7D9302346d4C35724821cf98966B2257c9683c6) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x4b8D3277d49E114C8F2D6E0B2eD310e29226fe16](https://arbiscan.io/address/0x4b8D3277d49E114C8F2D6E0B2eD310e29226fe16) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 44,404.5786 wstETH [44404578614014172144074] |
+| virtualBalance | 0 wstETH [0] | 44,386.3073 wstETH [44386307317363886425009] |
 | address | null | [0x4b8D3277d49E114C8F2D6E0B2eD310e29226fe16](https://arbiscan.io/address/0x4b8D3277d49E114C8F2D6E0B2eD310e29226fe16) |
 | baseStableBorrowRate | null | 55000000000000000000000000 |
 | baseVariableBorrowRate | null | 2500000000000000000000000 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x36d32fD7a72AD600be60Ccb71D3718E455025CaA](https://arbiscan.io/address/0x36d32fD7a72AD600be60Ccb71D3718E455025CaA) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 GHO [0] | 83,085.3860 GHO [83085386005227810343035] |
+| virtualBalance | 0 GHO [0] | 59,675.9108 GHO [59675910878585682370084] |
 | address | null | [0x36d32fD7a72AD600be60Ccb71D3718E455025CaA](https://arbiscan.io/address/0x36d32fD7a72AD600be60Ccb71D3718E455025CaA) |
 | baseStableBorrowRate | null | 120000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -170,7 +170,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x42ec99A020B78C449d17d93bC4c89e0189B5811d](https://arbiscan.io/address/0x42ec99A020B78C449d17d93bC4c89e0189B5811d) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 18,480.6820 WETH [18480682026388127354024] |
+| virtualBalance | 0 WETH [0] | 18,535.7517 WETH [18535751759251969025000] |
 | address | null | [0x42ec99A020B78C449d17d93bC4c89e0189B5811d](https://arbiscan.io/address/0x42ec99A020B78C449d17d93bC4c89e0189B5811d) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -197,7 +197,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xD87974E8ED49AB16d5053ba793F4e17078Be0426](https://arbiscan.io/address/0xD87974E8ED49AB16d5053ba793F4e17078Be0426) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 ARB [0] | 22,360,309.2061 ARB [22360309206123213159514996] |
+| virtualBalance | 0 ARB [0] | 22,324,642.1923 ARB [22324642192394681794982902] |
 | address | null | [0xD87974E8ED49AB16d5053ba793F4e17078Be0426](https://arbiscan.io/address/0xD87974E8ED49AB16d5053ba793F4e17078Be0426) |
 | baseStableBorrowRate | null | 80000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -224,7 +224,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x8D397BD90cF90786D2f8c6c75e0Fc6ac2EC2B08D](https://arbiscan.io/address/0x8D397BD90cF90786D2f8c6c75e0Fc6ac2EC2B08D) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LUSD [0] | 183,418.8492 LUSD [183418849274569480232591] |
+| virtualBalance | 0 LUSD [0] | 176,843.6246 LUSD [176843624694444623719379] |
 | address | null | [0x8D397BD90cF90786D2f8c6c75e0Fc6ac2EC2B08D](https://arbiscan.io/address/0x8D397BD90cF90786D2f8c6c75e0Fc6ac2EC2B08D) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -278,7 +278,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 DAI [0] | 957,395.7640 DAI [957395764094590231674961] |
+| virtualBalance | 0 DAI [0] | 942,602.9520 DAI [942602952067421113277586] |
 | address | null | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -305,7 +305,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xC82dF96432346cFb632473eB619Db3B8AC280234](https://arbiscan.io/address/0xC82dF96432346cFb632473eB619Db3B8AC280234) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 rETH [0] | 2,864.1577 rETH [2864157750565705634669] |
+| virtualBalance | 0 rETH [0] | 2,883.9732 rETH [2883973247499939798446] |
 | address | null | [0xC82dF96432346cFb632473eB619Db3B8AC280234](https://arbiscan.io/address/0xC82dF96432346cFb632473eB619Db3B8AC280234) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -332,7 +332,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x986e9D34aeDE701a9ee4D6b60BcA95498c723FF2](https://arbiscan.io/address/0x986e9D34aeDE701a9ee4D6b60BcA95498c723FF2) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 961,550.9880 USDC [961550988072] |
+| virtualBalance | 0 USDC [0] | 982,490.7115 USDC [982490711578] |
 | address | null | [0x986e9D34aeDE701a9ee4D6b60BcA95498c723FF2](https://arbiscan.io/address/0x986e9D34aeDE701a9ee4D6b60BcA95498c723FF2) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -359,7 +359,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDT [0] | 12,102,608.0471 USDT [12102608047135] |
+| virtualBalance | 0 USDT [0] | 9,125,780.5846 USDT [9125780584676] |
 | address | null | [0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7](https://arbiscan.io/address/0x25AC195Cf3aA4568a97b5728A14EdC462A5488e7) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -386,7 +386,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xf1e5355cEcaA71036CE21cdF8F9d04061B1BC6E1](https://arbiscan.io/address/0xf1e5355cEcaA71036CE21cdF8F9d04061B1BC6E1) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 39,355,342.9036 USDC [39355342903662] |
+| virtualBalance | 0 USDC [0] | 31,412,187.1452 USDC [31412187145225] |
 | address | null | [0xf1e5355cEcaA71036CE21cdF8F9d04061B1BC6E1](https://arbiscan.io/address/0xf1e5355cEcaA71036CE21cdF8F9d04061B1BC6E1) |
 | baseStableBorrowRate | null | 100000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -413,7 +413,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f](https://arbiscan.io/address/0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 AAVE [0] | 3,599.8353 AAVE [3599835328597782941116] |
+| virtualBalance | 0 AAVE [0] | 3,599.8879 AAVE [3599887972724488695639] |
 | address | null | [0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f](https://arbiscan.io/address/0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -440,7 +440,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f](https://arbiscan.io/address/0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f) | [0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea](https://arbiscan.io/address/0xC2c6DF6a8B6cc79a6F927a1FFAE602c701C374Ea) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LINK [0] | 1,849,392.0908 LINK [1849392090898607598855443] |
+| virtualBalance | 0 LINK [0] | 1,845,384.5259 LINK [1845384525936574153603544] |
 | address | null | [0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f](https://arbiscan.io/address/0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -491,7 +491,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "35864006479534801235410"
+        "to": "34389004949404322106195"
       },
       "address": {
         "from": null,
@@ -549,7 +549,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 383912034974
+        "to": 385314234927
       },
       "address": {
         "from": null,
@@ -607,7 +607,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "66081002185179927333304"
+        "to": "66081300854233668594776"
       },
       "address": {
         "from": null,
@@ -665,7 +665,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "14364299686213277889638"
+        "to": "14364299683510853261488"
       },
       "address": {
         "from": null,
@@ -723,7 +723,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "44404578614014172144074"
+        "to": "44386307317363886425009"
       },
       "address": {
         "from": null,
@@ -781,7 +781,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "83085386005227810343035"
+        "to": "59675910878585682370084"
       },
       "address": {
         "from": null,
@@ -839,7 +839,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "18480682026388127354024"
+        "to": "18535751759251969025000"
       },
       "address": {
         "from": null,
@@ -897,7 +897,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "22360309206123213159514996"
+        "to": "22324642192394681794982902"
       },
       "address": {
         "from": null,
@@ -955,7 +955,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "183418849274569480232591"
+        "to": "176843624694444623719379"
       },
       "address": {
         "from": null,
@@ -1071,7 +1071,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "957395764094590231674961"
+        "to": "942602952067421113277586"
       },
       "address": {
         "from": null,
@@ -1129,7 +1129,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "2864157750565705634669"
+        "to": "2883973247499939798446"
       },
       "address": {
         "from": null,
@@ -1187,7 +1187,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 961550988072
+        "to": 982490711578
       },
       "address": {
         "from": null,
@@ -1245,7 +1245,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 12102608047135
+        "to": 9125780584676
       },
       "address": {
         "from": null,
@@ -1303,7 +1303,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 39355342903662
+        "to": 31412187145225
       },
       "address": {
         "from": null,
@@ -1361,7 +1361,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "3599835328597782941116"
+        "to": "3599887972724488695639"
       },
       "address": {
         "from": null,
@@ -1419,7 +1419,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "1849392090898607598855443"
+        "to": "1845384525936574153603544"
       },
       "address": {
         "from": null,
