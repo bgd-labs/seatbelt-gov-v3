@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xA6459195d60A797D278f58Ffbd2BA62Fb3F7FA1E](https://polygonscan.com/address/0xA6459195d60A797D278f58Ffbd2BA62Fb3F7FA1E) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 wstETH [0] | 6,050.6719 wstETH [6050671970636875657368] |
+| virtualBalance | 0 wstETH [0] | 6,050.0775 wstETH [6050077592136068753257] |
 | address | null | [0xA6459195d60A797D278f58Ffbd2BA62Fb3F7FA1E](https://polygonscan.com/address/0xA6459195d60A797D278f58Ffbd2BA62Fb3F7FA1E) |
 | baseStableBorrowRate | null | 55000000000000000000000000 |
 | baseVariableBorrowRate | null | 2500000000000000000000000 |
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 SUSHI [0] | 64,042.4092 SUSHI [64042409294454164999023] |
+| virtualBalance | 0 SUSHI [0] | 64,042.0975 SUSHI [64042097510942588784098] |
 | address | null | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -62,7 +62,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xD87974E8ED49AB16d5053ba793F4e17078Be0426](https://polygonscan.com/address/0xD87974E8ED49AB16d5053ba793F4e17078Be0426) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WMATIC [0] | 26,291,783.7902 WMATIC [26291783790222285685526301] |
+| virtualBalance | 0 WMATIC [0] | 25,540,880.2057 WMATIC [25540880205773226662645057] |
 | address | null | [0xD87974E8ED49AB16d5053ba793F4e17078Be0426](https://polygonscan.com/address/0xD87974E8ED49AB16d5053ba793F4e17078Be0426) |
 | baseStableBorrowRate | null | 70000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -89,7 +89,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xBefcd01681224555b74eAC87207eaF9Bc3361F59](https://polygonscan.com/address/0xBefcd01681224555b74eAC87207eaF9Bc3361F59) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 CRV [0] | 142,911.8984 CRV [142911898414895846553843] |
+| virtualBalance | 0 CRV [0] | 143,492.8800 CRV [143492880059068175069979] |
 | address | null | [0xBefcd01681224555b74eAC87207eaF9Bc3361F59](https://polygonscan.com/address/0xBefcd01681224555b74eAC87207eaF9Bc3361F59) |
 | baseStableBorrowRate | null | 170000000000000000000000000 |
 | baseVariableBorrowRate | null | 30000000000000000000000000 |
@@ -116,7 +116,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x07Fa3744FeC271F80c2EA97679823F65c13CCDf4](https://polygonscan.com/address/0x07Fa3744FeC271F80c2EA97679823F65c13CCDf4) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WBTC [0] | 1,698.4970 WBTC [169849707094] |
+| virtualBalance | 0 WBTC [0] | 1,707.7619 WBTC [170776190426] |
 | address | null | [0x07Fa3744FeC271F80c2EA97679823F65c13CCDf4](https://polygonscan.com/address/0x07Fa3744FeC271F80c2EA97679823F65c13CCDf4) |
 | baseStableBorrowRate | null | 60000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -143,7 +143,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xc7b53C7d24164FB78F57Ea3b5d056bD2E541013d](https://polygonscan.com/address/0xc7b53C7d24164FB78F57Ea3b5d056bD2E541013d) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 3,891,255.5529 USDC [3891255552955] |
+| virtualBalance | 0 USDC [0] | 4,031,908.9618 USDC [4031908961828] |
 | address | null | [0xc7b53C7d24164FB78F57Ea3b5d056bD2E541013d](https://polygonscan.com/address/0xc7b53C7d24164FB78F57Ea3b5d056bD2E541013d) |
 | baseStableBorrowRate | null | 110000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -197,7 +197,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 stMATIC [0] | 33,292,113.7264 stMATIC [33292113726476594298714351] |
+| virtualBalance | 0 stMATIC [0] | 33,295,603.3903 stMATIC [33295603390377354192364067] |
 | address | null | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -224,7 +224,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x2B3Ed91C6667d808b0401f439c4859ea635c6862](https://polygonscan.com/address/0x2B3Ed91C6667d808b0401f439c4859ea635c6862) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDC [0] | 4,597,984.9749 USDC [4597984974928] |
+| virtualBalance | 0 USDC [0] | 4,019,580.9683 USDC [4019580968372] |
 | address | null | [0x2B3Ed91C6667d808b0401f439c4859ea635c6862](https://polygonscan.com/address/0x2B3Ed91C6667d808b0401f439c4859ea635c6862) |
 | baseStableBorrowRate | null | 65000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -251,7 +251,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xca719585f2E07BDe82c4a05D6E7C0E446c2D6601](https://polygonscan.com/address/0xca719585f2E07BDe82c4a05D6E7C0E446c2D6601) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 jEUR [0] | 14,148.9526 jEUR [14148952690260432596898] |
+| virtualBalance | 0 jEUR [0] | 14,245.6845 jEUR [14245684539142861682055] |
 | address | null | [0xca719585f2E07BDe82c4a05D6E7C0E446c2D6601](https://polygonscan.com/address/0xca719585f2E07BDe82c4a05D6E7C0E446c2D6601) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -278,7 +278,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 LINK [0] | 657,033.8697 LINK [657033869733448436276108] |
+| virtualBalance | 0 LINK [0] | 651,349.1174 LINK [651349117415545548655477] |
 | address | null | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -305,7 +305,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x48AF11111764E710fcDcE2750db848C63edab57B](https://polygonscan.com/address/0x48AF11111764E710fcDcE2750db848C63edab57B) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 WETH [0] | 20,083.6863 WETH [20083686362315344947324] |
+| virtualBalance | 0 WETH [0] | 20,194.7110 WETH [20194711064185384482485] |
 | address | null | [0x48AF11111764E710fcDcE2750db848C63edab57B](https://polygonscan.com/address/0x48AF11111764E710fcDcE2750db848C63edab57B) |
 | baseStableBorrowRate | null | 57000000000000000000000000 |
 | baseVariableBorrowRate | null | 10000000000000000000000000 |
@@ -359,7 +359,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f](https://polygonscan.com/address/0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 DAI [0] | 3,919,425.0257 DAI [3919425025749991213173913] |
+| virtualBalance | 0 DAI [0] | 3,914,678.7185 DAI [3914678718549658148277593] |
 | address | null | [0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f](https://polygonscan.com/address/0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -386,7 +386,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0xCbDC7D7984D7AD59434f0B1999D2006898C40f9A](https://polygonscan.com/address/0xCbDC7D7984D7AD59434f0B1999D2006898C40f9A) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 BAL [0] | 160,544.1882 BAL [160544188249245853350902] |
+| virtualBalance | 0 BAL [0] | 160,544.1873 BAL [160544187373592772694311] |
 | address | null | [0xCbDC7D7984D7AD59434f0B1999D2006898C40f9A](https://polygonscan.com/address/0xCbDC7D7984D7AD59434f0B1999D2006898C40f9A) |
 | baseStableBorrowRate | null | 270000000000000000000000000 |
 | baseVariableBorrowRate | null | 50000000000000000000000000 |
@@ -413,7 +413,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 AAVE [0] | 69,993.3730 AAVE [69993373021916136573474] |
+| virtualBalance | 0 AAVE [0] | 69,997.1876 AAVE [69997187603398664018074] |
 | address | null | [0x03733F4E008d36f2e37F0080fF1c8DF756622E6F](https://polygonscan.com/address/0x03733F4E008d36f2e37F0080fF1c8DF756622E6F) |
 | baseStableBorrowRate | null | 90000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -440,7 +440,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7](https://polygonscan.com/address/0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 EURA [0] | 25,029.7308 EURA [25029730823839362822567] |
+| virtualBalance | 0 EURA [0] | 25,029.7258 EURA [25029725878502668633425] |
 | address | null | [0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7](https://polygonscan.com/address/0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -467,7 +467,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7](https://polygonscan.com/address/0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 EURS [0] | 1,107,540.5 EURS [110754050] |
+| virtualBalance | 0 EURS [0] | 1,102,148.87 EURS [110214887] |
 | address | null | [0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7](https://polygonscan.com/address/0x05F410A9EB94e0BEe0E47F12254E7Cb5F4E2A1f7) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -521,7 +521,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f](https://polygonscan.com/address/0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 USDT [0] | 5,406,205.1570 USDT [5406205157075] |
+| virtualBalance | 0 USDT [0] | 5,549,985.6109 USDT [5549985610922] |
 | address | null | [0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f](https://polygonscan.com/address/0x0fc12Ad84210695dE8C0D5D8B6f720C37cEaB02f) |
 | baseStableBorrowRate | null | 75000000000000000000000000 |
 | baseVariableBorrowRate | null | 0 |
@@ -548,7 +548,7 @@
 | --- | --- | --- |
 | interestRateStrategy | [0x6B434652E4C4e3e972f9F267982F05ae0fcc24b6](https://polygonscan.com/address/0x6B434652E4C4e3e972f9F267982F05ae0fcc24b6) | [0x21128C8f5AE37904c9082D932928FE0C2be1Ff73](https://polygonscan.com/address/0x21128C8f5AE37904c9082D932928FE0C2be1Ff73) |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 MaticX [0] | 92,350,918.8678 MaticX [92350918867800542450311407] |
+| virtualBalance | 0 MaticX [0] | 92,350,243.4055 MaticX [92350243405537734403137322] |
 | address | null | [0x6B434652E4C4e3e972f9F267982F05ae0fcc24b6](https://polygonscan.com/address/0x6B434652E4C4e3e972f9F267982F05ae0fcc24b6) |
 | baseStableBorrowRate | null | 60000000000000000000000000 |
 | baseVariableBorrowRate | null | 2500000000000000000000000 |
@@ -599,7 +599,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "6050671970636875657368"
+        "to": "6050077592136068753257"
       },
       "address": {
         "from": null,
@@ -657,7 +657,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "64042409294454164999023"
+        "to": "64042097510942588784098"
       },
       "address": {
         "from": null,
@@ -715,7 +715,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "26291783790222285685526301"
+        "to": "25540880205773226662645057"
       },
       "address": {
         "from": null,
@@ -773,7 +773,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "142911898414895846553843"
+        "to": "143492880059068175069979"
       },
       "address": {
         "from": null,
@@ -831,7 +831,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 169849707094
+        "to": 170776190426
       },
       "address": {
         "from": null,
@@ -889,7 +889,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 3891255552955
+        "to": 4031908961828
       },
       "address": {
         "from": null,
@@ -1005,7 +1005,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "33292113726476594298714351"
+        "to": "33295603390377354192364067"
       },
       "address": {
         "from": null,
@@ -1063,7 +1063,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 4597984974928
+        "to": 4019580968372
       },
       "address": {
         "from": null,
@@ -1121,7 +1121,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "14148952690260432596898"
+        "to": "14245684539142861682055"
       },
       "address": {
         "from": null,
@@ -1179,7 +1179,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "657033869733448436276108"
+        "to": "651349117415545548655477"
       },
       "address": {
         "from": null,
@@ -1237,7 +1237,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "20083686362315344947324"
+        "to": "20194711064185384482485"
       },
       "address": {
         "from": null,
@@ -1353,7 +1353,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "3919425025749991213173913"
+        "to": "3914678718549658148277593"
       },
       "address": {
         "from": null,
@@ -1411,7 +1411,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "160544188249245853350902"
+        "to": "160544187373592772694311"
       },
       "address": {
         "from": null,
@@ -1469,7 +1469,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "69993373021916136573474"
+        "to": "69997187603398664018074"
       },
       "address": {
         "from": null,
@@ -1527,7 +1527,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "25029730823839362822567"
+        "to": "25029725878502668633425"
       },
       "address": {
         "from": null,
@@ -1585,7 +1585,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 110754050
+        "to": 110214887
       },
       "address": {
         "from": null,
@@ -1701,7 +1701,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": 5406205157075
+        "to": 5549985610922
       },
       "address": {
         "from": null,
@@ -1759,7 +1759,7 @@
       },
       "virtualBalance": {
         "from": 0,
-        "to": "92350918867800542450311407"
+        "to": "92350243405537734403137322"
       },
       "address": {
         "from": null,
