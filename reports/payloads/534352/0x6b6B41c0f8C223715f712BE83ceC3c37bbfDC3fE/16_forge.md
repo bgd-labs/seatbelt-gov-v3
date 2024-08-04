@@ -18,7 +18,7 @@
 | oracle | [0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9](https://scrollscan.com/address/0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3253.99088941 |
+| oracleLatestAnswer | 3027.56686103 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % [7250] |
 | liquidationThreshold | 75 % [7500] |
@@ -58,127 +58,11 @@
 | eMode.priceSource | 0x0000000000000000000000000000000000000000 |
 
 
-### Reserve altered
-
-#### USDC ([0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4](https://scrollscan.com/address/0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4))
-
-| description | value before | value after |
-| --- | --- | --- |
-| address | null | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
-| baseVariableBorrowRate | null | 0 |
-| maxVariableBorrowRate | null | 665000000000000000000000000 |
-| optimalUsageRatio | null | 900000000000000000000000000 |
-| variableRateSlope1 | null | 65000000000000000000000000 |
-| variableRateSlope2 | null | 600000000000000000000000000 |
-
-
-#### WETH ([0x5300000000000000000000000000000000000004](https://scrollscan.com/address/0x5300000000000000000000000000000000000004))
-
-| description | value before | value after |
-| --- | --- | --- |
-| address | null | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
-| baseVariableBorrowRate | null | 0 |
-| maxVariableBorrowRate | null | 827000000000000000000000000 |
-| optimalUsageRatio | null | 800000000000000000000000000 |
-| variableRateSlope1 | null | 27000000000000000000000000 |
-| variableRateSlope2 | null | 800000000000000000000000000 |
-
-
-#### wstETH ([0xf610A9dfB7C89644979b4A0f27063E9e7d7Cda32](https://scrollscan.com/address/0xf610A9dfB7C89644979b4A0f27063E9e7d7Cda32))
-
-| description | value before | value after |
-| --- | --- | --- |
-| address | null | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) |
-| baseVariableBorrowRate | null | 0 |
-| maxVariableBorrowRate | null | 3070000000000000000000000000 |
-| optimalUsageRatio | null | 450000000000000000000000000 |
-| variableRateSlope1 | null | 70000000000000000000000000 |
-| variableRateSlope2 | null | 3000000000000000000000000000 |
-
-
 ## Raw diff
 
 ```json
 {
   "reserves": {
-    "0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4": {
-      "address": {
-        "from": null,
-        "to": "0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0"
-      },
-      "baseVariableBorrowRate": {
-        "from": null,
-        "to": "0"
-      },
-      "maxVariableBorrowRate": {
-        "from": null,
-        "to": "665000000000000000000000000"
-      },
-      "optimalUsageRatio": {
-        "from": null,
-        "to": "900000000000000000000000000"
-      },
-      "variableRateSlope1": {
-        "from": null,
-        "to": "65000000000000000000000000"
-      },
-      "variableRateSlope2": {
-        "from": null,
-        "to": "600000000000000000000000000"
-      }
-    },
-    "0x5300000000000000000000000000000000000004": {
-      "address": {
-        "from": null,
-        "to": "0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0"
-      },
-      "baseVariableBorrowRate": {
-        "from": null,
-        "to": "0"
-      },
-      "maxVariableBorrowRate": {
-        "from": null,
-        "to": "827000000000000000000000000"
-      },
-      "optimalUsageRatio": {
-        "from": null,
-        "to": "800000000000000000000000000"
-      },
-      "variableRateSlope1": {
-        "from": null,
-        "to": "27000000000000000000000000"
-      },
-      "variableRateSlope2": {
-        "from": null,
-        "to": "800000000000000000000000000"
-      }
-    },
-    "0xf610A9dfB7C89644979b4A0f27063E9e7d7Cda32": {
-      "address": {
-        "from": null,
-        "to": "0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0"
-      },
-      "baseVariableBorrowRate": {
-        "from": null,
-        "to": "0"
-      },
-      "maxVariableBorrowRate": {
-        "from": null,
-        "to": "3070000000000000000000000000"
-      },
-      "optimalUsageRatio": {
-        "from": null,
-        "to": "450000000000000000000000000"
-      },
-      "variableRateSlope1": {
-        "from": null,
-        "to": "70000000000000000000000000"
-      },
-      "variableRateSlope2": {
-        "from": null,
-        "to": "3000000000000000000000000000"
-      }
-    },
     "0x01f0a31698C4d065659b9bdC21B3610292a1c506": {
       "from": null,
       "to": {
@@ -206,7 +90,7 @@
         "oracle": "0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": 325399088941,
+        "oracleLatestAnswer": 302756686103,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0xF474cC392591E3252996459FCAA3D75dc9F95b09",
