@@ -15,7 +15,7 @@ import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {AaveV3PolygonZkEvm} from 'aave-address-book/AaveV3PolygonZkEvm.sol';
 import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
-import {ChainIds} from 'aave-helpers/ChainIds.sol';
+import {ChainIds} from 'solidity-utils/contracts/utils/ChainHelpers.sol';
 
 contract E2EPayload is Script, ProtocolV3TestBase {
   function run(uint40 payloadId) public {
