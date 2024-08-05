@@ -18,7 +18,7 @@
 | oracle | [0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9](https://scrollscan.com/address/0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3027.56686103 |
+| oracleLatestAnswer | 2508.93507604 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % [7250] |
 | liquidationThreshold | 75 % [7500] |
@@ -90,7 +90,7 @@
         "oracle": "0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": 302756686103,
+        "oracleLatestAnswer": 250893507604,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0xF474cC392591E3252996459FCAA3D75dc9F95b09",
