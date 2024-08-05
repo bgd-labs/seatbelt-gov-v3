@@ -18,7 +18,7 @@
 | oracle | [0x0a2d05bc646C65A029e602c257DfA14adF8BfAd2](https://gnosisscan.io/address/0x0a2d05bc646C65A029e602c257DfA14adF8BfAd2) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDC/USD |
-| oracleLatestAnswer | 0.99996019 |
+| oracleLatestAnswer | 0.99995539 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -85,7 +85,7 @@
         "oracle": "0x0a2d05bc646C65A029e602c257DfA14adF8BfAd2",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDC/USD",
-        "oracleLatestAnswer": 99996019,
+        "oracleLatestAnswer": 99995539,
         "reserveFactor": 1000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x135A7bA96fBe20949cf2D8E46c7F5ca3bB1EE222",
