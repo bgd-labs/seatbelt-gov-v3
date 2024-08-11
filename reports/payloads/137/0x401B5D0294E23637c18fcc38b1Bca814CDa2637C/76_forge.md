@@ -6,32 +6,32 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 11,028,979.8613 USDC [11028979861343] | 10,883,502.7019 USDC [10883502701941] |
-| virtualBalance | 11,028,801.6379 USDC [11028801637924] | 10,883,324.4785 USDC [10883324478522] |
+| aTokenUnderlyingBalance | 11,306,228.1089 USDC [11306228108927] | 11,155,691.8503 USDC [11155691850308] |
+| virtualBalance | 11,306,049.8855 USDC [11306049885508] | 11,155,513.6268 USDC [11155513626889] |
 
 
 #### WETH ([0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619](https://polygonscan.com/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 17,823.9661 WETH [17823966136588432061289] | 17,850.6776 WETH [17850677637667371607845] |
-| virtualBalance | 17,823.9661 WETH [17823966136588432061289] | 17,850.6776 WETH [17850677637667371607845] |
+| aTokenUnderlyingBalance | 18,401.3348 WETH [18401334835616183300587] | 18,428.2660 WETH [18428266028717878450329] |
+| virtualBalance | 18,401.3348 WETH [18401334835616183300587] | 18,428.2660 WETH [18428266028717878450329] |
 
 
 #### DAI ([0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063](https://polygonscan.com/address/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 4,882,957.8212 DAI [4882957821294246423023018] | 5,168,780.7887 DAI [5168780788755948802068716] |
-| virtualBalance | 4,882,801.1354 DAI [4882801135430455678306560] | 5,168,624.1028 DAI [5168624102892158057352258] |
+| aTokenUnderlyingBalance | 5,653,388.1654 DAI [5653388165487301071560371] | 5,943,067.6743 DAI [5943067674343565169378472] |
+| virtualBalance | 5,653,231.4795 DAI [5653231479569510326843913] | 5,942,910.9884 DAI [5942910988425774424662014] |
 
 
 #### USDT ([0xc2132D05D31c914a87C6611C10748AEb04B58e8F](https://polygonscan.com/address/0xc2132D05D31c914a87C6611C10748AEb04B58e8F))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 7,392,646.9928 USDT [7392646992861] | 7,710,452.7369 USDT [7710452736930] |
-| virtualBalance | 7,392,591.2562 USDT [7392591256286] | 7,710,397.0003 USDT [7710397000355] |
+| aTokenUnderlyingBalance | 7,487,699.0863 USDT [7487699086328] | 7,829,879.5705 USDT [7829879570592] |
+| virtualBalance | 7,487,643.3497 USDT [7487643349753] | 7,829,823.8340 USDT [7829823834017] |
 
 
 ## Raw diff
@@ -41,42 +41,42 @@
   "reserves": {
     "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174": {
       "aTokenUnderlyingBalance": {
-        "from": 11028979861343,
-        "to": 10883502701941
+        "from": 11306228108927,
+        "to": 11155691850308
       },
       "virtualBalance": {
-        "from": 11028801637924,
-        "to": 10883324478522
+        "from": 11306049885508,
+        "to": 11155513626889
       }
     },
     "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619": {
       "aTokenUnderlyingBalance": {
-        "from": "17823966136588432061289",
-        "to": "17850677637667371607845"
+        "from": "18401334835616183300587",
+        "to": "18428266028717878450329"
       },
       "virtualBalance": {
-        "from": "17823966136588432061289",
-        "to": "17850677637667371607845"
+        "from": "18401334835616183300587",
+        "to": "18428266028717878450329"
       }
     },
     "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063": {
       "aTokenUnderlyingBalance": {
-        "from": "4882957821294246423023018",
-        "to": "5168780788755948802068716"
+        "from": "5653388165487301071560371",
+        "to": "5943067674343565169378472"
       },
       "virtualBalance": {
-        "from": "4882801135430455678306560",
-        "to": "5168624102892158057352258"
+        "from": "5653231479569510326843913",
+        "to": "5942910988425774424662014"
       }
     },
     "0xc2132D05D31c914a87C6611C10748AEb04B58e8F": {
       "aTokenUnderlyingBalance": {
-        "from": 7392646992861,
-        "to": 7710452736930
+        "from": 7487699086328,
+        "to": 7829879570592
       },
       "virtualBalance": {
-        "from": 7392591256286,
-        "to": 7710397000355
+        "from": 7487643349753,
+        "to": 7829823834017
       }
     }
   }
