@@ -9,6 +9,7 @@ evm_version = 'shanghai'
 [profile.zksync]
 src = 'zksync'
 test = 'zksync'
+script = 'zksync'
 libs = ['lib']
 solc = '0.8.20'
 fs_permissions = [{ access = "write", path = "./reports" }]
