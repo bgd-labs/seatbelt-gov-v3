@@ -21,7 +21,7 @@ jobs:
   trigger:
     concurrency:
       group: ${{ github.workflow }} ${{ inputs.type || 'proposal' }} ${{ inputs.chainId }} ${{ inputs.ids }}
-    name: Check all live proposals
+    name: Triggered proposal check
     runs-on: ubuntu-latest
     env:
       FOUNDRY_PROFILE: ci
@@ -39,6 +39,7 @@ jobs:
       TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
       TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
+      VERBOSE: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
