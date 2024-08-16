@@ -3,18 +3,8 @@ pragma solidity ^0.8.13;
 
 import {Script, console} from 'forge-std/Script.sol';
 import {GovV3Helpers} from 'aave-helpers/src/GovV3Helpers.sol';
-import {ProtocolV3TestBase, ReserveConfig, IPool} from 'aave-helpers/src/ProtocolV3TestBase.sol';
-import {AaveV3Base} from 'aave-address-book/AaveV3Base.sol';
-import {AaveV3Gnosis} from 'aave-address-book/AaveV3Gnosis.sol';
-import {AaveV3Metis} from 'aave-address-book/AaveV3Metis.sol';
-import {AaveV3Ethereum} from 'aave-address-book/AaveV3Ethereum.sol';
-import {AaveV3Polygon} from 'aave-address-book/AaveV3Polygon.sol';
-import {AaveV3Optimism} from 'aave-address-book/AaveV3Optimism.sol';
-import {AaveV3Arbitrum} from 'aave-address-book/AaveV3Arbitrum.sol';
-import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
-import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
-import {AaveV3PolygonZkEvm} from 'aave-address-book/AaveV3PolygonZkEvm.sol';
-import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
+import {ProtocolV3TestBase, ReserveConfig, IPool} from 'aave-helpers/zksync/src/ProtocolV3TestBase.sol';
+import {AaveV3ZkSync} from 'aave-address-book/AaveV3ZkSync.sol';
 import {ChainIds} from 'solidity-utils/contracts/utils/ChainHelpers.sol';
 
 contract E2EPayload is Script, ProtocolV3TestBase {
@@ -84,16 +74,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
   }
 
   function _getPool() internal view returns (IPool pool) {
-    if (block.chainid == ChainIds.MAINNET) return AaveV3Ethereum.POOL;
-    if (block.chainid == ChainIds.OPTIMISM) return AaveV3Optimism.POOL;
-    if (block.chainid == ChainIds.ARBITRUM) return AaveV3Arbitrum.POOL;
-    if (block.chainid == ChainIds.METIS) return AaveV3Metis.POOL;
-    if (block.chainid == ChainIds.POLYGON) return AaveV3Polygon.POOL;
-    if (block.chainid == ChainIds.AVALANCHE) return AaveV3Avalanche.POOL;
-    if (block.chainid == ChainIds.BNB) return AaveV3BNB.POOL;
-    if (block.chainid == ChainIds.ZK_EVM) return AaveV3PolygonZkEvm.POOL;
-    if (block.chainid == ChainIds.SCROLL) return AaveV3Scroll.POOL;
-    if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
-    if (block.chainid == ChainIds.BASE) return AaveV3Base.POOL;
+    if (block.chainid == ChainIds.ZKSYNC) return AaveV3ZkSync.POOL;
   }
 }

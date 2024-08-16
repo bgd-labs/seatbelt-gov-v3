@@ -30,6 +30,7 @@ jobs:
       RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
       RPC_BNB: ${{ secrets.RPC_BNB }}
       RPC_SCROLL: ${{ secrets.RPC_SCROLL }}
+      RPC_ZKSYNC: ${{ secrets.RPC_ZKSYNC }}
       TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
       TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
@@ -96,7 +97,7 @@ jobs:
   payloads:
     strategy:
       matrix:
-        chainId: [1, 10, 56, 100, 137, 1088, 8453, 42161, 43114, 534352]
+        chainId: [1, 10, 56, 100, 137, 324, 1088, 8453, 42161, 43114, 534352]
     needs: ["proposals"]
     name: Check all live payloads
     runs-on: ubuntu-latest
@@ -112,6 +113,7 @@ jobs:
       RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
       RPC_BNB: ${{ secrets.RPC_BNB }}
       RPC_SCROLL: ${{ secrets.RPC_SCROLL }}
+      RPC_ZKSYNC: ${{ secrets.RPC_ZKSYNC }}
       TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
       TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
@@ -146,6 +148,7 @@ jobs:
           RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
           RPC_BNB: ${{ secrets.RPC_BNB }}
           RPC_SCROLL: ${{ secrets.RPC_SCROLL }}
+          RPC_ZKSYNC: ${{ secrets.RPC_ZKSYNC }}
           TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
           TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
