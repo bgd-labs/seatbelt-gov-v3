@@ -67,10 +67,15 @@
     viem "^2.17.11"
     zod "^3.23.8"
 
-"@bgd-labs/aave-v3-governance-cache@^1.0.5", "@bgd-labs/aave-v3-governance-cache@^1.0.6":
+"@bgd-labs/aave-v3-governance-cache@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@bgd-labs/aave-v3-governance-cache/-/aave-v3-governance-cache-1.0.6.tgz#a56268e5e759b84d3691c8b23f23743170d04468"
   integrity sha512-FpWMBxt18c8pk+10gvWtHBuXhb1uVYF63PgIs6CY4WMSEs/42KCmGYJSamCNYR9nEEX4PVqjPViu3zBoqZOgCQ==
+
+"@bgd-labs/aave-v3-governance-cache@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@bgd-labs/aave-v3-governance-cache/-/aave-v3-governance-cache-1.0.7.tgz#14c7cf32e8d9502c3e8ccf28a980ba662a80ad84"
+  integrity sha512-0viMU8RdJJZ9+pp+YY5LbQJBekgTzxU45+mFLZt6pwqqzhoX3UzBQtq8RmpOQMyoSq+d+axPBQV1K2Hx6gOybg==
 
 "@bgd-labs/js-utils@^1.3.0", "@bgd-labs/js-utils@^1.4.2":
   version "1.4.2"

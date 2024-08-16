@@ -79,7 +79,30 @@ function getProposalFileName(proposalId: number) {
 }
 
 function getChainName(chainId: number) {
-  return Object.keys(ChainId).find((key) => ChainId[key as keyof typeof ChainId] === chainId);
+  return Object.keys(ChainId)
+    .find((key) => ChainId[key as keyof typeof ChainId] === chainId)
+    ?.toLowerCase();
+}
+
+function simulateViaFoundry(
+  payload: {chain: bigint | number; payloadId: number | bigint},
+  blockNumber: number | bigint
+) {
+  const client = CHAIN_ID_CLIENT_MAP[Number(payload.chain)];
+  const command = [
+    `FOUNDRY_PROFILE=${getChainName(Number(payload.chain))}`,
+    `forge script ${
+      Number(payload.chain) === ChainId.zkSync ? 'zksync/' : ''
+    }script/E2EPayload.s.sol:E2EPayload`,
+    Number(payload.chain) === ChainId.zkSync ? '--zksync' : '',
+    `--fork-url ${client.transport.url!}`,
+    blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : '',
+    `--sig "run(uint40)" -- ${payload.payloadId}`,
+  ]
+    .filter((c) => c)
+    .join(' ');
+  if (process.env.VERBOSE === 'true') console.log(command);
+  return execSync(command, {stdio: 'inherit'});
 }
 
 const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
@@ -174,15 +197,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
                   let blockNumber = 0n; // current
                   if (cache.logs.executedLog)
                     blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
-                  execSync(
-                    `FOUNDRY_PROFILE=${getChainName(
-                      Number(payload.chain)
-                    )} forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport
-                      .url!}${
-                      blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : ''
-                    } --sig "run(uint40)" -- ${payload.payloadId}`,
-                    {stdio: 'inherit'}
-                  );
+                  simulateViaFoundry(payload, blockNumber);
                   console.log('foundry simulation finished');
                   // update cache
                   storeCache(
@@ -292,14 +307,8 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
       let blockNumber = BigInt(0); // current
       if (cache.logs.executedLog)
         blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
-      execSync(
-        `FOUNDRY_PROFILE=${getChainName(
-          chainId
-        )} forge script script/E2EPayload.s.sol:E2EPayload --fork-url ${client.transport.url!}${
-          blockNumber != BigInt(0) ? ` --fork-block-number ${blockNumber}` : ''
-        } --sig "run(uint40)" -- ${payloadId}`,
-        {stdio: 'inherit'}
-      );
+      simulateViaFoundry({chain: chainId, payloadId}, blockNumber);
+
       console.log('foundry simulation finished');
     } catch (e) {
       console.log('simulating on foundry failed');

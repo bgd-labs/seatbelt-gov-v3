@@ -10,5 +10,6 @@ reports/*
 reports/foundry/*.json
 
 cache/solidity-files-cache.json
+cache/zksync-solidity-files-cache.json
 out
 zkout
