@@ -97,6 +97,7 @@ function simulateViaFoundry(
     Number(payload.chain) === ChainId.zkSync ? '--zksync' : '',
     `--fork-url ${client.transport.url!}`,
     blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : '',
+    '-vvvv',
     `--sig "run(uint40)" -- ${payload.payloadId}`,
   ]
     .filter((c) => c)

@@ -12,9 +12,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     IPool pool = _getPool();
     if (address(pool) == address(0)) return;
     defaultTest(
-      string(
-        abi.encodePacked('/foundry/', vm.toString(block.chainid), '_', vm.toString(payloadId))
-      ),
+      string(abi.encodePacked('foundry/', vm.toString(block.chainid), '_', vm.toString(payloadId))),
       pool,
       payloadId,
       false
