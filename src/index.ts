@@ -82,7 +82,12 @@ function getChainName(chainId: number) {
   return Object.keys(ChainId).find((key) => ChainId[key as keyof typeof ChainId] === chainId);
 }
 
-const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.metis, ChainId.scroll, ChainId.zkEVM];
+const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
+  ChainId.metis,
+  ChainId.scroll,
+  ChainId.zkEVM,
+  ChainId.zkSync,
+];
 
 async function simulateProposals(proposalsToCheck: number[]) {
   const client = mainnetClient as Client;
