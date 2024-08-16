@@ -11,3 +11,4 @@ reports/foundry/*.json
 
 cache/solidity-files-cache.json
 out
+zkout
