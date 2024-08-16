@@ -1,6 +1,7 @@
 [profile.default]
 src = "src"
 out = "out"
+script = "script"
 libs = ["lib"]
 ffi = true
 fs_permissions = [{ access = "write", path = "./reports" }]
@@ -9,7 +10,7 @@ evm_version = 'shanghai'
 [profile.zksync]
 src = 'zksync'
 test = 'zksync'
-script = 'zksync'
+script = 'zksync/script'
 libs = ['lib']
 solc = '0.8.20'
 fs_permissions = [{ access = "write", path = "./reports" }]

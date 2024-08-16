@@ -4,14 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       type:
+        description: "Do you want to execute a payload or proposal"
         type: choice
         options:
           - proposal
           - payload
         default: proposal
       chainId:
+        description: "On which networkId are the payloads deployed"
         type: string
       ids:
+        description: "Comma seperated list of ids"
         type: string
 
 jobs:
