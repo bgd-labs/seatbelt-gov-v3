@@ -24,7 +24,7 @@ jobs:
     name: Triggered proposal check
     runs-on: ubuntu-latest
     env:
-      FOUNDRY_PROFILE: ci
+      # FOUNDRY_PROFILE: ci
       ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
       RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
       RPC_POLYGON: ${{ secrets.RPC_POLYGON }}
@@ -50,9 +50,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
       - name: Install dependencies
         run: bun install
-
-      - name: Install Foundry
-        uses: foundry-rs/foundry-toolchain@v1
 
       - name: Install Foundry
         uses: bgd-labs/foundry-zksync-toolchain@340cea9a42119d9a77a6bb0a8236d4311582b709
