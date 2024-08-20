@@ -67,8 +67,8 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         '_forge.md'
       )
     );
-    string memory beforePath = string(abi.encodePacked('./reports', reportBefore, '.json'));
-    string memory afterPath = string(abi.encodePacked('./reports', reportAfter, '.json'));
+    string memory beforePath = string(abi.encodePacked('./reports/', reportBefore, '.json'));
+    string memory afterPath = string(abi.encodePacked('./reports/', reportAfter, '.json'));
 
     string[] memory inputs = new string[](7);
     inputs[0] = 'npx';
