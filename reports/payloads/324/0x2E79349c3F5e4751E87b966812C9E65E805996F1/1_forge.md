@@ -37,7 +37,7 @@
 | interestRateStrategy | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
 | aTokenName | Aave ZkSync USDC |
 | aTokenSymbol | aZksUSDC |
-| aTokenUnderlyingBalance | 0 USDC [0] |
+| aTokenUnderlyingBalance | 10 USDC [10000000] |
 | isPaused | false |
 | stableDebtTokenName | Aave ZkSync Stable Debt USDC |
 | stableDebtTokenSymbol | stableDebtZksUSDC |
@@ -88,7 +88,7 @@
 | interestRateStrategy | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
 | aTokenName | Aave ZkSync USDT |
 | aTokenSymbol | aZksUSDT |
-| aTokenUnderlyingBalance | 0 USDT [0] |
+| aTokenUnderlyingBalance | 10 USDT [10000000] |
 | isPaused | false |
 | stableDebtTokenName | Aave ZkSync Stable Debt USDT |
 | stableDebtTokenSymbol | stableDebtZksUSDT |
@@ -120,7 +120,7 @@
 | oracle | [0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13](https://era.zksync.network//address/0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13) |
 | oracleDecimals | 8 |
 | oracleDescription | ZK / USD |
-| oracleLatestAnswer | 0.11395054 |
+| oracleLatestAnswer | 0.11301156 |
 | usageAsCollateralEnabled | true |
 | ltv | 40 % [4000] |
 | liquidationThreshold | 45 % [4500] |
@@ -139,7 +139,7 @@
 | interestRateStrategy | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
 | aTokenName | Aave ZkSync ZK |
 | aTokenSymbol | aZksZK |
-| aTokenUnderlyingBalance | 0 ZK [0] |
+| aTokenUnderlyingBalance | 100 ZK [100000000000000000000] |
 | isPaused | false |
 | stableDebtTokenName | Aave ZkSync Stable Debt ZK |
 | stableDebtTokenSymbol | stableDebtZksZK |
@@ -171,7 +171,7 @@
 | oracle | [0x6D41d1dc818112880b40e26BD6FD347E41008eDA](https://era.zksync.network//address/0x6D41d1dc818112880b40e26BD6FD347E41008eDA) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2599.45 |
+| oracleLatestAnswer | 2594.1235 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -190,7 +190,7 @@
 | interestRateStrategy | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
 | aTokenName | Aave ZkSync WETH |
 | aTokenSymbol | aZksWETH |
-| aTokenUnderlyingBalance | 0 WETH [0] |
+| aTokenUnderlyingBalance | 0.01 WETH [10000000000000000] |
 | isPaused | false |
 | stableDebtTokenName | Aave ZkSync Stable Debt WETH |
 | stableDebtTokenSymbol | stableDebtZksWETH |
@@ -222,7 +222,7 @@
 | oracle | [0xfba43A6b73649F002d37274663CC971BF7d215D9](https://era.zksync.network//address/0xfba43A6b73649F002d37274663CC971BF7d215D9) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped wstETH / stETH(ETH) / USD |
-| oracleLatestAnswer | 3058.18059714 |
+| oracleLatestAnswer | 3051.9141181 |
 | usageAsCollateralEnabled | true |
 | ltv | 71 % [7100] |
 | liquidationThreshold | 76 % [7600] |
@@ -241,7 +241,7 @@
 | interestRateStrategy | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
 | aTokenName | Aave ZkSync wstETH |
 | aTokenSymbol | aZkswstETH |
-| aTokenUnderlyingBalance | 0 wstETH [0] |
+| aTokenUnderlyingBalance | 0.01 wstETH [10000000000000000] |
 | isPaused | false |
 | stableDebtTokenName | Aave ZkSync Stable Debt wstETH |
 | stableDebtTokenSymbol | stableDebtZkswstETH |
@@ -269,7 +269,7 @@
         "aTokenImpl": "0x58C1F5d7Ea1F419588CF8eC9D22cB982C7C630D4",
         "aTokenName": "Aave ZkSync USDC",
         "aTokenSymbol": "aZksUSDC",
-        "aTokenUnderlyingBalance": 0,
+        "aTokenUnderlyingBalance": 10000000,
         "borrowCap": 900000,
         "borrowingEnabled": true,
         "debtCeiling": 0,
@@ -315,7 +315,7 @@
         "aTokenImpl": "0x58C1F5d7Ea1F419588CF8eC9D22cB982C7C630D4",
         "aTokenName": "Aave ZkSync USDT",
         "aTokenSymbol": "aZksUSDT",
-        "aTokenUnderlyingBalance": 0,
+        "aTokenUnderlyingBalance": 10000000,
         "borrowCap": 2700000,
         "borrowingEnabled": true,
         "debtCeiling": 0,
@@ -361,7 +361,7 @@
         "aTokenImpl": "0x58C1F5d7Ea1F419588CF8eC9D22cB982C7C630D4",
         "aTokenName": "Aave ZkSync ZK",
         "aTokenSymbol": "aZksZK",
-        "aTokenUnderlyingBalance": 0,
+        "aTokenUnderlyingBalance": "100000000000000000000",
         "borrowCap": 10000000,
         "borrowingEnabled": true,
         "debtCeiling": 100000000,
@@ -381,7 +381,7 @@
         "oracle": "0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13",
         "oracleDecimals": 8,
         "oracleDescription": "ZK / USD",
-        "oracleLatestAnswer": 11395054,
+        "oracleLatestAnswer": 11301156,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x9EAAc5b543258E44a189D1dF02dD2CEAAb8Af7B0",
@@ -407,7 +407,7 @@
         "aTokenImpl": "0x58C1F5d7Ea1F419588CF8eC9D22cB982C7C630D4",
         "aTokenName": "Aave ZkSync WETH",
         "aTokenSymbol": "aZksWETH",
-        "aTokenUnderlyingBalance": 0,
+        "aTokenUnderlyingBalance": "10000000000000000",
         "borrowCap": 800,
         "borrowingEnabled": true,
         "debtCeiling": 0,
@@ -427,7 +427,7 @@
         "oracle": "0x6D41d1dc818112880b40e26BD6FD347E41008eDA",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": 259945000000,
+        "oracleLatestAnswer": 259412350000,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x415BeF014E69564Fe68f6b8d5fBbDE4310794C5d",
@@ -453,7 +453,7 @@
         "aTokenImpl": "0x58C1F5d7Ea1F419588CF8eC9D22cB982C7C630D4",
         "aTokenName": "Aave ZkSync wstETH",
         "aTokenSymbol": "aZkswstETH",
-        "aTokenUnderlyingBalance": 0,
+        "aTokenUnderlyingBalance": "10000000000000000",
         "borrowCap": 50,
         "borrowingEnabled": true,
         "debtCeiling": 0,
@@ -473,7 +473,7 @@
         "oracle": "0xfba43A6b73649F002d37274663CC971BF7d215D9",
         "oracleDecimals": 8,
         "oracleDescription": "Capped wstETH / stETH(ETH) / USD",
-        "oracleLatestAnswer": 305818059714,
+        "oracleLatestAnswer": 305191411810,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x60a6E8f92482Fe6F11B57697Ca4f962c0cDA3369",
