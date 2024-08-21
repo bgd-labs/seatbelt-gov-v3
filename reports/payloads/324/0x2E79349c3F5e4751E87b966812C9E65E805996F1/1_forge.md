@@ -171,7 +171,7 @@
 | oracle | [0x6D41d1dc818112880b40e26BD6FD347E41008eDA](https://era.zksync.network//address/0x6D41d1dc818112880b40e26BD6FD347E41008eDA) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2586.90189347 |
+| oracleLatestAnswer | 2573.7889 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -222,7 +222,7 @@
 | oracle | [0xfba43A6b73649F002d37274663CC971BF7d215D9](https://era.zksync.network//address/0xfba43A6b73649F002d37274663CC971BF7d215D9) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped wstETH / stETH(ETH) / USD |
-| oracleLatestAnswer | 3043.17925094 |
+| oracleLatestAnswer | 3027.7533897 |
 | usageAsCollateralEnabled | true |
 | ltv | 71 % [7100] |
 | liquidationThreshold | 76 % [7600] |
@@ -427,7 +427,7 @@
         "oracle": "0x6D41d1dc818112880b40e26BD6FD347E41008eDA",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": 258690189347,
+        "oracleLatestAnswer": 257378890000,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x415BeF014E69564Fe68f6b8d5fBbDE4310794C5d",
@@ -473,7 +473,7 @@
         "oracle": "0xfba43A6b73649F002d37274663CC971BF7d215D9",
         "oracleDecimals": 8,
         "oracleDescription": "Capped wstETH / stETH(ETH) / USD",
-        "oracleLatestAnswer": 304317925094,
+        "oracleLatestAnswer": 302775338970,
         "reserveFactor": 1500,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x60a6E8f92482Fe6F11B57697Ca4f962c0cDA3369",
