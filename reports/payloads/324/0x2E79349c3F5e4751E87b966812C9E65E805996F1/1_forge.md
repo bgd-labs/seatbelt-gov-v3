@@ -120,7 +120,7 @@
 | oracle | [0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13](https://era.zksync.network//address/0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13) |
 | oracleDecimals | 8 |
 | oracleDescription | ZK / USD |
-| oracleLatestAnswer | 0.1123684 |
+| oracleLatestAnswer | 0.11304993 |
 | usageAsCollateralEnabled | true |
 | ltv | 40 % [4000] |
 | liquidationThreshold | 45 % [4500] |
@@ -381,7 +381,7 @@
         "oracle": "0xD1ce60dc8AE060DDD17cA8716C96f193bC88DD13",
         "oracleDecimals": 8,
         "oracleDescription": "ZK / USD",
-        "oracleLatestAnswer": 11236840,
+        "oracleLatestAnswer": 11304993,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x9EAAc5b543258E44a189D1dF02dD2CEAAb8Af7B0",
