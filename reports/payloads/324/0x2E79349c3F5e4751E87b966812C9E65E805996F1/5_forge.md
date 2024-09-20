@@ -6,7 +6,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| address | null | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
+| address | null | [0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1](https://era.zksync.network//address/0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1) |
 | baseVariableBorrowRate | null | 0 |
 | maxVariableBorrowRate | null | 655000000000000000000000000 |
 | optimalUsageRatio | null | 900000000000000000000000000 |
@@ -18,7 +18,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| address | null | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
+| address | null | [0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1](https://era.zksync.network//address/0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1) |
 | baseVariableBorrowRate | null | 0 |
 | maxVariableBorrowRate | null | 655000000000000000000000000 |
 | optimalUsageRatio | null | 900000000000000000000000000 |
@@ -30,7 +30,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| address | null | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
+| address | null | [0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1](https://era.zksync.network//address/0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1) |
 | baseVariableBorrowRate | null | 0 |
 | maxVariableBorrowRate | null | 3090000000000000000000000000 |
 | optimalUsageRatio | null | 450000000000000000000000000 |
@@ -42,7 +42,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| address | null | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
+| address | null | [0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1](https://era.zksync.network//address/0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1) |
 | baseVariableBorrowRate | null | 0 |
 | maxVariableBorrowRate | null | 827000000000000000000000000 |
 | optimalUsageRatio | null | 900000000000000000000000000 |
@@ -54,7 +54,7 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| address | null | [0x7BcE25db0C430059C4277D6A747d7fd0C1214beA](https://era.zksync.network//address/0x7BcE25db0C430059C4277D6A747d7fd0C1214beA) |
+| address | null | [0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1](https://era.zksync.network//address/0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1) |
 | baseVariableBorrowRate | null | 0 |
 | maxVariableBorrowRate | null | 845000000000000000000000000 |
 | optimalUsageRatio | null | 450000000000000000000000000 |
@@ -70,7 +70,7 @@
     "0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4": {
       "address": {
         "from": null,
-        "to": "0x7BcE25db0C430059C4277D6A747d7fd0C1214beA"
+        "to": "0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1"
       },
       "baseVariableBorrowRate": {
         "from": null,
@@ -96,7 +96,7 @@
     "0x493257fD37EDB34451f62EDf8D2a0C418852bA4C": {
       "address": {
         "from": null,
-        "to": "0x7BcE25db0C430059C4277D6A747d7fd0C1214beA"
+        "to": "0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1"
       },
       "baseVariableBorrowRate": {
         "from": null,
@@ -122,7 +122,7 @@
     "0x5A7d6b2F92C77FAD6CCaBd7EE0624E64907Eaf3E": {
       "address": {
         "from": null,
-        "to": "0x7BcE25db0C430059C4277D6A747d7fd0C1214beA"
+        "to": "0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1"
       },
       "baseVariableBorrowRate": {
         "from": null,
@@ -148,7 +148,7 @@
     "0x5AEa5775959fBC2557Cc8789bC1bf90A239D9a91": {
       "address": {
         "from": null,
-        "to": "0x7BcE25db0C430059C4277D6A747d7fd0C1214beA"
+        "to": "0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1"
       },
       "baseVariableBorrowRate": {
         "from": null,
@@ -174,7 +174,7 @@
     "0x703b52F2b28fEbcB60E1372858AF5b18849FE867": {
       "address": {
         "from": null,
-        "to": "0x7BcE25db0C430059C4277D6A747d7fd0C1214beA"
+        "to": "0x73E2D854e809504b8e6d4e29ddae4ac5b40d5be1"
       },
       "baseVariableBorrowRate": {
         "from": null,
