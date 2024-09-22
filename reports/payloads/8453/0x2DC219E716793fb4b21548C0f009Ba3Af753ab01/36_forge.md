@@ -18,7 +18,7 @@
 | oracle | [0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F](https://basescan.org/address/0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 59902.8388234 |
+| oracleLatestAnswer | 62629.855 |
 | usageAsCollateralEnabled | true |
 | ltv | 73 % [7300] |
 | liquidationThreshold | 78 % [7800] |
@@ -85,7 +85,7 @@
         "oracle": "0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": 5990283882340,
+        "oracleLatestAnswer": 6262985500000,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x839A515eB049237a6D4978F1735a00608a5A857D",

@@ -18,7 +18,7 @@
 | oracle | [0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 59850.5918 |
+| oracleLatestAnswer | 62635.86 |
 | usageAsCollateralEnabled | true |
 | ltv | 73 % [7300] |
 | liquidationThreshold | 78 % [7800] |
@@ -85,7 +85,7 @@
         "oracle": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": 5985059180000,
+        "oracleLatestAnswer": 6263586000000,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0xCcf8413F9cA3bAE07EEF05E265D238d60abCb8Ca",
