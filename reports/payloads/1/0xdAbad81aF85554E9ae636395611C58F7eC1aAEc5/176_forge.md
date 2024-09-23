@@ -18,18 +18,18 @@
 | oracle | [0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 62635.86 |
+| oracleLatestAnswer | 63532.01842481 |
 | usageAsCollateralEnabled | true |
 | ltv | 73 % [7300] |
 | liquidationThreshold | 78 % [7800] |
 | liquidationBonus | 7.5 % |
 | liquidationProtocolFee | 10 % [1000] |
 | reserveFactor | 20 % [2000] |
-| aToken | [0x10Ac93971cdb1F5c778144084242374473c350Da](https://etherscan.io/address/0x10Ac93971cdb1F5c778144084242374473c350Da) |
+| aToken | [0x5c647cE0Ae10658ec44FA4E11A51c96e94efd1Dd](https://etherscan.io/address/0x5c647cE0Ae10658ec44FA4E11A51c96e94efd1Dd) |
 | aTokenImpl | [0x7EfFD7b47Bfd17e52fB7559d3f924201b9DbfF3d](https://etherscan.io/address/0x7EfFD7b47Bfd17e52fB7559d3f924201b9DbfF3d) |
-| variableDebtToken | [0xAC50890a80A2731eb1eA2e9B4F29569CeB06D960](https://etherscan.io/address/0xAC50890a80A2731eb1eA2e9B4F29569CeB06D960) |
+| variableDebtToken | [0xeB284A70557EFe3591b9e6D9D720040E02c54a4d](https://etherscan.io/address/0xeB284A70557EFe3591b9e6D9D720040E02c54a4d) |
 | variableDebtTokenImpl | [0xaC725CB59D16C81061BDeA61041a8A5e73DA9EC6](https://etherscan.io/address/0xaC725CB59D16C81061BDeA61041a8A5e73DA9EC6) |
-| stableDebtToken | [0xCcf8413F9cA3bAE07EEF05E265D238d60abCb8Ca](https://etherscan.io/address/0xCcf8413F9cA3bAE07EEF05E265D238d60abCb8Ca) |
+| stableDebtToken | [0x0002BfcCE657a4BEB498E23201bd767FC5A0A0d5](https://etherscan.io/address/0x0002BfcCE657a4BEB498E23201bd767FC5A0A0d5) |
 | stableDebtTokenImpl | [0x15C5620dfFaC7c7366EED66C20Ad222DDbB1eD57](https://etherscan.io/address/0x15C5620dfFaC7c7366EED66C20Ad222DDbB1eD57) |
 | borrowingEnabled | true |
 | stableBorrowRateEnabled | false |
@@ -61,7 +61,7 @@
     "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf": {
       "from": null,
       "to": {
-        "aToken": "0x10Ac93971cdb1F5c778144084242374473c350Da",
+        "aToken": "0x5c647cE0Ae10658ec44FA4E11A51c96e94efd1Dd",
         "aTokenImpl": "0x7EfFD7b47Bfd17e52fB7559d3f924201b9DbfF3d",
         "aTokenName": "Aave Ethereum cbBTC",
         "aTokenSymbol": "aEthcbBTC",
@@ -85,10 +85,10 @@
         "oracle": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": 6263586000000,
+        "oracleLatestAnswer": 6353201842481,
         "reserveFactor": 2000,
         "stableBorrowRateEnabled": false,
-        "stableDebtToken": "0xCcf8413F9cA3bAE07EEF05E265D238d60abCb8Ca",
+        "stableDebtToken": "0x0002BfcCE657a4BEB498E23201bd767FC5A0A0d5",
         "stableDebtTokenImpl": "0x15C5620dfFaC7c7366EED66C20Ad222DDbB1eD57",
         "stableDebtTokenName": "Aave Ethereum Stable Debt cbBTC",
         "stableDebtTokenSymbol": "stableDebtEthcbBTC",
@@ -96,7 +96,7 @@
         "symbol": "cbBTC",
         "underlying": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
         "usageAsCollateralEnabled": true,
-        "variableDebtToken": "0xAC50890a80A2731eb1eA2e9B4F29569CeB06D960",
+        "variableDebtToken": "0xeB284A70557EFe3591b9e6D9D720040E02c54a4d",
         "variableDebtTokenImpl": "0xaC725CB59D16C81061BDeA61041a8A5e73DA9EC6",
         "variableDebtTokenName": "Aave Ethereum Variable Debt cbBTC",
         "variableDebtTokenSymbol": "variableDebtEthcbBTC",
