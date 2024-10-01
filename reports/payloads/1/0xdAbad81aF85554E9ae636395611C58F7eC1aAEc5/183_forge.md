@@ -18,7 +18,7 @@
 | oracle | [0x4F01b76391A05d32B20FA2d05dD5963eE8db20E6](https://etherscan.io/address/0x4F01b76391A05d32B20FA2d05dD5963eE8db20E6) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDS <-> DAI / USD |
-| oracleLatestAnswer | 0.99994256 |
+| oracleLatestAnswer | 0.99995124 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -85,7 +85,7 @@
         "oracle": "0x4F01b76391A05d32B20FA2d05dD5963eE8db20E6",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDS <-> DAI / USD",
-        "oracleLatestAnswer": 99994256,
+        "oracleLatestAnswer": 99995124,
         "reserveFactor": 1000,
         "stableBorrowRateEnabled": false,
         "stableDebtToken": "0x21A7BD33410cb836d99efEA1f1bFE72E3094024b",
