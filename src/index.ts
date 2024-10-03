@@ -309,7 +309,7 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
       if (cache.logs.executedLog)
         blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
       simulateViaFoundry({chain: chainId, payloadId}, blockNumber);
-
+      storeCache(chainId, address, payloadId, cache.payload.state);
       console.log('foundry simulation finished');
     } catch (e) {
       console.log('simulating on foundry failed');
