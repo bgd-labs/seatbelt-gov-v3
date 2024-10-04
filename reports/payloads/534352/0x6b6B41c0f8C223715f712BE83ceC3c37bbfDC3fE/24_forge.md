@@ -30,6 +30,19 @@
 | interestRateStrategy | [0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0](https://scrollscan.com/address/0xEC93d0BBA1b1e635ba0Fff4786dB323db49D99F0) | [0xC37353E5766164D8654D3CB395acfDcA4c2E7Ddc](https://scrollscan.com/address/0xC37353E5766164D8654D3CB395acfDcA4c2E7Ddc) |
 | interestRate | ![before](/.assets/8fa1be0a18750a60d1bf8c471ee14d962f51656a.svg) | ![after](/.assets/956d5d162477b53a9b2180aa2ee41b626fde60e1.svg) |
 
+## Emodes changes
+
+### EMode: ETH correlated(id: 1)
+
+| eMode.borrowableBitmap | - | WETH, wstETH, weETH |
+| eMode.collateralBitmap | - | WETH, wstETH, weETH |
+| eMode.label (unchanged) | ETH correlated | ETH correlated |
+| eMode.ltv (unchanged) | 90 % | 90 % |
+| eMode.liquidationThreshold (unchanged) | 93 % | 93 % |
+| eMode.liquidationBonus (unchanged) | 1 % | 1 % |
+| eMode.priceSource | 0x0000000000000000000000000000000000000000 | - |
+
+
 ## Raw diff
 
 ```json
