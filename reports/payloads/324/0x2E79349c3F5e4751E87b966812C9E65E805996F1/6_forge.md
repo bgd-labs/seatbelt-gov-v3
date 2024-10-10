@@ -41,6 +41,8 @@
 
 ### EMode: ETH correlated(id: 1)
 
+| description | value before | value after |
+| --- | --- | --- |
 | eMode.borrowableBitmap | - | WETH, wstETH |
 | eMode.collateralBitmap | - | WETH, wstETH |
 | eMode.label (unchanged) | ETH correlated | ETH correlated |
