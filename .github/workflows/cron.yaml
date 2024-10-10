@@ -50,6 +50,11 @@ jobs:
         with:
           version: nightly
 
+      - name: cleanup foundry
+        run: |
+          forge install
+          forge build --force
+
       - name: scheduled proposals
         id: all
         run: bun run start --type proposal
