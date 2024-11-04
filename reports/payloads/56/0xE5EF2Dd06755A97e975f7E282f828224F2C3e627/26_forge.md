@@ -17,7 +17,7 @@
 | oracle | [0xc1377B4cdF9116bf7b3d7F72A4f8A7Be8506cE80](https://bscscan.com/address/0xc1377B4cdF9116bf7b3d7F72A4f8A7Be8506cE80) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped wstETH / stETH(ETH) / USD |
-| oracleLatestAnswer | 3041.68266248 |
+| oracleLatestAnswer | 2867.1685378 |
 | usageAsCollateralEnabled | true |
 | ltv | 72 % [7200] |
 | liquidationThreshold | 75 % [7500] |
@@ -108,7 +108,7 @@
         "oracle": "0xc1377B4cdF9116bf7b3d7F72A4f8A7Be8506cE80",
         "oracleDecimals": 8,
         "oracleDescription": "Capped wstETH / stETH(ETH) / USD",
-        "oracleLatestAnswer": "304168266248",
+        "oracleLatestAnswer": "286716853780",
         "reserveFactor": 1500,
         "supplyCap": 1900,
         "symbol": "wstETH",
