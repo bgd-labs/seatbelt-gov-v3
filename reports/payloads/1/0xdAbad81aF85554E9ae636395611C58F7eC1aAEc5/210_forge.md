@@ -17,7 +17,7 @@
 | oracle | [0x47F52B2e43D0386cF161e001835b03Ad49889e3b](https://etherscan.io/address/0x47F52B2e43D0386cF161e001835b03Ad49889e3b) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped rsETH / ETH / USD |
-| oracleLatestAnswer | 3222.31459835 |
+| oracleLatestAnswer | 3212.18796165 |
 | usageAsCollateralEnabled | true |
 | ltv | 72 % [7200] |
 | liquidationThreshold | 75 % [7500] |
@@ -67,6 +67,10 @@
 ## Emodes changed
 
 ### EMode: ETH correlated(id: 1)
+
+
+
+### EMode: sUSDe Stablecoins(id: 2)
 
 
 
@@ -140,7 +144,7 @@
         "oracle": "0x47F52B2e43D0386cF161e001835b03Ad49889e3b",
         "oracleDecimals": 8,
         "oracleDescription": "Capped rsETH / ETH / USD",
-        "oracleLatestAnswer": "322231459835",
+        "oracleLatestAnswer": "321218796165",
         "reserveFactor": 1500,
         "supplyCap": 19000,
         "symbol": "rsETH",
