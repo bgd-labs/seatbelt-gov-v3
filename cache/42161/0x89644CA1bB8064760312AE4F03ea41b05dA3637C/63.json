@@ -1,1 +1,4 @@
-{"state":-1}
+{
+  "state": 3,
+  "info": "manually patched as anvil does not support arbitrum specific opcodes https://github.com/foundry-rs/foundry/issues/748"
+}
