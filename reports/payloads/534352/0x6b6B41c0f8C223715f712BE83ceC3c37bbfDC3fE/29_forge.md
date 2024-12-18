@@ -17,7 +17,7 @@
 | oracle | [0x26f6F7C468EE309115d19Aa2055db5A74F8cE7A5](https://scrollscan.com/address/0x26f6F7C468EE309115d19Aa2055db5A74F8cE7A5) |
 | oracleDecimals | 8 |
 | oracleDescription | SCR / USD |
-| oracleLatestAnswer | 1.11353303 |
+| oracleLatestAnswer | 1.04859999 |
 | usageAsCollateralEnabled | false |
 | ltv | 0 % [0] |
 | liquidationThreshold | 0 % [0] |
@@ -80,7 +80,7 @@
         "oracle": "0x26f6F7C468EE309115d19Aa2055db5A74F8cE7A5",
         "oracleDecimals": 8,
         "oracleDescription": "SCR / USD",
-        "oracleLatestAnswer": "111353303",
+        "oracleLatestAnswer": "104859999",
         "reserveFactor": 2000,
         "supplyCap": 360000,
         "symbol": "SCR",
