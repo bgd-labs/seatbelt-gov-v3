@@ -6,16 +6,16 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 219,359,953.9121 USDC [219359953912154] | 218,109,953.9121 USDC [218109953912154] |
-| virtualBalance | 219,353,615.9868 USDC [219353615986880] | 218,103,615.9868 USDC [218103615986880] |
+| aTokenUnderlyingBalance | 255,115,803.6705 USDC [255115803670537] | 253,865,803.6705 USDC [253865803670537] |
+| virtualBalance | 255,109,465.7452 USDC [255109465745263] | 253,859,465.7452 USDC [253859465745263] |
 
 
 #### USDT ([0xdAC17F958D2ee523a2206206994597C13D831ec7](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 447,725,397.2265 USDT [447725397226530] | 446,475,397.2265 USDT [446475397226530] |
-| virtualBalance | 447,724,243.0123 USDT [447724243012318] | 446,474,243.0123 USDT [446474243012318] |
+| aTokenUnderlyingBalance | 489,095,537.3923 USDT [489095537392301] | 487,845,537.3923 USDT [487845537392301] |
+| virtualBalance | 489,094,383.1780 USDT [489094383178089] | 487,844,383.1780 USDT [487844383178089] |
 
 
 ## Raw diff
@@ -25,22 +25,22 @@
   "reserves": {
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
       "aTokenUnderlyingBalance": {
-        "from": "219359953912154",
-        "to": "218109953912154"
+        "from": "255115803670537",
+        "to": "253865803670537"
       },
       "virtualBalance": {
-        "from": "219353615986880",
-        "to": "218103615986880"
+        "from": "255109465745263",
+        "to": "253859465745263"
       }
     },
     "0xdAC17F958D2ee523a2206206994597C13D831ec7": {
       "aTokenUnderlyingBalance": {
-        "from": "447725397226530",
-        "to": "446475397226530"
+        "from": "489095537392301",
+        "to": "487845537392301"
       },
       "virtualBalance": {
-        "from": "447724243012318",
-        "to": "446474243012318"
+        "from": "489094383178089",
+        "to": "487844383178089"
       }
     }
   }
