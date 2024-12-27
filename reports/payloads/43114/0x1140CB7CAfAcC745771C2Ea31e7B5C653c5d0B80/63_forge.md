@@ -17,7 +17,7 @@
 | oracle | [0x83f32c0882B12Ef16214c417efF11FD9e764bf34](https://snowtrace.io/address/0x83f32c0882B12Ef16214c417efF11FD9e764bf34) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped AUSD / USD |
-| oracleLatestAnswer | 0.99859833 |
+| oracleLatestAnswer | 0.99868644 |
 | usageAsCollateralEnabled | false |
 | ltv | 0 % [0] |
 | liquidationThreshold | 0 % [0] |
@@ -80,7 +80,7 @@
         "oracle": "0x83f32c0882B12Ef16214c417efF11FD9e764bf34",
         "oracleDecimals": 8,
         "oracleDescription": "Capped AUSD / USD",
-        "oracleLatestAnswer": "99859833",
+        "oracleLatestAnswer": "99868644",
         "reserveFactor": 1000,
         "supplyCap": 19000000,
         "symbol": "AUSD",
