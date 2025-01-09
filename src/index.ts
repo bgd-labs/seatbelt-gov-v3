@@ -3,7 +3,7 @@ import {existsSync, writeFileSync, readFileSync, mkdirSync} from 'fs';
 import {execSync} from 'child_process';
 import path from 'path';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
-import {Address, Client, Hex} from 'viem';
+import {Address, Client, createClient, Hex, http, HttpTransportConfig} from 'viem';
 import {
   findPayloadsController,
   generateProposalReport,
@@ -14,7 +14,6 @@ import {
   logInfo,
   logWarning,
 } from '@bgd-labs/aave-cli';
-import {CHAIN_ID_CLIENT_MAP, ChainId, mainnetClient} from '@bgd-labs/js-utils';
 import {fallbackProvider} from '@bgd-labs/aave-v3-governance-cache/fallbackProvider';
 import {githubPagesProvider} from '@bgd-labs/aave-v3-governance-cache/githubPagesProvider';
 import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/customStorageProvider';
@@ -22,6 +21,25 @@ import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/customSt
 import {Option, program} from 'commander';
 import {ProposalState, isPayloadFinal} from '@bgd-labs/aave-v3-governance-cache';
 import {fileSystemStorageAdapter} from '@bgd-labs/aave-v3-governance-cache/fileSystemStorageAdapter';
+import {ChainId, ChainList, getRPCUrl} from '@bgd-labs/rpc-env';
+
+const commonConfig: HttpTransportConfig = {timeout: 30_000, batch: true};
+const batchConfig = {batch: {multicall: true}};
+
+const clientCache: Record<number, Client> = {};
+
+export function getClient(chainId: number) {
+  if (!clientCache[chainId]) {
+    const rpcURL = getRPCUrl(chainId as any, {alchemyKey: process.env.ALCHEMY_API_KEY});
+
+    clientCache[chainId] = createClient({
+      chain: ChainList[chainId as keyof typeof ChainList],
+      transport: http(rpcURL, commonConfig),
+      ...batchConfig,
+    });
+  }
+  return clientCache[chainId];
+}
 
 const cachingLayer = fallbackProvider(
   githubPagesProvider,
@@ -88,13 +106,13 @@ function simulateViaFoundry(
   payload: {chain: bigint | number; payloadId: number | bigint},
   blockNumber: number | bigint
 ) {
-  const client = CHAIN_ID_CLIENT_MAP[Number(payload.chain)];
+  const client = getClient(Number(payload.chain));
   const command = [
     `FOUNDRY_PROFILE=${getChainName(Number(payload.chain))}`,
     `forge script ${
-      Number(payload.chain) === ChainId.zkSync ? 'zksync/' : ''
+      Number(payload.chain) === ChainId.zksync ? 'zksync/' : ''
     }script/E2EPayload.s.sol:E2EPayload`,
-    Number(payload.chain) === ChainId.zkSync ? '--zksync' : '',
+    Number(payload.chain) === ChainId.zksync ? '--zksync' : '',
     `--fork-url ${client.transport.url!}`,
     blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : '',
     '-vvvv',
@@ -106,10 +124,10 @@ function simulateViaFoundry(
   return execSync(command, {stdio: 'inherit'});
 }
 
-const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.scroll, ChainId.zkEVM, ChainId.zkSync];
+const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.scroll, ChainId.zkEVM, ChainId.zksync];
 
 async function simulateProposals(proposalsToCheck: number[]) {
-  const client = mainnetClient as Client;
+  const client = getClient(1);
   const governance = getGovernance({
     address: GovernanceV3Ethereum.GOVERNANCE,
     client,
@@ -136,7 +154,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
         const payloadsSection: string[] = [];
 
         for (const payload of cache.proposal.payloads) {
-          const client = CHAIN_ID_CLIENT_MAP[Number(payload.chain)];
+          const client = getClient(Number(payload.chain));
           const fileName = getPayloadFileName(
             client.chain!.id,
             payload.payloadsController,
@@ -209,19 +227,15 @@ async function simulateProposals(proposalsToCheck: number[]) {
             }
           } catch (e) {
             logError(
-              CHAIN_ID_CLIENT_MAP[Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP].chain!
-                .name,
+              getClient(Number(payload.chain)).chain!.name,
               `Simulating payload ${payload.payloadId} on ${payload.payloadsController} failed`
             );
             console.log(e);
             storeCache(payload.chain, payload.payloadsController, payload.payloadId, -1);
             payloadsSection.push(
-              `- Network: ${
-                CHAIN_ID_CLIENT_MAP[Number(payload.chain) as keyof typeof CHAIN_ID_CLIENT_MAP]
-                  .chain!.name
-              }, PayloadsController: ${payload.payloadsController}, ID: ${
-                payload.payloadId
-              } - ERROR`
+              `- Network: ${getClient(Number(payload.chain)).chain!.name}, PayloadsController: ${
+                payload.payloadsController
+              }, ID: ${payload.payloadId} - ERROR`
             );
           }
         }
@@ -257,7 +271,7 @@ async function simulateProposals(proposalsToCheck: number[]) {
 }
 
 async function simulatePayload(chainId: number, payloadIds: number[]) {
-  const client = CHAIN_ID_CLIENT_MAP[chainId] as Client;
+  const client = getClient(chainId);
   const address = findPayloadsController(chainId)!;
   if (!address) throw new Error(`payloadsController on ${chainId} not found`);
   logInfo(client.chain!.name, `Simulating payloads on ${address}`);
@@ -329,7 +343,7 @@ program
       if (options.ids && options.ids.length > 0)
         return simulateProposals(options.ids.map((id: string) => Number(id)));
       else {
-        const client = mainnetClient as Client;
+        const client = getClient(1);
         const governance = getGovernance({
           address: GovernanceV3Ethereum.GOVERNANCE,
           client,
