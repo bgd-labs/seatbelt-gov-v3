@@ -17,7 +17,7 @@
 | oracle | [0x438e24f5FCDC1A66ecb25D19B5543e0Cb91A44D4](https://basescan.org/address/0x438e24f5FCDC1A66ecb25D19B5543e0Cb91A44D4) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped ezETH / ETH / USD |
-| oracleLatestAnswer | 3290.12205124 |
+| oracleLatestAnswer | 3319.94486003 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -136,7 +136,7 @@
         "oracle": "0x438e24f5FCDC1A66ecb25D19B5543e0Cb91A44D4",
         "oracleDecimals": 8,
         "oracleDescription": "Capped ezETH / ETH / USD",
-        "oracleLatestAnswer": "329012205124",
+        "oracleLatestAnswer": "331994486003",
         "reserveFactor": 1500,
         "supplyCap": 1200,
         "symbol": "ezETH",
