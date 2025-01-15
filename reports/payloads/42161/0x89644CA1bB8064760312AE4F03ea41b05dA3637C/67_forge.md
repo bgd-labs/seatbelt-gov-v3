@@ -17,7 +17,7 @@
 | oracle | [0x8Ed37B72300683c0482A595bfa80fFb793874b15](https://arbiscan.io/address/0x8Ed37B72300683c0482A595bfa80fFb793874b15) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped ezETH / ETH / USD |
-| oracleLatestAnswer | 3321.33248043 |
+| oracleLatestAnswer | 3454.92342559 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -140,7 +140,7 @@
         "oracle": "0x8Ed37B72300683c0482A595bfa80fFb793874b15",
         "oracleDecimals": 8,
         "oracleDescription": "Capped ezETH / ETH / USD",
-        "oracleLatestAnswer": "332133248043",
+        "oracleLatestAnswer": "345492342559",
         "reserveFactor": 1500,
         "supplyCap": 1750,
         "symbol": "ezETH",
