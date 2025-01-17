@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@bgd-labs/aave-address-book": "^4.7.4",
-    "@bgd-labs/aave-cli": "1.1.13",
+    "@bgd-labs/aave-cli": "1.1.14-cc51d42fec69bc368a9d18c12ad9fa11aff801ae.0",
     "@bgd-labs/aave-v3-governance-cache": "^1.0.8",
     "@bgd-labs/rpc-env": "^2.2.1",
     "commander": "^11.1.0",
