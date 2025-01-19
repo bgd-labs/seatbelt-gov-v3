@@ -17,7 +17,7 @@
 | oracle | [0xDaec4cC3a41E423d678428A8Bb29fa1ADF26869a](https://era.zksync.network//address/0xDaec4cC3a41E423d678428A8Bb29fa1ADF26869a) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped sUSDe / USDe / USD |
-| oracleLatestAnswer | 1.14756874 |
+| oracleLatestAnswer | 1.14631886 |
 | usageAsCollateralEnabled | true |
 | ltv | 65 % [6500] |
 | liquidationThreshold | 75 % [7500] |
@@ -63,7 +63,7 @@
 | oracle | [0x32aF9A0a47B332761c8C90E9eC9f53e46e852b2B](https://era.zksync.network//address/0x32aF9A0a47B332761c8C90E9eC9f53e46e852b2B) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3446.251103 |
+| oracleLatestAnswer | 3575.80718617 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % [7250] |
 | liquidationThreshold | 75 % [7500] |
@@ -158,7 +158,7 @@
         "oracle": "0xDaec4cC3a41E423d678428A8Bb29fa1ADF26869a",
         "oracleDecimals": 8,
         "oracleDescription": "Capped sUSDe / USDe / USD",
-        "oracleLatestAnswer": "114756874",
+        "oracleLatestAnswer": "114631886",
         "reserveFactor": 2000,
         "supplyCap": 400000,
         "symbol": "sUSDe",
@@ -199,7 +199,7 @@
         "oracle": "0x32aF9A0a47B332761c8C90E9eC9f53e46e852b2B",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": "344625110300",
+        "oracleLatestAnswer": "357580718617",
         "reserveFactor": 4500,
         "supplyCap": 300,
         "symbol": "weETH",
