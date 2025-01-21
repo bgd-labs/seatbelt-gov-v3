@@ -124,7 +124,7 @@ function simulateViaFoundry(
   return execSync(command, {stdio: 'inherit'});
 }
 
-const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.scroll, ChainId.zkEVM, ChainId.zksync];
+const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM, ChainId.zksync, ChainId.celo];
 
 async function simulateProposals(proposalsToCheck: number[]) {
   const client = getClient(1);
