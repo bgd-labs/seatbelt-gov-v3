@@ -17,7 +17,7 @@
 | oracle | [0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 106450.01 |
+| oracleLatestAnswer | 105723.78 |
 | usageAsCollateralEnabled | true |
 | ltv | 70 % [7000] |
 | liquidationThreshold | 75 % [7500] |
@@ -120,7 +120,7 @@
         "oracle": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": "10645001000000",
+        "oracleLatestAnswer": "10572378000000",
         "reserveFactor": 5000,
         "supplyCap": 800,
         "symbol": "LBTC",
