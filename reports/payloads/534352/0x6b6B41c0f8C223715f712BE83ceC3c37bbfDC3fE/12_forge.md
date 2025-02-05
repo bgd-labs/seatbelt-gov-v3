@@ -6,8 +6,8 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| ltv | 76 % | 75 % |
-| liquidationThreshold | 79 % | 78 % |
+| ltv | 76 % [7600] | 75 % [7500] |
+| liquidationThreshold | 79 % [7900] | 78 % [7800] |
 
 
 ## Raw diff

@@ -9,7 +9,7 @@
 | interestRateStrategy | [0x39FA62444F4716f64253aEAc4509Ad32DE8D67B2](https://scrollscan.com/address/0x39FA62444F4716f64253aEAc4509Ad32DE8D67B2) | [0x80E14993fE2cA5c64328B4a8DfC1D95960338bd5](https://scrollscan.com/address/0x80E14993fE2cA5c64328B4a8DfC1D95960338bd5) |
 | variableRateSlope1 | 12 % | 9 % |
 | baseStableBorrowRate | 13 % | 10 % |
-| interestRate | ![before](/.assets/71713b8fe82177533a16dd37178324b412bce932.svg) | ![after](/.assets/a47328fc7b24fdcc5b0874aea1c9aa52e00b8238.svg) |
+| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=120000000000000000000000000&variableRateSlope2=600000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=undefined) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=90000000000000000000000000&variableRateSlope2=600000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=undefined) |
 
 ## Raw diff
 
