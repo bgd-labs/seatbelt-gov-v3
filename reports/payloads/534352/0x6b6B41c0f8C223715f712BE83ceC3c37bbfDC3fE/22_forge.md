@@ -10,7 +10,7 @@
 | optimalUsageRatio | 45 % | 30 % |
 | maxVariableBorrowRate | 307 % | 308 % |
 | baseVariableBorrowRate | 0 % | 1 % |
-| interestRate | ![before](/.assets/8fa1be0a18750a60d1bf8c471ee14d962f51656a.svg) | ![after](/.assets/ba06e5f94338be2fe2b46141ae0af1531fe2e9ed.svg) |
+| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=70000000000000000000000000&variableRateSlope2=3000000000000000000000000000&optimalUsageRatio=450000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=3070000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=70000000000000000000000000&variableRateSlope2=3000000000000000000000000000&optimalUsageRatio=300000000000000000000000000&baseVariableBorrowRate=10000000000000000000000000&maxVariableBorrowRate=3080000000000000000000000000) |
 
 ## Raw diff
 

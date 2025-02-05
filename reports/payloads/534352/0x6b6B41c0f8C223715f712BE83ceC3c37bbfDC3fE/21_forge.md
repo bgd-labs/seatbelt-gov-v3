@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | maxVariableBorrowRate | 66.5 % | 65.5 % |
 | variableRateSlope1 | 6.5 % | 5.5 % |
-| interestRate | ![before](/.assets/4a8178b70e2e1d9be97f627f529f7680d26bd083.svg) | ![after](/.assets/79d81a829bfe358f506a4e7b9c9cd91bd31cbb1c.svg) |
+| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=600000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=665000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=55000000000000000000000000&variableRateSlope2=600000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=655000000000000000000000000) |
 
 ## Raw diff
 

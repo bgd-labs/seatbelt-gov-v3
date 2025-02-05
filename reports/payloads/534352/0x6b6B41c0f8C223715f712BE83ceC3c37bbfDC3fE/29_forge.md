@@ -25,9 +25,7 @@
 | liquidationProtocolFee | 0 % [0] |
 | reserveFactor | 20 % [2000] |
 | aToken | [0x25718130C2a8eb94e2e1FAFB5f1cDd4b459aCf64](https://scrollscan.com/address/0x25718130C2a8eb94e2e1FAFB5f1cDd4b459aCf64) |
-| aTokenImpl | [0x92EDe4ABd9df4Bfb49b4d723e4c932e35c47C54C](https://scrollscan.com/address/0x92EDe4ABd9df4Bfb49b4d723e4c932e35c47C54C) |
 | variableDebtToken | [0xFFbA405BBF25B2e6C454d18165F2fd8786858c6B](https://scrollscan.com/address/0xFFbA405BBF25B2e6C454d18165F2fd8786858c6B) |
-| variableDebtTokenImpl | [0x49bA16C08130FF8cFADE263B49387A8555bc057B](https://scrollscan.com/address/0x49bA16C08130FF8cFADE263B49387A8555bc057B) |
 | borrowingEnabled | true |
 | isBorrowableInIsolation | false |
 | interestRateStrategy | [0xC37353E5766164D8654D3CB395acfDcA4c2E7Ddc](https://scrollscan.com/address/0xC37353E5766164D8654D3CB395acfDcA4c2E7Ddc) |
@@ -57,7 +55,6 @@
       "from": null,
       "to": {
         "aToken": "0x25718130C2a8eb94e2e1FAFB5f1cDd4b459aCf64",
-        "aTokenImpl": "0x92EDe4ABd9df4Bfb49b4d723e4c932e35c47C54C",
         "aTokenName": "Aave Scroll SCR",
         "aTokenSymbol": "aScrSCR",
         "aTokenUnderlyingBalance": "100000000000000000000",
@@ -87,7 +84,6 @@
         "underlying": "0xd29687c813D741E2F938F4aC377128810E217b1b",
         "usageAsCollateralEnabled": false,
         "variableDebtToken": "0xFFbA405BBF25B2e6C454d18165F2fd8786858c6B",
-        "variableDebtTokenImpl": "0x49bA16C08130FF8cFADE263B49387A8555bc057B",
         "variableDebtTokenName": "Aave Scroll Variable Debt SCR",
         "variableDebtTokenSymbol": "variableDebtScrSCR",
         "virtualAccountingActive": true,
