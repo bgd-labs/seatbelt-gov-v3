@@ -2,12 +2,12 @@
 
 ### Reserves altered
 
-#### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://andromeda-explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
+#### m.DAI ([0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0](https://explorer.metis.io/address/0x4c078361FC9BbB78DF910800A991C7c3DD2F6ce0))
 
 | description | value before | value after |
 | --- | --- | --- |
-| ltv | 75 % | 63 % |
-| liquidationThreshold | 80 % | 77 % |
+| ltv | 75 % [7500] | 63 % [6300] |
+| liquidationThreshold | 80 % [8000] | 77 % [7700] |
 
 
 ## Raw diff

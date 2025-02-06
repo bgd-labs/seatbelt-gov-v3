@@ -7,7 +7,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | optimalUsageRatio | 80 % | 90 % |
-| interestRate | ![before](/.assets/5a5123819558b2679cc9d427d997ff7916be309b.svg) | ![after](/.assets/3344097cc58003c1aad8dd7147a8287f660fc210.svg) |
+| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=27000000000000000000000000&variableRateSlope2=800000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=10000000000000000000000000&maxVariableBorrowRate=837000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=27000000000000000000000000&variableRateSlope2=800000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=10000000000000000000000000&maxVariableBorrowRate=837000000000000000000000000) |
 
 ## Raw diff
 

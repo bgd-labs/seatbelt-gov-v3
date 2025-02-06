@@ -2,11 +2,11 @@
 
 ### Reserves altered
 
-#### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://andromeda-explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
+#### m.USDT ([0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC](https://explorer.metis.io/address/0xbB06DCA3AE6887fAbF931640f67cab3e3a16F4dC))
 
 | description | value before | value after |
 | --- | --- | --- |
-| ltv | 75 % | 77 % |
+| ltv | 75 % [7500] | 77 % [7700] |
 
 
 ## Raw diff
