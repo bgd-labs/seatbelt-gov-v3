@@ -51,6 +51,9 @@ evm_version = 'shanghai'
 [profile.bnb]
 evm_version = 'shanghai'
 
+[profile.linea]
+evm_version = 'london'
+
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET}"
 polygon = "${RPC_POLYGON}"

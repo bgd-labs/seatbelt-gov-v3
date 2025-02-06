@@ -15,12 +15,15 @@ import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {AaveV3PolygonZkEvm} from 'aave-address-book/AaveV3PolygonZkEvm.sol';
 import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
+import {AaveV3Linea} from 'aave-address-book/AaveV3Linea.sol';
 import {ChainIds} from 'solidity-utils/contracts/utils/ChainHelpers.sol';
 
 contract E2EPayload is Script, ProtocolV3TestBase {
+  error UnknownPool();
+
   function run(uint40 payloadId) public {
     IPool pool = _getPool();
-    if (address(pool) == address(0)) return;
+    if (address(pool) == address(0)) revert UnknownPool();
     defaultTest(
       string(abi.encodePacked('foundry/', vm.toString(block.chainid), '_', vm.toString(payloadId))),
       pool,
@@ -93,5 +96,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     if (block.chainid == ChainIds.SCROLL) return AaveV3Scroll.POOL;
     if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
     if (block.chainid == ChainIds.BASE) return AaveV3Base.POOL;
+    if (block.chainid == ChainIds.LINEA) return AaveV3Linea.POOL;
   }
 }
