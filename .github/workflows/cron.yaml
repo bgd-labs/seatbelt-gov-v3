@@ -54,9 +54,9 @@ jobs:
             git config --global user.name 'Cache bot'
             git config --global user.email 'cache-bot@bgdlabs.com'
             git config --global pull.rebase true
+            git pull origin main --rebase --autostash
             git add .
             git commit -am "fix(cache): automatic cache update :robot:"
-            git pull --rebase --autostash
             git push
           exit
           fi
