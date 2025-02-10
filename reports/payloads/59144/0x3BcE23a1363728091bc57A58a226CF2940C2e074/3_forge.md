@@ -17,7 +17,7 @@
 | oracle | [0x14ac9f8a8646D11D66fbaA9E9F5A869dC08B5D71](https://lineascan.build/address/0x14ac9f8a8646D11D66fbaA9E9F5A869dC08B5D71) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDC/USD |
-| oracleLatestAnswer | 1.00000256 |
+| oracleLatestAnswer | 0.99999348 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -61,7 +61,7 @@
 | oracle | [0x0abf2f5642d945b49B8d2DBC6f85c2D8e0424C85](https://lineascan.build/address/0x0abf2f5642d945b49B8d2DBC6f85c2D8e0424C85) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped weETH / eETH(ETH) / USD |
-| oracleLatestAnswer | 3017.79570433 |
+| oracleLatestAnswer | 2815.46785892 |
 | usageAsCollateralEnabled | true |
 | ltv | 72.5 % [7250] |
 | liquidationThreshold | 75 % [7500] |
@@ -105,7 +105,7 @@
 | oracle | [0x1217a8A40cea4dB5429fbF6EDeB3B606b99CC9b0](https://lineascan.build/address/0x1217a8A40cea4dB5429fbF6EDeB3B606b99CC9b0) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped ezETH / ETH / USD |
-| oracleLatestAnswer | 2952.29676611 |
+| oracleLatestAnswer | 2753.97243069 |
 | usageAsCollateralEnabled | true |
 | ltv | 72 % [7200] |
 | liquidationThreshold | 75 % [7500] |
@@ -149,7 +149,7 @@
 | oracle | [0x7A99092816C8BD5ec8ba229e3a6E6Da1E628E1F9](https://lineascan.build/address/0x7A99092816C8BD5ec8ba229e3a6E6Da1E628E1F9) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 98942.5288877 |
+| oracleLatestAnswer | 97641.70574801 |
 | usageAsCollateralEnabled | true |
 | ltv | 73 % [7300] |
 | liquidationThreshold | 78 % [7800] |
@@ -193,7 +193,7 @@
 | oracle | [0x0DccbA847D677d4dc3c22C9Dc17DC468226d08Ed](https://lineascan.build/address/0x0DccbA847D677d4dc3c22C9Dc17DC468226d08Ed) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDT/USD |
-| oracleLatestAnswer | 1.000174 |
+| oracleLatestAnswer | 1.00014089 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -237,7 +237,7 @@
 | oracle | [0x96014CA32e2902A5F07c6ADF00eB17D3DE9aC364](https://lineascan.build/address/0x96014CA32e2902A5F07c6ADF00eB17D3DE9aC364) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped wstETH / stETH(ETH) / USD |
-| oracleLatestAnswer | 3398.40180365 |
+| oracleLatestAnswer | 3170.72883908 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 79 % [7900] |
@@ -281,7 +281,7 @@
 | oracle | [0x3c6Cd9Cc7c7a4c2Cf5a82734CD249D7D593354dA](https://lineascan.build/address/0x3c6Cd9Cc7c7a4c2Cf5a82734CD249D7D593354dA) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2848.35931518 |
+| oracleLatestAnswer | 2656.71428039 |
 | usageAsCollateralEnabled | true |
 | ltv | 80 % [8000] |
 | liquidationThreshold | 83 % [8300] |
@@ -417,7 +417,7 @@
         "oracle": "0x14ac9f8a8646D11D66fbaA9E9F5A869dC08B5D71",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDC/USD",
-        "oracleLatestAnswer": "100000256",
+        "oracleLatestAnswer": "99999348",
         "reserveFactor": 1000,
         "supplyCap": 12000000,
         "symbol": "USDC",
@@ -456,7 +456,7 @@
         "oracle": "0x0abf2f5642d945b49B8d2DBC6f85c2D8e0424C85",
         "oracleDecimals": 8,
         "oracleDescription": "Capped weETH / eETH(ETH) / USD",
-        "oracleLatestAnswer": "301779570433",
+        "oracleLatestAnswer": "281546785892",
         "reserveFactor": 4500,
         "supplyCap": 1200,
         "symbol": "weETH",
@@ -495,7 +495,7 @@
         "oracle": "0x1217a8A40cea4dB5429fbF6EDeB3B606b99CC9b0",
         "oracleDecimals": 8,
         "oracleDescription": "Capped ezETH / ETH / USD",
-        "oracleLatestAnswer": "295229676611",
+        "oracleLatestAnswer": "275397243069",
         "reserveFactor": 4500,
         "supplyCap": 1200,
         "symbol": "ezETH",
@@ -534,7 +534,7 @@
         "oracle": "0x7A99092816C8BD5ec8ba229e3a6E6Da1E628E1F9",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": "9894252888770",
+        "oracleLatestAnswer": "9764170574801",
         "reserveFactor": 2000,
         "supplyCap": 25,
         "symbol": "WBTC",
@@ -573,7 +573,7 @@
         "oracle": "0x0DccbA847D677d4dc3c22C9Dc17DC468226d08Ed",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDT/USD",
-        "oracleLatestAnswer": "100017400",
+        "oracleLatestAnswer": "100014089",
         "reserveFactor": 1000,
         "supplyCap": 7800000,
         "symbol": "USDT",
@@ -612,7 +612,7 @@
         "oracle": "0x96014CA32e2902A5F07c6ADF00eB17D3DE9aC364",
         "oracleDecimals": 8,
         "oracleDescription": "Capped wstETH / stETH(ETH) / USD",
-        "oracleLatestAnswer": "339840180365",
+        "oracleLatestAnswer": "317072883908",
         "reserveFactor": 500,
         "supplyCap": 800,
         "symbol": "wstETH",
@@ -651,7 +651,7 @@
         "oracle": "0x3c6Cd9Cc7c7a4c2Cf5a82734CD249D7D593354dA",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": "284835931518",
+        "oracleLatestAnswer": "265671428039",
         "reserveFactor": 1500,
         "supplyCap": 1200,
         "symbol": "WETH",

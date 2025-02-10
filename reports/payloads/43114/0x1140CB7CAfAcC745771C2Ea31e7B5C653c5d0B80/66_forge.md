@@ -6,48 +6,48 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 2,740.4265 BTC.b [274042655952] | 2,740.5825 BTC.b [274058258647] |
-| virtualBalance | 2,740.4252 BTC.b [274042524081] | 2,740.5812 BTC.b [274058126776] |
+| aTokenUnderlyingBalance | 2,740.3132 BTC.b [274031326499] | 2,740.4693 BTC.b [274046936332] |
+| virtualBalance | 2,740.3119 BTC.b [274031194628] | 2,740.4680 BTC.b [274046804461] |
 
 
 #### WETH.e ([0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB](https://snowtrace.io/address/0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 8,842.8199 WETH.e [8842819947333897024393] | 8,891.1672 WETH.e [8891167230083148572458] |
-| virtualBalance | 8,842.8199 WETH.e [8842819947333897024393] | 8,891.1672 WETH.e [8891167230083148572458] |
+| aTokenUnderlyingBalance | 8,786.6058 WETH.e [8786605849464496132719] | 8,834.9731 WETH.e [8834973187970818573763] |
+| virtualBalance | 8,786.6058 WETH.e [8786605849464496132719] | 8,834.9731 WETH.e [8834973187970818573763] |
 
 
 #### USDt ([0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7](https://snowtrace.io/address/0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 55,051,497.4349 USDt [55051497434985] | 55,065,357.4121 USDt [55065357412186] |
-| virtualBalance | 55,051,475.6213 USDt [55051475621385] | 55,065,335.5985 USDt [55065335598586] |
+| aTokenUnderlyingBalance | 44,470,020.5650 USDt [44470020565034] | 44,483,892.5595 USDt [44483892559563] |
+| virtualBalance | 44,469,998.7514 USDt [44469998751434] | 44,483,870.7459 USDt [44483870745963] |
 
 
 #### WAVAX ([0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7](https://snowtrace.io/address/0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 2,479,090.9498 WAVAX [2479090949843010500138211] | 2,481,153.6172 WAVAX [2481153617235837538894706] |
-| virtualBalance | 2,479,090.9498 WAVAX [2479090949843010500138211] | 2,481,153.6172 WAVAX [2481153617235837538894706] |
+| aTokenUnderlyingBalance | 2,516,487.3906 WAVAX [2516487390693506633517714] | 2,518,555.0562 WAVAX [2518555056210142336778492] |
+| virtualBalance | 2,516,487.3906 WAVAX [2516487390693506633517714] | 2,518,555.0562 WAVAX [2518555056210142336778492] |
 
 
 #### USDC ([0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E](https://snowtrace.io/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 60,562,524.8584 USDC [60562524858480] | 60,590,513.7051 USDC [60590513705116] |
-| virtualBalance | 60,562,508.1191 USDC [60562508119123] | 60,590,496.9657 USDC [60590496965759] |
+| aTokenUnderlyingBalance | 62,685,732.4727 USDC [62685732472764] | 62,713,864.0267 USDC [62713864026767] |
+| virtualBalance | 62,685,715.7334 USDC [62685715733407] | 62,713,847.2874 USDC [62713847287410] |
 
 
 #### DAI.e ([0xd586E7F844cEa2F87f50152665BCbc2C279D8d70](https://snowtrace.io/address/0xd586E7F844cEa2F87f50152665BCbc2C279D8d70))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 656,802.7581 DAI.e [656802758101384240141575] | 1,658,254.8131 DAI.e [1658254813142933176898202] |
-| virtualBalance | 656,802.7581 DAI.e [656802758101384240141575] | 1,658,254.8131 DAI.e [1658254813142933176898202] |
+| aTokenUnderlyingBalance | 708,651.9869 DAI.e [708651986952269609563747] | 1,710,104.0419 DAI.e [1710104041993818546320374] |
+| virtualBalance | 708,651.9869 DAI.e [708651986952269609563747] | 1,710,104.0419 DAI.e [1710104041993818546320374] |
 
 
 ## Raw diff
@@ -57,62 +57,62 @@
   "reserves": {
     "0x152b9d0FdC40C096757F570A51E494bd4b943E50": {
       "aTokenUnderlyingBalance": {
-        "from": "274042655952",
-        "to": "274058258647"
+        "from": "274031326499",
+        "to": "274046936332"
       },
       "virtualBalance": {
-        "from": "274042524081",
-        "to": "274058126776"
+        "from": "274031194628",
+        "to": "274046804461"
       }
     },
     "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB": {
       "aTokenUnderlyingBalance": {
-        "from": "8842819947333897024393",
-        "to": "8891167230083148572458"
+        "from": "8786605849464496132719",
+        "to": "8834973187970818573763"
       },
       "virtualBalance": {
-        "from": "8842819947333897024393",
-        "to": "8891167230083148572458"
+        "from": "8786605849464496132719",
+        "to": "8834973187970818573763"
       }
     },
     "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7": {
       "aTokenUnderlyingBalance": {
-        "from": "55051497434985",
-        "to": "55065357412186"
+        "from": "44470020565034",
+        "to": "44483892559563"
       },
       "virtualBalance": {
-        "from": "55051475621385",
-        "to": "55065335598586"
+        "from": "44469998751434",
+        "to": "44483870745963"
       }
     },
     "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7": {
       "aTokenUnderlyingBalance": {
-        "from": "2479090949843010500138211",
-        "to": "2481153617235837538894706"
+        "from": "2516487390693506633517714",
+        "to": "2518555056210142336778492"
       },
       "virtualBalance": {
-        "from": "2479090949843010500138211",
-        "to": "2481153617235837538894706"
+        "from": "2516487390693506633517714",
+        "to": "2518555056210142336778492"
       }
     },
     "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E": {
       "aTokenUnderlyingBalance": {
-        "from": "60562524858480",
-        "to": "60590513705116"
+        "from": "62685732472764",
+        "to": "62713864026767"
       },
       "virtualBalance": {
-        "from": "60562508119123",
-        "to": "60590496965759"
+        "from": "62685715733407",
+        "to": "62713847287410"
       }
     },
     "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70": {
       "aTokenUnderlyingBalance": {
-        "from": "656802758101384240141575",
-        "to": "1658254813142933176898202"
+        "from": "708651986952269609563747",
+        "to": "1710104041993818546320374"
       },
       "virtualBalance": {
-        "from": "656802758101384240141575",
-        "to": "1658254813142933176898202"
+        "from": "708651986952269609563747",
+        "to": "1710104041993818546320374"
       }
     }
   }
