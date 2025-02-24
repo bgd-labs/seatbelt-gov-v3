@@ -16,6 +16,7 @@ import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
 import {AaveV3PolygonZkEvm} from 'aave-address-book/AaveV3PolygonZkEvm.sol';
 import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
 import {AaveV3Linea} from 'aave-address-book/AaveV3Linea.sol';
+import {AaveV3Sonic} from 'aave-address-book/AaveV3Sonic.sol';
 import {ChainIds} from 'solidity-utils/contracts/utils/ChainHelpers.sol';
 
 contract E2EPayload is Script, ProtocolV3TestBase {
@@ -97,5 +98,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
     if (block.chainid == ChainIds.BASE) return AaveV3Base.POOL;
     if (block.chainid == ChainIds.LINEA) return AaveV3Linea.POOL;
+    if (block.chainid == ChainIds.SONIC) return AaveV3Sonic.POOL;
   }
 }
