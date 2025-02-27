@@ -118,6 +118,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          ref: main
 
       - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
 
@@ -146,7 +147,8 @@ jobs:
           then
             echo "tree is clean"
           else
-            git diff > ${{ matrix.chainId }}.patch
+            git add .
+            git diff --cached > ${{ matrix.chainId }}.patch
             echo "diff=true" >> $GITHUB_OUTPUT
           fi
 
