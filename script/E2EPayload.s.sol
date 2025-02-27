@@ -13,7 +13,6 @@ import {AaveV3Optimism} from 'aave-address-book/AaveV3Optimism.sol';
 import {AaveV3Arbitrum} from 'aave-address-book/AaveV3Arbitrum.sol';
 import {AaveV3BNB} from 'aave-address-book/AaveV3BNB.sol';
 import {AaveV3Scroll} from 'aave-address-book/AaveV3Scroll.sol';
-import {AaveV3PolygonZkEvm} from 'aave-address-book/AaveV3PolygonZkEvm.sol';
 import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
 import {AaveV3Linea} from 'aave-address-book/AaveV3Linea.sol';
 import {AaveV3Sonic} from 'aave-address-book/AaveV3Sonic.sol';
@@ -93,7 +92,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     if (block.chainid == ChainIds.POLYGON) return AaveV3Polygon.POOL;
     if (block.chainid == ChainIds.AVALANCHE) return AaveV3Avalanche.POOL;
     if (block.chainid == ChainIds.BNB) return AaveV3BNB.POOL;
-    if (block.chainid == ChainIds.ZK_EVM) return AaveV3PolygonZkEvm.POOL;
     if (block.chainid == ChainIds.SCROLL) return AaveV3Scroll.POOL;
     if (block.chainid == ChainIds.GNOSIS) return AaveV3Gnosis.POOL;
     if (block.chainid == ChainIds.BASE) return AaveV3Base.POOL;

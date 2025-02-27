@@ -196,6 +196,11 @@ jobs:
     name: Commit actual changes
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
       - uses: actions/download-artifact@v4
         with:
           # Destination path. Supports basic tilde expansion.
@@ -206,6 +211,7 @@ jobs:
           # If false, the downloaded artifacts will be extracted into individual named directories within the specified path.
           # Optional. Default is 'false'
           merge-multiple: true
+
       - name: check diff
         run: |
           if [ -z "$( ls -A '/tmp/patches' )" ]
