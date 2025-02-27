@@ -208,6 +208,8 @@ jobs:
         run: |
           if [ -z "$( ls -A '/tmp/patches' )" ]
           then
+            echo "tree is clean"
+          else
             git apply /tmp/patches/*.patch
             git config --global user.name 'Cache bot'
             git config --global user.email 'cache-bot@bgdlabs.com'
@@ -215,6 +217,4 @@ jobs:
             git commit -am "fix(cache): automatic cache update :robot:"
             git push
             exit
-          else
-            echo "tree is clean"
           fi
