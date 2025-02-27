@@ -144,6 +144,8 @@ jobs:
         run: |
           if [[ -z $(git status -s) ]]
           then
+            echo "tree is clean"
+          else
             git diff > ${{ matrix.chainId }}.patch
             echo "diff=true" >> $GITHUB_OUTPUT
           fi
