@@ -140,10 +140,16 @@ jobs:
           TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
 
       - name: check diff
+        id: diff
         run: |
-          git diff > ${{ matrix.chainId }}.patch
+          if [[ -z $(git status -s) ]]
+          then
+            git diff > ${{ matrix.chainId }}.patch
+            echo "diff=true" >> $GITHUB_OUTPUT
+          fi
 
       - uses: actions/upload-artifact@v4
+        if: ${{ steps.diff.outputs.diff == 'true' }}
         with:
           # Name of the artifact to upload.
           # Optional. Default is 'artifact'
@@ -203,19 +209,12 @@ jobs:
           if [ -z "$( ls -A '/tmp/patches' )" ]
           then
             git apply /tmp/patches/*.patch
-          else
-            exit
-          fi
-          if [[ -z $(git status -s) ]]
-          then
-            echo "tree is clean"
-          else
             git config --global user.name 'Cache bot'
             git config --global user.email 'cache-bot@bgdlabs.com'
-            git config --global pull.rebase true
             git add .
             git commit -am "fix(cache): automatic cache update :robot:"
-            git pull --rebase --autostash
             git push
-          exit
+            exit
+          else
+            echo "tree is clean"
           fi
