@@ -17,7 +17,7 @@
 | oracle | [0xc76dFb89fF298145b417d221B2c747d84952e01d](https://sonicscan.org//address/0xc76dFb89fF298145b417d221B2c747d84952e01d) |
 | oracleDecimals | 8 |
 | oracleDescription | S / USD |
-| oracleLatestAnswer | 0.85434758 |
+| oracleLatestAnswer | 0.76187643 |
 | usageAsCollateralEnabled | true |
 | ltv | 68 % [6800] |
 | liquidationThreshold | 70 % [7000] |
@@ -61,7 +61,7 @@
 | oracle | [0x7A8443a2a5D772db7f1E40DeFe32db485108F128](https://sonicscan.org//address/0x7A8443a2a5D772db7f1E40DeFe32db485108F128) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDC/USD |
-| oracleLatestAnswer | 0.99991608 |
+| oracleLatestAnswer | 0.99997045 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -105,7 +105,7 @@
 | oracle | [0x824364077993847f71293B24ccA8567c00c2de11](https://sonicscan.org//address/0x824364077993847f71293B24ccA8567c00c2de11) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2676.4 |
+| oracleLatestAnswer | 2483.11 |
 | usageAsCollateralEnabled | true |
 | ltv | 80 % [8000] |
 | liquidationThreshold | 83 % [8300] |
@@ -165,7 +165,7 @@
         "oracle": "0xc76dFb89fF298145b417d221B2c747d84952e01d",
         "oracleDecimals": 8,
         "oracleDescription": "S / USD",
-        "oracleLatestAnswer": "85434758",
+        "oracleLatestAnswer": "76187643",
         "reserveFactor": 1500,
         "supplyCap": 20000000,
         "symbol": "wS",
@@ -204,7 +204,7 @@
         "oracle": "0x7A8443a2a5D772db7f1E40DeFe32db485108F128",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDC/USD",
-        "oracleLatestAnswer": "99991608",
+        "oracleLatestAnswer": "99997045",
         "reserveFactor": 1000,
         "supplyCap": 20000000,
         "symbol": "USDC.e",
@@ -243,7 +243,7 @@
         "oracle": "0x824364077993847f71293B24ccA8567c00c2de11",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": "267640000000",
+        "oracleLatestAnswer": "248311000000",
         "reserveFactor": 1500,
         "supplyCap": 3000,
         "symbol": "WETH",
