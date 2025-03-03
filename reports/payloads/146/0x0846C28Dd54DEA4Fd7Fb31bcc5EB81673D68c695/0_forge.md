@@ -17,7 +17,7 @@
 | oracle | [0xc76dFb89fF298145b417d221B2c747d84952e01d](https://sonicscan.org//address/0xc76dFb89fF298145b417d221B2c747d84952e01d) |
 | oracleDecimals | 8 |
 | oracleDescription | S / USD |
-| oracleLatestAnswer | 0.76187643 |
+| oracleLatestAnswer | 0.61830476 |
 | usageAsCollateralEnabled | true |
 | ltv | 68 % [6800] |
 | liquidationThreshold | 70 % [7000] |
@@ -61,7 +61,7 @@
 | oracle | [0x7A8443a2a5D772db7f1E40DeFe32db485108F128](https://sonicscan.org//address/0x7A8443a2a5D772db7f1E40DeFe32db485108F128) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDC/USD |
-| oracleLatestAnswer | 0.99997045 |
+| oracleLatestAnswer | 0.9998289 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -105,7 +105,7 @@
 | oracle | [0x824364077993847f71293B24ccA8567c00c2de11](https://sonicscan.org//address/0x824364077993847f71293B24ccA8567c00c2de11) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2483.11 |
+| oracleLatestAnswer | 2188.56355634 |
 | usageAsCollateralEnabled | true |
 | ltv | 80 % [8000] |
 | liquidationThreshold | 83 % [8300] |
@@ -165,7 +165,7 @@
         "oracle": "0xc76dFb89fF298145b417d221B2c747d84952e01d",
         "oracleDecimals": 8,
         "oracleDescription": "S / USD",
-        "oracleLatestAnswer": "76187643",
+        "oracleLatestAnswer": "61830476",
         "reserveFactor": 1500,
         "supplyCap": 20000000,
         "symbol": "wS",
@@ -204,7 +204,7 @@
         "oracle": "0x7A8443a2a5D772db7f1E40DeFe32db485108F128",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDC/USD",
-        "oracleLatestAnswer": "99997045",
+        "oracleLatestAnswer": "99982890",
         "reserveFactor": 1000,
         "supplyCap": 20000000,
         "symbol": "USDC.e",
@@ -243,7 +243,7 @@
         "oracle": "0x824364077993847f71293B24ccA8567c00c2de11",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": "248311000000",
+        "oracleLatestAnswer": "218856355634",
         "reserveFactor": 1500,
         "supplyCap": 3000,
         "symbol": "WETH",
