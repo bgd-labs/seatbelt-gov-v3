@@ -6,16 +6,16 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 1,133,035.6049 USDC [1133035604929] | 1,054,295.3186 USDC [1054295318679] |
-| virtualBalance | 1,132,958.5580 USDC [1132958558067] | 1,054,218.2718 USDC [1054218271817] |
+| aTokenUnderlyingBalance | 945,177.3645 USDC [945177364589] | 864,776.4626 USDC [864776462682] |
+| virtualBalance | 945,100.3177 USDC [945100317727] | 864,699.4158 USDC [864699415820] |
 
 
 #### LUSD ([0xc40F949F8a4e094D1b49a23ea9241D289B7b2819](https://optimistic.etherscan.io/address/0xc40F949F8a4e094D1b49a23ea9241D289B7b2819))
 
 | description | value before | value after |
 | --- | --- | --- |
-| aTokenUnderlyingBalance | 71,410.2132 LUSD [71410213289897474968680] | 70,484.6114 LUSD [70484611428883226810754] |
-| virtualBalance | 71,410.2132 LUSD [71410213289897474968680] | 70,484.6114 LUSD [70484611428883226810754] |
+| aTokenUnderlyingBalance | 50,471.9146 LUSD [50471914635497012834243] | 49,524.1811 LUSD [49524181179380151878946] |
+| virtualBalance | 50,471.9146 LUSD [50471914635497012834243] | 49,524.1811 LUSD [49524181179380151878946] |
 
 
 ## Raw diff
@@ -25,22 +25,22 @@
   "reserves": {
     "0x7F5c764cBc14f9669B88837ca1490cCa17c31607": {
       "aTokenUnderlyingBalance": {
-        "from": "1133035604929",
-        "to": "1054295318679"
+        "from": "945177364589",
+        "to": "864776462682"
       },
       "virtualBalance": {
-        "from": "1132958558067",
-        "to": "1054218271817"
+        "from": "945100317727",
+        "to": "864699415820"
       }
     },
     "0xc40F949F8a4e094D1b49a23ea9241D289B7b2819": {
       "aTokenUnderlyingBalance": {
-        "from": "71410213289897474968680",
-        "to": "70484611428883226810754"
+        "from": "50471914635497012834243",
+        "to": "49524181179380151878946"
       },
       "virtualBalance": {
-        "from": "71410213289897474968680",
-        "to": "70484611428883226810754"
+        "from": "50471914635497012834243",
+        "to": "49524181179380151878946"
       }
     }
   }
