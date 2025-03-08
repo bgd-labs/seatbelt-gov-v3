@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | oracle | [0x55B6C4D3E8A27b8A1F5a263321b602e0fdEEcC17](https://etherscan.io/address/0x55B6C4D3E8A27b8A1F5a263321b602e0fdEEcC17) | [0xC26D4a1c46d884cfF6dE9800B6aE7A8Cf48B4Ff8](https://etherscan.io/address/0xC26D4a1c46d884cfF6dE9800B6aE7A8Cf48B4Ff8) |
 | oracleDescription | Capped USDe / USD | Capped USDT/USD |
-| oracleLatestAnswer | 0.99900928 | 0.99998783 |
+| oracleLatestAnswer | 0.99885747 | 0.9998 |
 
 
 #### sUSDe ([0x9D39A5DE30e57443BfF2A8307A4256c8797A3497](https://etherscan.io/address/0x9D39A5DE30e57443BfF2A8307A4256c8797A3497))
@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | oracle | [0xb37aE8aBa6C0C1Bf2c509fc06E11aa4AF29B665A](https://etherscan.io/address/0xb37aE8aBa6C0C1Bf2c509fc06E11aa4AF29B665A) | [0x42bc86f2f08419280a99d8fbEa4672e7c30a86ec](https://etherscan.io/address/0x42bc86f2f08419280a99d8fbEa4672e7c30a86ec) |
 | oracleDescription | Capped sUSDe / USDe / USD | Capped sUSDe / USDT / USD |
-| oracleLatestAnswer | 1.16028288 | 1.1614194 |
+| oracleLatestAnswer | 1.16024775 | 1.16134257 |
 
 
 ## Raw diff
@@ -35,8 +35,8 @@
         "to": "Capped USDT/USD"
       },
       "oracleLatestAnswer": {
-        "from": "99900928",
-        "to": "99998783"
+        "from": "99885747",
+        "to": "99980000"
       }
     },
     "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497": {
@@ -49,8 +49,8 @@
         "to": "Capped sUSDe / USDT / USD"
       },
       "oracleLatestAnswer": {
-        "from": "116028288",
-        "to": "116141940"
+        "from": "116024775",
+        "to": "116134257"
       }
     }
   }

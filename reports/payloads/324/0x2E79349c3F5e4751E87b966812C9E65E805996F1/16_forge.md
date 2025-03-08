@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | oracle | [0xDaec4cC3a41E423d678428A8Bb29fa1ADF26869a](https://era.zksync.network//address/0xDaec4cC3a41E423d678428A8Bb29fa1ADF26869a) | [0x9172A80ed668D3097D45350ffF71F4421ff572e1](https://era.zksync.network//address/0x9172A80ed668D3097D45350ffF71F4421ff572e1) |
 | oracleDescription | Capped sUSDe / USDe / USD | Capped sUSDe / USDT / USD |
-| oracleLatestAnswer | 1.16072313 | 1.16147061 |
+| oracleLatestAnswer | 1.16023145 | 1.16162627 |
 
 
 ## Raw diff
@@ -26,8 +26,8 @@
         "to": "Capped sUSDe / USDT / USD"
       },
       "oracleLatestAnswer": {
-        "from": "116072313",
-        "to": "116147061"
+        "from": "116023145",
+        "to": "116162627"
       }
     }
   }
