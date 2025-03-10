@@ -35,6 +35,8 @@ jobs:
       - uses: bgd-labs/action-rpc-env@main
         with:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
+          QUICKNODE_ENDPOINT_NAME: ${{ secrets.QUICKNODE_ENDPOINT_NAME }}
 
       - name: Install Foundry
         uses: bgd-labs/foundry-zksync-toolchain@340cea9a42119d9a77a6bb0a8236d4311582b709
@@ -100,6 +102,7 @@ jobs:
             1088,
             8453,
             42161,
+            42220,
             43114,
             59144,
             534352,
@@ -125,6 +128,8 @@ jobs:
       - uses: bgd-labs/action-rpc-env@main
         with:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
+          QUICKNODE_ENDPOINT_NAME: ${{ secrets.QUICKNODE_ENDPOINT_NAME }}
 
       - name: Install Foundry
         uses: bgd-labs/foundry-zksync-toolchain@340cea9a42119d9a77a6bb0a8236d4311582b709

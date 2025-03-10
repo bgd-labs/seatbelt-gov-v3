@@ -11,7 +11,7 @@
   "author": "BGD Labs",
   "license": "MIT",
   "dependencies": {
-    "@bgd-labs/aave-address-book": "^4.12.0",
+    "@bgd-labs/aave-address-book": "^4.15.1",
     "@bgd-labs/aave-cli": "1.2.3",
     "@bgd-labs/aave-v3-governance-cache": "^1.0.10",
     "@bgd-labs/rpc-env": "^2.3.2",
