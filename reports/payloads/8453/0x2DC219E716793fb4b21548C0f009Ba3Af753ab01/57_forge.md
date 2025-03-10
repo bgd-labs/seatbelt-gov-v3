@@ -17,7 +17,7 @@
 | oracle | [0x567E7f3DB2CD4C81872F829C8ab6556616818580](https://basescan.org/address/0x567E7f3DB2CD4C81872F829C8ab6556616818580) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped rsETH / ETH / USD |
-| oracleLatestAnswer | 2181.49292434 |
+| oracleLatestAnswer | 2173.00676198 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -117,7 +117,7 @@
         "oracle": "0x567E7f3DB2CD4C81872F829C8ab6556616818580",
         "oracleDecimals": 8,
         "oracleDescription": "Capped rsETH / ETH / USD",
-        "oracleLatestAnswer": "218149292434",
+        "oracleLatestAnswer": "217300676198",
         "reserveFactor": 2000,
         "supplyCap": 400,
         "symbol": "wrsETH",
