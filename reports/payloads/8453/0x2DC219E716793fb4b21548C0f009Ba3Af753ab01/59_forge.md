@@ -17,7 +17,7 @@
 | oracle | [0x215f25556f91b30AFCF0a12dA51C9d4374B22570](https://basescan.org/address/0x215f25556f91b30AFCF0a12dA51C9d4374B22570) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped EURC/USD |
-| oracleLatestAnswer | 1.07876662 |
+| oracleLatestAnswer | 1.08592385 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -77,7 +77,7 @@
         "oracle": "0x215f25556f91b30AFCF0a12dA51C9d4374B22570",
         "oracleDecimals": 8,
         "oracleDescription": "Capped EURC/USD",
-        "oracleLatestAnswer": "107876662",
+        "oracleLatestAnswer": "108592385",
         "reserveFactor": 1000,
         "supplyCap": 4200000,
         "symbol": "EURC",
