@@ -17,22 +17,22 @@
 | oracle | [0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F](https://basescan.org/address/0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 83512.964166 |
+| oracleLatestAnswer | 81556.955 |
 | usageAsCollateralEnabled | true |
 | ltv | 68 % [6800] |
 | liquidationThreshold | 73 % [7300] |
 | liquidationBonus | 8.5 % |
 | liquidationProtocolFee | 10 % [1000] |
 | reserveFactor | 50 % [5000] |
-| aToken | [0x80a94C36747CF51b2FbabDfF045f6D22c1930eD1](https://basescan.org/address/0x80a94C36747CF51b2FbabDfF045f6D22c1930eD1) |
-| variableDebtToken | [0xe9541C77a111bCAa5dF56839bbC50894eba7aFcb](https://basescan.org/address/0xe9541C77a111bCAa5dF56839bbC50894eba7aFcb) |
+| aToken | [0x90072A4aA69B5Eb74984Ab823EFC5f91e90b3a72](https://basescan.org/address/0x90072A4aA69B5Eb74984Ab823EFC5f91e90b3a72) |
+| variableDebtToken | [0xa2525b3f058846075506903d792d58C5a0D834c9](https://basescan.org/address/0xa2525b3f058846075506903d792d58C5a0D834c9) |
 | borrowingEnabled | false |
 | isBorrowableInIsolation | false |
 | interestRateStrategy | [0x86AB1C62A8bf868E1b3E1ab87d587Aba6fbCbDC5](https://basescan.org/address/0x86AB1C62A8bf868E1b3E1ab87d587Aba6fbCbDC5) |
 | aTokenName | Aave Base LBTC |
 | aTokenSymbol | aBasLBTC |
 | aTokenUnderlyingBalance | 0.001 LBTC [100000] |
-| id | 9 |
+| id | 10 |
 | isPaused | false |
 | variableDebtTokenName | Aave Base Variable Debt LBTC |
 | variableDebtTokenSymbol | variableDebtBasLBTC |
@@ -76,12 +76,12 @@
 
 | description | value before | value after |
 | --- | --- | --- |
-| eMode.label | - | LBTC_cbBTC |
-| eMode.ltv | - | 82 % |
-| eMode.liquidationThreshold | - | 84 % |
-| eMode.liquidationBonus | - | 3 % |
-| eMode.borrowableBitmap | - | cbBTC |
-| eMode.collateralBitmap | - | LBTC |
+| eMode.label | rsETH/wstETH emode | LBTC_cbBTC |
+| eMode.ltv | 92.5 % | 82 % |
+| eMode.liquidationThreshold | 94.5 % | 84 % |
+| eMode.liquidationBonus | 1 % | 3 % |
+| eMode.borrowableBitmap | wstETH | wstETH, cbBTC |
+| eMode.collateralBitmap | wrsETH | wrsETH, LBTC |
 
 
 ## Raw diff
@@ -90,15 +90,29 @@
 {
   "eModes": {
     "4": {
-      "from": null,
-      "to": {
-        "borrowableBitmap": "64",
-        "collateralBitmap": "512",
-        "eModeCategory": 4,
-        "label": "LBTC_cbBTC",
-        "liquidationBonus": 10300,
-        "liquidationThreshold": 8400,
-        "ltv": 8200
+      "borrowableBitmap": {
+        "from": "8",
+        "to": "72"
+      },
+      "collateralBitmap": {
+        "from": "512",
+        "to": "1536"
+      },
+      "label": {
+        "from": "rsETH/wstETH emode",
+        "to": "LBTC_cbBTC"
+      },
+      "liquidationBonus": {
+        "from": 10100,
+        "to": 10300
+      },
+      "liquidationThreshold": {
+        "from": 9450,
+        "to": 8400
+      },
+      "ltv": {
+        "from": 9250,
+        "to": 8200
       }
     }
   },
@@ -112,7 +126,7 @@
     "0xecAc9C5F704e954931349Da37F60E39f515c11c1": {
       "from": null,
       "to": {
-        "aToken": "0x80a94C36747CF51b2FbabDfF045f6D22c1930eD1",
+        "aToken": "0x90072A4aA69B5Eb74984Ab823EFC5f91e90b3a72",
         "aTokenName": "Aave Base LBTC",
         "aTokenSymbol": "aBasLBTC",
         "aTokenUnderlyingBalance": "100000",
@@ -120,7 +134,7 @@
         "borrowingEnabled": false,
         "debtCeiling": 0,
         "decimals": 8,
-        "id": 9,
+        "id": 10,
         "interestRateStrategy": "0x86AB1C62A8bf868E1b3E1ab87d587Aba6fbCbDC5",
         "isActive": true,
         "isBorrowableInIsolation": false,
@@ -135,13 +149,13 @@
         "oracle": "0x64c911996D3c6aC71f9b455B1E8E7266BcbD848F",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": "8351296416600",
+        "oracleLatestAnswer": "8155695500000",
         "reserveFactor": 5000,
         "supplyCap": 400,
         "symbol": "LBTC",
         "underlying": "0xecAc9C5F704e954931349Da37F60E39f515c11c1",
         "usageAsCollateralEnabled": true,
-        "variableDebtToken": "0xe9541C77a111bCAa5dF56839bbC50894eba7aFcb",
+        "variableDebtToken": "0xa2525b3f058846075506903d792d58C5a0D834c9",
         "variableDebtTokenName": "Aave Base Variable Debt LBTC",
         "variableDebtTokenSymbol": "variableDebtBasLBTC",
         "virtualAccountingActive": true,
