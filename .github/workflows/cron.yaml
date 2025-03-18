@@ -15,78 +15,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  proposals:
-    name: Check all live proposals
-    runs-on: ubuntu-latest
-    env:
-      FOUNDRY_PROFILE: ci
-      ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
-      TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
-      TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
-      TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
-
-      - uses: bgd-labs/action-rpc-env@main
-        with:
-          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
-          QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
-          QUICKNODE_ENDPOINT_NAME: ${{ secrets.QUICKNODE_ENDPOINT_NAME }}
-
-      - name: Install Foundry
-        uses: bgd-labs/foundry-zksync-toolchain@340cea9a42119d9a77a6bb0a8236d4311582b709
-        with:
-          version: nightly
-
-      - name: scheduled proposals
-        id: all
-        run: bun run start --type proposal
-
-      - name: check diff
-        run: |
-          if [[ -z $(git status -s) ]]
-          then
-            echo "tree is clean"
-          else
-            git config --global user.name 'Cache bot'
-            git config --global user.email 'cache-bot@bgdlabs.com'
-            git config --global pull.rebase true
-            git pull origin main --rebase --autostash
-            git add .
-            git commit -am "fix(cache): automatic cache update :robot:"
-            git push
-          exit
-          fi
-
-      - name: Post to a Slack channel
-        id: slack
-        if: failure()
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          # Slack channel id, channel name, or user id to post message.
-          # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: "C068J77L8JG"
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
   payloads:
     strategy:
       matrix:
@@ -138,7 +66,7 @@ jobs:
 
       - name: scheduled ${{ matrix.chainId }}
         id: all
-        run: bun run start --type payload --chainId ${{ matrix.chainId }}
+        run: bun run start --chainId ${{ matrix.chainId }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
