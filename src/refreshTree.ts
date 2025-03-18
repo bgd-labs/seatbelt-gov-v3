@@ -6,7 +6,7 @@ import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book/abis';
 import {ChainId, getRPCUrl} from '@bgd-labs/rpc-env';
 import {Address, createPublicClient, getContract, http} from 'viem';
 import {mainnet} from 'viem/chains';
-import {GovernanceV3Ethereum} from '../lib/aave-helpers/lib/aave-address-book/src/ts/AaveAddressBook';
+import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
 import {ProposalState} from '@bgd-labs/toolbox';
 import tree from './tree.json';
 import path from 'node:path';
