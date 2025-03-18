@@ -1,3 +1,6 @@
+/**
+ * Constructs a tree of all currently existing proposals and their attached payloads
+ */
 import {writeFileSync} from 'node:fs';
 import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book/abis';
 import {ChainId, getRPCUrl} from '@bgd-labs/rpc-env';
@@ -44,7 +47,7 @@ interface TreeStructure {
   >;
 }
 
-export async function syncTree() {
+(async function syncTree() {
   const treeCopy = tree as TreeStructure;
   const count = await governanceContract.read.getProposalsCount();
   for (let i = 0; i < count; i++) {
@@ -71,4 +74,4 @@ export async function syncTree() {
   }
   writeFileSync(path.join(process.cwd(), 'src/tree.json'), JSON.stringify(treeCopy, null, 2));
   return treeCopy;
-}
+})();

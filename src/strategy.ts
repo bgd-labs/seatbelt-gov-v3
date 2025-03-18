@@ -1,9 +1,9 @@
 import {Address, getContract} from 'viem';
-import {syncTree} from './tree';
 import {getClient} from '@bgd-labs/rpc-env';
 import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book/abis';
 import {isPayloadFinal, isProposalFinal} from '@bgd-labs/aave-v3-governance-cache';
 import {getNonFinalizedPayloads} from '@bgd-labs/toolbox';
+import tree from './tree.json';
 
 export type PayloadExecutionStrategy = {
   executeBefore: number[];
@@ -29,7 +29,6 @@ export async function generatePayloadsStrategy(
     return {executeBefore: [], alerts};
   }
 
-  const tree = await syncTree();
   const node = tree.payloads[chainId]?.[payloadsController]?.[payloadId];
   if (node) {
     // there is at least one proposal which tries executing the payload
