@@ -32,6 +32,7 @@ export async function simulateOnTenderly({
       forkChainId: chainId,
       displayName: `Seatbelt ${chainId} ${payloadId}`,
       slug: `seatbelt_${chainId}_${payloadId}`,
+      force: true,
     },
     {
       projectSlug: process.env.TENDERLY_PROJECT_SLUG!,

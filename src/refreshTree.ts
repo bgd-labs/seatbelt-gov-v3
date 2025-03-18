@@ -7,10 +7,9 @@ import {ChainId, getRPCUrl} from '@bgd-labs/rpc-env';
 import {Address, createPublicClient, getContract, http} from 'viem';
 import {mainnet} from 'viem/chains';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
-import {ProposalState} from '@bgd-labs/toolbox';
+import {ProposalState, isProposalFinal} from '@bgd-labs/toolbox';
 import tree from './tree.json';
 import path from 'node:path';
-import {isProposalFinal} from '@bgd-labs/aave-v3-governance-cache';
 
 const mainnetClient = createPublicClient({
   chain: mainnet,

@@ -1,8 +1,7 @@
 import {Address, getContract} from 'viem';
 import {getClient} from '@bgd-labs/rpc-env';
 import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book/abis';
-import {isPayloadFinal, isProposalFinal} from '@bgd-labs/aave-v3-governance-cache';
-import {getNonFinalizedPayloads} from '@bgd-labs/toolbox';
+import {getNonFinalizedPayloads, isPayloadFinal, isProposalFinal} from '@bgd-labs/toolbox';
 import tree from './tree.json';
 
 export type PayloadExecutionStrategy = {
