@@ -17,7 +17,7 @@
 | oracle | [0x0568fD19986748cEfF3301e55c0eb1E729E0Ab7e](https://celoscan.io/address/0x0568fD19986748cEfF3301e55c0eb1E729E0Ab7e) |
 | oracleDecimals | 8 |
 | oracleDescription | CELO / USD |
-| oracleLatestAnswer | 0.34376091 |
+| oracleLatestAnswer | 0.35144582 |
 | usageAsCollateralEnabled | true |
 | ltv | 55 % [5500] |
 | liquidationThreshold | 61 % [6100] |
@@ -61,7 +61,7 @@
 | oracle | [0x6e3d991C965364481796116dE68A8036d1b3Ecd0](https://celoscan.io/address/0x6e3d991C965364481796116dE68A8036d1b3Ecd0) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDT/USD |
-| oracleLatestAnswer | 0.99994 |
+| oracleLatestAnswer | 0.99982334 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -105,7 +105,7 @@
 | oracle | [0xdCdA3E7E90fe827776b8FDaEa3C5977F123354DA](https://celoscan.io/address/0xdCdA3E7E90fe827776b8FDaEa3C5977F123354DA) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped cUSD/USD |
-| oracleLatestAnswer | 0.99949333 |
+| oracleLatestAnswer | 1.00106764 |
 | usageAsCollateralEnabled | false |
 | ltv | 0 % [0] |
 | liquidationThreshold | 0 % [0] |
@@ -149,7 +149,7 @@
 | oracle | [0x3D207061Dbe8E2473527611BFecB87Ff12b28dDa](https://celoscan.io/address/0x3D207061Dbe8E2473527611BFecB87Ff12b28dDa) |
 | oracleDecimals | 8 |
 | oracleDescription | EUR / USD |
-| oracleLatestAnswer | 1.08152 |
+| oracleLatestAnswer | 1.08989 |
 | usageAsCollateralEnabled | false |
 | ltv | 0 % [0] |
 | liquidationThreshold | 0 % [0] |
@@ -193,7 +193,7 @@
 | oracle | [0xBF704f2FfdB856805cE64D085cD50427823696D7](https://celoscan.io/address/0xBF704f2FfdB856805cE64D085cD50427823696D7) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped USDC/USD |
-| oracleLatestAnswer | 0.99985185 |
+| oracleLatestAnswer | 0.99989737 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -253,7 +253,7 @@
         "oracle": "0x0568fD19986748cEfF3301e55c0eb1E729E0Ab7e",
         "oracleDecimals": 8,
         "oracleDescription": "CELO / USD",
-        "oracleLatestAnswer": "34376091",
+        "oracleLatestAnswer": "35144582",
         "reserveFactor": 2000,
         "supplyCap": 1000000,
         "symbol": "CELO",
@@ -292,7 +292,7 @@
         "oracle": "0x6e3d991C965364481796116dE68A8036d1b3Ecd0",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDT/USD",
-        "oracleLatestAnswer": "99994000",
+        "oracleLatestAnswer": "99982334",
         "reserveFactor": 1000,
         "supplyCap": 2000000,
         "symbol": "USD₮",
@@ -331,7 +331,7 @@
         "oracle": "0xdCdA3E7E90fe827776b8FDaEa3C5977F123354DA",
         "oracleDecimals": 8,
         "oracleDescription": "Capped cUSD/USD",
-        "oracleLatestAnswer": "99949333",
+        "oracleLatestAnswer": "100106764",
         "reserveFactor": 1500,
         "supplyCap": 1300000,
         "symbol": "cUSD",
@@ -370,7 +370,7 @@
         "oracle": "0x3D207061Dbe8E2473527611BFecB87Ff12b28dDa",
         "oracleDecimals": 8,
         "oracleDescription": "EUR / USD",
-        "oracleLatestAnswer": "108152000",
+        "oracleLatestAnswer": "108989000",
         "reserveFactor": 1500,
         "supplyCap": 80000,
         "symbol": "cEUR",
@@ -409,7 +409,7 @@
         "oracle": "0xBF704f2FfdB856805cE64D085cD50427823696D7",
         "oracleDecimals": 8,
         "oracleDescription": "Capped USDC/USD",
-        "oracleLatestAnswer": "99985185",
+        "oracleLatestAnswer": "99989737",
         "reserveFactor": 1000,
         "supplyCap": 3500000,
         "symbol": "USDC",
