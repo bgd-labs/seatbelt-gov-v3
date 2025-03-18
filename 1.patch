@@ -1,0 +1,553 @@
+diff --git a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/256.md b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/256.md
+index 9359859..9deec69 100644
+--- a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/256.md
++++ b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/256.md
+@@ -1,6 +1,6 @@
+ ## Payload 256 on Ethereum
+
+-- Simulation: [https://dashboard.tenderly.co/me/simulator/be01d64c-1266-490c-b4b0-2052b1f3b312](https://dashboard.tenderly.co/me/simulator/be01d64c-1266-490c-b4b0-2052b1f3b312)
++- Simulation: [https://dashboard.tenderly.co/me/simulator/13d20a4c-091e-4854-8b08-7519fa404cdd](https://dashboard.tenderly.co/me/simulator/13d20a4c-091e-4854-8b08-7519fa404cdd)
+ - creator: 0x076d6da60aAAC6c97A8a0fE8057f9564203Ee545
+ - maximumAccessLevelRequired: 1
+ - state: 1(Created)
+@@ -32,11 +32,11 @@ ClinicSteward at `0x7571F419F7Df2d0622C1A20154a0D4250B2265cC`
+ TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:ghost:](https://github.com/bgd-labs/aave-address-book "GovernanceV3Ethereum.PAYLOADS_CONTROLLER") with implementation PayloadsController at `0x7222182cB9c5320587b5148BF03eeE107AD64578`
+ ```diff
+ @@ Slot `0xeec86ed86396456308414027da1b2df403cb74680a87867e742cc275a8d16ed8` @@
+-- "0x0067d7f2560067d02b170201076d6da60aaac6c97a8a0fe8057f9564203ee545"
+-+ "0x0067d7f2560067d02b170301076d6da60aaac6c97a8a0fe8057f9564203ee545"
++- "0x0067d7fcfa0067d02b170201076d6da60aaac6c97a8a0fe8057f9564203ee545"
+++ "0x0067d7fcfa0067d02b170301076d6da60aaac6c97a8a0fe8057f9564203ee545"
+ @@ Slot `0xeec86ed86396456308414027da1b2df403cb74680a87867e742cc275a8d16ed9` @@
+ - "0x000000000000000000093a8000000151800067fe4f9700000000000000000000"
+-+ "0x000000000000000000093a8000000151800067fe4f9700000000000067d944af"
+++ "0x000000000000000000093a8000000151800067fe4f9700000000000067d94f7a"
+ ```
+
+ ClinicSteward at `0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7`
+@@ -57,8 +57,8 @@ ClinicSteward at `0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7`
+ - ClinicSteward at `0xf00E2de0E78DFf055A92AD4719a179CE275b6Ef7`
+   - `RoleGranted(role: 0xa76fa7c45e5f73660ff588d1884d27398b8576fbdeca4568c9e474f45a928f19, account: 0x3cbded22f878afc8d39dcd744d3fe62086b76193, sender: 0x5300a1a15135ea4dc7ad5a167152c01efc9b192a)`
+ - Executor at `0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV2Ethereum.POOL_ADMIN, AaveV2EthereumAMM.POOL_ADMIN, AaveV3Ethereum.ACL_ADMIN, AaveV3EthereumEtherFi.ACL_ADMIN, AaveV3EthereumLido.ACL_ADMIN, GovernanceV3Ethereum.EXECUTOR_LVL_1")
+-  - `ExecutedAction(target: 0x4cab0c8deb2a116332c1f8584590aa7bd79ec0fc, value: 0, signature: execute(), data: 0x, executionTime: 1742292143, withDelegatecall: true, resultData: 0x)`
+-  - `ExecutedAction(target: 0x2990d304c53a257dc0dd15ac25c8558d7f4c7fa9, value: 0, signature: execute(), data: 0x, executionTime: 1742292143, withDelegatecall: true, resultData: 0x)`
++  - `ExecutedAction(target: 0x4cab0c8deb2a116332c1f8584590aa7bd79ec0fc, value: 0, signature: execute(), data: 0x, executionTime: 1742294906, withDelegatecall: true, resultData: 0x)`
++  - `ExecutedAction(target: 0x2990d304c53a257dc0dd15ac25c8558d7f4c7fa9, value: 0, signature: execute(), data: 0x, executionTime: 1742294906, withDelegatecall: true, resultData: 0x)`
+ - ClinicSteward at `0x7571F419F7Df2d0622C1A20154a0D4250B2265cC`
+   - `RoleGranted(role: 0xa76fa7c45e5f73660ff588d1884d27398b8576fbdeca4568c9e474f45a928f19, account: 0x3cbded22f878afc8d39dcd744d3fe62086b76193, sender: 0x5300a1a15135ea4dc7ad5a167152c01efc9b192a)`
+ - TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:ghost:](https://github.com/bgd-labs/aave-address-book "GovernanceV3Ethereum.PAYLOADS_CONTROLLER") with implementation PayloadsController at `0x7222182cB9c5320587b5148BF03eeE107AD64578`
+diff --git a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/258.md b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/258.md
+index 5500c7e..f68a348 100644
+--- a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/258.md
++++ b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/258.md
+@@ -1,6 +1,6 @@
+ ## Payload 258 on Ethereum
+
+-- Simulation: [https://dashboard.tenderly.co/me/simulator/326f96d8-7b48-423d-975b-69139d45ea50](https://dashboard.tenderly.co/me/simulator/326f96d8-7b48-423d-975b-69139d45ea50)
++- Simulation: [https://dashboard.tenderly.co/me/simulator/a532b3ba-1dfa-4c7b-a1b4-36a275318ba8](https://dashboard.tenderly.co/me/simulator/a532b3ba-1dfa-4c7b-a1b4-36a275318ba8)
+ - creator: 0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922
+ - maximumAccessLevelRequired: 1
+ - state: 1(Created)
+diff --git a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259.md b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259.md
+index 5ebc2b0..f0a7649 100644
+--- a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259.md
++++ b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259.md
+@@ -1,6 +1,6 @@
+ ## Payload 259 on Ethereum
+
+-- Simulation: [https://dashboard.tenderly.co/me/simulator/8ae0b8ad-5960-4b2d-9ca1-5aa07a2b6412](https://dashboard.tenderly.co/me/simulator/8ae0b8ad-5960-4b2d-9ca1-5aa07a2b6412)
++- Simulation: [https://dashboard.tenderly.co/me/simulator/8bb8b047-fd20-4cdd-9b38-f62a1e516f39](https://dashboard.tenderly.co/me/simulator/8bb8b047-fd20-4cdd-9b38-f62a1e516f39)
+ - creator: 0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922
+ - maximumAccessLevelRequired: 1
+ - state: 1(Created)
+@@ -16,192 +16,192 @@ InitializableImmutableAdminUpgradeabilityProxy at `0x0AA97c284e98396202b6A04024F
+ ```diff
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).liquidityIndex` @@
+ - 1.0123 [1012362047256249157512519064, 27 decimals]
+-+ 1.0124 [1012429663978315358856160035, 27 decimals]
+++ 1.0124 [1012430780804785579895978514, 27 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).currentLiquidityRate` @@
+ - 1.4593 % [14593188732780564189978871, 25 decimals]
+-+ 1.1859 % [11859356581717646373455854, 25 decimals]
+++ 1.1859 % [11859396071918138328788680, 25 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).variableBorrowIndex` @@
+ - 1.0240 [1024048503261414306401835266, 27 decimals]
+-+ 1.0242 [1024237251301508305225302416, 27 decimals]
+++ 1.0242 [1024240369147911774494515611, 27 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).currentVariableBorrowRate` @@
+ - 4.0267 % [40267423741200479500893472, 25 decimals]
+-+ 3.2720 % [32720580038742161092030842, 25 decimals]
+++ 3.2720 % [32720634516452708559698651, 25 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).lastUpdateTimestamp` @@
+ - 1742147855
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).accruedToTreasury` @@
+ - 51304619263333124012
+-+ 60319487193593891116
+++ 60468389749318330185
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).liquidityIndex` @@
+ - 1.0470 [1047025515378134125076366468, 27 decimals]
+-+ 1.0470 [1047088309361343129543147654, 27 decimals]
+++ 1.0470 [1047090272393810612714519361, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentLiquidityRate` @@
+ - 2.4801 % [24801078856704431815418193, 25 decimals]
+-+ 2.0153 % [20153014440684664947992156, 25 decimals]
+++ 2.0153 % [20153081275035853017907408, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).variableBorrowIndex` @@
+ - 1.0608 [1060870599273316346561636967, 27 decimals]
+-+ 1.0609 [1060997576587489144941131928, 27 decimals]
+++ 1.0610 [1061001546330452996737435893, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentVariableBorrowRate` @@
+ - 4.9493 % [49493428605890363312894402, 25 decimals]
+-+ 4.0215 % [40215543808776643911775010, 25 decimals]
+++ 4.0215 % [40215610491148103597398260, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).lastUpdateTimestamp` @@
+ - 1742215931
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).accruedToTreasury` @@
+ - 17062755
+-+ 18668583
+++ 18718784
+ ```
+
+ InitializableImmutableAdminUpgradeabilityProxy at `0x4e033931ad43597d96D6bcc25c280717730B58B1`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumLido.POOL") with implementation PoolInstance at `0xc405a0eAB071a085A832F876D8e5be7cFEAfb624`
+ ```diff
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).liquidityIndex` @@
+ - 1.0264 [1026450260019295663696747359, 27 decimals]
+-+ 1.0264 [1026450719029844208409454539, 27 decimals]
+++ 1.0264 [1026453324461148328873963872, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentLiquidityRate` @@
+ - 3.3577 % [33577014147289898668259802, 25 decimals]
+-+ 2.7281 % [27281338273550900321398358, 25 decimals]
+++ 2.7281 % [27281419323180559886734999, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).variableBorrowIndex` @@
+ - 1.0368 [1036876726548736243590916119, 27 decimals]
+-+ 1.0368 [1036877513088776832861383000, 27 decimals]
+++ 1.0368 [1036881977651169369430998121, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentVariableBorrowRate` @@
+ - 5.6957 % [56957492538382459863932735, 25 decimals]
+-+ 4.6277 % [46277974798235253452033680, 25 decimals]
+++ 4.6278 % [46278043541379291714625326, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).lastUpdateTimestamp` @@
+ - 1742291771
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).accruedToTreasury` @@
+ - 505016256
+-+ 505260120
+++ 506644335
+ ```
+
+ InitializableImmutableAdminUpgradeabilityProxy at `0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3Ethereum.POOL") with implementation PoolInstance at `0x9aEb8aAA1cA38634Aa8C0c8933E7fB4D61091327`
+ ```diff
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).liquidityIndex` @@
+ - 1.0377 [1037733414657184506015173411, 27 decimals]
+-+ 1.0377 [1037744104468665857309375855, 27 decimals]
+++ 1.0377 [1037747443634097138950541817, 27 decimals]
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).currentLiquidityRate` @@
+ - 4.2564 % [42564985568823079522381558, 25 decimals]
+-+ 3.2550 % [32550024118516197861599345, 25 decimals]
+++ 3.2550 % [32550126972556225904381824, 25 decimals]
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).variableBorrowIndex` @@
+ - 1.0726 [1072617412921662225511064247, 27 decimals]
+-+ 1.0726 [1072637570611614668631617177, 27 decimals]
+++ 1.0726 [1072643867326165692999298431, 27 decimals]
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).currentVariableBorrowRate` @@
+ - 7.7653 % [77653329756359683521042284, 25 decimals]
+-+ 5.9382 % [59382258401304128644745416, 25 decimals]
+++ 5.9382 % [59382352221516602754623340, 25 decimals]
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).lastUpdateTimestamp` @@
+ - 1742284559
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe).accruedToTreasury` @@
+ - 1288946956651317139606
+-+ 1393794426124277913160
+++ 1426545483579258740975
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).liquidityIndex` @@
+ - 1.1016 [1101627863214393354628842734, 27 decimals]
+-+ 1.1016 [1101684572679163237295934275, 27 decimals]
+++ 1.1016 [1101687063015222981627616161, 27 decimals]
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).currentLiquidityRate` @@
+ - 2.9903 % [29903594926140808245590440, 25 decimals]
+-+ 2.4298 % [24298658395280518901320796, 25 decimals]
+++ 2.4298 % [24298745675813355324269358, 25 decimals]
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).variableBorrowIndex` @@
+ - 1.1622 [1162243258730123195398766582, 27 decimals]
+-+ 1.1623 [1162365588971412420316898127, 27 decimals]
+++ 1.1623 [1162370961269460995009511563, 27 decimals]
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).currentVariableBorrowRate` @@
+ - 6.1138 % [61138771379277822634406065, 25 decimals]
+-+ 4.9677 % [49677283473139689192082303, 25 decimals]
+++ 4.9677 % [49677372693207054306184780, 25 decimals]
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).lastUpdateTimestamp` @@
+ - 1742237903
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD).accruedToTreasury` @@
+ - 44670234905610163541
+-+ 89583567489717898281
+++ 91555891269954835349
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).liquidityIndex` @@
+-- 1.1205 [1120595498225028826515822226, 27 decimals]
+-+ 1.1205 [1120596276105719754722264803, 27 decimals]
++- 1.1205 [1120598589260279083489702244, 27 decimals]
+++ 1.1205 [1120599166475246793292226988, 27 decimals]
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).currentLiquidityRate` @@
+-- 3.5082 % [35082144665275600481847039, 25 decimals]
+-+ 2.8504 % [28504261717720731653651933, 25 decimals]
++- 3.3286 % [33286972541445260622386305, 25 decimals]
+++ 2.7045 % [27045680039760499611164867, 25 decimals]
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).variableBorrowIndex` @@
+-- 1.1769 [1176903567639384711821801577, 27 decimals]
+-+ 1.1769 [1176905052831611996182938046, 27 decimals]
++- 1.1769 [1176909516850932904015305015, 27 decimals]
+++ 1.1769 [1176910648245558541493450774, 27 decimals]
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).currentVariableBorrowRate` @@
+-- 6.3776 % [63776918547203039363711821, 25 decimals]
+-+ 5.1818 % [51818763750996715109295952, 25 decimals]
++- 6.2123 % [62123742846970055416615854, 25 decimals]
+++ 5.0475 % [50475554920343970580528725, 25 decimals]
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).lastUpdateTimestamp` @@
+-- 1742291567
+-+ 1742292191
++- 1742294087
+++ 1742294575
+ @@ `_reserves` key `0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI).accruedToTreasury` @@
+-- 4439089586922761861566
+-+ 4474019706254045406428
++- 4577890015652885916483
+++ 4603809351922416401272
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).liquidityIndex` @@
+ - 1.1185 [1118506043994614704995740690, 27 decimals]
+-+ 1.1186 [1118662810762454502332866907, 27 decimals]
+++ 1.1186 [1118666142419622970426324588, 27 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).currentLiquidityRate` @@
+ - 3.9402 % [39402368314725372142564636, 25 decimals]
+-+ 3.2018 % [32018276363689705967323750, 25 decimals]
+++ 3.2018 % [32018358227617938870844374, 25 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).variableBorrowIndex` @@
+ - 1.1681 [1168131080934460798806912726, 27 decimals]
+-+ 1.1684 [1168406044999076005840365159, 27 decimals]
+++ 1.1684 [1168411889325076232664682685, 27 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).currentVariableBorrowRate` @@
+ - 6.6166 % [66166766007251515681260569, 25 decimals]
+-+ 5.3763 % [53763731626335741269913809, 25 decimals]
+++ 5.3763 % [53763800357509838489261767, 25 decimals]
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).lastUpdateTimestamp` @@
+ - 1742180015
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX).accruedToTreasury` @@
+ - 0
+-+ 14138810706025760936
+++ 14439286314129303449
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).liquidityIndex` @@
+-- 1.1237 [1123799802985625966031048005, 27 decimals]
+-+ 1.1237 [1123799882592177252926593377, 27 decimals]
++- 1.1238 [1123801876177701516607275084, 27 decimals]
+++ 1.1238 [1123802146654145966013633841, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentLiquidityRate` @@
+-- 2.6594 % [26594215221068841197449036, 25 decimals]
+-+ 2.1607 % [21607802300660304690570258, 25 decimals]
++- 2.6725 % [26725630694083976406262710, 25 decimals]
+++ 2.1714 % [21714583199104591593358667, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).variableBorrowIndex` @@
+-- 1.1627 [1162785402434327214421740564, 27 decimals]
+-+ 1.1627 [1162785559432897078781858721, 27 decimals]
++- 1.1627 [1162789487772744567084069736, 27 decimals]
+++ 1.1627 [1162790019889259596008183182, 27 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).currentVariableBorrowRate` @@
+-- 5.0690 % [50690131425231902904715218, 25 decimals]
+-+ 4.1185 % [41185734102237487345226857, 25 decimals]
++- 5.0815 % [50815219877499885673394524, 25 decimals]
+++ 4.1287 % [41287374003265044763479443, 25 decimals]
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).lastUpdateTimestamp` @@
+-- 1742292107
+-+ 1742292191
++- 1742294291
+++ 1742294575
+ @@ `_reserves` key `0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC).accruedToTreasury` @@
+-- 18281888212
+-+ 18301762963
++- 18799615082
+++ 18867166544
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).liquidityIndex` @@
+-- 1.1181 [1118197213677887521929314837, 27 decimals]
+-+ 1.1181 [1118197278350993745424712234, 27 decimals]
++- 1.1181 [1118199236985498612643169582, 27 decimals]
+++ 1.1181 [1118199626955210720318699048, 27 decimals]
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).currentLiquidityRate` @@
+-- 3.0399 % [30399096165930090637027689, 25 decimals]
+-+ 2.4699 % [24699267553836851270168775, 25 decimals]
++- 2.6437 % [26437778677505395661177507, 25 decimals]
+++ 2.1480 % [21480707170297365786706629, 25 decimals]
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).variableBorrowIndex` @@
+-- 1.1614 [1161499653782061156601468165, 27 decimals]
+-+ 1.1614 [1161499773545404754089641557, 27 decimals]
++- 1.1615 [1161503540060569876906185529, 27 decimals]
+++ 1.1615 [1161504314432698999946851667, 27 decimals]
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).currentVariableBorrowRate` @@
+-- 5.4195 % [54195117491998031364881949, 25 decimals]
+-+ 4.4033 % [44033534672849238669906584, 25 decimals]
++- 5.0540 % [50540822778285266378808367, 25 decimals]
+++ 4.1064 % [41064429972544644064463147, 25 decimals]
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).lastUpdateTimestamp` @@
+-- 1742292131
+-+ 1742292191
++- 1742294159
+++ 1742294575
+ @@ `_reserves` key `0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT).accruedToTreasury` @@
+-- 22058196065
+-+ 22076376531
++- 22648147950
+++ 22765688400
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).liquidityIndex` @@
+ - 1.1432 [1143266539161327011811900922, 27 decimals]
+-+ 1.1432 [1143295379515668625246773288, 27 decimals]
+++ 1.1432 [1143298101424011871740389112, 27 decimals]
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).currentLiquidityRate` @@
+ - 3.1493 % [31493893882726709753197288, 25 decimals]
+-+ 2.5589 % [25589779244256923990473763, 25 decimals]
+++ 2.5589 % [25589872723325067837143696, 25 decimals]
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).variableBorrowIndex` @@
+ - 1.1866 [1186682858875983542693931649, 27 decimals]
+-+ 1.1867 [1186739088298374371673704170, 27 decimals]
+++ 1.1867 [1186744395282482535878161177, 27 decimals]
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).currentVariableBorrowRate` @@
+ - 5.9155 % [59155063540876954860394588, 25 decimals]
+-+ 4.8064 % [48064419314035374593020421, 25 decimals]
+++ 4.8064 % [48064507103245712084551241, 25 decimals]
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).lastUpdateTimestamp` @@
+ - 1742266931
+-+ 1742292191
+++ 1742294575
+ @@ `_reserves` key `0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD).accruedToTreasury` @@
+ - 7435605918908162547
+-+ 10007771593100704743
+++ 10250528230932834925
+ ```
+
+ DefaultReserveInterestRateStrategyV2 at `0x8958b1C39269167527821f8c276Ef7504883f2fa`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumLido.ASSETS.wstETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.WETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.USDS.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.USDC.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.ezETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.sUSDe.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.GHO.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.rsETH.INTEREST_RATE_STRATEGY")
+@@ -249,11 +249,11 @@ DefaultReserveInterestRateStrategyV2 at `0xC16666b7FF197427BD255E6961A5F99cfb3A6
+ TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:ghost:](https://github.com/bgd-labs/aave-address-book "GovernanceV3Ethereum.PAYLOADS_CONTROLLER") with implementation PayloadsController at `0x7222182cB9c5320587b5148BF03eeE107AD64578`
+ ```diff
+ @@ Slot `0x250aa56d419d6944c75ef323c37456f10c8deae91a088f5266af04395bfb6f9f` @@
+-- "0x0067d7f2860067d434f7020157ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922"
+-+ "0x0067d7f2860067d434f7030157ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922"
++- "0x0067d7fbb60067d434f7020157ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922"
+++ "0x0067d7fbb60067d434f7030157ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922"
+ @@ Slot `0x250aa56d419d6944c75ef323c37456f10c8deae91a088f5266af04395bfb6fa0` @@
+ - "0x000000000000000000093a800000015180006802597700000000000000000000"
+-+ "0x000000000000000000093a800000015180006802597700000000000067d944df"
+++ "0x000000000000000000093a800000015180006802597700000000000067d94e2f"
+ ```
+
+
+@@ -278,23 +278,23 @@ TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:gho
+   - `ReserveInterestRateDataChanged(asset: 0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD), strategy: 0x9ec6f08190dea04a54f8afc53db96134e5e3fdfb, data: 0x0000000000000000000000000000000000000000000000000000000000001f400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028a0000000000000000000000000000000000000000000000000000000000001388)`
+   - `ReserveInterestRateDataChanged(asset: 0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe), strategy: 0x9ec6f08190dea04a54f8afc53db96134e5e3fdfb, data: 0x0000000000000000000000000000000000000000000000000000000000001f400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028a0000000000000000000000000000000000000000000000000000000000001388)`
+ - InitializableImmutableAdminUpgradeabilityProxy at `0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3Ethereum.POOL") with implementation PoolInstance at `0x9aEb8aAA1cA38634Aa8C0c8933E7fB4D61091327`
+-  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 21607802300660304690570258, stableBorrowRate: 0, variableBorrowRate: 41185734102237487345226857, liquidityIndex: 1.1237 [1123799882592177252926593377, 27 decimals], variableBorrowIndex: 1.1627 [1162785559432897078781858721, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI), liquidityRate: 28504261717720731653651933, stableBorrowRate: 0, variableBorrowRate: 51818763750996715109295952, liquidityIndex: 1.1205 [1120596276105719754722264803, 27 decimals], variableBorrowIndex: 1.1769 [1176905052831611996182938046, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT), liquidityRate: 24699267553836851270168775, stableBorrowRate: 0, variableBorrowRate: 44033534672849238669906584, liquidityIndex: 1.1181 [1118197278350993745424712234, 27 decimals], variableBorrowIndex: 1.1614 [1161499773545404754089641557, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD), liquidityRate: 24298658395280518901320796, stableBorrowRate: 0, variableBorrowRate: 49677283473139689192082303, liquidityIndex: 1.1016 [1101684572679163237295934275, 27 decimals], variableBorrowIndex: 1.1623 [1162365588971412420316898127, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), liquidityRate: 32018276363689705967323750, stableBorrowRate: 0, variableBorrowRate: 53763731626335741269913809, liquidityIndex: 1.1186 [1118662810762454502332866907, 27 decimals], variableBorrowIndex: 1.1684 [1168406044999076005840365159, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD), liquidityRate: 25589779244256923990473763, stableBorrowRate: 0, variableBorrowRate: 48064419314035374593020421, liquidityIndex: 1.1432 [1143295379515668625246773288, 27 decimals], variableBorrowIndex: 1.1867 [1186739088298374371673704170, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe), liquidityRate: 32550024118516197861599345, stableBorrowRate: 0, variableBorrowRate: 59382258401304128644745416, liquidityIndex: 1.0377 [1037744104468665857309375855, 27 decimals], variableBorrowIndex: 1.0726 [1072637570611614668631617177, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 21714583199104591593358667, stableBorrowRate: 0, variableBorrowRate: 41287374003265044763479443, liquidityIndex: 1.1238 [1123802146654145966013633841, 27 decimals], variableBorrowIndex: 1.1627 [1162790019889259596008183182, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0x6b175474e89094c44da98b954eedeac495271d0f (symbol: DAI), liquidityRate: 27045680039760499611164867, stableBorrowRate: 0, variableBorrowRate: 50475554920343970580528725, liquidityIndex: 1.1205 [1120599166475246793292226988, 27 decimals], variableBorrowIndex: 1.1769 [1176910648245558541493450774, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0xdac17f958d2ee523a2206206994597c13d831ec7 (symbol: USDT), liquidityRate: 21480707170297365786706629, stableBorrowRate: 0, variableBorrowRate: 41064429972544644064463147, liquidityIndex: 1.1181 [1118199626955210720318699048, 27 decimals], variableBorrowIndex: 1.1615 [1161504314432698999946851667, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0x5f98805a4e8be255a32880fdec7f6728c6568ba0 (symbol: LUSD), liquidityRate: 24298745675813355324269358, stableBorrowRate: 0, variableBorrowRate: 49677372693207054306184780, liquidityIndex: 1.1016 [1101687063015222981627616161, 27 decimals], variableBorrowIndex: 1.1623 [1162370961269460995009511563, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), liquidityRate: 32018358227617938870844374, stableBorrowRate: 0, variableBorrowRate: 53763800357509838489261767, liquidityIndex: 1.1186 [1118666142419622970426324588, 27 decimals], variableBorrowIndex: 1.1684 [1168411889325076232664682685, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0xf939e0a03fb07f59a73314e73794be0e57ac1b4e (symbol: crvUSD), liquidityRate: 25589872723325067837143696, stableBorrowRate: 0, variableBorrowRate: 48064507103245712084551241, liquidityIndex: 1.1432 [1143298101424011871740389112, 27 decimals], variableBorrowIndex: 1.1867 [1186744395282482535878161177, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0x4c9edd5852cd905f086c759e8383e09bff1e68b3 (symbol: USDe), liquidityRate: 32550126972556225904381824, stableBorrowRate: 0, variableBorrowRate: 59382352221516602754623340, liquidityIndex: 1.0377 [1037747443634097138950541817, 27 decimals], variableBorrowIndex: 1.0726 [1072643867326165692999298431, 27 decimals])`
+ - Executor at `0x5300A1a15135EA4dc7aD5a167152C01EFc9b192A`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV2Ethereum.POOL_ADMIN, AaveV2EthereumAMM.POOL_ADMIN, AaveV3Ethereum.ACL_ADMIN, AaveV3EthereumEtherFi.ACL_ADMIN, AaveV3EthereumLido.ACL_ADMIN, GovernanceV3Ethereum.EXECUTOR_LVL_1")
+-  - `ExecutedAction(target: 0x50fbd9c93fbf99c38104b1dcae84ce0d2071b440, value: 0, signature: execute(), data: 0x, executionTime: 1742292191, withDelegatecall: true, resultData: 0x)`
+-  - `ExecutedAction(target: 0xaf54cd5e62b995059c1ef507b7de67d403b42ed4, value: 0, signature: execute(), data: 0x, executionTime: 1742292191, withDelegatecall: true, resultData: 0x)`
+-  - `ExecutedAction(target: 0x89b6d89fb3cfe5c59cb7d972c4ddb81afc160272, value: 0, signature: execute(), data: 0x, executionTime: 1742292191, withDelegatecall: true, resultData: 0x)`
++  - `ExecutedAction(target: 0x50fbd9c93fbf99c38104b1dcae84ce0d2071b440, value: 0, signature: execute(), data: 0x, executionTime: 1742294575, withDelegatecall: true, resultData: 0x)`
++  - `ExecutedAction(target: 0xaf54cd5e62b995059c1ef507b7de67d403b42ed4, value: 0, signature: execute(), data: 0x, executionTime: 1742294575, withDelegatecall: true, resultData: 0x)`
++  - `ExecutedAction(target: 0x89b6d89fb3cfe5c59cb7d972c4ddb81afc160272, value: 0, signature: execute(), data: 0x, executionTime: 1742294575, withDelegatecall: true, resultData: 0x)`
+ - DefaultReserveInterestRateStrategyV2 at `0x8958b1C39269167527821f8c276Ef7504883f2fa`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumLido.ASSETS.wstETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.WETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.USDS.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.USDC.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.ezETH.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.sUSDe.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.GHO.INTEREST_RATE_STRATEGY, AaveV3EthereumLido.ASSETS.rsETH.INTEREST_RATE_STRATEGY")
+   - `RateDataUpdate(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), optimalUsageRatio: 9200, baseVariableBorrowRate: 0, variableRateSlope1: 650, variableRateSlope2: 3500)`
+ - InitializableImmutableAdminUpgradeabilityProxy at `0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumLido.POOL_CONFIGURATOR") with implementation PoolConfiguratorInstance at `0xE5e48Ad1F9D1A894188b483DcF91f4FaD6AbA43b`
+   - `ReserveInterestRateDataChanged(asset: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), strategy: 0x8958b1c39269167527821f8c276ef7504883f2fa, data: 0x00000000000000000000000000000000000000000000000000000000000023f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028a0000000000000000000000000000000000000000000000000000000000000dac)`
+ - InitializableImmutableAdminUpgradeabilityProxy at `0x4e033931ad43597d96D6bcc25c280717730B58B1`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumLido.POOL") with implementation PoolInstance at `0xc405a0eAB071a085A832F876D8e5be7cFEAfb624`
+-  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 27281338273550900321398358, stableBorrowRate: 0, variableBorrowRate: 46277974798235253452033680, liquidityIndex: 1.0264 [1026450719029844208409454539, 27 decimals], variableBorrowIndex: 1.0368 [1036877513088776832861383000, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 27281419323180559886734999, stableBorrowRate: 0, variableBorrowRate: 46278043541379291714625326, liquidityIndex: 1.0264 [1026453324461148328873963872, 27 decimals], variableBorrowIndex: 1.0368 [1036881977651169369430998121, 27 decimals])`
+ - DefaultReserveInterestRateStrategyV2 at `0xC16666b7FF197427BD255E6961A5F99cfb3A6059`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumEtherFi.ASSETS.weETH.INTEREST_RATE_STRATEGY, AaveV3EthereumEtherFi.ASSETS.USDC.INTEREST_RATE_STRATEGY, AaveV3EthereumEtherFi.ASSETS.PYUSD.INTEREST_RATE_STRATEGY, AaveV3EthereumEtherFi.ASSETS.FRAX.INTEREST_RATE_STRATEGY")
+   - `RateDataUpdate(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), optimalUsageRatio: 9000, baseVariableBorrowRate: 0, variableRateSlope1: 650, variableRateSlope2: 4000)`
+   - `RateDataUpdate(reserve: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), optimalUsageRatio: 9000, baseVariableBorrowRate: 0, variableRateSlope1: 650, variableRateSlope2: 4000)`
+@@ -302,8 +302,8 @@ TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:gho
+   - `ReserveInterestRateDataChanged(asset: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), strategy: 0xc16666b7ff197427bd255e6961a5f99cfb3a6059, data: 0x00000000000000000000000000000000000000000000000000000000000023280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028a0000000000000000000000000000000000000000000000000000000000000fa0)`
+   - `ReserveInterestRateDataChanged(asset: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), strategy: 0xc16666b7ff197427bd255e6961a5f99cfb3a6059, data: 0x00000000000000000000000000000000000000000000000000000000000023280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028a0000000000000000000000000000000000000000000000000000000000000fa0)`
+ - InitializableImmutableAdminUpgradeabilityProxy at `0x0AA97c284e98396202b6A04024F5E2c65026F3c0`[:ghost:](https://github.com/bgd-labs/aave-address-book "AaveV3EthereumEtherFi.POOL") with implementation PoolInstance at `0x56401d666f486c495566A29249447C2BB8C56bB2`
+-  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 20153014440684664947992156, stableBorrowRate: 0, variableBorrowRate: 40215543808776643911775010, liquidityIndex: 1.0470 [1047088309361343129543147654, 27 decimals], variableBorrowIndex: 1.0609 [1060997576587489144941131928, 27 decimals])`
+-  - `ReserveDataUpdated(reserve: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), liquidityRate: 11859356581717646373455854, stableBorrowRate: 0, variableBorrowRate: 32720580038742161092030842, liquidityIndex: 1.0124 [1012429663978315358856160035, 27 decimals], variableBorrowIndex: 1.0242 [1024237251301508305225302416, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48 (symbol: USDC), liquidityRate: 20153081275035853017907408, stableBorrowRate: 0, variableBorrowRate: 40215610491148103597398260, liquidityIndex: 1.0470 [1047090272393810612714519361, 27 decimals], variableBorrowIndex: 1.0610 [1061001546330452996737435893, 27 decimals])`
++  - `ReserveDataUpdated(reserve: 0x853d955acef822db058eb8505911ed77f175b99e (symbol: FRAX), liquidityRate: 11859396071918138328788680, stableBorrowRate: 0, variableBorrowRate: 32720634516452708559698651, liquidityIndex: 1.0124 [1012430780804785579895978514, 27 decimals], variableBorrowIndex: 1.0242 [1024240369147911774494515611, 27 decimals])`
+ - TransparentUpgradeableProxy at `0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5`[:ghost:](https://github.com/bgd-labs/aave-address-book "GovernanceV3Ethereum.PAYLOADS_CONTROLLER") with implementation PayloadsController at `0x7222182cB9c5320587b5148BF03eeE107AD64578`
+   - `PayloadExecuted(payloadId: 259)`
+
+diff --git a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259_forge.md b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259_forge.md
+index e13a542..d4a822b 100644
+--- a/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259_forge.md
++++ b/reports/payloads/1/0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5/259_forge.md
+@@ -14,49 +14,49 @@
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 58.5 % | 56.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=585000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=565000000000000000000000000) |
++| maxVariableBorrowRate | 58 % | 56.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=580000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=565000000000000000000000000) |
+
+ #### DAI ([0x6B175474E89094C44Da98b954EedeAC495271d0F](https://etherscan.io/address/0x6B175474E89094C44Da98b954EedeAC495271d0F))
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 43.5 % | 41.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=435000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
++| maxVariableBorrowRate | 43 % | 41.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=430000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
+
+ #### FRAX ([0x853d955aCEf822Db058eb8505911ED77F175b99e](https://etherscan.io/address/0x853d955aCEf822Db058eb8505911ED77F175b99e))
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 48.5 % | 46.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=400000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=485000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=400000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=465000000000000000000000000) |
++| maxVariableBorrowRate | 48 % | 46.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=400000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=480000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=400000000000000000000000000&optimalUsageRatio=900000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=465000000000000000000000000) |
+
+ #### USDC ([0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48))
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 43.5 % | 41.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=435000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
++| maxVariableBorrowRate | 43 % | 41.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=430000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
+
+ #### USDT ([0xdAC17F958D2ee523a2206206994597C13D831ec7](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7))
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 43.5 % | 41.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=435000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
++| maxVariableBorrowRate | 43 % | 41.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=430000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=350000000000000000000000000&optimalUsageRatio=920000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=415000000000000000000000000) |
+
+ #### crvUSD ([0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E](https://etherscan.io/address/0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E))
+
+ | description | value before | value after |
+ | --- | --- | --- |
+-| maxVariableBorrowRate | 58.5 % | 56.5 % |
+-| variableRateSlope1 | 8.5 % | 6.5 % |
+-| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=85000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=585000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=565000000000000000000000000) |
++| maxVariableBorrowRate | 58 % | 56.5 % |
++| variableRateSlope1 | 8 % | 6.5 % |
++| interestRate | ![before](https://dash.onaave.com/api/static?variableRateSlope1=80000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=580000000000000000000000000) | ![after](https://dash.onaave.com/api/static?variableRateSlope1=65000000000000000000000000&variableRateSlope2=500000000000000000000000000&optimalUsageRatio=800000000000000000000000000&baseVariableBorrowRate=0&maxVariableBorrowRate=565000000000000000000000000) |
+
+ ## Raw diff
+
+@@ -75,61 +75,61 @@
+     },
+     "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0": {
+       "maxVariableBorrowRate": {
+-        "from": "585000000000000000000000000",
++        "from": "580000000000000000000000000",
+         "to": "565000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     },
+     "0x6B175474E89094C44Da98b954EedeAC495271d0F": {
+       "maxVariableBorrowRate": {
+-        "from": "435000000000000000000000000",
++        "from": "430000000000000000000000000",
+         "to": "415000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     },
+     "0x853d955aCEf822Db058eb8505911ED77F175b99e": {
+       "maxVariableBorrowRate": {
+-        "from": "485000000000000000000000000",
++        "from": "480000000000000000000000000",
+         "to": "465000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     },
+     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
+       "maxVariableBorrowRate": {
+-        "from": "435000000000000000000000000",
++        "from": "430000000000000000000000000",
+         "to": "415000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     },
+     "0xdAC17F958D2ee523a2206206994597C13D831ec7": {
+       "maxVariableBorrowRate": {
+-        "from": "435000000000000000000000000",
++        "from": "430000000000000000000000000",
+         "to": "415000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     },
+     "0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E": {
+       "maxVariableBorrowRate": {
+-        "from": "585000000000000000000000000",
++        "from": "580000000000000000000000000",
+         "to": "565000000000000000000000000"
+       },
+       "variableRateSlope1": {
+-        "from": "85000000000000000000000000",
++        "from": "80000000000000000000000000",
+         "to": "65000000000000000000000000"
+       }
+     }
+diff --git a/src/tree.json b/src/tree.json
+index ee9fdff..0ea5c0c 100644
+--- a/src/tree.json
++++ b/src/tree.json
+@@ -4666,7 +4666,7 @@
+       ]
+     },
+     "270": {
+-      "state": 2,
++      "state": 4,
+       "payloads": [
+         {
+           "chain": 1,

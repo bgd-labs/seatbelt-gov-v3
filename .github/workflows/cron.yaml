@@ -15,7 +15,44 @@ on:
   workflow_dispatch:
 
 jobs:
+  tree:
+    name: Refresh tree
+    runs-on: ubuntu-latest
+    env:
+      TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
+      TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
+      TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
+
+      - uses: bgd-labs/action-rpc-env@main
+        with:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
+          QUICKNODE_ENDPOINT_NAME: ${{ secrets.QUICKNODE_ENDPOINT_NAME }}
+
+      - name: tree building
+        run: bun run ci:tree
+
+      - name: check diff
+        run: |
+          if [[ -z $(git status -s) ]]
+          then
+            echo "tree is clean"
+          else
+            git config --global user.name 'Cache bot'
+            git config --global user.email 'cache-bot@bgdlabs.com'
+            git config --global pull.rebase true
+            git pull origin main --rebase --autostash
+            git add .
+            git commit -am "fix(cache): automatic cache update :robot:"
+            git push
+          fi
   payloads:
+    needs: [tree]
     strategy:
       matrix:
         chainId:
@@ -65,7 +102,7 @@ jobs:
 
       - name: scheduled ${{ matrix.chainId }}
         id: all
-        run: bun run start --chainId ${{ matrix.chainId }}
+        run: bun run start:ci --chainId ${{ matrix.chainId }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           TENDERLY_ACCESS_TOKEN: ${{ secrets.TENDERLY_ACCESS_TOKEN }}
