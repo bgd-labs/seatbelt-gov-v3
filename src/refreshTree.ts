@@ -3,11 +3,10 @@
  */
 import {writeFileSync} from 'node:fs';
 import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book/abis';
-import {ChainId, getRPCUrl} from '@bgd-labs/rpc-env';
 import {Address, createPublicClient, getContract, http} from 'viem';
 import {mainnet} from 'viem/chains';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
-import {ProposalState, isProposalFinal} from '@bgd-labs/toolbox';
+import {ChainId, ProposalState, getRPCUrl, isProposalFinal} from '@bgd-labs/toolbox';
 import tree from './tree.json';
 import path from 'node:path';
 
@@ -32,7 +31,7 @@ type ProposalId = number;
 type PayloadId = number;
 type PayloadsController = Address;
 
-interface TreeStructure {
+export interface TreeStructure {
   governance: Record<
     ProposalId,
     {

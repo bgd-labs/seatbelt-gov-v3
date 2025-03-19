@@ -1,5 +1,5 @@
+import {ChainId, getClient} from '@bgd-labs/toolbox';
 import {execSync} from 'child_process';
-import {ChainId, getClient} from '@bgd-labs/rpc-env';
 
 function getChainName(chainId: number) {
   return Object.keys(ChainId)
@@ -11,7 +11,13 @@ export function simulateViaFoundry(
   payload: {chain: bigint | number; payloadId: number | bigint},
   blockNumber: number | bigint
 ) {
-  const client = getClient(Number(payload.chain), {});
+  const client = getClient(Number(payload.chain), {
+    providerConfig: {
+      alchemyKey: process.env.ALCHEMY_API_KEY,
+      quicknodeToken: process.env.QUICKNODE_TOKEN,
+      quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
+    },
+  });
   const command = [
     `FOUNDRY_PROFILE=${getChainName(Number(payload.chain))}`,
     `forge script ${

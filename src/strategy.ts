@@ -1,8 +1,13 @@
-import {Address, getContract} from 'viem';
-import {getClient} from '@bgd-labs/rpc-env';
+import {Address, getContract, PublicClient} from 'viem';
 import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book/abis';
-import {getNonFinalizedPayloads, isPayloadFinal, isProposalFinal} from '@bgd-labs/toolbox';
-import tree from './tree.json';
+import {
+  getClient,
+  getNonFinalizedPayloads,
+  isPayloadFinal,
+  isProposalFinal,
+} from '@bgd-labs/toolbox';
+import treeJson from './tree.json';
+import {TreeStructure} from './refreshTree';
 
 export type PayloadExecutionStrategy = {
   executeBefore: number[];
@@ -15,8 +20,15 @@ export async function generatePayloadsStrategy(
   payloadsController: Address,
   payloadId: number
 ): Promise<PayloadExecutionStrategy> {
+  const tree = treeJson as TreeStructure;
   const alerts: string[] = [];
-  const client = getClient(chainId, {});
+  const client = getClient(chainId, {
+    providerConfig: {
+      alchemyKey: process.env.ALCHEMY_API_KEY,
+      quicknodeToken: process.env.QUICKNODE_TOKEN,
+      quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
+    },
+  }) as PublicClient;
   const controllerContract = getContract({
     abi: IPayloadsControllerCore_ABI,
     client,

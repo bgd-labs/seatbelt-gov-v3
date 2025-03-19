@@ -1,7 +1,11 @@
 import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book/abis';
 import {generateReport} from '@bgd-labs/aave-cli';
-import {ChainId, getClient} from '@bgd-labs/rpc-env';
-import {makePayloadExecutableOnTestClient, tenderly_createVnet} from '@bgd-labs/toolbox';
+import {
+  ChainId,
+  getClient,
+  makePayloadExecutableOnTestClient,
+  tenderly_createVnet,
+} from '@bgd-labs/toolbox';
 import {Address, encodeFunctionData} from 'viem';
 import {GetPayloadReturnType} from '@bgd-labs/aave-v3-governance-cache';
 
@@ -79,7 +83,13 @@ export async function simulateOnTenderly({
     payloadId: payloadId,
     payloadInfo: cache,
     simulation: tenderlyPayload,
-    client: getClient(chainId, {}),
+    client: getClient(chainId, {
+      providerConfig: {
+        alchemyKey: process.env.ALCHEMY_API_KEY,
+        quicknodeToken: process.env.QUICKNODE_TOKEN,
+        quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
+      },
+    }),
   });
   await vnet.delete();
   return report;

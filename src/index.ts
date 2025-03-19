@@ -3,13 +3,12 @@ import {existsSync, writeFileSync, mkdirSync} from 'fs';
 import path from 'path';
 import {Hex} from 'viem';
 import {findPayloadsController, logError, logInfo} from '@bgd-labs/aave-cli';
-import {getNonFinalizedPayloads} from '@bgd-labs/toolbox';
+import {getClient, getNonFinalizedPayloads} from '@bgd-labs/toolbox';
 import {fallbackProvider} from '@bgd-labs/aave-v3-governance-cache/fallbackProvider';
 import {githubPagesProvider} from '@bgd-labs/aave-v3-governance-cache/githubPagesProvider';
 import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/customStorageProvider';
-import {Option, program} from 'commander';
 import {fileSystemStorageAdapter} from '@bgd-labs/aave-v3-governance-cache/fileSystemStorageAdapter';
-import {getClient} from '@bgd-labs/rpc-env';
+import {Option, program} from 'commander';
 import {CHAIN_NOT_SUPPORTED_ON_TENDERLY, simulateOnTenderly} from './tenderly';
 import {generatePayloadsStrategy} from './strategy';
 import {simulateViaFoundry} from './foundry';
@@ -31,7 +30,16 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
   if (!payloadsController) throw new Error(`payloadsController on ${chainId} not found`);
   logInfo(chainId.toString(), `Simulating payloads on ${payloadsController}`);
   if (!payloadIds || payloadIds.length === 0) {
-    payloadIds = await getNonFinalizedPayloads(getClient(chainId, {}), payloadsController);
+    payloadIds = await getNonFinalizedPayloads(
+      getClient(chainId, {
+        providerConfig: {
+          alchemyKey: process.env.ALCHEMY_API_KEY,
+          quicknodeToken: process.env.QUICKNODE_TOKEN,
+          quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
+        },
+      }),
+      payloadsController
+    );
   }
   for (const payloadId of payloadIds) {
     const cache = await cachingLayer.getPayload({chainId, payloadId, payloadsController});
