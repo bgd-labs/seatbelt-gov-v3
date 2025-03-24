@@ -6,7 +6,7 @@ import {
   makePayloadExecutableOnTestClient,
   tenderly_createVnet,
 } from '@bgd-labs/toolbox';
-import {Address, encodeFunctionData} from 'viem';
+import {Address, Client, encodeFunctionData, PublicClient} from 'viem';
 import {GetPayloadReturnType} from '@bgd-labs/aave-v3-governance-cache';
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
@@ -58,27 +58,25 @@ export async function simulateOnTenderly({
   }
   // prepare the actual payload execution via state overrides
   await makePayloadExecutableOnTestClient(vnet.testClient, payloadsController, payloadId);
-  const tenderlyPayload = await (
-    await vnet.simulate({
-      network_id: chainId.toString(),
-      from: '0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073',
-      to: payloadsController,
-      input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
-        functionName: 'executePayload',
-        args: [payloadId],
-      }),
-      block_number: null,
-      transaction_index: 0,
-      gas: 8_000_000,
-      gas_price: '0',
-      value: '0',
-      access_list: [],
-      generate_access_list: true,
-      save: true,
-      source: 'dashboard',
-    })
-  ).json();
+  const tenderlyPayload = await vnet.simulate({
+    network_id: chainId.toString(),
+    from: '0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073',
+    to: payloadsController,
+    input: encodeFunctionData({
+      abi: IPayloadsControllerCore_ABI,
+      functionName: 'executePayload',
+      args: [payloadId],
+    }),
+    block_number: null,
+    transaction_index: 0,
+    gas: 8_000_000,
+    gas_price: '0',
+    value: '0',
+    access_list: [],
+    generate_access_list: true,
+    save: true,
+    source: 'dashboard',
+  });
   const report = await generateReport({
     payloadId: payloadId,
     payloadInfo: cache,
@@ -89,7 +87,7 @@ export async function simulateOnTenderly({
         quicknodeToken: process.env.QUICKNODE_TOKEN,
         quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
       },
-    }),
+    }) as any, // currently there is a type mismatch due to multiple viem versions being in use. Should be resolved one tooling is unified.
   });
   await vnet.delete();
   return report;
