@@ -44,7 +44,7 @@ jobs:
 
       - name: Trigger
         id: external-trigger
-        run: bun run start --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
+        run: bun run ci:simulate --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
 
       - name: check diff
         run: |
