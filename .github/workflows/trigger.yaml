@@ -3,13 +3,6 @@ name: Triggered Governance Checks
 on:
   workflow_dispatch:
     inputs:
-      type:
-        description: "Deprecated always payload (kept to not break tenderly actions)"
-        type: choice
-        options:
-          - proposal
-          - payload
-        default: payload
       chainId:
         description: "On which networkId are the payloads deployed"
         type: string
