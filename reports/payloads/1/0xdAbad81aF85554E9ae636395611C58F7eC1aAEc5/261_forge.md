@@ -7,7 +7,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) | [0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A](https://etherscan.io/address/0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A) |
-| oracleLatestAnswer | 87413.16543212 | 87478.89249525 |
+| oracleLatestAnswer | 87442.35936498 | 87478.265849 |
 
 
 #### LINK ([0x514910771AF9Ca656af840dff83E8264EcF986CA](https://etherscan.io/address/0x514910771AF9Ca656af840dff83E8264EcF986CA))
@@ -15,7 +15,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c](https://etherscan.io/address/0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c) | [0xC7e9b623ed51F033b32AE7f1282b1AD62C28C183](https://etherscan.io/address/0xC7e9b623ed51F033b32AE7f1282b1AD62C28C183) |
-| oracleLatestAnswer | 15.63241 | 15.6108 |
+| oracleLatestAnswer | 15.635 | 15.64861 |
 
 
 #### AAVE ([0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9](https://etherscan.io/address/0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9))
@@ -23,7 +23,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x547a514d5e3769680Ce22B2361c10Ea13619e8a9](https://etherscan.io/address/0x547a514d5e3769680Ce22B2361c10Ea13619e8a9) | [0xF02C1e2A3B77c1cacC72f72B44f7d0a4c62e4a85](https://etherscan.io/address/0xF02C1e2A3B77c1cacC72f72B44f7d0a4c62e4a85) |
-| oracleLatestAnswer | 184.4589 | 184.1024187 |
+| oracleLatestAnswer | 184.888 | 185.02670127 |
 
 
 #### LBTC ([0x8236a87084f8B84306f72007F36F2618A5634494](https://etherscan.io/address/0x8236a87084f8B84306f72007F36F2618A5634494))
@@ -31,7 +31,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c](https://etherscan.io/address/0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c) | [0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A](https://etherscan.io/address/0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A) |
-| oracleLatestAnswer | 87413.16543212 | 87478.89249525 |
+| oracleLatestAnswer | 87442.35936498 | 87478.265849 |
 
 
 ## Raw diff
@@ -45,8 +45,8 @@
         "to": "0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A"
       },
       "oracleLatestAnswer": {
-        "from": "8741316543212",
-        "to": "8747889249525"
+        "from": "8744235936498",
+        "to": "8747826584900"
       }
     },
     "0x514910771AF9Ca656af840dff83E8264EcF986CA": {
@@ -55,8 +55,8 @@
         "to": "0xC7e9b623ed51F033b32AE7f1282b1AD62C28C183"
       },
       "oracleLatestAnswer": {
-        "from": "1563241000",
-        "to": "1561080000"
+        "from": "1563500000",
+        "to": "1564861000"
       }
     },
     "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9": {
@@ -65,8 +65,8 @@
         "to": "0xF02C1e2A3B77c1cacC72f72B44f7d0a4c62e4a85"
       },
       "oracleLatestAnswer": {
-        "from": "18445890000",
-        "to": "18410241870"
+        "from": "18488800000",
+        "to": "18502670127"
       }
     },
     "0x8236a87084f8B84306f72007F36F2618A5634494": {
@@ -75,8 +75,8 @@
         "to": "0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A"
       },
       "oracleLatestAnswer": {
-        "from": "8741316543212",
-        "to": "8747889249525"
+        "from": "8744235936498",
+        "to": "8747826584900"
       }
     }
   }
