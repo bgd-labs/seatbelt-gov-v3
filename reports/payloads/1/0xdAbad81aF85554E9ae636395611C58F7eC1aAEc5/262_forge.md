@@ -17,7 +17,7 @@
 | oracle | [0x95a85D0d2f3115702d813549a80040387738A430](https://etherscan.io/address/0x95a85D0d2f3115702d813549a80040387738A430) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped eBTC / BTC / USD |
-| oracleLatestAnswer | 83721.9602995 |
+| oracleLatestAnswer | 84140.44808364 |
 | usageAsCollateralEnabled | true |
 | ltv | 67 % [6700] |
 | liquidationThreshold | 72 % [7200] |
@@ -129,7 +129,7 @@
         "oracle": "0x95a85D0d2f3115702d813549a80040387738A430",
         "oracleDecimals": 8,
         "oracleDescription": "Capped eBTC / BTC / USD",
-        "oracleLatestAnswer": "8372196029950",
+        "oracleLatestAnswer": "8414044808364",
         "reserveFactor": 5000,
         "supplyCap": 750,
         "symbol": "eBTC",
