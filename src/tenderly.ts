@@ -69,7 +69,7 @@ export async function simulateOnTenderly({
     }),
     block_number: null,
     transaction_index: 0,
-    gas: 8_000_000,
+    gas: 10_000_000,
     gas_price: '0',
     value: '0',
     access_list: [],
