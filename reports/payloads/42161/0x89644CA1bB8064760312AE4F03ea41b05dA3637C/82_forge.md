@@ -17,7 +17,7 @@
 | oracle | [0xb4B0cbcA864c2Eb0C0342608D92490C034aC1089](https://arbiscan.io/address/0xb4B0cbcA864c2Eb0C0342608D92490C034aC1089) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped rsETH / ETH / USD |
-| oracleLatestAnswer | 1865.39756675 |
+| oracleLatestAnswer | 1886.63612762 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -121,7 +121,7 @@
         "oracle": "0xb4B0cbcA864c2Eb0C0342608D92490C034aC1089",
         "oracleDecimals": 8,
         "oracleDescription": "Capped rsETH / ETH / USD",
-        "oracleLatestAnswer": "186539756675",
+        "oracleLatestAnswer": "188663612762",
         "reserveFactor": 2000,
         "supplyCap": 900,
         "symbol": "rsETH",
