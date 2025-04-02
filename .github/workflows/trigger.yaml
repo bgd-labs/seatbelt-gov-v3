@@ -42,6 +42,9 @@ jobs:
         with:
           version: nightly
 
+      - name: tree building
+        run: bun run ci:tree
+
       - name: Trigger
         id: external-trigger
         run: bun run ci:simulate --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
@@ -55,7 +58,7 @@ jobs:
             git config --global user.name 'Cache bot'
             git config --global user.email 'cache-bot@bgdlabs.com'
             git config --global pull.rebase true
-            git add .
+            git add reports
             git commit -am "fix(cache): automatic cache update :robot:"
             git pull --rebase --autostash
             git push
