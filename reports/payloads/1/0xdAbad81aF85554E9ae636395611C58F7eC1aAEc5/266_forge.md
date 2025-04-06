@@ -58,7 +58,7 @@
 | --- | --- | --- |
 | oracle | [0x4F01b76391A05d32B20FA2d05dD5963eE8db20E6](https://etherscan.io/address/0x4F01b76391A05d32B20FA2d05dD5963eE8db20E6) | [0x94C7FD62fd0506e71d8142E9D36687fC72A86B02](https://etherscan.io/address/0x94C7FD62fd0506e71d8142E9D36687fC72A86B02) |
 | oracleDescription | Capped USDS <-> DAI / USD | Capped USDS/USD |
-| oracleLatestAnswer | 1.00016891 | 0.99998575 |
+| oracleLatestAnswer | 1.00001656 | 0.99997691 |
 
 
 #### crvUSD ([0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E](https://etherscan.io/address/0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E))
@@ -129,8 +129,8 @@
         "to": "Capped USDS/USD"
       },
       "oracleLatestAnswer": {
-        "from": "100016891",
-        "to": "99998575"
+        "from": "100001656",
+        "to": "99997691"
       }
     },
     "0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E": {
