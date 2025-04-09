@@ -12,11 +12,8 @@ import {Address, Client, encodeFunctionData, Hex, PublicClient} from 'viem';
 import {GetPayloadReturnType} from '@bgd-labs/aave-v3-governance-cache';
 import {providerConfig} from './common';
 
-export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
-  ChainId.zkEVM,
-  ChainId.zksync,
-  ChainId.celo,
-];
+export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM, ChainId.celo];
+export const NO_V_NET: number[] = [ChainId.zksync];
 
 type SimulateOnTenderlyParams = {
   chainId: number;
@@ -40,17 +37,17 @@ export async function simulateOnTenderly({
     accountSlug: process.env.TENDERLY_ACCOUNT!,
     accessToken: process.env.TENDERLY_ACCESS_TOKEN!,
   };
-  const vnet = await tenderly_createVnet(
-    {
-      baseChainId: chainId,
-      forkChainId: chainId,
-      displayName: `Seatbelt ${chainId} ${payloadId}`,
-      slug: `seatbelt_${chainId}_${payloadId}`,
-      force: true,
-    },
-    tenderlyConfig
-  );
   try {
+    const vnet = await tenderly_createVnet(
+      {
+        baseChainId: chainId,
+        forkChainId: chainId,
+        displayName: `Seatbelt ${chainId} ${payloadId}`,
+        slug: `seatbelt_${chainId}_${payloadId}`,
+        force: true,
+      },
+      tenderlyConfig
+    );
     // first execute all previous payloads
     for (const before of executeBefore) {
       await makePayloadExecutableOnTestClient(vnet.testClient, payloadsController, before);
@@ -84,6 +81,7 @@ export async function simulateOnTenderly({
       save: true,
       source: 'dashboard',
     });
+    await vnet.delete();
     const report = await generateReport({
       payloadId: payloadId,
       payloadInfo: cache,
@@ -101,7 +99,7 @@ export async function simulateOnTenderly({
       payloadsController,
       payloadId
     );
-    const simResult = await tenderly_sim(tenderlyConfig, {
+    const simPayload = {
       network_id: chainId.toString(),
       from: EOA,
       to: payloadsController,
@@ -119,7 +117,9 @@ export async function simulateOnTenderly({
           }, {} as Record<Hex, Hex>),
         },
       },
-    });
+    } as const;
+    console.log(JSON.stringify(simPayload));
+    const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await generateReport({
       payloadId: payloadId,
       payloadInfo: cache,
@@ -130,5 +130,4 @@ export async function simulateOnTenderly({
     });
     return report;
   }
-  await vnet.delete();
 }
