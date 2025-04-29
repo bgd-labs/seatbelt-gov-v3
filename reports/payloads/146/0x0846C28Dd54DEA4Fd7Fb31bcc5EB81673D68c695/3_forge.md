@@ -17,7 +17,7 @@
 | oracle | [0x5BA5D5213B47DFE020B1F8d6fB54Db3F74F9ea9a](https://sonicscan.org//address/0x5BA5D5213B47DFE020B1F8d6fB54Db3F74F9ea9a) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped stS / S / USD |
-| oracleLatestAnswer | 0.53475077 |
+| oracleLatestAnswer | 0.5351643 |
 | usageAsCollateralEnabled | true |
 | ltv | 66 % [6600] |
 | liquidationThreshold | 68 % [6800] |
@@ -105,7 +105,7 @@
         "oracle": "0x5BA5D5213B47DFE020B1F8d6fB54Db3F74F9ea9a",
         "oracleDecimals": 8,
         "oracleDescription": "Capped stS / S / USD",
-        "oracleLatestAnswer": "53475077",
+        "oracleLatestAnswer": "53516430",
         "reserveFactor": 1000,
         "supplyCap": 30000000,
         "symbol": "stS",
