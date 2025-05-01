@@ -5374,6 +5374,36 @@
           "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
         }
       ]
+    },
+    "304": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 1,
+          "payloadId": 282,
+          "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+        },
+        {
+          "chain": 137,
+          "payloadId": 110,
+          "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C"
+        },
+        {
+          "chain": 10,
+          "payloadId": 74,
+          "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4"
+        },
+        {
+          "chain": 42161,
+          "payloadId": 86,
+          "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C"
+        },
+        {
+          "chain": 100,
+          "payloadId": 51,
+          "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b"
+        }
+      ]
     }
   },
   "payloads": {
@@ -6067,6 +6097,9 @@
         },
         "281": {
           "303": true
+        },
+        "282": {
+          "304": true
         }
       }
     },
@@ -6259,6 +6292,9 @@
         "72": {
           "284": true,
           "288": true
+        },
+        "74": {
+          "304": true
         }
       }
     },
@@ -6514,6 +6550,9 @@
         "50": {
           "285": true,
           "289": true
+        },
+        "51": {
+          "304": true
         }
       }
     },
@@ -6750,6 +6789,9 @@
         },
         "109": {
           "293": true
+        },
+        "110": {
+          "304": true
         }
       }
     },
@@ -7321,6 +7363,9 @@
         "84": {
           "284": true,
           "288": true
+        },
+        "86": {
+          "304": true
         }
       }
     },
