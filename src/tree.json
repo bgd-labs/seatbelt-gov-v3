@@ -5346,7 +5346,7 @@
       ]
     },
     "301": {
-      "state": 2,
+      "state": 4,
       "payloads": [
         {
           "chain": 1,
@@ -5376,7 +5376,7 @@
       ]
     },
     "304": {
-      "state": 1,
+      "state": 2,
       "payloads": [
         {
           "chain": 1,
