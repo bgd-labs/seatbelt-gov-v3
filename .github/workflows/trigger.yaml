@@ -9,6 +9,9 @@ on:
       ids:
         description: "Comma separated list of ids"
         type: string
+      payloadsController:
+        description: "Address of the payloadsController"
+        type: string
 
 jobs:
   trigger:
@@ -47,7 +50,7 @@ jobs:
 
       - name: Trigger
         id: external-trigger
-        run: bun run ci:simulate --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }}
+        run: bun run ci:simulate --chainId ${{ inputs.chainId }} --ids ${{ inputs.ids }} --payloadsController ${{ inputs.payloadsController}}
 
       - name: check diff
         run: |

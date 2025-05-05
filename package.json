@@ -16,7 +16,7 @@
     "@bgd-labs/aave-address-book": "^4.17.2",
     "@bgd-labs/aave-cli": "1.2.3",
     "@bgd-labs/aave-v3-governance-cache": "^1.0.10",
-    "@bgd-labs/toolbox": "^0.0.9",
+    "@bgd-labs/toolbox": "^0.0.14",
     "commander": "^11.1.0",
     "dotenv": "^16.3.1",
     "prettier": "2.8.7",

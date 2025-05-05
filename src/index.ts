@@ -1,8 +1,9 @@
 import 'dotenv/config';
 import {existsSync, writeFileSync, mkdirSync} from 'fs';
 import path from 'path';
-import {Hex} from 'viem';
-import {findPayloadsController, logError, logInfo} from '@bgd-labs/aave-cli';
+import {Address, Hex} from 'viem';
+import * as addresses from '@bgd-labs/aave-address-book';
+import {logError, logInfo} from '@bgd-labs/aave-cli';
 import {getClient, getNonFinalizedPayloads} from '@bgd-labs/toolbox';
 import {fallbackProvider} from '@bgd-labs/aave-v3-governance-cache/fallbackProvider';
 import {githubPagesProvider} from '@bgd-labs/aave-v3-governance-cache/githubPagesProvider';
@@ -25,8 +26,7 @@ function getPayloadFileName(chain: number, payloadsController: Hex, payloadId: n
   return path.join(storagePath, `${payloadId}.md`);
 }
 
-async function simulatePayload(chainId: number, payloadIds: number[]) {
-  const payloadsController = findPayloadsController(chainId)!;
+async function simulatePayload(chainId: number, payloadsController: Address, payloadIds: number[]) {
   if (!payloadsController) throw new Error(`payloadsController on ${chainId} not found`);
   logInfo(chainId.toString(), `Simulating payloads on ${payloadsController}`);
   if (!payloadIds || payloadIds.length === 0) {
@@ -81,18 +81,47 @@ async function simulatePayload(chainId: number, payloadIds: number[]) {
   }
 }
 
+export function findPayloadsControllers(chainId: number): Address[] {
+  const key = Object.keys(addresses).reduce((acc, key) => {
+    if ((addresses[key as keyof typeof addresses] as any).CHAIN_ID === chainId) {
+      if ((addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER)
+        acc.push((addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER);
+      if ((addresses[key as keyof typeof addresses] as any).PERMISSIONED_PAYLOADS_CONTROLLER)
+        acc.push(
+          (addresses[key as keyof typeof addresses] as any).PERMISSIONED_PAYLOADS_CONTROLLER
+        );
+    }
+
+    return acc;
+  }, [] as Address[]);
+  return [];
+}
+
 program
   .addOption(
     new Option('-c, --chainId [chainId]', 'the chainId of the payload (only for payloads)')
   )
   .addOption(new Option('-i, --ids [ids...]', 'the ids of the payloads/proposals'))
+  .addOption(
+    new Option(
+      '-c, --payloadsController [payloadsController]',
+      'the address of the payloadsController'
+    )
+  )
   .action(async (options) => {
+    console.log(options);
     if (!options.chainId || typeof options.chainId === 'boolean')
       throw new Error('chainId required when simulating payloads');
-    return simulatePayload(
-      Number(options.chainId),
-      options.ids && options.ids.length > 0 && options.ids.map((id: string) => Number(id))
-    );
+    const payloadsControllers = options.payloadsController
+      ? [options.payloadsController]
+      : findPayloadsControllers(Number(options.chainId))!;
+    for (const controller of payloadsControllers) {
+      return simulatePayload(
+        Number(options.chainId),
+        controller,
+        options.ids && options.ids.length > 0 && options.ids.map((id: string) => Number(id))
+      );
+    }
   })
   .showHelpAfterError()
   .parse();

@@ -8,7 +8,7 @@ import {
   tenderly_createVnet,
   tenderly_sim,
 } from '@bgd-labs/toolbox';
-import {Address, Client, encodeFunctionData, Hex, PublicClient} from 'viem';
+import {Address, encodeFunctionData, Hex} from 'viem';
 import {GetPayloadReturnType} from '@bgd-labs/aave-v3-governance-cache';
 import {providerConfig} from './common';
 
