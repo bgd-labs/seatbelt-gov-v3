@@ -13,3 +13,5 @@ cache/solidity-files-cache.json
 cache/zksync-solidity-files-cache.json
 out
 zkout
+
+.early.coverage

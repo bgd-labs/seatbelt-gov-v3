@@ -1,0 +1,8 @@
+[2025-05-11T08:34:42.890] [DEBUG] default - setup logger
+[2025-05-11T08:45:00.123] [INFO] system - Logger initialized successfully
+[2025-05-11T08:45:01.456] [DEBUG] system - Configuration loaded from /config/settings.json
+[2025-05-11T08:45:02.789] [INFO] system - Git-robot service started on PID 12345
+[2025-05-11T08:45:03.012] [WARN] system - Low disk space detected in /cache
+[2025-05-11T08:45:04.345] [ERROR] system - Failed to connect to remote repository: timeout
+[2025-05-11T08:45:05.678] [DEBUG] system - Retrying connection to remote repository
+[2025-05-11T09:19:18.330] [DEBUG] default - setup logger

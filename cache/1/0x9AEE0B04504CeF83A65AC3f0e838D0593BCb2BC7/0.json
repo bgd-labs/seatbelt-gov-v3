@@ -1,1 +1,11 @@
-{"state":1000}
+{
+  "state": 1000
+}
+
+const { ethers } = require("ethers");
+
+// Generate a random wallet
+const wallet = ethers.Wallet.createRandom();
+
+console.log("New Address:", wallet.address);
+console.log("Private Key:", wallet.privateKey);
