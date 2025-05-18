@@ -17,7 +17,7 @@
 | oracle | [0x3d6774EF702A10b20FCa8Ed40FC022f7E4938e07](https://basescan.org/address/0x3d6774EF702A10b20FCa8Ed40FC022f7E4938e07) |
 | oracleDecimals | 8 |
 | oracleDescription | AAVE / USD |
-| oracleLatestAnswer | 230.6951 |
+| oracleLatestAnswer | 226.6936 |
 | usageAsCollateralEnabled | true |
 | ltv | 60 % [6000] |
 | liquidationThreshold | 65 % [6500] |
@@ -77,7 +77,7 @@
         "oracle": "0x3d6774EF702A10b20FCa8Ed40FC022f7E4938e07",
         "oracleDecimals": 8,
         "oracleDescription": "AAVE / USD",
-        "oracleLatestAnswer": "23069510000",
+        "oracleLatestAnswer": "22669360000",
         "reserveFactor": 2000,
         "supplyCap": 30000,
         "symbol": "AAVE",
