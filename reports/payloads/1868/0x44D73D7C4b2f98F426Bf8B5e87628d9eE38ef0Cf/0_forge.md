@@ -61,7 +61,7 @@
 | oracle | 0x291cF980BA12505D65ee01BDe0882F1d5e533525 |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2551.04 |
+| oracleLatestAnswer | 2563.92 |
 | usageAsCollateralEnabled | true |
 | ltv | 80 % [8000] |
 | liquidationThreshold | 83 % [8300] |
@@ -204,7 +204,7 @@
         "oracle": "0x291cF980BA12505D65ee01BDe0882F1d5e533525",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": "255104000000",
+        "oracleLatestAnswer": "256392000000",
         "reserveFactor": 1500,
         "supplyCap": 800,
         "symbol": "WETH",
