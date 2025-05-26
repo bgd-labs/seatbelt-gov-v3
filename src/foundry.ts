@@ -1,5 +1,6 @@
 import {ChainId, getClient} from '@bgd-labs/toolbox';
 import {execSync} from 'child_process';
+import {providerConfig} from './common';
 
 function getChainName(chainId: number) {
   return Object.keys(ChainId)
@@ -12,11 +13,7 @@ export function simulateViaFoundry(
   blockNumber: number | bigint
 ) {
   const client = getClient(Number(payload.chain), {
-    providerConfig: {
-      alchemyKey: process.env.ALCHEMY_API_KEY,
-      quicknodeToken: process.env.QUICKNODE_TOKEN,
-      quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
-    },
+    providerConfig,
   });
   const command = [
     `FOUNDRY_PROFILE=${getChainName(Number(payload.chain))}`,

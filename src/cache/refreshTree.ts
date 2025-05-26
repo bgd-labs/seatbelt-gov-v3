@@ -9,16 +9,11 @@ import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
 import {ChainId, ProposalState, getRPCUrl, isProposalFinal} from '@bgd-labs/toolbox';
 import tree from './tree.json';
 import path from 'node:path';
+import {providerConfig} from '../common';
 
 const mainnetClient = createPublicClient({
   chain: mainnet,
-  transport: http(
-    getRPCUrl(ChainId.mainnet, {
-      alchemyKey: process.env.ALCHEMY_API_KEY,
-      quicknodeToken: process.env.QUICKNODE_TOKEN,
-      quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
-    })
-  ),
+  transport: http(getRPCUrl(ChainId.mainnet, providerConfig)),
 });
 
 const governanceContract = getContract({
@@ -70,6 +65,6 @@ export interface TreeStructure {
       });
     }
   }
-  writeFileSync(path.join(process.cwd(), 'src/tree.json'), JSON.stringify(treeCopy, null, 2));
+  writeFileSync(path.join(process.cwd(), 'src/cache/tree.json'), JSON.stringify(treeCopy, null, 2));
   return treeCopy;
 })();

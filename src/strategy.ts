@@ -6,8 +6,8 @@ import {
   isPayloadFinal,
   isProposalFinal,
 } from '@bgd-labs/toolbox';
-import treeJson from './tree.json';
-import {TreeStructure} from './refreshTree';
+import treeJson from './cache/tree.json';
+import {TreeStructure} from './cache/refreshTree';
 
 export type PayloadExecutionStrategy = {
   executeBefore: number[];

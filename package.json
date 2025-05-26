@@ -4,8 +4,8 @@
   "description": "Seatbelt for aave governance v3",
   "main": "index.js",
   "scripts": {
-    "simulate": "bun src/refreshTree.ts && bun src/index.ts",
-    "ci:tree": "bun src/refreshTree.ts",
+    "simulate": "bun src/cache/refreshTree.ts && bun src/index.ts",
+    "ci:tree": "bun src/cache/refreshTree.ts && bun src/cache/logs.ts",
     "ci:simulate": "bun src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

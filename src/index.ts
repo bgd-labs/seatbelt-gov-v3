@@ -82,7 +82,7 @@ async function simulatePayload(chainId: number, payloadsController: Address, pay
 }
 
 export function findPayloadsControllers(chainId: number): Address[] {
-  const key = Object.keys(addresses).reduce((acc, key) => {
+  return Object.keys(addresses).reduce((acc, key) => {
     if ((addresses[key as keyof typeof addresses] as any).CHAIN_ID === chainId) {
       if ((addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER)
         acc.push((addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER);
@@ -94,7 +94,6 @@ export function findPayloadsControllers(chainId: number): Address[] {
 
     return acc;
   }, [] as Address[]);
-  return [];
 }
 
 program
