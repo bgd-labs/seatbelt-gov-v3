@@ -2,13 +2,13 @@
  * Constructs a tree of all currently existing proposals and their attached payloads
  */
 import {writeFileSync} from 'node:fs';
+import path from 'node:path';
 import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book/abis';
 import {Address, createPublicClient, getContract, http} from 'viem';
 import {mainnet} from 'viem/chains';
 import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
 import {ChainId, ProposalState, getRPCUrl, isProposalFinal} from '@bgd-labs/toolbox';
 import tree from './tree.json';
-import path from 'node:path';
 import {providerConfig} from '../common';
 import {refreshLogs} from './logs';
 

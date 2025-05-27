@@ -9,7 +9,7 @@ import {
   tenderly_sim,
 } from '@bgd-labs/toolbox';
 import {Address, encodeFunctionData, Hex} from 'viem';
-import {GetPayloadReturnType, Payload} from '@bgd-labs/aave-v3-governance-cache';
+import {Payload} from '@bgd-labs/aave-v3-governance-cache';
 import {providerConfig} from './common';
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM, ChainId.celo];
