@@ -6,13 +6,15 @@ import {
   isPayloadFinal,
   isProposalFinal,
 } from '@bgd-labs/toolbox';
-import treeJson from './tree.json';
-import {TreeStructure} from './refreshTree';
+import treeJson from './cache/tree.json';
+import {TreeStructure} from './cache/refreshTree';
+import {Payload} from '@bgd-labs/aave-v3-governance-cache';
 
 export type PayloadExecutionStrategy = {
   executeBefore: number[];
   alerts: string[];
   proposals?: number[];
+  payload: Payload;
 };
 
 export async function generatePayloadsStrategy(
@@ -37,7 +39,7 @@ export async function generatePayloadsStrategy(
   // if it's already final, we just simulate the existing transaction
   const payload = await controllerContract.read.getPayloadById([payloadId]);
   if (isPayloadFinal(payload.state)) {
-    return {executeBefore: [], alerts};
+    return {executeBefore: [], alerts, payload};
   }
 
   const node = tree.payloads[chainId]?.[payloadsController]?.[payloadId];
@@ -62,7 +64,7 @@ export async function generatePayloadsStrategy(
           ', '
         )}`
       );
-      return {executeBefore: [], alerts};
+      return {executeBefore: [], alerts, payload};
     }
     const nonFinalizedPayloads: number[] = [];
     for (let i = 0; i < activeProposalIds[0]; i++) {
@@ -71,7 +73,7 @@ export async function generatePayloadsStrategy(
           ...tree.governance[i].payloads.filter((p) => p.chain === chainId).map((p) => p.payloadId)
         );
     }
-    return {executeBefore: nonFinalizedPayloads, alerts, proposals: allAttachedProposals};
+    return {executeBefore: nonFinalizedPayloads, alerts, proposals: allAttachedProposals, payload};
   } else {
     // This state will only be reached before proposal creation
     // in this case we simulate the proposal based on the assumption that all currently existing payloads that are attached on a proposal are already executed
@@ -81,6 +83,7 @@ export async function generatePayloadsStrategy(
         (pl) => pl != payloadId && tree.payloads[chainId]?.[payloadsController]?.[pl]
       ),
       alerts,
+      payload,
     };
   }
 }
