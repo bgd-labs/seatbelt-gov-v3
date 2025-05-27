@@ -5,20 +5,12 @@ import {Address, Hex} from 'viem';
 import * as addresses from '@bgd-labs/aave-address-book';
 import {logError, logInfo} from '@bgd-labs/aave-cli';
 import {getClient, getNonFinalizedPayloads} from '@bgd-labs/toolbox';
-import {fallbackProvider} from '@bgd-labs/aave-v3-governance-cache/fallbackProvider';
-import {githubPagesProvider} from '@bgd-labs/aave-v3-governance-cache/githubPagesProvider';
-import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/customStorageProvider';
-import {fileSystemStorageAdapter} from '@bgd-labs/aave-v3-governance-cache/fileSystemStorageAdapter';
 import {Option, program} from 'commander';
 import {CHAIN_NOT_SUPPORTED_ON_TENDERLY, simulateOnTenderly} from './tenderly';
 import {generatePayloadsStrategy} from './strategy';
 import {simulateViaFoundry} from './foundry';
 import {storeSimulationState} from './simulationCache';
-
-const cachingLayer = fallbackProvider(
-  githubPagesProvider,
-  customStorageProvider(fileSystemStorageAdapter)
-);
+import {getCache} from './cache/logs';
 
 function getPayloadFileName(chain: number, payloadsController: Hex, payloadId: number) {
   const storagePath = `./reports/payloads/${chain}/${payloadsController}`;
@@ -42,7 +34,6 @@ async function simulatePayload(chainId: number, payloadsController: Address, pay
     );
   }
   for (const payloadId of payloadIds) {
-    const cache = await cachingLayer.getPayload({chainId, payloadId, payloadsController});
     logInfo(chainId.toString(), `Simulating ${payloadId}`);
     const fileName = getPayloadFileName(chainId, payloadsController, payloadId);
     const strategy = await generatePayloadsStrategy(chainId, payloadsController, payloadId);
@@ -53,10 +44,10 @@ async function simulatePayload(chainId: number, payloadsController: Address, pay
           payloadsController,
           payloadId: payloadId,
           executeBefore: strategy.executeBefore,
-          cache,
+          payload: strategy.payload,
         });
         writeFileSync(fileName, report);
-        storeSimulationState(chainId, payloadsController, payloadId, cache.payload.state);
+        storeSimulationState(chainId, payloadsController, payloadId, strategy.payload.state);
       } catch (e) {
         logError(
           chainId.toString(),
@@ -69,11 +60,14 @@ async function simulatePayload(chainId: number, payloadsController: Address, pay
 
     // foundry
     try {
+      const cache = getCache(chainId, payloadsController);
       let blockNumber = BigInt(0); // current
-      if (cache.logs.executedLog)
-        blockNumber = BigInt(cache.logs.executedLog.blockNumber) - BigInt(1);
+      const executedLog = cache.find(
+        (l) => l.eventName === 'PayloadExecuted' && l.args.payloadId === Number(payloadId)
+      );
+      if (executedLog) blockNumber = BigInt(executedLog.blockNumber) - BigInt(1);
       simulateViaFoundry({chain: chainId, payloadId}, blockNumber);
-      storeSimulationState(chainId, payloadsController, payloadId, cache.payload.state);
+      storeSimulationState(chainId, payloadsController, payloadId, strategy.payload.state);
       console.log('foundry simulation finished');
     } catch (e) {
       console.log('simulating on foundry failed');

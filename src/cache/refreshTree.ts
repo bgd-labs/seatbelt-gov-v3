@@ -10,6 +10,7 @@ import {ChainId, ProposalState, getRPCUrl, isProposalFinal} from '@bgd-labs/tool
 import tree from './tree.json';
 import path from 'node:path';
 import {providerConfig} from '../common';
+import {refreshLogs} from './logs';
 
 const mainnetClient = createPublicClient({
   chain: mainnet,
@@ -66,5 +67,6 @@ export interface TreeStructure {
     }
   }
   writeFileSync(path.join(process.cwd(), 'src/cache/tree.json'), JSON.stringify(treeCopy, null, 2));
+  await refreshLogs();
   return treeCopy;
 })();

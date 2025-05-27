@@ -9,7 +9,7 @@ import {
   tenderly_sim,
 } from '@bgd-labs/toolbox';
 import {Address, encodeFunctionData, Hex} from 'viem';
-import {GetPayloadReturnType} from '@bgd-labs/aave-v3-governance-cache';
+import {GetPayloadReturnType, Payload} from '@bgd-labs/aave-v3-governance-cache';
 import {providerConfig} from './common';
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM, ChainId.celo];
@@ -20,7 +20,7 @@ type SimulateOnTenderlyParams = {
   executeBefore: number[];
   payloadId: number;
   payloadsController: Address;
-  cache: GetPayloadReturnType;
+  payload: Payload;
 };
 
 const EOA = '0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073';
@@ -30,7 +30,7 @@ export async function simulateOnTenderly({
   executeBefore,
   payloadId,
   payloadsController,
-  cache,
+  payload,
 }: SimulateOnTenderlyParams) {
   const tenderlyConfig = {
     projectSlug: process.env.TENDERLY_PROJECT_SLUG!,
@@ -84,7 +84,7 @@ export async function simulateOnTenderly({
     await vnet.delete();
     const report = await generateReport({
       payloadId: payloadId,
-      payloadInfo: cache,
+      payloadInfo: {payload, logs: {}} as any,
       simulation: simResult,
       client: getClient(chainId, {
         providerConfig,
@@ -122,7 +122,7 @@ export async function simulateOnTenderly({
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await generateReport({
       payloadId: payloadId,
-      payloadInfo: cache,
+      payloadInfo: {payload, logs: {}} as any,
       simulation: simResult,
       client: getClient(chainId, {
         providerConfig,
