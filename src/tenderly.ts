@@ -1,5 +1,5 @@
-import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book/abis';
-import {generateReport} from '@bgd-labs/aave-cli';
+import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
+import { generateReport } from "@bgd-labs/aave-cli";
 import {
   ChainId,
   getClient,
@@ -7,12 +7,15 @@ import {
   makePayloadExecutableOnTestClient,
   tenderly_createVnet,
   tenderly_sim,
-} from '@bgd-labs/toolbox';
-import {Address, encodeFunctionData, Hex} from 'viem';
-import {Payload} from '@bgd-labs/aave-v3-governance-cache';
-import {providerConfig} from './common';
+} from "@bgd-labs/toolbox";
+import { Address, encodeFunctionData, Hex } from "viem";
+import { GetPayloadReturnType } from "@bgd-labs/aave-v3-governance-cache";
+import { providerConfig } from "./common";
 
-export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM, ChainId.celo];
+export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
+  ChainId.zkEVM,
+  ChainId.celo,
+];
 export const NO_V_NET: number[] = [ChainId.zksync];
 
 type SimulateOnTenderlyParams = {
@@ -20,17 +23,17 @@ type SimulateOnTenderlyParams = {
   executeBefore: number[];
   payloadId: number;
   payloadsController: Address;
-  payload: Payload;
+  cache: GetPayloadReturnType;
 };
 
-const EOA = '0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073';
+const EOA = "0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073";
 
 export async function simulateOnTenderly({
   chainId,
   executeBefore,
   payloadId,
   payloadsController,
-  payload,
+  cache,
 }: SimulateOnTenderlyParams) {
   const tenderlyConfig = {
     projectSlug: process.env.TENDERLY_PROJECT_SLUG!,
@@ -50,41 +53,49 @@ export async function simulateOnTenderly({
     );
     // first execute all previous payloads
     for (const before of executeBefore) {
-      await makePayloadExecutableOnTestClient(vnet.testClient, payloadsController, before);
+      await makePayloadExecutableOnTestClient(
+        vnet.testClient,
+        payloadsController,
+        before
+      );
       await vnet.walletClient.writeContract({
-        chain: {id: chainId} as any,
+        chain: { id: chainId } as any,
         abi: IPayloadsControllerCore_ABI,
         account: EOA,
         address: payloadsController,
-        functionName: 'executePayload',
+        functionName: "executePayload",
         args: [before],
       });
     }
     // prepare the actual payload execution via state overrides
-    await makePayloadExecutableOnTestClient(vnet.testClient, payloadsController, payloadId);
+    await makePayloadExecutableOnTestClient(
+      vnet.testClient,
+      payloadsController,
+      payloadId
+    );
     const simResult = await vnet.simulate({
       network_id: chainId.toString(),
       from: EOA,
       to: payloadsController,
       input: encodeFunctionData({
         abi: IPayloadsControllerCore_ABI,
-        functionName: 'executePayload',
+        functionName: "executePayload",
         args: [payloadId],
       }),
       block_number: null,
       transaction_index: 0,
       gas: 30_000_000,
-      gas_price: '0',
-      value: '0',
+      gas_price: "0",
+      value: "0",
       access_list: [],
       generate_access_list: true,
       save: true,
-      source: 'dashboard',
+      source: "dashboard",
     });
     await vnet.delete();
     const report = await generateReport({
       payloadId: payloadId,
-      payloadInfo: {payload, logs: {}} as any,
+      payloadInfo: cache,
       simulation: simResult,
       client: getClient(chainId, {
         providerConfig,
@@ -93,9 +104,11 @@ export async function simulateOnTenderly({
     return report;
   } catch (e) {
     console.log(e);
-    console.log('error simulating against a vnet, trying against the simulation endpoint');
+    console.log(
+      "error simulating against a vnet, trying against the simulation endpoint"
+    );
     const overrides = await getPayloadStorageOverrides(
-      getClient(chainId, {providerConfig}) as any,
+      getClient(chainId, { providerConfig }) as any,
       payloadsController,
       payloadId
     );
@@ -105,7 +118,7 @@ export async function simulateOnTenderly({
       to: payloadsController,
       input: encodeFunctionData({
         abi: IPayloadsControllerCore_ABI,
-        functionName: 'executePayload',
+        functionName: "executePayload",
         args: [payloadId],
       }),
       block_number: -2,
@@ -122,7 +135,7 @@ export async function simulateOnTenderly({
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await generateReport({
       payloadId: payloadId,
-      payloadInfo: {payload, logs: {}} as any,
+      payloadInfo: cache,
       simulation: simResult,
       client: getClient(chainId, {
         providerConfig,

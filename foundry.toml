@@ -28,7 +28,7 @@ zksolc = '1.5.8'
 evm_version = 'shanghai'
 
 [profile.mainnet]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.arbitrum]
 evm_version = 'shanghai'
