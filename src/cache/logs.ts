@@ -1,7 +1,6 @@
 import {
   ChainList,
   genericIndexer,
-  getClient,
   getContractDeploymentBlock,
   getHyperRPC,
   getRPCUrl,
@@ -19,7 +18,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import indexCache from "./cache.json";
 
-export function getCache(chainId: number, address: Address, payloadId: number) {
+export function getCacheFile(chainId: number, address: Address) {
   const cacheKey = `${chainId}:${address}`;
   const pcCachePath = path.join(process.cwd(), `src/cache/${cacheKey}.json`);
   const pcCache: {
@@ -29,6 +28,10 @@ export function getCache(chainId: number, address: Address, payloadId: number) {
   }[] = existsSync(pcCachePath)
     ? JSON.parse(readFileSync(pcCachePath, "utf8"))
     : [];
+  return pcCache;
+}
+export function getCache(chainId: number, address: Address, payloadId: number) {
+  const pcCache = getCacheFile(chainId, address);
   return {
     createdLog: pcCache.find(
       (log) =>
@@ -145,7 +148,7 @@ export async function refreshLogs() {
         );
         const newLogs = logsCache.get(cacheKey);
         if (newLogs?.length) {
-          const pcCache = getCache(client.chain!.id, addr);
+          const pcCache = getCacheFile(client.chain!.id, addr);
           const pcCachePath = path.join(
             process.cwd(),
             `src/cache/${cacheKey}.json`
