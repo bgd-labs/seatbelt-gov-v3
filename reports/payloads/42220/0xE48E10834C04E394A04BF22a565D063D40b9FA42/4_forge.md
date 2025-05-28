@@ -17,7 +17,7 @@
 | oracle | [0x1FcD30A73D67639c1cD89ff5746E7585731c083B](https://celoscan.io/address/0x1FcD30A73D67639c1cD89ff5746E7585731c083B) |
 | oracleDecimals | 8 |
 | oracleDescription | ETH / USD |
-| oracleLatestAnswer | 2632.26 |
+| oracleLatestAnswer | 2634.6721919 |
 | usageAsCollateralEnabled | true |
 | ltv | 78 % [7800] |
 | liquidationThreshold | 80 % [8000] |
@@ -77,7 +77,7 @@
         "oracle": "0x1FcD30A73D67639c1cD89ff5746E7585731c083B",
         "oracleDecimals": 8,
         "oracleDescription": "ETH / USD",
-        "oracleLatestAnswer": "263226000000",
+        "oracleLatestAnswer": "263467219190",
         "reserveFactor": 1500,
         "supplyCap": 500,
         "symbol": "WETH",
