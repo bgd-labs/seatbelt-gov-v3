@@ -17,7 +17,7 @@
 | oracle | [0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A](https://etherscan.io/address/0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A) |
 | oracleDecimals | 8 |
 | oracleDescription | BTC / USD |
-| oracleLatestAnswer | 106997.63 |
+| oracleLatestAnswer | 107517.26769346 |
 | usageAsCollateralEnabled | true |
 | ltv | 73 % [7300] |
 | liquidationThreshold | 78 % [7800] |
@@ -165,7 +165,7 @@
         "oracle": "0xb41E773f507F7a7EA890b1afB7d2b660c30C8B0A",
         "oracleDecimals": 8,
         "oracleDescription": "BTC / USD",
-        "oracleLatestAnswer": "10699763000000",
+        "oracleLatestAnswer": "10751726769346",
         "reserveFactor": 5000,
         "supplyCap": 200,
         "symbol": "FBTC",
