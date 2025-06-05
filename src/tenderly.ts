@@ -1,5 +1,4 @@
 import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
-import { generateReport } from "@bgd-labs/aave-cli";
 import {
   ChainId,
   getClient,
@@ -11,6 +10,7 @@ import {
 import { Address, encodeFunctionData, Hex } from "viem";
 import { GetPayloadReturnType } from "@bgd-labs/aave-v3-governance-cache";
 import { providerConfig } from "./common";
+import { renderTenderlyReport } from "./tenderlyReport";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -70,6 +70,25 @@ export async function simulateOnTenderly({
       payloadsController,
       payloadId
     );
+    console.log({
+      network_id: chainId.toString(),
+      from: EOA,
+      to: payloadsController,
+      input: encodeFunctionData({
+        abi: IPayloadsControllerCore_ABI,
+        functionName: "executePayload",
+        args: [payloadId],
+      }),
+      block_number: null,
+      transaction_index: 0,
+      gas: 30_000_000,
+      gas_price: "0",
+      value: "0",
+      access_list: [],
+      generate_access_list: true,
+      save: true,
+      source: "dashboard",
+    });
     const simResult = await vnet.simulate({
       network_id: chainId.toString(),
       from: EOA,
@@ -89,11 +108,12 @@ export async function simulateOnTenderly({
       save: true,
       source: "dashboard",
     });
-    await vnet.delete();
-    const report = await generateReport({
+    // await vnet.delete();
+    const report = await renderTenderlyReport({
       payloadId: payloadId,
-      payloadInfo: cache,
-      simulation: simResult,
+      payload: cache.payload,
+      onchainLogs: cache.logs as any,
+      sim: simResult,
       client: getClient(chainId, {
         providerConfig,
       }) as any, // currently there is a type mismatch due to multiple viem versions being in use. Should be resolved one tooling is unified.
@@ -130,10 +150,11 @@ export async function simulateOnTenderly({
     } as const;
     console.log(JSON.stringify(simPayload));
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
-    const report = await generateReport({
+    const report = await renderTenderlyReport({
+      payload: cache.payload,
       payloadId: payloadId,
-      payloadInfo: cache,
-      simulation: simResult,
+      onchainLogs: cache.logs as any,
+      sim: simResult,
       client: getClient(chainId, {
         providerConfig,
       }) as any, // currently there is a type mismatch due to multiple viem versions being in use. Should be resolved one tooling is unified.
