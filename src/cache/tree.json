@@ -5694,6 +5694,21 @@
           "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42"
         }
       ]
+    },
+    "323": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 324,
+          "payloadId": 27,
+          "payloadsController": "0x2E79349c3F5e4751E87b966812C9E65E805996F1"
+        },
+        {
+          "chain": 1,
+          "payloadId": 298,
+          "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+        }
+      ]
     }
   },
   "payloads": {
@@ -6433,6 +6448,9 @@
         },
         "297": {
           "322": true
+        },
+        "298": {
+          "323": true
         }
       }
     },
@@ -7223,6 +7241,9 @@
         },
         "24": {
           "313": true
+        },
+        "27": {
+          "323": true
         }
       }
     },
