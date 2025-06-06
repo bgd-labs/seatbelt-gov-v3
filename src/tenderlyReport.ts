@@ -43,13 +43,13 @@ export async function renderTenderlyReport({
     logs: (sim.transaction.transaction_info.logs || []).map((l: any) => l.raw),
     eventDb: events as any,
   });
-  const selfDestruct = checkForSelfdestruct(
+  const selfDestruct = await checkForSelfdestruct(
     client,
     sim.transaction.addresses,
     [] // trusted addresses
   );
 
-  const verified = getVerificationStatus({
+  const verified = await getVerificationStatus({
     client: client,
     addresses: sim.transaction.addresses,
     // In the future we might want to maintain our own db, so we do not need to rely on tenderly so much for contract name lookup.
@@ -63,7 +63,7 @@ export async function renderTenderlyReport({
     sim.transaction.transaction_info.state_diff
   );
 
-  console.log(events, logs, selfDestruct, verified, stateDiff);
+  console.log(events, logs, selfDestruct, verified);
 
   let report = `## Payload ${payloadId} on ${client.chain!.name}
 
