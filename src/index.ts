@@ -142,14 +142,15 @@ program
     console.log(options);
     if (!options.chainId || typeof options.chainId === "boolean")
       throw new Error("chainId required when simulating payloads");
-    const payloadsControllers = options.payloadsController
-      ? [options.payloadsController]
-      : findPayloadsControllers(Number(options.chainId))!;
+    const payloadsControllers =
+      typeof options.payloadsController === "string"
+        ? [options.payloadsController]
+        : findPayloadsControllers(Number(options.chainId))!;
     for (const controller of payloadsControllers) {
       return simulatePayload(
         Number(options.chainId),
         controller,
-        options.ids &&
+        typeof options.ids === "object" &&
           options.ids.length > 0 &&
           options.ids.map((id: string) => Number(id))
       );
