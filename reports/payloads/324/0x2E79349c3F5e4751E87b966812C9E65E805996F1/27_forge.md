@@ -17,7 +17,7 @@
 | oracle | [0x8d25c9de6DBAd9a9eadfB2CA4706034F6721d555](https://era.zksync.network//address/0x8d25c9de6DBAd9a9eadfB2CA4706034F6721d555) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped rsETH / ETH / USD |
-| oracleLatestAnswer | 2884.55625657 |
+| oracleLatestAnswer | 2899.08138378 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -116,7 +116,7 @@
         "oracle": "0x8d25c9de6DBAd9a9eadfB2CA4706034F6721d555",
         "oracleDecimals": 8,
         "oracleDescription": "Capped rsETH / ETH / USD",
-        "oracleLatestAnswer": "288455625657",
+        "oracleLatestAnswer": "289908138378",
         "reserveFactor": 1000,
         "supplyCap": 700,
         "symbol": "wrsETH",
