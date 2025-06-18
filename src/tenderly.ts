@@ -12,10 +12,7 @@ import { Address, encodeFunctionData, Hex } from "viem";
 import { GetPayloadReturnType } from "@bgd-labs/aave-v3-governance-cache";
 import { providerConfig } from "./common";
 
-export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
-  ChainId.zkEVM,
-  ChainId.celo,
-];
+export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
 
 type SimulateOnTenderlyParams = {
