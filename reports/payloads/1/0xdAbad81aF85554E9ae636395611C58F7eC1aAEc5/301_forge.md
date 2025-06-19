@@ -9,9 +9,9 @@
 | supplyCap | 0 GHO | 1 GHO |
 | isFlashloanable | false | true |
 | reserveFactor | 0 % [0] | 100 % [10000] |
-| aTokenUnderlyingBalance | 66,302.5787 GHO [66302578790002079392663] | 18,665,006.8008 GHO [18665006800867072360713604] |
+| aTokenUnderlyingBalance | 66,302.5787 GHO [66302578790002079392663] | 18,613,791.7136 GHO [18613791713627155305919545] |
 | virtualAccountingActive | false | true |
-| virtualBalance | 0 GHO [0] | 18,665,006.8008 GHO [18665006800867072360713604] |
+| virtualBalance | 0 GHO [0] | 18,613,791.7136 GHO [18613791713627155305919545] |
 
 
 ## Raw diff
@@ -28,7 +28,7 @@
     "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f": {
       "aTokenUnderlyingBalance": {
         "from": "66302578790002079392663",
-        "to": "18665006800867072360713604"
+        "to": "18613791713627155305919545"
       },
       "isFlashloanable": {
         "from": false,
@@ -48,7 +48,7 @@
       },
       "virtualBalance": {
         "from": "0",
-        "to": "18665006800867072360713604"
+        "to": "18613791713627155305919545"
       }
     }
   }
