@@ -7,7 +7,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0xB4aB0c94159bc2d8C133946E7241368fc2F2a010](https://etherscan.io/address/0xB4aB0c94159bc2d8C133946E7241368fc2F2a010) | [0xe1D97bF61901B075E9626c8A2340a7De385861Ef](https://etherscan.io/address/0xe1D97bF61901B075E9626c8A2340a7De385861Ef) |
-| oracleLatestAnswer | 2918.7290229 | 2918.37094398 |
+| oracleLatestAnswer | 2923.10103714 | 2929.96471333 |
 
 
 #### USDC ([0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48))
@@ -24,7 +24,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x47F52B2e43D0386cF161e001835b03Ad49889e3b](https://etherscan.io/address/0x47F52B2e43D0386cF161e001835b03Ad49889e3b) | [0x7292C95A5f6A501a9c4B34f6393e221F2A0139c3](https://etherscan.io/address/0x7292C95A5f6A501a9c4B34f6393e221F2A0139c3) |
-| oracleLatestAnswer | 2534.55893568 | 2534.24798797 |
+| oracleLatestAnswer | 2538.35549496 | 2544.3157577 |
 
 
 #### ETHx ([0xA35b1B31Ce002FBF2058D22F30f95D405200A15b](https://etherscan.io/address/0xA35b1B31Ce002FBF2058D22F30f95D405200A15b))
@@ -32,7 +32,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0xD6270dAabFe4862306190298C2B48fed9e15C847](https://etherscan.io/address/0xD6270dAabFe4862306190298C2B48fed9e15C847) | [0xd7b163B671f8cE9379DF8Ff7F75fA72Ccec1841c](https://etherscan.io/address/0xd7b163B671f8cE9379DF8Ff7F75fA72Ccec1841c) |
-| oracleLatestAnswer | 2573.02686682 | 2572.71119974 |
+| oracleLatestAnswer | 2576.88104788 | 2582.93177171 |
 
 
 #### cbETH ([0xBe9895146f7AF43049ca1c1AE358B0541Ea49704](https://etherscan.io/address/0xBe9895146f7AF43049ca1c1AE358B0541Ea49704))
@@ -40,7 +40,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x6243d2F41b4ec944F731f647589E28d9745a2674](https://etherscan.io/address/0x6243d2F41b4ec944F731f647589E28d9745a2674) | [0x889399C34461b25d70d43931e6cE9E40280E617B](https://etherscan.io/address/0x889399C34461b25d70d43931e6cE9E40280E617B) |
-| oracleLatestAnswer | 2670.99492235 | 2670.66723624 |
+| oracleLatestAnswer | 2674.99585143 | 2681.27695671 |
 
 
 #### WETH ([0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2))
@@ -48,7 +48,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419](https://etherscan.io/address/0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419) | [0x5424384B256154046E9667dDFaaa5e550145215e](https://etherscan.io/address/0x5424384B256154046E9667dDFaaa5e550145215e) |
-| oracleLatestAnswer | 2418.856753 | 2418.56 |
+| oracleLatestAnswer | 2422.48 | 2428.16817776 |
 
 
 #### weETH ([0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee](https://etherscan.io/address/0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee))
@@ -56,7 +56,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3](https://etherscan.io/address/0xf112aF6F0A332B815fbEf3Ff932c057E570b62d3) | [0x87625393534d5C102cADB66D37201dF24cc26d4C](https://etherscan.io/address/0x87625393534d5C102cADB66D37201dF24cc26d4C) |
-| oracleLatestAnswer | 2590.20562015 | 2589.88784553 |
+| oracleLatestAnswer | 2594.08553356 | 2600.1766549 |
 
 
 #### rETH ([0xae78736Cd615f374D3085123A210448E74Fc6393](https://etherscan.io/address/0xae78736Cd615f374D3085123A210448E74Fc6393))
@@ -64,7 +64,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x5AE8365D0a30D67145f0c55A08760C250559dB64](https://etherscan.io/address/0x5AE8365D0a30D67145f0c55A08760C250559dB64) | [0x6929706c42d637DF5Ebf7F0BcfF2aF47F84Ea69D](https://etherscan.io/address/0x6929706c42d637DF5Ebf7F0BcfF2aF47F84Ea69D) |
-| oracleLatestAnswer | 2756.82308194 | 2756.48486616 |
+| oracleLatestAnswer | 2760.9525745 | 2767.43551307 |
 
 
 #### osETH ([0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38](https://etherscan.io/address/0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38))
@@ -72,7 +72,7 @@
 | description | value before | value after |
 | --- | --- | --- |
 | oracle | [0x0A2AF898cEc35197e6944D9E0F525C2626393442](https://etherscan.io/address/0x0A2AF898cEc35197e6944D9E0F525C2626393442) | [0x2b86D519eF34f8Adfc9349CDeA17c09Aa9dB60E2](https://etherscan.io/address/0x2b86D519eF34f8Adfc9349CDeA17c09Aa9dB60E2) |
-| oracleLatestAnswer | 2538.57752695 | 2538.26608623 |
+| oracleLatestAnswer | 2542.39530745 | 2548.36505599 |
 
 
 ## Raw diff
@@ -86,8 +86,8 @@
         "to": "0xe1D97bF61901B075E9626c8A2340a7De385861Ef"
       },
       "oracleLatestAnswer": {
-        "from": "291872902290",
-        "to": "291837094398"
+        "from": "292310103714",
+        "to": "292996471333"
       }
     },
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
@@ -110,8 +110,8 @@
         "to": "0x7292C95A5f6A501a9c4B34f6393e221F2A0139c3"
       },
       "oracleLatestAnswer": {
-        "from": "253455893568",
-        "to": "253424798797"
+        "from": "253835549496",
+        "to": "254431575770"
       }
     },
     "0xA35b1B31Ce002FBF2058D22F30f95D405200A15b": {
@@ -120,8 +120,8 @@
         "to": "0xd7b163B671f8cE9379DF8Ff7F75fA72Ccec1841c"
       },
       "oracleLatestAnswer": {
-        "from": "257302686682",
-        "to": "257271119974"
+        "from": "257688104788",
+        "to": "258293177171"
       }
     },
     "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704": {
@@ -130,8 +130,8 @@
         "to": "0x889399C34461b25d70d43931e6cE9E40280E617B"
       },
       "oracleLatestAnswer": {
-        "from": "267099492235",
-        "to": "267066723624"
+        "from": "267499585143",
+        "to": "268127695671"
       }
     },
     "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": {
@@ -140,8 +140,8 @@
         "to": "0x5424384B256154046E9667dDFaaa5e550145215e"
       },
       "oracleLatestAnswer": {
-        "from": "241885675300",
-        "to": "241856000000"
+        "from": "242248000000",
+        "to": "242816817776"
       }
     },
     "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee": {
@@ -150,8 +150,8 @@
         "to": "0x87625393534d5C102cADB66D37201dF24cc26d4C"
       },
       "oracleLatestAnswer": {
-        "from": "259020562015",
-        "to": "258988784553"
+        "from": "259408553356",
+        "to": "260017665490"
       }
     },
     "0xae78736Cd615f374D3085123A210448E74Fc6393": {
@@ -160,8 +160,8 @@
         "to": "0x6929706c42d637DF5Ebf7F0BcfF2aF47F84Ea69D"
       },
       "oracleLatestAnswer": {
-        "from": "275682308194",
-        "to": "275648486616"
+        "from": "276095257450",
+        "to": "276743551307"
       }
     },
     "0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38": {
@@ -170,8 +170,8 @@
         "to": "0x2b86D519eF34f8Adfc9349CDeA17c09Aa9dB60E2"
       },
       "oracleLatestAnswer": {
-        "from": "253857752695",
-        "to": "253826608623"
+        "from": "254239530745",
+        "to": "254836505599"
       }
     }
   }
