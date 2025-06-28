@@ -17,7 +17,7 @@
 | oracle | [0xa6aB031A4d189B24628EC9Eb155F0a0f1A0E55a3](https://etherscan.io/address/0xa6aB031A4d189B24628EC9Eb155F0a0f1A0E55a3) |
 | oracleDecimals | 8 |
 | oracleDescription | Capped EURC/USD |
-| oracleLatestAnswer | 1.17118416 |
+| oracleLatestAnswer | 1.17132838 |
 | usageAsCollateralEnabled | true |
 | ltv | 75 % [7500] |
 | liquidationThreshold | 78 % [7800] |
@@ -77,7 +77,7 @@
         "oracle": "0xa6aB031A4d189B24628EC9Eb155F0a0f1A0E55a3",
         "oracleDecimals": 8,
         "oracleDescription": "Capped EURC/USD",
-        "oracleLatestAnswer": "117118416",
+        "oracleLatestAnswer": "117132838",
         "reserveFactor": 1000,
         "supplyCap": 7000000,
         "symbol": "EURC",
