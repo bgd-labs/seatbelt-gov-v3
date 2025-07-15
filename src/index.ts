@@ -56,14 +56,18 @@ async function simulatePayload(
     const cache = getCache(chainId, payloadsController, payloadId);
     if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
       try {
-        const report = await simulateOnTenderly({
+        const simResult = await simulateOnTenderly({
           chainId,
           payloadsController,
           payloadId: payloadId,
           executeBefore: strategy.executeBefore,
           cache: { payload: strategy.payload, logs: cache },
         });
-        writeFileSync(fileName, report);
+        writeFileSync(
+          "./src/cache/eventDb.json",
+          JSON.stringify(simResult.eventCache)
+        );
+        writeFileSync(fileName, simResult.report);
         storeSimulationState(
           chainId,
           payloadsController,
