@@ -1,1 +1,316 @@
-[]
+[
+  {
+    "type": "event",
+    "name": "RiskConfigSet",
+    "inputs": [
+      {
+        "name": "riskConfig",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "tuple",
+        "components": [
+          {
+            "name": "ltv",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "liquidationThreshold",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "liquidationBonus",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "supplyCap",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "borrowCap",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "debtCeiling",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "baseVariableBorrowRate",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "variableRateSlope1",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "variableRateSlope2",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "optimalUsageRatio",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "priceCapLst",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          },
+          {
+            "name": "priceCapStable",
+            "type": "tuple",
+            "internalType": "tuple",
+            "indexed": false,
+            "components": [
+              {
+                "name": "minDelay",
+                "type": "uint40",
+                "internalType": "uint40",
+                "indexed": false
+              },
+              {
+                "name": "maxPercentChange",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ExecutedAction",
+    "inputs": [
+      {
+        "name": "target",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "signature",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "data",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      },
+      {
+        "name": "executionTime",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "withDelegatecall",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      },
+      {
+        "name": "resultData",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "PayloadExecuted",
+    "inputs": [
+      {
+        "name": "payloadId",
+        "type": "uint40",
+        "indexed": false,
+        "internalType": "uint40"
+      }
+    ]
+  }
+]

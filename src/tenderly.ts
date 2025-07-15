@@ -148,7 +148,7 @@ export async function simulateOnTenderly({
         },
       },
     } as const;
-    console.log(JSON.stringify(simPayload));
+    console.info(JSON.stringify(simPayload));
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await renderTenderlyReport({
       payload: cache.payload,

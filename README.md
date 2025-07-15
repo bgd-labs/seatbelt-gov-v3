@@ -17,9 +17,14 @@ The generated report will contain:
 Some of those checks are initially generic, but in addition, we also added extra “interpretations” for particularities of the Aave ecosystem.
 For example, when an Aave Pool contract is affected, we can automate a deeper interpretation of the effect, making it more human-readable.
 
-
 ## Local setup
 
 ```
 bun install
+```
+
+## Run locally
+
+```
+bun simulate
 ```
