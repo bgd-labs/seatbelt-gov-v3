@@ -69,9 +69,9 @@
 | description | value before | value after |
 | --- | --- | --- |
 | eMode.label (unchanged) | PT-sUSDe Stablecoins September 2025 | PT-sUSDe Stablecoins September 2025 |
-| eMode.ltv (unchanged) | 88.3 % | 88.3 % |
-| eMode.liquidationThreshold (unchanged) | 90.3 % | 90.3 % |
-| eMode.liquidationBonus (unchanged) | 5 % | 5 % |
+| eMode.ltv (unchanged) | 88.6 % | 88.6 % |
+| eMode.liquidationThreshold (unchanged) | 90.6 % | 90.6 % |
+| eMode.liquidationBonus (unchanged) | 4.7 % | 4.7 % |
 | eMode.borrowableBitmap | USDC, USDT, USDe, USDS | USDC, USDT, USDe, USDS, USDtb |
 | eMode.collateralBitmap | PT-sUSDE-25SEP2025 | sUSDe, PT-sUSDE-31JUL2025, PT-sUSDE-25SEP2025 |
 
