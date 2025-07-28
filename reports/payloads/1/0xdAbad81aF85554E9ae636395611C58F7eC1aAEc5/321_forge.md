@@ -17,7 +17,7 @@
 | oracle | [0x8B17C02d22EE7D6B8D6829ceB710A458de41E84a](https://etherscan.io/address/0x8B17C02d22EE7D6B8D6829ceB710A458de41E84a) |
 | oracleDecimals | 8 |
 | oracleDescription | PT Capped USDe USDT/USD linear discount 25SEP2025 |
-| oracleLatestAnswer | 0.98482906 |
+| oracleLatestAnswer | 0.9845811 |
 | usageAsCollateralEnabled | true |
 | ltv | 0.05 % [5] |
 | liquidationThreshold | 0.1 % [10] |
@@ -201,7 +201,7 @@
         "oracle": "0x8B17C02d22EE7D6B8D6829ceB710A458de41E84a",
         "oracleDecimals": 8,
         "oracleDescription": "PT Capped USDe USDT/USD linear discount 25SEP2025",
-        "oracleLatestAnswer": "98482906",
+        "oracleLatestAnswer": "98458110",
         "reserveFactor": 2500,
         "supplyCap": 50000000,
         "symbol": "PT-USDe-25SEP2025",
