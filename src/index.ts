@@ -3,7 +3,6 @@ import { existsSync, writeFileSync, mkdirSync } from "fs";
 import path from "path";
 import { Address, Hex } from "viem";
 import * as addresses from "@bgd-labs/aave-address-book";
-import { logError, logInfo } from "@bgd-labs/aave-cli";
 import { getClient, getNonFinalizedPayloads } from "@bgd-labs/toolbox";
 import { Option, program } from "commander";
 import {
@@ -18,7 +17,7 @@ import { getCache } from "./cache/logs";
 function getPayloadFileName(
   chain: number,
   payloadsController: Hex,
-  payloadId: number
+  payloadId: number,
 ) {
   const storagePath = `./reports/payloads/${chain}/${payloadsController}`;
   if (!existsSync(storagePath)) mkdirSync(storagePath, { recursive: true });
@@ -28,11 +27,14 @@ function getPayloadFileName(
 async function simulatePayload(
   chainId: number,
   payloadsController: Address,
-  payloadIds: number[]
+  payloadIds: number[],
 ) {
   if (!payloadsController)
     throw new Error(`payloadsController on ${chainId} not found`);
-  logInfo(chainId.toString(), `Simulating payloads on ${payloadsController}`);
+  console.info(
+    chainId.toString(),
+    `Simulating payloads on ${payloadsController}`,
+  );
   if (!payloadIds || payloadIds.length === 0) {
     payloadIds = await getNonFinalizedPayloads(
       getClient(chainId, {
@@ -42,16 +44,16 @@ async function simulatePayload(
           quicknodeEndpointName: process.env.QUICKNODE_ENDPOINT_NAME,
         },
       }),
-      payloadsController
+      payloadsController,
     );
   }
   for (const payloadId of payloadIds) {
-    logInfo(chainId.toString(), `Simulating ${payloadId}`);
+    console.info(chainId.toString(), `Simulating ${payloadId}`);
     const fileName = getPayloadFileName(chainId, payloadsController, payloadId);
     const strategy = await generatePayloadsStrategy(
       chainId,
       payloadsController,
-      payloadId
+      payloadId,
     );
     const cache = getCache(chainId, payloadsController, payloadId);
     if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
@@ -65,19 +67,19 @@ async function simulatePayload(
         });
         writeFileSync(
           "./src/cache/eventDb.json",
-          JSON.stringify(simResult.eventCache)
+          JSON.stringify(simResult.eventCache),
         );
         writeFileSync(fileName, simResult.report);
         storeSimulationState(
           chainId,
           payloadsController,
           payloadId,
-          strategy.payload.state
+          strategy.payload.state,
         );
       } catch (e) {
-        logError(
+        console.error(
           chainId.toString(),
-          `Simulating payload ${payloadId} on ${payloadsController} failed`
+          `Simulating payload ${payloadId} on ${payloadsController} failed`,
         );
         console.log(e);
         storeSimulationState(chainId, payloadsController, payloadId, -1);
@@ -94,7 +96,7 @@ async function simulatePayload(
         chainId,
         payloadsController,
         payloadId,
-        strategy.payload.state
+        strategy.payload.state,
       );
       console.log("foundry simulation finished");
     } catch (e) {
@@ -110,7 +112,7 @@ export function findPayloadsControllers(chainId: number): Address[] {
     ) {
       if ((addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER)
         acc.push(
-          (addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER
+          (addresses[key as keyof typeof addresses] as any).PAYLOADS_CONTROLLER,
         );
       if (
         (addresses[key as keyof typeof addresses] as any)
@@ -118,7 +120,7 @@ export function findPayloadsControllers(chainId: number): Address[] {
       )
         acc.push(
           (addresses[key as keyof typeof addresses] as any)
-            .PERMISSIONED_PAYLOADS_CONTROLLER
+            .PERMISSIONED_PAYLOADS_CONTROLLER,
         );
     }
 
@@ -130,17 +132,17 @@ program
   .addOption(
     new Option(
       "-c, --chainId [chainId]",
-      "the chainId of the payload (only for payloads)"
-    )
+      "the chainId of the payload (only for payloads)",
+    ),
   )
   .addOption(
-    new Option("-i, --ids [ids...]", "the ids of the payloads/proposals")
+    new Option("-i, --ids [ids...]", "the ids of the payloads/proposals"),
   )
   .addOption(
     new Option(
       "-c, --payloadsController [payloadsController]",
-      "the address of the payloadsController"
-    )
+      "the address of the payloadsController",
+    ),
   )
   .action(async (options) => {
     console.log(options);
@@ -156,7 +158,7 @@ program
         controller,
         typeof options.ids === "object" &&
           options.ids.length > 0 &&
-          options.ids.map((id: string) => Number(id))
+          options.ids.map((id: string) => Number(id)),
       );
     }
   })

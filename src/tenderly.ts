@@ -1,16 +1,18 @@
 import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
 import {
   ChainId,
+  Payload,
   getClient,
+  getMdContractName,
   getPayloadStorageOverrides,
   makePayloadExecutableOnTestClient,
+  renderTenderlyReport,
   tenderly_createVnet,
   tenderly_sim,
 } from "@bgd-labs/toolbox";
-import { Address, encodeFunctionData, Hex } from "viem";
-import { GetPayloadReturnType } from "@bgd-labs/aave-v3-governance-cache";
+import { Address, encodeFunctionData, Hash, Hex, isAddress } from "viem";
 import { providerConfig } from "./common";
-import { renderTenderlyReport } from "./tenderlyReport";
+import * as addresses from "@bgd-labs/aave-address-book";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -20,7 +22,14 @@ type SimulateOnTenderlyParams = {
   executeBefore: number[];
   payloadId: number;
   payloadsController: Address;
-  cache: GetPayloadReturnType;
+  cache: {
+    logs: {
+      createdLog: { transactionHash: Hash; blockNumber: number };
+      queuedLog?: { transactionHash: Hash; blockNumber: number };
+      executedLog?: { transactionHash: Hash; blockNumber: number };
+    };
+    payload: Payload;
+  };
 };
 
 const EOA = "0xD73a92Be73EfbFcF3854433A5FcbAbF9c1316073";
@@ -46,14 +55,14 @@ export async function simulateOnTenderly({
         slug: `seatbelt_${chainId}_${payloadId}`,
         force: true,
       },
-      tenderlyConfig
+      tenderlyConfig,
     );
     // first execute all previous payloads
     for (const before of executeBefore) {
       await makePayloadExecutableOnTestClient(
         vnet.testClient,
         payloadsController,
-        before
+        before,
       );
       await vnet.walletClient.writeContract({
         chain: { id: chainId } as any,
@@ -68,7 +77,7 @@ export async function simulateOnTenderly({
     await makePayloadExecutableOnTestClient(
       vnet.testClient,
       payloadsController,
-      payloadId
+      payloadId,
     );
     console.log({
       network_id: chainId.toString(),
@@ -116,18 +125,21 @@ export async function simulateOnTenderly({
       sim: simResult,
       client: getClient(chainId, {
         providerConfig,
-      }) as any, // currently there is a type mismatch due to multiple viem versions being in use. Should be resolved one tooling is unified.
+      }),
+      config: {
+        etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
+      },
     });
     return report;
   } catch (e) {
     console.log(e);
     console.log(
-      "error simulating against a vnet, trying against the simulation endpoint"
+      "error simulating against a vnet, trying against the simulation endpoint",
     );
     const overrides = await getPayloadStorageOverrides(
       getClient(chainId, { providerConfig }) as any,
       payloadsController,
-      payloadId
+      payloadId,
     );
     const simPayload = {
       network_id: chainId.toString(),
@@ -141,10 +153,13 @@ export async function simulateOnTenderly({
       block_number: -2,
       state_objects: {
         [payloadsController]: {
-          storage: overrides.reduce((acc, val) => {
-            acc[val.slot] = val.value;
-            return acc;
-          }, {} as Record<Hex, Hex>),
+          storage: overrides.reduce(
+            (acc, val) => {
+              acc[val.slot] = val.value;
+              return acc;
+            },
+            {} as Record<Hex, Hex>,
+          ),
         },
       },
     } as const;
@@ -157,8 +172,64 @@ export async function simulateOnTenderly({
       sim: simResult,
       client: getClient(chainId, {
         providerConfig,
-      }) as any, // currently there is a type mismatch due to multiple viem versions being in use. Should be resolved one tooling is unified.
+      }),
+      config: {
+        etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
+      },
+      getContractName: (sim, address) => {
+        const isKnown = isKnownAddress(
+          address,
+          Number(sim.simulation.network_id),
+        );
+        if (isKnown)
+          return flagAsKnown(getMdContractName(sim.contracts, address));
+        return getMdContractName(sim.contracts, address);
+      },
     });
     return report;
   }
+}
+
+type AnyObject = { [key: string]: any };
+
+function flattenObject(
+  obj: AnyObject,
+  parentKey = "",
+  result: AnyObject = {},
+): AnyObject {
+  for (const [key, value] of Object.entries(obj)) {
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+    if (value !== null && typeof value === "object" && !Array.isArray(value)) {
+      flattenObject(value, newKey, result);
+    } else {
+      result[newKey] = value;
+    }
+  }
+  return result;
+}
+
+/**
+ * Checks if address is listed on address-book
+ * @param value
+ * @param chainId
+ * @returns string[] found paths to address-book addresses
+ */
+function isKnownAddress(value: Address, chainId: number): boolean {
+  // glob imports have no object properties
+  // therefore we recreate the object via spread & remove addresses unrelated to the chain we are checking
+  const transformedAddresses = Object.keys(addresses)
+    .reduce((acc, key) => {
+      if (addresses[key as keyof typeof addresses].CHAIN_ID === chainId) {
+        const chainAddresses = { ...addresses[key as keyof typeof addresses] };
+        acc.push(...Object.values(flattenObject(chainAddresses)));
+      }
+      return acc;
+    }, [] as Address[])
+    .filter((a) => isAddress(a));
+  return transformedAddresses.includes(value);
+}
+
+function flagAsKnown(address: string) {
+  return `${address} :ghost:`;
 }
