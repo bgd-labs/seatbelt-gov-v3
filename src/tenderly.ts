@@ -129,6 +129,15 @@ export async function simulateOnTenderly({
       config: {
         etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
       },
+      getContractName: (sim, address) => {
+        const isKnown = isKnownAddress(
+          address,
+          Number(sim.simulation.network_id),
+        );
+        if (isKnown)
+          return flagAsKnown(getMdContractName(sim.contracts, address));
+        return getMdContractName(sim.contracts, address);
+      },
     });
     return report;
   } catch (e) {
