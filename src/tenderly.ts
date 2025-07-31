@@ -8,11 +8,14 @@ import {
   makePayloadExecutableOnTestClient,
   renderTenderlyReport,
   tenderly_createVnet,
+  tenderly_logsToAbiLogs,
   tenderly_sim,
 } from "@bgd-labs/toolbox";
 import { Address, encodeFunctionData, Hash, Hex, isAddress } from "viem";
+import { writeFileSync } from "fs";
 import { providerConfig } from "./common";
 import * as addresses from "@bgd-labs/aave-address-book";
+import eventCache from "./cache/eventDb.json";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -117,6 +120,15 @@ export async function simulateOnTenderly({
       save: true,
       source: "dashboard",
     });
+    const events = tenderly_logsToAbiLogs(
+      simResult.transaction.transaction_info?.logs,
+    );
+    events.map((e) => {
+      if (!eventCache.find((eC) => JSON.stringify(eC) === JSON.stringify(e))) {
+        eventCache.push(e as any);
+      }
+    });
+    writeFileSync("cache/eventDb.json", JSON.stringify(events));
     // await vnet.delete();
     const report = await renderTenderlyReport({
       payloadId: payloadId,
@@ -129,6 +141,7 @@ export async function simulateOnTenderly({
       config: {
         etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
       },
+      eventCache: eventCache as any,
       getContractName: (sim, address) => {
         const isKnown = isKnownAddress(
           address,
