@@ -13,7 +13,6 @@ import {
   tenderly_sim,
 } from "@bgd-labs/toolbox";
 import { Address, encodeFunctionData, Hash, Hex } from "viem";
-import { writeFileSync } from "fs";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
 
@@ -128,9 +127,6 @@ export async function simulateOnTenderly({
         eventCache.push(e as any);
       }
     });
-    if (process.env.UPDATE_EVENT_DB === "true") {
-      writeFileSync("cache/eventDb.json", JSON.stringify(eventCache, null, 2));
-    }
     // await vnet.delete();
     const report = await renderTenderlyReport({
       payloadId: payloadId,

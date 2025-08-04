@@ -65,10 +65,14 @@ async function simulatePayload(
           executeBefore: strategy.executeBefore,
           cache: { payload: strategy.payload, logs: cache },
         });
-        writeFileSync(
-          "./src/cache/eventDb.json",
-          JSON.stringify(simResult.eventCache),
-        );
+
+        if (process.env.UPDATE_EVENT_DB === "true") {
+          writeFileSync(
+            "./src/cache/eventDb.json",
+            JSON.stringify(simResult.eventCache, null, 2),
+          );
+        }
+
         writeFileSync(fileName, simResult.report);
         storeSimulationState(
           chainId,
