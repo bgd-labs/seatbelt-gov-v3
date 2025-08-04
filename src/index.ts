@@ -83,24 +83,24 @@ async function simulatePayload(
         );
         console.log(e);
         storeSimulationState(chainId, payloadsController, payloadId, -1);
-      }
-    }
 
-    // foundry
-    try {
-      let blockNumber = BigInt(0); // current
-      if (cache.executedLog)
-        blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
-      simulateViaFoundry({ chain: chainId, payloadId }, blockNumber);
-      storeSimulationState(
-        chainId,
-        payloadsController,
-        payloadId,
-        strategy.payload.state,
-      );
-      console.log("foundry simulation finished");
-    } catch (e) {
-      console.log("simulating on foundry failed");
+        // foundry
+        try {
+          let blockNumber = BigInt(0); // current
+          if (cache.executedLog)
+            blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
+          simulateViaFoundry({ chain: chainId, payloadId }, blockNumber);
+          storeSimulationState(
+            chainId,
+            payloadsController,
+            payloadId,
+            strategy.payload.state,
+          );
+          console.log("foundry simulation finished");
+        } catch (e) {
+          console.log("simulating on foundry failed");
+        }
+      }
     }
   }
 }

@@ -128,7 +128,8 @@ export async function simulateOnTenderly({
         eventCache.push(e as any);
       }
     });
-    writeFileSync("cache/eventDb.json", JSON.stringify(events));
+    if (process.env.UPDATE_EVENT_DB === "true")
+      writeFileSync("cache/eventDb.json", JSON.stringify(events));
     // await vnet.delete();
     const report = await renderTenderlyReport({
       payloadId: payloadId,
