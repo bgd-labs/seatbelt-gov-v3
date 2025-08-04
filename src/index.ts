@@ -153,6 +153,8 @@ program
         ? [options.payloadsController]
         : findPayloadsControllers(Number(options.chainId))!;
     for (const controller of payloadsControllers) {
+      if (typeof options.ids === "string" && options.ids.match(/,/g))
+        options.ids = options.ids.split(",");
       return simulatePayload(
         Number(options.chainId),
         controller,

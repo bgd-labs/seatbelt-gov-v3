@@ -218,25 +218,6 @@ export async function simulateOnTenderly({
   }
 }
 
-type AnyObject = { [key: string]: any };
-
-function flattenObject(
-  obj: AnyObject,
-  parentKey = "",
-  result: AnyObject = {},
-): AnyObject {
-  for (const [key, value] of Object.entries(obj)) {
-    const newKey = parentKey ? `${parentKey}.${key}` : key;
-
-    if (value !== null && typeof value === "object" && !Array.isArray(value)) {
-      flattenObject(value, newKey, result);
-    } else {
-      result[newKey] = value;
-    }
-  }
-  return result;
-}
-
 function flagAsKnown(value: string, reference: string) {
   return `${value} [:ghost:](https://github.com/bgd-labs/aave-address-book  "${reference}")`;
 }
