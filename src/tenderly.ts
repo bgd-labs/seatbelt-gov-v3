@@ -1,4 +1,5 @@
 import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
+import { getAddressBookReferences } from "@bgd-labs/aave-address-book/utils";
 import {
   ChainId,
   Payload,
@@ -11,10 +12,9 @@ import {
   tenderly_logsToAbiLogs,
   tenderly_sim,
 } from "@bgd-labs/toolbox";
-import { Address, encodeFunctionData, Hash, Hex, isAddress } from "viem";
+import { Address, encodeFunctionData, Hash, Hex } from "viem";
 import { writeFileSync } from "fs";
 import { providerConfig } from "./common";
-import * as addresses from "@bgd-labs/aave-address-book";
 import eventCache from "./cache/eventDb.json";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
@@ -143,12 +143,15 @@ export async function simulateOnTenderly({
       },
       eventCache: eventCache as any,
       getContractName: (sim, address) => {
-        const isKnown = isKnownAddress(
+        const references = getAddressBookReferences(
           address,
           Number(sim.simulation.network_id),
         );
-        if (isKnown)
-          return flagAsKnown(getMdContractName(sim.contracts, address));
+        if (references.length > 0)
+          return flagAsKnown(
+            getMdContractName(sim.contracts, address),
+            references[0],
+          );
         return getMdContractName(sim.contracts, address);
       },
     });
@@ -199,12 +202,15 @@ export async function simulateOnTenderly({
         etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
       },
       getContractName: (sim, address) => {
-        const isKnown = isKnownAddress(
+        const references = getAddressBookReferences(
           address,
           Number(sim.simulation.network_id),
         );
-        if (isKnown)
-          return flagAsKnown(getMdContractName(sim.contracts, address));
+        if (references.length)
+          return flagAsKnown(
+            getMdContractName(sim.contracts, address),
+            references[0],
+          );
         return getMdContractName(sim.contracts, address);
       },
     });
@@ -231,27 +237,6 @@ function flattenObject(
   return result;
 }
 
-/**
- * Checks if address is listed on address-book
- * @param value
- * @param chainId
- * @returns string[] found paths to address-book addresses
- */
-function isKnownAddress(value: Address, chainId: number): boolean {
-  // glob imports have no object properties
-  // therefore we recreate the object via spread & remove addresses unrelated to the chain we are checking
-  const transformedAddresses = Object.keys(addresses)
-    .reduce((acc, key) => {
-      if (addresses[key as keyof typeof addresses].CHAIN_ID === chainId) {
-        const chainAddresses = { ...addresses[key as keyof typeof addresses] };
-        acc.push(...Object.values(flattenObject(chainAddresses)));
-      }
-      return acc;
-    }, [] as Address[])
-    .filter((a) => isAddress(a));
-  return transformedAddresses.includes(value);
-}
-
-function flagAsKnown(address: string) {
-  return `${address} :ghost:`;
+function flagAsKnown(value: string, reference: string) {
+  return `${value} [:ghost:](https://github.com/bgd-labs/aave-address-book  "${reference}")`;
 }

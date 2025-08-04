@@ -13,7 +13,7 @@
   "author": "BGD Labs",
   "license": "MIT",
   "dependencies": {
-    "@bgd-labs/aave-address-book": "^4.25.3",
+    "@bgd-labs/aave-address-book": "^4.26.0",
     "@bgd-labs/aave-cli": "^1.3.4",
     "@bgd-labs/aave-v3-governance-cache": "^1.0.11",
     "@bgd-labs/toolbox": "^0.0.32",

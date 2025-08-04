@@ -4,7 +4,7 @@
     "": {
       "name": "seatbelt-gov-v3",
       "dependencies": {
-        "@bgd-labs/aave-address-book": "^4.25.3",
+        "@bgd-labs/aave-address-book": "^4.26.0",
         "@bgd-labs/aave-cli": "^1.3.4",
         "@bgd-labs/aave-v3-governance-cache": "^1.0.11",
         "@bgd-labs/toolbox": "^0.0.32",
@@ -26,7 +26,7 @@
 
     "@assemblyscript/loader": ["@assemblyscript/loader@0.9.4", "", {}, "sha512-HazVq9zwTVwGmqdwYzu7WyQ6FQVZ7SwET0KKQuKm55jD0IfUpZgN0OPIiZG3zV1iSrVYcN0bdwLRXI/VNCYsUA=="],
 
-    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.25.3", "", {}, "sha512-B9bxg1QujWBOFoeMy5py9TNuyuC5r6qcSp60Tz4vA/5350a9UI3Mf7LRyAzmPbVes6kB/gGM+Ryf5LMhr2/0Og=="],
+    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.26.0", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-7DS5yKaVBItT7pVUILX39jrYukmG1U1PeHR0qb30IkylD1whIQBWM7jeD1CzD503Sywc9tMgsdwp+nJImkP/pA=="],
 
     "@bgd-labs/aave-cli": ["@bgd-labs/aave-cli@1.3.4", "", { "dependencies": { "@bgd-labs/aave-address-book": "^4.21.0", "@bgd-labs/aave-v3-governance-cache": "^1.0.11", "@bgd-labs/js-utils": "^1.4.8", "@bgd-labs/rpc-env": "^2.3.2", "@commander-js/extra-typings": "^12.1.0", "@inquirer/prompts": "^7.1.0", "blockstore-core": "^5.0.2", "chalk": "^4.1.2", "commander": "^12.1.0", "deepmerge": "^4.3.1", "dotenv": "^16.4.1", "find-object-paths": "^1.1.0", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.1", "json-bigint": "^1.0.0", "viem": "^2.22.21", "zod": "^3.23.8" }, "bin": { "aave-cli": "dist/cli.js" } }, "sha512-/cKrKc+VB08O3ukgZHSHtM/9uUJS1EBntf4hvbN5eeCEwFaVHGNurK8OSPb/1Qo6TEx7Icc26X1bRoCVxBXPGg=="],
 
