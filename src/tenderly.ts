@@ -12,7 +12,7 @@ import {
   tenderly_logsToAbiLogs,
   tenderly_sim,
 } from "@bgd-labs/toolbox";
-import { Address, encodeFunctionData, Hash, Hex } from "viem";
+import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
 
@@ -43,11 +43,13 @@ export async function simulateOnTenderly({
   payloadsController,
   cache,
 }: SimulateOnTenderlyParams) {
+  console.log(cache.logs.executedLog?.blockNumber);
   const tenderlyConfig = {
     projectSlug: process.env.TENDERLY_PROJECT_SLUG!,
     accountSlug: process.env.TENDERLY_ACCOUNT!,
     accessToken: process.env.TENDERLY_ACCESS_TOKEN!,
   };
+  const blockNumber = Number(cache.logs.executedLog?.blockNumber || "latest");
   try {
     const vnet = await tenderly_createVnet(
       {
@@ -55,6 +57,7 @@ export async function simulateOnTenderly({
         forkChainId: chainId,
         displayName: `Seatbelt ${chainId} ${payloadId}`,
         slug: `seatbelt_${chainId}_${payloadId}`,
+        blockNumber: blockNumber as any,
         force: true,
       },
       tenderlyConfig,
@@ -81,7 +84,7 @@ export async function simulateOnTenderly({
       payloadsController,
       payloadId,
     );
-    console.log({
+    const simPayload = {
       network_id: chainId.toString(),
       from: EOA,
       to: payloadsController,
@@ -90,7 +93,7 @@ export async function simulateOnTenderly({
         functionName: "executePayload",
         args: [payloadId],
       }),
-      block_number: null,
+      block_number: blockNumber,
       transaction_index: 0,
       gas: 30_000_000,
       gas_price: "0",
@@ -99,34 +102,8 @@ export async function simulateOnTenderly({
       generate_access_list: true,
       save: true,
       source: "dashboard",
-    });
-    const simResult = await vnet.simulate({
-      network_id: chainId.toString(),
-      from: EOA,
-      to: payloadsController,
-      input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
-        functionName: "executePayload",
-        args: [payloadId],
-      }),
-      block_number: null,
-      transaction_index: 0,
-      gas: 30_000_000,
-      gas_price: "0",
-      value: "0",
-      access_list: [],
-      generate_access_list: true,
-      save: true,
-      source: "dashboard",
-    });
-    const events = tenderly_logsToAbiLogs(
-      simResult.transaction.transaction_info?.logs,
-    );
-    events.map((e) => {
-      if (!eventCache.find((eC) => JSON.stringify(eC) === JSON.stringify(e))) {
-        eventCache.push(e as any);
-      }
-    });
+    };
+    const simResult = await vnet.simulate(simPayload);
     // await vnet.delete();
     const report = await renderTenderlyReport({
       payloadId: payloadId,
@@ -173,7 +150,7 @@ export async function simulateOnTenderly({
         functionName: "executePayload",
         args: [payloadId],
       }),
-      block_number: -2,
+      block_number: blockNumber,
       state_objects: {
         [payloadsController]: {
           storage: overrides.reduce(
@@ -186,7 +163,6 @@ export async function simulateOnTenderly({
         },
       },
     } as const;
-    console.info(JSON.stringify(simPayload));
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await renderTenderlyReport({
       payload: cache.payload,
