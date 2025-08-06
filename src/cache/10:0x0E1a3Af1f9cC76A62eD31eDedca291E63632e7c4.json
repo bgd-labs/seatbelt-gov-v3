@@ -5481,5 +5481,22 @@
     "blockHash": "0x6a5d9672bb978d12a208daed82d2bc42be7b710c9d2437569a7cb8b6dce2a684",
     "logIndex": 157,
     "removed": false
+  },
+  {
+    "eventName": "PayloadQueued",
+    "args": {
+      "payloadId": 83
+    },
+    "address": "0x0e1a3af1f9cc76a62ed31ededca291e63632e7c4",
+    "topics": [
+      "0x1c4585f98a2bf1a1dca30917ba110f1b978343c7cce2c703495e5e47d5164456"
+    ],
+    "data": "0x0000000000000000000000000000000000000000000000000000000000000053",
+    "blockNumber": "139437447",
+    "transactionHash": "0x19fab52f168c3e9c43528bd50f50f3e4431a5624d6e1f67d4404c0f0866ed6b6",
+    "transactionIndex": 1,
+    "blockHash": "0xbb67b95400032a8e339c53c970ae8547fd3ac8a84b2fb0341761d991d5a48a60",
+    "logIndex": 1,
+    "removed": false
   }
 ]
