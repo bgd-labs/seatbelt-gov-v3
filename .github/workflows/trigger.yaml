@@ -27,10 +27,16 @@ jobs:
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
       VERBOSE: true
     steps:
+      - name: wait
+        uses: softprops/turnstyle@87724d307f37360709253b3d749fa52f1e62fa19
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: recursive        
+          ref: ${{ github.event.repository.default_branch }}
 
       - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
 
