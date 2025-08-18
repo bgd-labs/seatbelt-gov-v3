@@ -27,10 +27,16 @@ jobs:
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
       VERBOSE: true
     steps:
+      - name: wait
+        uses: softprops/turnstyle@807f6009e7cee5c2c9faa41ccef03a8bb24b06ab # 2.4.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: recursive        
+          ref: ${{ github.event.repository.default_branch }}
 
       - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
 
@@ -60,11 +66,9 @@ jobs:
           else
             git config --global user.name 'Cache bot'
             git config --global user.email 'cache-bot@bgdlabs.com'
-            git config --global pull.rebase true
             git add reports
             git restore .
             git commit -am "fix(cache): automatic cache update :robot:"
-            git pull --rebase --autostash
             git push
           exit
           fi
