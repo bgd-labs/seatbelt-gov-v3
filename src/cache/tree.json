@@ -6409,6 +6409,16 @@
           "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01"
         }
       ]
+    },
+    "358": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 59144,
+          "payloadId": 12,
+          "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074"
+        }
+      ]
     }
   },
   "payloads": {
@@ -9029,6 +9039,9 @@
         },
         "11": {
           "353": true
+        },
+        "12": {
+          "358": true
         }
       }
     },
