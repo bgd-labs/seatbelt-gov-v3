@@ -6619,6 +6619,36 @@
           "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074"
         }
       ]
+    },
+    "373": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 1,
+          "payloadId": 340,
+          "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+        }
+      ]
+    },
+    "374": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 534352,
+          "payloadId": 46,
+          "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE"
+        }
+      ]
+    },
+    "375": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 43114,
+          "payloadId": 95,
+          "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80"
+        }
+      ]
     }
   },
   "payloads": {
@@ -7475,6 +7505,9 @@
         "338": {
           "370": true,
           "371": true
+        },
+        "340": {
+          "373": true
         }
       }
     },
@@ -9266,6 +9299,9 @@
         },
         "93": {
           "368": true
+        },
+        "95": {
+          "375": true
         }
       }
     },
@@ -9440,6 +9476,9 @@
         },
         "45": {
           "353": true
+        },
+        "46": {
+          "374": true
         }
       }
     }
