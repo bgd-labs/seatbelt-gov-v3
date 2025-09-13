@@ -6659,6 +6659,16 @@
           "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
         }
       ]
+    },
+    "377": {
+      "state": 1,
+      "payloads": [
+        {
+          "chain": 1,
+          "payloadId": 342,
+          "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5"
+        }
+      ]
     }
   },
   "payloads": {
@@ -7521,6 +7531,9 @@
         },
         "341": {
           "376": true
+        },
+        "342": {
+          "377": true
         }
       }
     },
