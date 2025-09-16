@@ -6,12 +6,19 @@ on:
       chainId:
         description: "On which networkId are the payloads deployed"
         type: string
+        required: true
       ids:
         description: "Comma separated list of ids"
         type: string
+        required: true
       payloadsController:
         description: "Address of the payloadsController"
         type: string
+        required: true
+      origin:
+        description: "Self-description of the origin"
+        type: string
+        required: false
 
 jobs:
   trigger:
