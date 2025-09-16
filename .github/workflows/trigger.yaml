@@ -70,7 +70,7 @@ jobs:
 
       - name: check diff
         run: |
-          if [[ -z $(git status -s) ]]
+          if [[ -z $(git status reports -s) ]]
           then
             echo "tree is clean"
           else
