@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { existsSync, writeFileSync, mkdirSync } from "fs";
 import path from "path";
-import { Address, Hex } from "viem";
+import { Address, Hex, getAddress } from "viem";
 import * as addresses from "@bgd-labs/aave-address-book";
 import { getClient, getNonFinalizedPayloads } from "@bgd-labs/toolbox";
 import { Option, program } from "commander";
@@ -154,7 +154,7 @@ program
       throw new Error("chainId required when simulating payloads");
     const payloadsControllers =
       typeof options.payloadsController === "string"
-        ? [options.payloadsController]
+        ? [getAddress(options.payloadsController)]
         : findPayloadsControllers(Number(options.chainId))!;
     for (const controller of payloadsControllers) {
       if (typeof options.ids === "string" && options.ids.match(/,/g))
