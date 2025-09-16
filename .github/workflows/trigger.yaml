@@ -27,6 +27,9 @@ jobs:
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
       VERBOSE: true
     steps:
+      - name: log inputs
+        run: echo "${{ toJSON(inputs) }}"
+
       - name: wait
         uses: softprops/turnstyle@807f6009e7cee5c2c9faa41ccef03a8bb24b06ab # 2.4.0
         env:
