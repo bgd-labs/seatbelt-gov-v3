@@ -1,8 +1,8 @@
 {
   "lib/aave-helpers": {
-    "tag": {
-      "name": "v3.1.0",
-      "rev": "e0ad471e9da2b45468b0f3e0adac7d3c257940dc"
+    "branch": {
+      "name": "main",
+      "rev": "54b1915c1b74e316d99860e7fdc916ec69b65e8d"
     }
   },
   "lib/forge-std": {
