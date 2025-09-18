@@ -83,5 +83,5 @@ celo = "${RPC_CELO}"
 zksync = "${RPC_ZKSYNC}"
 linea = "${RPC_LINEA}"
 sonic = "${RPC_SONIC}"
-
+plasma = "${RPC_PLASMA}"
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
