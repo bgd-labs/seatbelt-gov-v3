@@ -36,7 +36,6 @@
 | isPaused | false |
 | variableDebtTokenName | Aave Celo Variable Debt CELO |
 | variableDebtTokenSymbol | variableDebtCelCELO |
-| virtualAccountingActive | true |
 | virtualBalance | 10 CELO [10000000000000000000] |
 | optimalUsageRatio | 45 % |
 | maxVariableBorrowRate | 160 % |
@@ -80,7 +79,6 @@
 | isPaused | false |
 | variableDebtTokenName | Aave Celo Variable Debt USDT |
 | variableDebtTokenSymbol | variableDebtCelUSDT |
-| virtualAccountingActive | true |
 | virtualBalance | 10 USD₮ [10000000] |
 | optimalUsageRatio | 90 % |
 | maxVariableBorrowRate | 47.5 % |
@@ -124,7 +122,6 @@
 | isPaused | false |
 | variableDebtTokenName | Aave Celo Variable Debt cUSD |
 | variableDebtTokenSymbol | variableDebtCelcUSD |
-| virtualAccountingActive | true |
 | virtualBalance | 10 cUSD [10000000000000000000] |
 | optimalUsageRatio | 90 % |
 | maxVariableBorrowRate | 82.5 % |
@@ -168,7 +165,6 @@
 | isPaused | false |
 | variableDebtTokenName | Aave Celo Variable Debt cEUR |
 | variableDebtTokenSymbol | variableDebtCelcEUR |
-| virtualAccountingActive | true |
 | virtualBalance | 10 cEUR [10000000000000000000] |
 | optimalUsageRatio | 90 % |
 | maxVariableBorrowRate | 82.5 % |
@@ -212,7 +208,6 @@
 | isPaused | false |
 | variableDebtTokenName | Aave Celo Variable Debt USDC |
 | variableDebtTokenSymbol | variableDebtCelUSDC |
-| virtualAccountingActive | true |
 | virtualBalance | 10 USDC [10000000] |
 | optimalUsageRatio | 90 % |
 | maxVariableBorrowRate | 47.5 % |
@@ -262,7 +257,6 @@
         "variableDebtToken": "0xaEa37B42955De2Ba2E4AF6581E46349bCD3Ea2d6",
         "variableDebtTokenName": "Aave Celo Variable Debt CELO",
         "variableDebtTokenSymbol": "variableDebtCelCELO",
-        "virtualAccountingActive": true,
         "virtualBalance": "10000000000000000000"
       }
     },
@@ -301,7 +295,6 @@
         "variableDebtToken": "0xE15324a9887999803b931Ac45aa89a94A9750052",
         "variableDebtTokenName": "Aave Celo Variable Debt USDT",
         "variableDebtTokenSymbol": "variableDebtCelUSDT",
-        "virtualAccountingActive": true,
         "virtualBalance": "10000000"
       }
     },
@@ -340,7 +333,6 @@
         "variableDebtToken": "0x05Ee3d1fBACbDbA1259946033cd7A42FDFcCcF0d",
         "variableDebtTokenName": "Aave Celo Variable Debt cUSD",
         "variableDebtTokenSymbol": "variableDebtCelcUSD",
-        "virtualAccountingActive": true,
         "virtualBalance": "10000000000000000000"
       }
     },
@@ -379,7 +371,6 @@
         "variableDebtToken": "0x5C2B7EB5886B3cEc5CCE1019E34493da33291aF5",
         "variableDebtTokenName": "Aave Celo Variable Debt cEUR",
         "variableDebtTokenSymbol": "variableDebtCelcEUR",
-        "virtualAccountingActive": true,
         "virtualBalance": "10000000000000000000"
       }
     },
@@ -418,7 +409,6 @@
         "variableDebtToken": "0xDbe517c0FA6467873B684eCcbED77217E471E862",
         "variableDebtTokenName": "Aave Celo Variable Debt USDC",
         "variableDebtTokenSymbol": "variableDebtCelUSDC",
-        "virtualAccountingActive": true,
         "virtualBalance": "10000000"
       }
     }
