@@ -64,6 +64,7 @@ export async function simulateOnTenderly({
     );
     // first execute all previous payloads
     for (const before of executeBefore) {
+      console.log(`assuming execution of ${before}`);
       await makePayloadExecutableOnTestClient(
         vnet.testClient,
         payloadsController,
@@ -104,15 +105,21 @@ export async function simulateOnTenderly({
       source: "dashboard",
     };
     const simResult = await vnet.simulate(simPayload);
-    // await vnet.delete();
+    // after simulation execute payload
+    await vnet.walletClient.writeContract({
+      chain: { id: chainId } as any,
+      abi: IPayloadsControllerCore_ABI,
+      account: EOA,
+      address: payloadsController,
+      functionName: "executePayload",
+      args: [payloadId],
+    });
     const report = await renderTenderlyReport({
       payloadId: payloadId,
       payload: cache.payload,
       onchainLogs: cache.logs as any,
       sim: simResult,
-      client: getClient(chainId, {
-        providerConfig,
-      }),
+      client: vnet.testClient,
       config: {
         etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
       },
@@ -130,6 +137,7 @@ export async function simulateOnTenderly({
         return getMdContractName(sim.contracts, address);
       },
     });
+    // await vnet.delete();
     return report;
   } catch (e) {
     console.log(e);

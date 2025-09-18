@@ -4,9 +4,9 @@
     "": {
       "name": "seatbelt-gov-v3",
       "dependencies": {
-        "@bgd-labs/aave-address-book": "^4.30.2",
+        "@bgd-labs/aave-address-book": "^4.30.3",
         "@bgd-labs/aave-cli": "^1.4.1",
-        "@bgd-labs/toolbox": "^0.0.42",
+        "@bgd-labs/toolbox": "^0.0.45",
         "commander": "^11.1.0",
         "dotenv": "^16.3.1",
         "prettier": "3.5.3",
@@ -25,13 +25,13 @@
 
     "@assemblyscript/loader": ["@assemblyscript/loader@0.9.4", "", {}, "sha512-HazVq9zwTVwGmqdwYzu7WyQ6FQVZ7SwET0KKQuKm55jD0IfUpZgN0OPIiZG3zV1iSrVYcN0bdwLRXI/VNCYsUA=="],
 
-    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.30.2", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-5ZjLEjdIyjQ1YPF/TeO8aG3cMsxbiSBwPrXoZmxJrqfngdBGYuLsIaFXgnetV9hqWDssskUfUv0RkLu4C/fAgw=="],
+    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.30.3", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-CrfiNgIT7L6rigVs/yT90prMBJRgqrTu2uAQ7+urhDANf/1+ps0eEMvYDVtLaROGOu6NfPWSC2gbCrEsBbZung=="],
 
     "@bgd-labs/aave-cli": ["@bgd-labs/aave-cli@1.4.1", "", { "dependencies": { "@bgd-labs/aave-address-book": "^4.28.1", "@bgd-labs/aave-v3-governance-cache": "^1.0.11", "@bgd-labs/toolbox": "^0.0.40", "@commander-js/extra-typings": "^12.1.0", "@inquirer/prompts": "^7.1.0", "blockstore-core": "^5.0.4", "bs58": "^6.0.0", "chalk": "^4.1.2", "commander": "^12.1.0", "deepmerge": "^4.3.1", "dotenv": "^16.4.1", "find-object-paths": "^1.1.0", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.4.0", "json-bigint": "^1.0.0", "viem": "^2.22.21", "zod": "^3.23.8" }, "bin": { "aave-cli": "dist/cli.js" } }, "sha512-gSElE1hVKvqqTcECayjogcWikthrpM/eFAPhrfso8lt6LsTlZhe/QgDOVj51P1bXdlAkaJAsTAGPjZWBKHMLFA=="],
 
     "@bgd-labs/aave-v3-governance-cache": ["@bgd-labs/aave-v3-governance-cache@1.0.11", "", { "peerDependencies": { "@bgd-labs/aave-address-book": "^4.21.0", "viem": "^2.30.0" } }, "sha512-K5HPPxIN4EOM/AGz6PF+mmc3LjfYG0N4BQDvS+ZMPKFnzBqhk43gYyzNwyRlAG3uo8LS//+pH5ReHQfz0p2DvA=="],
 
-    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.0.42", "", { "dependencies": { "arktype": "^2.1.20", "blockstore-core": "^5.0.2", "diff": "^7.0.0", "eventsource": "^3.0.6", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.2", "ts-pattern": "^5.8.0", "viem": "^2.37.5" }, "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0" } }, "sha512-uMplC5ROXqb6jUObpYOUje5vK/oDca5dzkku1SPYLbRJbNhDkBL0yESbuRCswX+k7rn6x75nH2gBNey13SxBHQ=="],
+    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.0.45", "", { "dependencies": { "arktype": "^2.1.20", "blockstore-core": "^5.0.2", "diff": "^7.0.0", "eventsource": "^3.0.6", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.2", "ts-pattern": "^5.8.0", "viem": "^2.37.6" }, "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0" } }, "sha512-/c2Bf5l3B7TAPW+OiM3P/f/6SGGfe+FbPzVSrMtF78LyuoPiszU+FLhoEBcHIIfzMlhV19ycY3XNkCPmJHdSjA=="],
 
     "@chainsafe/is-ip": ["@chainsafe/is-ip@2.1.0", "", {}, "sha512-KIjt+6IfysQ4GCv66xihEitBjvhU/bixbbbFxdJ1sqCp4uJ0wuZiYBPhksZoy4lfaF0k9cwNzY5upEW/VWdw3w=="],
 
@@ -504,6 +504,8 @@
     "yoctocolors-cjs": ["yoctocolors-cjs@2.1.2", "", {}, "sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA=="],
 
     "zod": ["zod@3.25.30", "", {}, "sha512-VolhdEtu6TJr/fzGuHA/SZ5ixvXqA6ADOG9VRcQ3rdOKmF5hkmcJbyaQjUH5BgmpA9gej++zYRX7zjSmdReIwA=="],
+
+    "@bgd-labs/aave-cli/@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.30.2", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-5ZjLEjdIyjQ1YPF/TeO8aG3cMsxbiSBwPrXoZmxJrqfngdBGYuLsIaFXgnetV9hqWDssskUfUv0RkLu4C/fAgw=="],
 
     "@bgd-labs/aave-cli/@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.0.40", "", { "dependencies": { "arktype": "^2.1.20", "blockstore-core": "^5.0.2", "diff": "^7.0.0", "eventsource": "^3.0.6", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.2", "ts-pattern": "^5.8.0", "viem": "^2.30.0" }, "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0" } }, "sha512-vjLvGJLpFtqA9pvwrxleqIDSc2yoZJngol3VNoi6q4LgF/tG+zv6UpQ9TXKfx89BPsQpIQwkz8qnkfIC1nCv7Q=="],
 
