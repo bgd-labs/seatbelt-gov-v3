@@ -4,9 +4,9 @@
     "": {
       "name": "seatbelt-gov-v3",
       "dependencies": {
-        "@bgd-labs/aave-address-book": "^4.30.3",
+        "@bgd-labs/aave-address-book": "^4.36.0",
         "@bgd-labs/aave-cli": "^1.4.1",
-        "@bgd-labs/toolbox": "^0.0.45",
+        "@bgd-labs/toolbox": "^0.0.53",
         "commander": "^11.1.0",
         "dotenv": "^16.3.1",
         "prettier": "3.5.3",
@@ -25,13 +25,13 @@
 
     "@assemblyscript/loader": ["@assemblyscript/loader@0.9.4", "", {}, "sha512-HazVq9zwTVwGmqdwYzu7WyQ6FQVZ7SwET0KKQuKm55jD0IfUpZgN0OPIiZG3zV1iSrVYcN0bdwLRXI/VNCYsUA=="],
 
-    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.30.3", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-CrfiNgIT7L6rigVs/yT90prMBJRgqrTu2uAQ7+urhDANf/1+ps0eEMvYDVtLaROGOu6NfPWSC2gbCrEsBbZung=="],
+    "@bgd-labs/aave-address-book": ["@bgd-labs/aave-address-book@4.36.0", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-9vpDl3SYJyxVronEIEmh3B1Z58o87A5b98DCvsDmeochD1UMdsi8GmptgQ5fDwHFyiqRGwlbA1uy0YCExdz+Zg=="],
 
     "@bgd-labs/aave-cli": ["@bgd-labs/aave-cli@1.4.1", "", { "dependencies": { "@bgd-labs/aave-address-book": "^4.28.1", "@bgd-labs/aave-v3-governance-cache": "^1.0.11", "@bgd-labs/toolbox": "^0.0.40", "@commander-js/extra-typings": "^12.1.0", "@inquirer/prompts": "^7.1.0", "blockstore-core": "^5.0.4", "bs58": "^6.0.0", "chalk": "^4.1.2", "commander": "^12.1.0", "deepmerge": "^4.3.1", "dotenv": "^16.4.1", "find-object-paths": "^1.1.0", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.4.0", "json-bigint": "^1.0.0", "viem": "^2.22.21", "zod": "^3.23.8" }, "bin": { "aave-cli": "dist/cli.js" } }, "sha512-gSElE1hVKvqqTcECayjogcWikthrpM/eFAPhrfso8lt6LsTlZhe/QgDOVj51P1bXdlAkaJAsTAGPjZWBKHMLFA=="],
 
     "@bgd-labs/aave-v3-governance-cache": ["@bgd-labs/aave-v3-governance-cache@1.0.11", "", { "peerDependencies": { "@bgd-labs/aave-address-book": "^4.21.0", "viem": "^2.30.0" } }, "sha512-K5HPPxIN4EOM/AGz6PF+mmc3LjfYG0N4BQDvS+ZMPKFnzBqhk43gYyzNwyRlAG3uo8LS//+pH5ReHQfz0p2DvA=="],
 
-    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.0.45", "", { "dependencies": { "arktype": "^2.1.20", "blockstore-core": "^5.0.2", "diff": "^7.0.0", "eventsource": "^3.0.6", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.2", "ts-pattern": "^5.8.0", "viem": "^2.37.6" }, "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0" } }, "sha512-/c2Bf5l3B7TAPW+OiM3P/f/6SGGfe+FbPzVSrMtF78LyuoPiszU+FLhoEBcHIIfzMlhV19ycY3XNkCPmJHdSjA=="],
+    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.0.53", "", { "dependencies": { "@openzeppelin/contracts-upgradeable": "^5.4.0", "arktype": "^2.1.20", "blockstore-core": "^5.0.2", "diff": "^7.0.0", "eventsource": "^3.0.6", "gray-matter": "^4.0.3", "ipfs-unixfs-importer": "^15.3.2", "ts-pattern": "^5.8.0", "viem": "^2.37.6" }, "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0" } }, "sha512-s6Z/OybHw+JxmvYWIImmc0RKPt+CREHD/SSRsZSoCctgrKsEjg/24iLVFyIRMW2Q14QYBKc3GRp5xyknG+iTKQ=="],
 
     "@chainsafe/is-ip": ["@chainsafe/is-ip@2.1.0", "", {}, "sha512-KIjt+6IfysQ4GCv66xihEitBjvhU/bixbbbFxdJ1sqCp4uJ0wuZiYBPhksZoy4lfaF0k9cwNzY5upEW/VWdw3w=="],
 
@@ -138,6 +138,10 @@
     "@noble/curves": ["@noble/curves@1.9.1", "", { "dependencies": { "@noble/hashes": "1.8.0" } }, "sha512-k11yZxZg+t+gWvBbIswW0yoJlu8cHOC7dhunwOzoWH/mXGBiYyR4YY6hAEK/3EUs4UpB8la1RfdRpeGsFHkWsA=="],
 
     "@noble/hashes": ["@noble/hashes@1.8.0", "", {}, "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="],
+
+    "@openzeppelin/contracts": ["@openzeppelin/contracts@5.4.0", "", {}, "sha512-eCYgWnLg6WO+X52I16TZt8uEjbtdkgLC0SUX/xnAksjjrQI4Xfn4iBRoI5j55dmlOhDv1Y7BoR3cU7e3WWhC6A=="],
+
+    "@openzeppelin/contracts-upgradeable": ["@openzeppelin/contracts-upgradeable@5.4.0", "", { "peerDependencies": { "@openzeppelin/contracts": "5.4.0" } }, "sha512-STJKyDzUcYuB35Zub1JpWW58JxvrFFVgQ+Ykdr8A9PGXgtq/obF5uoh07k2XmFyPxfnZdPdBdhkJ/n2YxJ87HQ=="],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.44.1", "", { "os": "android", "cpu": "arm" }, "sha512-JAcBr1+fgqx20m7Fwe1DxPUl/hPkee6jA6Pl7n1v2EFiktAHenTaXl5aIFjUIEsfn9w3HE4gK1lEgNGMzBDs1w=="],
 
