@@ -4401,5 +4401,23 @@
     "logIndex": 43,
     "removed": false,
     "blockTimestamp": "0x690c6b74"
+  },
+  {
+    "eventName": "PayloadQueued",
+    "args": {
+      "payloadId": 66
+    },
+    "address": "0x9a1f491b86d09fc1484b5fab10041b189b60756b",
+    "topics": [
+      "0x1c4585f98a2bf1a1dca30917ba110f1b978343c7cce2c703495e5e47d5164456"
+    ],
+    "data": "0x0000000000000000000000000000000000000000000000000000000000000042",
+    "blockNumber": "43074806",
+    "transactionHash": "0x2c89b690585833e3bbe549eac8c56c046567a0c0a838e33f95484d1804853826",
+    "transactionIndex": 0,
+    "blockHash": "0x4a7bdac2d91ec12e0e429347d72be62ce7327dcc452f3c3e783f0dc43d4a23a6",
+    "logIndex": 2,
+    "removed": false,
+    "blockTimestamp": "0x6911f242"
   }
 ]
