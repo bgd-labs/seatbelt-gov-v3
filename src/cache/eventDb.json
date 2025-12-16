@@ -580,5 +580,35 @@
         "internalType": "uint256"
       }
     ]
+  },
+  {
+    "type": "event",
+    "name": "BridgeAdapterUpdated",
+    "inputs": [
+      {
+        "name": "destinationChainId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bridgeAdapter",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "destinationBridgeAdapter",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "allowed",
+        "type": "bool",
+        "indexed": true,
+        "internalType": "bool"
+      }
+    ]
   }
 ]

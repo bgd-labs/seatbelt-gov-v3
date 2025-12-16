@@ -15,6 +15,7 @@ import {
 import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
+import { savUSD_vUSD_Exchange_Rate } from "../lib/aave-helpers/lib/aave-address-book/src/ts/ChainlinkAvalanche";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -63,7 +64,7 @@ export async function simulateOnTenderly({
   const executedLog = cache.logs.executedLog;
   const blockNumber = executedLog?.blockNumber
     ? Number(executedLog?.blockNumber)
-    : "latest";
+    : -2;
   try {
     const vnet = await tenderly_createVnet(
       {
@@ -71,7 +72,7 @@ export async function simulateOnTenderly({
         forkChainId: chainId,
         displayName: `Seatbelt ${chainId} ${payloadId}`,
         slug: `seatbelt_${chainId}_${payloadId}`,
-        blockNumber: blockNumber as any,
+        blockNumber: blockNumber === -2 ? "latest" : blockNumber,
         force: true,
       },
       tenderlyConfig,
@@ -84,19 +85,23 @@ export async function simulateOnTenderly({
     // first execute all previous payloads
     for (const before of executeBefore) {
       console.log(`assuming execution of ${before}`);
-      await makePayloadExecutableOnTestClient(
-        vnet.testClient,
-        payloadsController,
-        before,
-      );
-      await vnet.walletClient.writeContract({
-        chain: { id: chainId } as any,
-        abi: IPayloadsControllerCore_ABI,
-        account: EOA,
-        address: payloadsController,
-        functionName: "executePayload",
-        args: [before],
-      });
+      try {
+        await makePayloadExecutableOnTestClient(
+          vnet.testClient,
+          payloadsController,
+          before,
+        );
+        await vnet.walletClient.writeContract({
+          chain: { id: chainId } as any,
+          abi: IPayloadsControllerCore_ABI,
+          account: EOA,
+          address: payloadsController,
+          functionName: "executePayload",
+          args: [before],
+        });
+      } catch (e) {
+        console.error(`Failed to execute payload ${before}: ${e}`);
+      }
     }
     // prepare the actual payload execution via state overrides
     await makePayloadExecutableOnTestClient(
@@ -189,6 +194,7 @@ export async function simulateOnTenderly({
           ),
         },
       },
+      save: true,
     } as const;
     const simResult = await tenderly_sim(tenderlyConfig, simPayload);
     const report = await renderTenderlyReport({
