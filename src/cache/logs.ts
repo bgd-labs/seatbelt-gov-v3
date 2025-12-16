@@ -30,20 +30,35 @@ export function getCacheFile(chainId: number, address: Address) {
     : [];
   return pcCache;
 }
-export function getCache(chainId: number, address: Address, payloadId: number) {
-  const pcCache = getCacheFile(chainId, address);
+export async function getCache(
+  chainId: number,
+  address: Address,
+  payloadId: number,
+) {
+  let cache;
+  try {
+    cache = (
+      (await (
+        await fetch(
+          `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
+        )
+      ).json()) as { events: any[] }
+    ).events;
+  } catch (e) {
+    cache = getCacheFile(chainId, address);
+  }
   return {
-    createdLog: pcCache.find(
+    createdLog: cache.find(
       (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadCreated"
+        log.args.payloadId === payloadId && log.eventName === "PayloadCreated",
     )!,
-    queuedLog: pcCache.find(
+    queuedLog: cache.find(
       (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadQueued"
+        log.args.payloadId === payloadId && log.eventName === "PayloadQueued",
     ),
-    executedLog: pcCache.find(
+    executedLog: cache.find(
       (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadExecuted"
+        log.args.payloadId === payloadId && log.eventName === "PayloadExecuted",
     ),
   };
 }
@@ -143,26 +158,26 @@ export async function refreshLogs() {
           JSON.stringify(
             Array.from(cache),
             (_, v) => (typeof v === "bigint" ? v.toString() : v),
-            2
-          )
+            2,
+          ),
         );
         const newLogs = logsCache.get(cacheKey);
         if (newLogs?.length) {
           const pcCache = getCacheFile(client.chain!.id, addr);
           const pcCachePath = path.join(
             process.cwd(),
-            `src/cache/${cacheKey}.json`
+            `src/cache/${cacheKey}.json`,
           );
           writeFileSync(
             pcCachePath,
             JSON.stringify(
               [...pcCache, ...newLogs],
               (_, v) => (typeof v === "bigint" ? v.toString() : v),
-              2
-            )
+              2,
+            ),
           );
         }
       }
-    })
+    }),
   );
 }

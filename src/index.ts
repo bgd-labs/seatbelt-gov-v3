@@ -55,7 +55,7 @@ async function simulatePayload(
       payloadsController,
       payloadId,
     );
-    const cache = getCache(chainId, payloadsController, payloadId);
+    const cache = await getCache(chainId, payloadsController, payloadId);
     if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
       try {
         const simResult = await simulateOnTenderly({

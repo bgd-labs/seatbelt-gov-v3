@@ -26,9 +26,21 @@ type SimulateOnTenderlyParams = {
   payloadsController: Address;
   cache: {
     logs: {
-      createdLog: { transactionHash: Hash; blockNumber: number };
-      queuedLog?: { transactionHash: Hash; blockNumber: number };
-      executedLog?: { transactionHash: Hash; blockNumber: number };
+      createdLog: {
+        transactionHash: Hash;
+        blockNumber: number;
+        timestamp: number;
+      };
+      queuedLog?: {
+        transactionHash: Hash;
+        blockNumber: number;
+        timestamp: number;
+      };
+      executedLog?: {
+        transactionHash: Hash;
+        blockNumber: number;
+        timestamp: number;
+      };
     };
     payload: Payload;
   };
@@ -43,13 +55,15 @@ export async function simulateOnTenderly({
   payloadsController,
   cache,
 }: SimulateOnTenderlyParams) {
-  console.log(cache.logs.executedLog?.blockNumber);
   const tenderlyConfig = {
     projectSlug: process.env.TENDERLY_PROJECT_SLUG!,
     accountSlug: process.env.TENDERLY_ACCOUNT!,
     accessToken: process.env.TENDERLY_ACCESS_TOKEN!,
   };
-  const blockNumber = Number(cache.logs.executedLog?.blockNumber || "latest");
+  const executedLog = cache.logs.executedLog;
+  const blockNumber = executedLog?.blockNumber
+    ? Number(executedLog?.blockNumber)
+    : "latest";
   try {
     const vnet = await tenderly_createVnet(
       {
@@ -62,6 +76,11 @@ export async function simulateOnTenderly({
       },
       tenderlyConfig,
     );
+    if (executedLog) {
+      vnet.testClient.setNextBlockTimestamp({
+        timestamp: BigInt(executedLog.timestamp),
+      });
+    }
     // first execute all previous payloads
     for (const before of executeBefore) {
       console.log(`assuming execution of ${before}`);

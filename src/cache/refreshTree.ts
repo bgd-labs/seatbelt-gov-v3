@@ -1,16 +1,21 @@
 /**
  * Constructs a tree of all currently existing proposals and their attached payloads
  */
-import {writeFileSync} from 'node:fs';
-import path from 'node:path';
-import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book/abis';
-import {Address, createPublicClient, getContract, http} from 'viem';
-import {mainnet} from 'viem/chains';
-import {GovernanceV3Ethereum} from '@bgd-labs/aave-address-book';
-import {ChainId, ProposalState, getRPCUrl, isProposalFinal} from '@bgd-labs/toolbox';
-import tree from './tree.json';
-import {providerConfig} from '../common';
-import {refreshLogs} from './logs';
+import { writeFileSync } from "node:fs";
+import path from "node:path";
+import { IGovernanceCore_ABI } from "@bgd-labs/aave-address-book/abis";
+import { Address, createPublicClient, getContract, http } from "viem";
+import { mainnet } from "viem/chains";
+import { GovernanceV3Ethereum } from "@bgd-labs/aave-address-book";
+import {
+  ChainId,
+  ProposalState,
+  getRPCUrl,
+  isProposalFinal,
+} from "@bgd-labs/toolbox";
+import tree from "./tree.json";
+import { providerConfig } from "../common";
+import { refreshLogs } from "./logs";
 
 const mainnetClient = createPublicClient({
   chain: mainnet,
@@ -32,7 +37,11 @@ export interface TreeStructure {
     ProposalId,
     {
       state: ProposalState;
-      payloads: {chain: number; payloadsController: PayloadsController; payloadId: number}[];
+      payloads: {
+        chain: number;
+        payloadsController: PayloadsController;
+        payloadId: number;
+      }[];
     }
   >;
   payloads: Record<
@@ -45,7 +54,10 @@ export interface TreeStructure {
   const treeCopy = tree as TreeStructure;
   const count = await governanceContract.read.getProposalsCount();
   for (let i = 0; i < count; i++) {
-    if (!treeCopy.governance[i] || !isProposalFinal(treeCopy.governance[i].state)) {
+    if (
+      !treeCopy.governance[i] ||
+      !isProposalFinal(treeCopy.governance[i].state)
+    ) {
       const proposal = await governanceContract.read.getProposal([BigInt(i)]);
       treeCopy.governance[i] = {
         state: proposal.state,
@@ -57,16 +69,31 @@ export interface TreeStructure {
       };
       proposal.payloads.map((val) => {
         if (!treeCopy.payloads[Number(val.chain)])
-          treeCopy.payloads[Number(val.chain)] = {[val.payloadsController]: {[val.payloadId]: {}}};
+          treeCopy.payloads[Number(val.chain)] = {
+            [val.payloadsController]: { [val.payloadId]: {} },
+          };
         if (!treeCopy.payloads[Number(val.chain)][val.payloadsController])
           treeCopy.payloads[Number(val.chain)][val.payloadsController] = {};
-        if (!treeCopy.payloads[Number(val.chain)][val.payloadsController][val.payloadId])
-          treeCopy.payloads[Number(val.chain)][val.payloadsController][val.payloadId] = {};
-        treeCopy.payloads[Number(val.chain)][val.payloadsController][val.payloadId][i] = true;
+        if (
+          !treeCopy.payloads[Number(val.chain)][val.payloadsController][
+            val.payloadId
+          ]
+        )
+          treeCopy.payloads[Number(val.chain)][val.payloadsController][
+            val.payloadId
+          ] = {};
+        treeCopy.payloads[Number(val.chain)][val.payloadsController][
+          val.payloadId
+        ][i] = true;
       });
     }
   }
-  writeFileSync(path.join(process.cwd(), 'src/cache/tree.json'), JSON.stringify(treeCopy, null, 2));
-  await refreshLogs();
+  writeFileSync(
+    path.join(process.cwd(), "src/cache/tree.json"),
+    JSON.stringify(treeCopy, null, 2),
+  );
+  if (!process.env.INDEXER_API) {
+    await refreshLogs();
+  }
   return treeCopy;
 })();
