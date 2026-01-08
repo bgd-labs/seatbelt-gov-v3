@@ -1930,5 +1930,26 @@
     "logType": null,
     "removed": false,
     "blockTimestamp": "0x69387847"
+  },
+  {
+    "eventName": "PayloadQueued",
+    "args": {
+      "payloadId": 33
+    },
+    "address": "0x2e79349c3f5e4751e87b966812c9e65e805996f1",
+    "topics": [
+      "0x1c4585f98a2bf1a1dca30917ba110f1b978343c7cce2c703495e5e47d5164456"
+    ],
+    "data": "0x0000000000000000000000000000000000000000000000000000000000000021",
+    "blockHash": "0x842d8e398c5226ab5e40e6b82043f90c99056ae4c84e0b5e9c4b87f14482030d",
+    "blockNumber": "67632060",
+    "l1BatchNumber": "0x7b609",
+    "transactionHash": "0x4daeb95ee78208199fe7ae7f59d639c4d8716c271456d200ad14466c817b1307",
+    "transactionIndex": 0,
+    "logIndex": 1,
+    "transactionLogIndex": "0x1",
+    "logType": null,
+    "removed": false,
+    "blockTimestamp": "0x695f8bd9"
   }
 ]
