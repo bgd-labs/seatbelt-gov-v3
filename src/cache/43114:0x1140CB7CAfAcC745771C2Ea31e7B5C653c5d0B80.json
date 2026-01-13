@@ -6810,5 +6810,22 @@
     "blockHash": "0xe0b8678d681f8c44ee545e2a552dd2114dde4947048931aa9a72ac3016ae41f4",
     "logIndex": 22,
     "removed": false
+  },
+  {
+    "eventName": "PayloadQueued",
+    "args": {
+      "payloadId": 104
+    },
+    "address": "0x1140cb7cafacc745771c2ea31e7b5c653c5d0b80",
+    "topics": [
+      "0x1c4585f98a2bf1a1dca30917ba110f1b978343c7cce2c703495e5e47d5164456"
+    ],
+    "data": "0x0000000000000000000000000000000000000000000000000000000000000068",
+    "blockNumber": "75648071",
+    "transactionHash": "0x2887568d2223a65cd74a545808132a45200fed69c110b69ef8ff80058056666f",
+    "transactionIndex": 1,
+    "blockHash": "0xcd13436ae06ba5c7c496ca83eb14ff3d0462552b6cb0fb585f5012835c1ea7e8",
+    "logIndex": 2,
+    "removed": false
   }
 ]
