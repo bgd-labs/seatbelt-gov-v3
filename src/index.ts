@@ -159,7 +159,7 @@ program
     for (const controller of payloadsControllers) {
       if (typeof options.ids === "string" && options.ids.match(/,/g))
         options.ids = options.ids.split(",");
-      return simulatePayload(
+      await simulatePayload(
         Number(options.chainId),
         controller,
         typeof options.ids === "object" &&
