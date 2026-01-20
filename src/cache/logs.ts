@@ -45,6 +45,7 @@ export async function getCache(
       ).json()) as { events: any[] }
     ).events;
   } catch (e) {
+    console.log("api error", e);
     cache = getCacheFile(chainId, address);
   }
   return {
