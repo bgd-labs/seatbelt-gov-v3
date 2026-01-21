@@ -50,12 +50,16 @@ async function simulatePayload(
   for (const payloadId of payloadIds) {
     console.info(chainId.toString(), `Simulating ${payloadId}`);
     const fileName = getPayloadFileName(chainId, payloadsController, payloadId);
+    const cache = await getCache(chainId, payloadsController, payloadId);
+    if (!cache.createdLog) {
+      console.log(`Payload ${payloadId} on ${payloadsController} not created`);
+      break;
+    }
     const strategy = await generatePayloadsStrategy(
       chainId,
       payloadsController,
       payloadId,
     );
-    const cache = await getCache(chainId, payloadsController, payloadId);
     if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
       try {
         const simResult = await simulateOnTenderly({
@@ -164,7 +168,10 @@ program
         controller,
         typeof options.ids === "object" &&
           options.ids.length > 0 &&
-          options.ids.map((id: string) => Number(id)),
+          options.ids
+            .map((id: string) => id.split(","))
+            .flat()
+            .map((id: string) => Number(id)),
       );
     }
   })
