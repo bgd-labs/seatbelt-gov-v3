@@ -37,17 +37,18 @@ export async function getCache(
 ) {
   let cache;
   try {
-    cache = (
-      (await (
-        await fetch(
-          `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
-        )
-      ).json()) as { events: any[] }
-    ).events;
+    const res = (await (
+      await fetch(
+        `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
+      )
+    ).json()) as { events: any[] };
+    if (res.status !== 200) throw new Error(`API error: ${res.message}`);
+    cache = res.events;
   } catch (e) {
     console.log("api error", e);
     cache = getCacheFile(chainId, address);
   }
+  console.log(cache);
   return {
     createdLog: cache.find(
       (log) =>
@@ -84,6 +85,7 @@ export async function refreshLogs() {
           chain: ChainList[Number(gov.CHAIN_ID) as keyof typeof ChainList],
           transport: http(rpc),
         });
+        console.log("started", client.chain!.id);
         const cacheKey = `${gov.CHAIN_ID}:${addr}`;
         let pcLastIndexed = BigInt(cache.get(cacheKey) || 0);
         const currentBlock = await getBlockNumber(client);

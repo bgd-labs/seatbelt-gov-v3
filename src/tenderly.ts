@@ -15,7 +15,6 @@ import {
 import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
-import { savUSD_vUSD_Exchange_Rate } from "../lib/aave-helpers/lib/aave-address-book/src/ts/ChainlinkAvalanche";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -120,7 +119,7 @@ export async function simulateOnTenderly({
       }),
       block_number: blockNumber,
       transaction_index: 0,
-      gas: 30_000_000,
+      gas_limit: chainId !== ChainId.mantle ? 16_000_000 : 0,
       gas_price: "0",
       value: "0",
       access_list: [],
@@ -129,6 +128,7 @@ export async function simulateOnTenderly({
       source: "dashboard",
     };
     const simResult = await vnet.simulate(simPayload);
+    console.log(JSON.stringify(simResult, null, 2));
     // after simulation execute payload
     await vnet.walletClient.writeContract({
       chain: { id: chainId } as any,
