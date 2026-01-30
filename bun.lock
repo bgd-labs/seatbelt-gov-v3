@@ -7,7 +7,7 @@
       "dependencies": {
         "@bgd-labs/aave-address-book": "^4.42.0",
         "@bgd-labs/aave-cli": "^1.4.6",
-        "@bgd-labs/toolbox": "^0.2.6",
+        "@bgd-labs/toolbox": "^0.2.7",
         "commander": "^11.1.0",
         "dotenv": "^16.3.1",
         "prettier": "3.5.3",
@@ -28,7 +28,7 @@
 
     "@bgd-labs/aave-v3-governance-cache": ["@bgd-labs/aave-v3-governance-cache@1.0.11", "", { "peerDependencies": { "@bgd-labs/aave-address-book": "^4.21.0", "viem": "^2.30.0" } }, "sha512-K5HPPxIN4EOM/AGz6PF+mmc3LjfYG0N4BQDvS+ZMPKFnzBqhk43gYyzNwyRlAG3uo8LS//+pH5ReHQfz0p2DvA=="],
 
-    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.2.6", "", { "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0", "viem": "^2.45.0" } }, "sha512-jYHv2RGPOokIfje88CHkkyr+n+pGb1ecOFdernz1OKuFahPhlV99SSDGp5wnmeP0iSltVnH9uW3cXQAUld45zg=="],
+    "@bgd-labs/toolbox": ["@bgd-labs/toolbox@0.2.7", "", { "peerDependencies": { "prettier": "^3.5.2", "prettier-plugin-solidity": "^1.0.0", "viem": "^2.45.0" } }, "sha512-wc7iArs0HIJc3xfRP0YKZ0w1SINi/zRjezgxFNMH5YBPS0R0EkgH/tVgUqhsKaXrRWFP2AqEnAbE2ZW6DGOJvQ=="],
 
     "@chainsafe/is-ip": ["@chainsafe/is-ip@2.1.0", "", {}, "sha512-KIjt+6IfysQ4GCv66xihEitBjvhU/bixbbbFxdJ1sqCp4uJ0wuZiYBPhksZoy4lfaF0k9cwNzY5upEW/VWdw3w=="],
 

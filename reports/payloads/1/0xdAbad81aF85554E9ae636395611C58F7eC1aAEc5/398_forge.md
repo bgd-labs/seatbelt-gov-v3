@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | oracle | [0xec1D1B3b0443256cc3860e24a46F108e699484Aa](https://etherscan.io/address/0xec1D1B3b0443256cc3860e24a46F108e699484Aa) | [0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478](https://etherscan.io/address/0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478) |
 | oracleDescription | MKR / USD | MKR/USD (calculated) |
-| oracleLatestAnswer | 1499.87797542 | 1524.210072 |
+| oracleLatestAnswer | 1508.95163426 | 1524.210072 |
 
 
 #### USDtb ([0xC139190F447e929f090Edeb554D95AbB8b18aC1C](https://etherscan.io/address/0xC139190F447e929f090Edeb554D95AbB8b18aC1C))
@@ -35,7 +35,7 @@
         "to": "MKR/USD (calculated)"
       },
       "oracleLatestAnswer": {
-        "from": "149987797542",
+        "from": "150895163426",
         "to": "152421007200"
       }
     },
