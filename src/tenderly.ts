@@ -128,7 +128,6 @@ export async function simulateOnTenderly({
       source: "dashboard",
     };
     const simResult = await vnet.simulate(simPayload);
-    console.log(JSON.stringify(simResult, null, 2));
     // after simulation execute payload
     await vnet.walletClient.writeContract({
       chain: { id: chainId } as any,

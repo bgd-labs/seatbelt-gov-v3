@@ -35,20 +35,21 @@ export async function getCache(
   address: Address,
   payloadId: number,
 ) {
-  let cache;
-  try {
-    const res = (await (
-      await fetch(
-        `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
-      )
-    ).json()) as { events: any[] };
-    if (res.status !== 200) throw new Error(`API error: ${res.message}`);
-    cache = res.events;
-  } catch (e) {
-    console.log("api error", e);
-    cache = getCacheFile(chainId, address);
+  let cache = getCacheFile(chainId, address);
+  if (process.env.INDEXER_API) {
+    try {
+      const res = (await (
+        await fetch(
+          `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
+        )
+      ).json()) as { events: any[] };
+      if (res.status !== 200) throw new Error(`API error: ${res.message}`);
+      cache = res.events;
+    } catch (e) {
+      console.log("api error", e);
+    }
   }
-  console.log(cache);
+
   return {
     createdLog: cache.find(
       (log) =>
