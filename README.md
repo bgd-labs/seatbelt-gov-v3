@@ -1,3 +1,5 @@
+<p align="center"><img width="200" src="./seatbelt_logo.png" alt="Aave logo"></a></p>
+
 # Aave Seatbelt
 
 A comprehensive toolset for making Aave on-chain governance safer through automated proposal verification and simulation.
@@ -32,32 +34,31 @@ bun install
 
 Create a `.env` file in the project root (see `.env.example` for reference):
 
-### Required Environment Variables
+### Environment variables
 
 ```bash
-# RPC Endpoints - At minimum, configure the networks you want to simulate
-RPC_MAINNET=https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY
-RPC_ARBITRUM=https://arb-mainnet.g.alchemy.com/v2/YOUR_KEY
-RPC_POLYGON=https://polygon-mainnet.g.alchemy.com/v2/YOUR_KEY
-RPC_OPTIMISM=https://opt-mainnet.g.alchemy.com/v2/YOUR_KEY
-RPC_BASE=https://base-mainnet.g.alchemy.com/v2/YOUR_KEY
-RPC_GNOSIS=https://rpc.gnosischain.com
+# Provider Configuration
+
+### Tenderly Mode
+# In tenderly (js) mode, the system tries to use the rpcs in the following order
+RPC_MAINNET=https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY # 1. chain specific rpc if provided
+# A list of supported chain selectors can be found here: https://github.com/bgd-labs/toolkit/blob/main/packages/toolbox/src/ecosystem/rpcs.spec.ts#L54
+ALCHEMY_API_KEY=your_alchemy_api_key # 2. alchemy if alchemy key is provided and alchemy supports the network
+QUICKNODE_TOKEN=your_quicknode_token # 3. quicknode if quicknode token is provided and quicknode supports the network
+QUICKNODE_ENDPOINT_NAME=your_endpoint_name
+HYPER_RPC_API_TOKEN=your_hyper_rpc_token # 4. hyper rpc if hyper rpc token is provided and hyper rpc supports the network
+# 4. fallback to the viem default rpc of that network
 
 # Tenderly Configuration (for Tenderly simulations)
 TENDERLY_ACCESS_TOKEN=your_tenderly_access_token
 TENDERLY_PROJECT_SLUG=your_project_slug
 TENDERLY_ACCOUNT=your_account_name
-```
 
-### Optional Environment Variables
+### Foundry mode
+# In foundry-rs mode, resolving rpcs automatically is not supported.
+# Therefore please refer to the foundry.toml [rpc_endpoints] section.
 
-```bash
-# Provider Configuration (alternative to hardcoded RPC URLs in tenderly mode)
-ALCHEMY_API_KEY=your_alchemy_api_key
-QUICKNODE_TOKEN=your_quicknode_token
-QUICKNODE_ENDPOINT_NAME=your_endpoint_name
-HYPER_RPC_API_TOKEN=your_hyper_rpc_token
-
+### Optional configs and flags
 # Indexer API (speeds up transaction lookups)
 # If kept empty, the system will use eth_getLogs to lookup transactions or omit transaction lookup depending ont he case
 INDEXER_API=
@@ -77,36 +78,9 @@ RUN_FORGE_ALWAYS=true
 UPDATE_EVENT_DB=true       # Update event database after simulations
 ```
 
-### Additional RPC Endpoints
-
-The following RPC endpoints can also be configured for extended network support:
-
-```bash
-RPC_POLYGON_AMOY=
-RPC_AVALANCHE=
-RPC_AVALANCHE_FUJI=
-RPC_ARBITRUM_SEPOLIA=
-RPC_FANTOM=
-RPC_FANTOM_TESTNET=
-RPC_OPTIMISM_SEPOLIA=
-RPC_HARMONY=
-RPC_SEPOLIA=
-RPC_SCROLL=
-RPC_SCROLL_SEPOLIA=
-RPC_METIS=
-RPC_BASE_SEPOLIA=
-RPC_BNB=
-RPC_ZKEVM=
-RPC_CELO=
-RPC_ZKSYNC=
-RPC_LINEA=
-RPC_SONIC=
-RPC_PLASMA=
-```
-
 ## Usage
 
-### Basic Usage
+### Basic usage
 
 Simulate all pending payloads across all networks:
 
@@ -114,7 +88,7 @@ Simulate all pending payloads across all networks:
 bun simulate
 ```
 
-### Simulate Specific Payload(s)
+### Simulate specific payload(s)
 
 ```bash
 # Simulate a single payload
@@ -164,7 +138,7 @@ Each report includes:
 
 ## How It Works
 
-1. **Cache Refresh**: Fetches the latest governance tree and payload information
+1. **Cache refresh**: Fetches the latest governance tree and payload information
 2. **Payload Discovery**: Identifies non-finalized payloads from the governance system
 3. **Simulation Strategy**: Generates execution strategy including pre-execution steps
 4. **Tenderly Simulation**: Attempts simulation on Tenderly's platform (faster, more detailed)
