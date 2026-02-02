@@ -1,4 +1,4 @@
-<p align="center"><img width="200" src="./seatbelt_logo.png" alt="Aave logo"></a></p>
+<p align="center"><img width="200" src="./seatbelt_logo.jpg" alt="Aave logo"></a></p>
 
 # Aave Seatbelt
 
@@ -10,12 +10,12 @@ Aave Seatbelt executes and interprets governance proposal simulations by forking
 
 ## Features
 
-- **State Change Analysis**: Track all state changes caused by proposal execution
-- **Event Monitoring**: Capture and display all events triggered during execution
-- **Contract Compilation Reports**: Identify potential warnings in affected contracts
-- **Aave-Specific Interpretations**: Deep analysis of Aave Pool contracts and ecosystem changes
-- **Multi-Network Support**: Simulate proposals across all Aave-supported networks
-- **Dual Simulation Engines**: Tenderly-based simulation with Foundry fallback & e2e testing
+- **State change analysis**: Track all state changes caused by proposal execution
+- **Event monitoring**: Capture and display all events triggered during execution
+- **Contract compilation reports**: Identify potential warnings in affected contracts
+- **Aave-specific interpretations**: Deep analysis of Aave Pool contracts and ecosystem changes
+- **Multi-network support**: Simulate proposals across all Aave-supported networks
+- **Dual simulation engines**: Tenderly-based simulation with Foundry fallback & e2e testing
 
 ## Prerequisites
 
@@ -139,12 +139,12 @@ Each report includes:
 ## How It Works
 
 1. **Cache refresh**: Fetches the latest governance tree and payload information
-2. **Payload Discovery**: Identifies non-finalized payloads from the governance system
-3. **Simulation Strategy**: Generates execution strategy including pre-execution steps
-4. **Tenderly Simulation**: Attempts simulation on Tenderly's platform (faster, more detailed)
-5. **Foundry Fallback**: If Tenderly fails or is unavailable, falls back to local Foundry simulation
-6. **Report Generation**: Produces markdown reports with detailed analysis
-7. **State Caching**: Stores simulation results to avoid re-processing
+2. **Payload discovery**: Identifies non-finalized payloads from the governance system
+3. **Simulation strategy**: Generates execution strategy including pre-execution steps
+4. **Tenderly simulation**: Attempts simulation on Tenderly's platform (faster, more detailed)
+5. **Foundry fallback**: If Tenderly fails or is unavailable, falls back to local Foundry simulation
+6. **Report generation**: Produces markdown reports with detailed analysis
+7. **State caching**: Stores simulation results to avoid re-processing
 
 ## CI/CD Flow
 
