@@ -102,7 +102,7 @@ bun simulate -c 1 -i 42 43 44
 bun simulate -c 1 --payloadsController 0x1234...5678 -i 42
 ```
 
-### Available Commands
+### Available commands
 
 | Command               | Description                              |
 | --------------------- | ---------------------------------------- |
@@ -110,7 +110,7 @@ bun simulate -c 1 --payloadsController 0x1234...5678 -i 42
 | `bun run ci:tree`     | Refresh the governance tree cache only   |
 | `bun run ci:simulate` | Run simulations without refreshing cache |
 
-### Command Options
+### Command options
 
 - `-c, --chainId <chainId>` - Chain ID of the network to simulate on (required)
 - `-i, --ids <ids...>` - Payload ID(s) to simulate (comma or space separated)
@@ -136,7 +136,7 @@ Each report includes:
 - Contract compilation warnings (if any)
 - Aave-specific interpretations and risk assessments
 
-## How It Works
+## How it works
 
 1. **Cache refresh**: Fetches the latest governance tree and payload information
 2. **Payload discovery**: Identifies non-finalized payloads from the governance system
@@ -146,7 +146,7 @@ Each report includes:
 6. **Report generation**: Produces markdown reports with detailed analysis
 7. **State caching**: Stores simulation results to avoid re-processing
 
-## CI/CD Flow
+## CI/CD flow
 
 - [cron.yaml](.github/workflows/cron.yaml): Every 2 hours, the system automatically checks for new payloads and runs simulations when necessary.
 - [trigger.yaml](.github/workflows/trigger.yaml): Allows manual triggering of simulations via GitHub Actions. Currently, [BGD Labs](https://bgdlabs.com) is operating a monitoring service that automatically triggers simulations for new payloads, but this integration can be replaced by any other indexing service.
