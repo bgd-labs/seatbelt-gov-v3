@@ -114,7 +114,22 @@ bun simulate -c 1 --payloadsController 0x1234...5678 -i 42
 
 - `-c, --chainId <chainId>` - Chain ID of the network to simulate on (required)
 - `-i, --ids <ids...>` - Payload ID(s) to simulate (comma or space separated)
-- `--payloadsController <address>` - Specific payloads controller address (optional)
+- `--payloadsController <address>` - Specific payloads controller address (optional). The supplied payloadsController must maintain an equivalent storage layout for the `payloads` compared to the Aave `PayloadsController` contract. Currently, both `PayloadsController` and `PermissionedPayloadsController` are supported.
+
+## Modes
+
+### Tenderly mode
+
+`Tenderly mode` allows you to simulate payloads on the Tenderly platform.
+To use this mode, you need to have a Tenderly account and API key configured.
+`Tenderly mode` provides sophisticated state decoding even for complex types(structs, mappings, arrays) for any touched contracts.
+
+### Foundry mode
+
+`Foundry mode` allows you to simulate payloads against a local anvil fork.
+You can use the foundry simulations for any chain that is supported by foundry.
+`Foundry mode` will do "some" state decoding, for known contracts & slots, but is less sophisticated than the tenderly version.
+In addition, `Foundry mode` will run an e2e test suite against the fork after payload execution.
 
 ## Output
 
