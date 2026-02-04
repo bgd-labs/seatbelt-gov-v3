@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | oracle | [0xec1D1B3b0443256cc3860e24a46F108e699484Aa](https://etherscan.io/address/0xec1D1B3b0443256cc3860e24a46F108e699484Aa) | [0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478](https://etherscan.io/address/0x44Bb2a64bAf94210B583338D3D97b1e8288Bd478) |
 | oracleDescription | MKR / USD | MKR/USD (calculated) |
-| oracleLatestAnswer | 1508.95163426 | 1524.210072 |
+| oracleLatestAnswer | 1449.39544309 | 1445.7821616 |
 
 
 #### USDtb ([0xC139190F447e929f090Edeb554D95AbB8b18aC1C](https://etherscan.io/address/0xC139190F447e929f090Edeb554D95AbB8b18aC1C))
@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | oracle | [0x2FA6A78E3d617c1013a22938411602dc9Da98dBa](https://etherscan.io/address/0x2FA6A78E3d617c1013a22938411602dc9Da98dBa) | [0x88025072A7dB6Db5e54E46d43850bb44CA93D6C0](https://etherscan.io/address/0x88025072A7dB6Db5e54E46d43850bb44CA93D6C0) |
 | oracleDescription | Capped USDtb / USD | ONE USD |
-| oracleLatestAnswer | 0.99932902 | 1 |
+| oracleLatestAnswer | 0.99935124 | 1 |
 
 
 ## Raw diff
@@ -35,8 +35,8 @@
         "to": "MKR/USD (calculated)"
       },
       "oracleLatestAnswer": {
-        "from": "150895163426",
-        "to": "152421007200"
+        "from": "144939544309",
+        "to": "144578216160"
       }
     },
     "0xC139190F447e929f090Edeb554D95AbB8b18aC1C": {
@@ -49,7 +49,7 @@
         "to": "ONE USD"
       },
       "oracleLatestAnswer": {
-        "from": "99932902",
+        "from": "99935124",
         "to": "100000000"
       }
     }

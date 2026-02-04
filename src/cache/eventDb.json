@@ -610,5 +610,23 @@
         "internalType": "bool"
       }
     ]
+  },
+  {
+    "type": "event",
+    "name": "AssetSourceUpdated",
+    "inputs": [
+      {
+        "name": "asset",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "source",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ]
   }
 ]

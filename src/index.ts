@@ -60,7 +60,32 @@ async function simulatePayload(
       payloadsController,
       payloadId,
     );
-    if (!CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId)) {
+
+    const forceForge = process.env.FORCE_FORGE === "true";
+    const shouldUseFoundry =
+      forceForge || CHAIN_NOT_SUPPORTED_ON_TENDERLY.includes(chainId);
+
+    if (shouldUseFoundry) {
+      // Use Foundry simulation
+      try {
+        let blockNumber = BigInt(0); // current
+        if (cache.executedLog)
+          blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
+        simulateViaFoundry({ chain: chainId, payloadId }, blockNumber);
+        storeSimulationState(
+          chainId,
+          payloadsController,
+          payloadId,
+          strategy.payload.state,
+        );
+        console.log("foundry simulation finished");
+      } catch (e) {
+        console.log("simulating on foundry failed");
+        console.log(e);
+        storeSimulationState(chainId, payloadsController, payloadId, -1);
+      }
+    } else {
+      // Use Tenderly simulation
       try {
         const simResult = await simulateOnTenderly({
           chainId,
@@ -92,7 +117,7 @@ async function simulatePayload(
         console.log(e);
         storeSimulationState(chainId, payloadsController, payloadId, -1);
 
-        // foundry
+        // Fallback to foundry
         try {
           let blockNumber = BigInt(0); // current
           if (cache.executedLog)
