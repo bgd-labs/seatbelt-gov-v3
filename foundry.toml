@@ -31,31 +31,34 @@ evm_version = 'shanghai'
 evm_version = 'cancun'
 
 [profile.arbitrum]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.optimism]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.base]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.polygon]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.avalanche]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.gnosis]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.bnb]
-evm_version = 'shanghai'
+evm_version = 'cancun'
 
 [profile.sonic]
 evm_version = 'cancun'
 
 [profile.linea]
-evm_version = 'london'
+evm_version = 'cancun'
+
+[profile.megaeth]
+evm_version = 'prague'
 
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET}"
