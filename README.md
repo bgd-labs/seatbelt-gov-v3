@@ -8,6 +8,8 @@ A comprehensive toolset for making Aave on-chain governance safer through automa
 
 Aave Seatbelt executes and interprets governance proposal simulations by forking networks, simulating proposal execution, and generating detailed human-readable reports. This allows voters and developers to understand exactly what effects a proposal will have before it's executed on mainnet.
 
+![diagram](seatbelt_diagram.jpg)
+
 ## Features
 
 - **State change analysis**: Track all state changes caused by proposal execution
