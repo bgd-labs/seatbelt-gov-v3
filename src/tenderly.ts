@@ -1,5 +1,4 @@
-import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
-import { getAddressBookReferences } from "@bgd-labs/aave-address-book/utils";
+import { getAddressBookReferences } from "@aave-dao/aave-address-book/utils";
 import {
   ChainId,
   Payload,
@@ -11,6 +10,7 @@ import {
   tenderly_createVnet,
   tenderly_logsToAbiLogs,
   tenderly_sim,
+  IPayloadsController_ABI,
 } from "@bgd-labs/toolbox";
 import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
 import { providerConfig } from "./common";
@@ -92,7 +92,7 @@ export async function simulateOnTenderly({
         );
         await vnet.walletClient.writeContract({
           chain: { id: chainId } as any,
-          abi: IPayloadsControllerCore_ABI,
+          abi: IPayloadsController_ABI,
           account: EOA,
           address: payloadsController,
           functionName: "executePayload",
@@ -113,7 +113,7 @@ export async function simulateOnTenderly({
       from: EOA,
       to: payloadsController,
       input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
+        abi: IPayloadsController_ABI,
         functionName: "executePayload",
         args: [payloadId],
       }),
@@ -131,7 +131,7 @@ export async function simulateOnTenderly({
     // after simulation execute payload
     await vnet.walletClient.writeContract({
       chain: { id: chainId } as any,
-      abi: IPayloadsControllerCore_ABI,
+      abi: IPayloadsController_ABI,
       account: EOA,
       address: payloadsController,
       functionName: "executePayload",
@@ -177,7 +177,7 @@ export async function simulateOnTenderly({
       from: EOA,
       to: payloadsController,
       input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
+        abi: IPayloadsController_ABI,
         functionName: "executePayload",
         args: [payloadId],
       }),

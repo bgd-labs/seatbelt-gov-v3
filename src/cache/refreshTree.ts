@@ -3,15 +3,15 @@
  */
 import { writeFileSync } from "node:fs";
 import path from "node:path";
-import { IGovernanceCore_ABI } from "@bgd-labs/aave-address-book/abis";
 import { Address, createPublicClient, getContract, http } from "viem";
 import { mainnet } from "viem/chains";
-import { GovernanceV3Ethereum } from "@bgd-labs/aave-address-book";
+import { GovernanceV3Ethereum } from "@aave-dao/aave-address-book";
 import {
   ChainId,
   ProposalState,
   getRPCUrl,
   isProposalFinal,
+  IGovernance_ABI,
 } from "@bgd-labs/toolbox";
 import tree from "./tree.json";
 import { providerConfig } from "../common";
@@ -24,7 +24,7 @@ const mainnetClient = createPublicClient({
 
 const governanceContract = getContract({
   client: mainnetClient,
-  abi: IGovernanceCore_ABI,
+  abi: IGovernance_ABI,
   address: GovernanceV3Ethereum.GOVERNANCE,
 });
 
