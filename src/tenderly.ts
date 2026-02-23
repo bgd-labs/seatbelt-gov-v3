@@ -3,18 +3,19 @@ import {
   ChainId,
   Payload,
   getClient,
-  getMdContractName,
-  getPayloadStorageOverrides,
-  makePayloadExecutableOnTestClient,
-  renderTenderlyReport,
   tenderly_createVnet,
-  tenderly_logsToAbiLogs,
   tenderly_sim,
   IPayloadsController_ABI,
 } from "@bgd-labs/toolbox";
-import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
+import { Address, encodeFunctionData, Hash, Hex } from "viem";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
+import { renderTenderlyReport } from "./tenderly-tooling/tenderly-report";
+import { getMdContractName } from "./tenderly-tooling/utils";
+import {
+  getPayloadStorageOverrides,
+  makePayloadExecutableOnTestClient,
+} from "./tenderly-tooling/payloads-controller";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -168,7 +169,7 @@ export async function simulateOnTenderly({
       "error simulating against a vnet, trying against the simulation endpoint",
     );
     const overrides = await getPayloadStorageOverrides(
-      getClient(chainId, { providerConfig }) as any,
+      getClient(chainId, { providerConfig }),
       payloadsController,
       payloadId,
     );
