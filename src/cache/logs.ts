@@ -4,15 +4,15 @@ import {
   getContractDeploymentBlock,
   getHyperRPC,
   getRPCUrl,
+  IPayloadsController_ABI,
 } from "@bgd-labs/toolbox";
-import * as addresses from "@bgd-labs/aave-address-book";
+import * as addresses from "@aave-dao/aave-address-book";
 import { providerConfig } from "../common";
 import {
   GovernanceV3Ethereum,
   UmbrellaEthereum,
-} from "@bgd-labs/aave-address-book";
+} from "@aave-dao/aave-address-book";
 import { Address, createPublicClient, getAbiItem, http, Log } from "viem";
-import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
 import { getBlockNumber } from "viem/actions";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
@@ -115,7 +115,7 @@ export async function refreshLogs() {
             return [
               {
                 abi: getAbiItem({
-                  abi: IPayloadsControllerCore_ABI,
+                  abi: IPayloadsController_ABI,
                   name: "PayloadCreated",
                 }),
                 lastIndexedBlockNumber: pcLastIndexed,
@@ -123,7 +123,7 @@ export async function refreshLogs() {
               },
               {
                 abi: getAbiItem({
-                  abi: IPayloadsControllerCore_ABI,
+                  abi: IPayloadsController_ABI,
                   name: "PayloadQueued",
                 }),
                 lastIndexedBlockNumber: pcLastIndexed,
@@ -131,7 +131,7 @@ export async function refreshLogs() {
               },
               {
                 abi: getAbiItem({
-                  abi: IPayloadsControllerCore_ABI,
+                  abi: IPayloadsController_ABI,
                   name: "PayloadExecuted",
                 }),
                 lastIndexedBlockNumber: pcLastIndexed,

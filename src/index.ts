@@ -2,7 +2,7 @@ import "dotenv/config";
 import { existsSync, writeFileSync, mkdirSync } from "fs";
 import path from "path";
 import { Address, Hex, getAddress } from "viem";
-import * as addresses from "@bgd-labs/aave-address-book";
+import * as addresses from "@aave-dao/aave-address-book";
 import { getClient, getNonFinalizedPayloads } from "@bgd-labs/toolbox";
 import { Option, program } from "commander";
 import {

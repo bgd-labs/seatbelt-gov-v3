@@ -1,11 +1,11 @@
 import { Address, getContract, PublicClient } from "viem";
-import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
 import {
   getClient,
   getNonFinalizedPayloads,
   isPayloadFinal,
   isProposalFinal,
   Payload,
+  IPayloadsController_ABI,
 } from "@bgd-labs/toolbox";
 import treeJson from "./cache/tree.json";
 import { TreeStructure } from "./cache/refreshTree";
@@ -32,7 +32,7 @@ export async function generatePayloadsStrategy(
     },
   }) as PublicClient;
   const controllerContract = getContract({
-    abi: IPayloadsControllerCore_ABI,
+    abi: IPayloadsController_ABI,
     client,
     address: payloadsController,
   });

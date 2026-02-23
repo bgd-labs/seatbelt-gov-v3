@@ -1,20 +1,21 @@
-import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book/abis";
-import { getAddressBookReferences } from "@bgd-labs/aave-address-book/utils";
+import { getAddressBookReferences } from "@aave-dao/aave-address-book/utils";
 import {
   ChainId,
   Payload,
   getClient,
-  getMdContractName,
-  getPayloadStorageOverrides,
-  makePayloadExecutableOnTestClient,
-  renderTenderlyReport,
   tenderly_createVnet,
-  tenderly_logsToAbiLogs,
   tenderly_sim,
+  IPayloadsController_ABI,
 } from "@bgd-labs/toolbox";
-import { Address, encodeFunctionData, Hash, Hex, toHex } from "viem";
+import { Address, encodeFunctionData, Hash, Hex } from "viem";
 import { providerConfig } from "./common";
 import eventCache from "./cache/eventDb.json";
+import { renderTenderlyReport } from "./tenderly-tooling/tenderly-report";
+import { getMdContractName } from "./tenderly-tooling/utils";
+import {
+  getPayloadStorageOverrides,
+  makePayloadExecutableOnTestClient,
+} from "./tenderly-tooling/payloads-controller";
 
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
@@ -92,7 +93,7 @@ export async function simulateOnTenderly({
         );
         await vnet.walletClient.writeContract({
           chain: { id: chainId } as any,
-          abi: IPayloadsControllerCore_ABI,
+          abi: IPayloadsController_ABI,
           account: EOA,
           address: payloadsController,
           functionName: "executePayload",
@@ -113,7 +114,7 @@ export async function simulateOnTenderly({
       from: EOA,
       to: payloadsController,
       input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
+        abi: IPayloadsController_ABI,
         functionName: "executePayload",
         args: [payloadId],
       }),
@@ -131,7 +132,7 @@ export async function simulateOnTenderly({
     // after simulation execute payload
     await vnet.walletClient.writeContract({
       chain: { id: chainId } as any,
-      abi: IPayloadsControllerCore_ABI,
+      abi: IPayloadsController_ABI,
       account: EOA,
       address: payloadsController,
       functionName: "executePayload",
@@ -168,7 +169,7 @@ export async function simulateOnTenderly({
       "error simulating against a vnet, trying against the simulation endpoint",
     );
     const overrides = await getPayloadStorageOverrides(
-      getClient(chainId, { providerConfig }) as any,
+      getClient(chainId, { providerConfig }),
       payloadsController,
       payloadId,
     );
@@ -177,7 +178,7 @@ export async function simulateOnTenderly({
       from: EOA,
       to: payloadsController,
       input: encodeFunctionData({
-        abi: IPayloadsControllerCore_ABI,
+        abi: IPayloadsController_ABI,
         functionName: "executePayload",
         args: [payloadId],
       }),
@@ -225,5 +226,5 @@ export async function simulateOnTenderly({
 }
 
 function flagAsKnown(value: string, reference: string) {
-  return `${value} [:ghost:](https://github.com/bgd-labs/aave-address-book  "${reference}")`;
+  return `${value} [:ghost:](https://github.com/aave-dao/aave-address-book  "${reference}")`;
 }

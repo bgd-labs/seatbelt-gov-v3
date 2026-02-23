@@ -171,7 +171,3 @@ Each report includes:
 ## License
 
 MIT
-
-## Maintainer
-
-[BGD Labs](https://bgdlabs.com)
