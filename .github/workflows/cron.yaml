@@ -98,10 +98,15 @@ jobs:
           QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
           QUICKNODE_ENDPOINT_NAME: ${{ secrets.QUICKNODE_ENDPOINT_NAME }}
 
-      - name: Install Foundry
+      - name: Install Foundry (zkSync)
+        if: ${{ matrix.chainId == 324 }}
         uses: bgd-labs/foundry-zksync-toolchain@340cea9a42119d9a77a6bb0a8236d4311582b709
         with:
           version: nightly
+
+      - name: Run Foundry setup
+        if: ${{ matrix.chainId != 324 }}
+        uses: bgd-labs/github-workflows/.github/actions/foundry-setup@main
 
       - name: scheduled ${{ matrix.chainId }}
         id: all
