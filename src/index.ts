@@ -95,13 +95,6 @@ async function simulatePayload(
           cache: { payload: strategy.payload, logs: cache },
         });
 
-        if (process.env.UPDATE_EVENT_DB === "true") {
-          writeFileSync(
-            "./src/cache/eventDb.json",
-            JSON.stringify(simResult.eventCache, null, 2),
-          );
-        }
-
         writeFileSync(fileName, simResult.report);
         storeSimulationState(
           chainId,

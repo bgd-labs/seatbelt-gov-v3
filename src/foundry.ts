@@ -1,6 +1,6 @@
-import {ChainId, getClient} from '@bgd-labs/toolbox';
-import {execSync} from 'child_process';
-import {providerConfig} from './common';
+import { ChainId, getClient } from "@bgd-labs/toolbox";
+import { execSync } from "child_process";
+import { providerConfig } from "./common";
 
 function getChainName(chainId: number) {
   return Object.keys(ChainId)
@@ -9,8 +9,8 @@ function getChainName(chainId: number) {
 }
 
 export function simulateViaFoundry(
-  payload: {chain: bigint | number; payloadId: number | bigint},
-  blockNumber: number | bigint
+  payload: { chain: bigint | number; payloadId: number | bigint },
+  blockNumber: number | bigint,
 ) {
   const client = getClient(Number(payload.chain), {
     providerConfig,
@@ -18,16 +18,16 @@ export function simulateViaFoundry(
   const command = [
     `FOUNDRY_PROFILE=${getChainName(Number(payload.chain))}`,
     `forge script ${
-      Number(payload.chain) === ChainId.zksync ? 'zksync/' : ''
+      Number(payload.chain) === ChainId.zksync ? "zksync/" : ""
     }script/E2EPayload.s.sol:E2EPayload`,
-    Number(payload.chain) === ChainId.zksync ? '--zksync' : '',
+    Number(payload.chain) === ChainId.zksync ? "--zksync --offline" : "",
     `--fork-url ${client.transport.url!}`,
-    blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : '',
-    '-vvvv',
+    blockNumber != 0n ? ` --fork-block-number ${blockNumber}` : "",
+    "-vvvv",
     `--sig "run(uint40)" -- ${payload.payloadId}`,
   ]
     .filter((c) => c)
-    .join(' ');
-  if (process.env.VERBOSE === 'true') console.log(command);
-  return execSync(command, {stdio: 'inherit'});
+    .join(" ");
+  if (process.env.VERBOSE === "true") console.log(command);
+  return execSync(command, { stdio: "inherit" });
 }

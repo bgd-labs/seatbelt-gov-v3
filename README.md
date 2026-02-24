@@ -75,9 +75,6 @@ EXPLORER_PROXY=
 VERBOSE=true                # Enable verbose logging
 # Always use Foundry
 FORCE_FORGE=true
-# For decoding events we optionally rely on a local collection of known events
-# When the flag is set true, any run will add missing events to the collection
-UPDATE_EVENT_DB=true       # Update event database after simulations
 ```
 
 ## Usage

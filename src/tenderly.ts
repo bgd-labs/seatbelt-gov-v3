@@ -9,7 +9,7 @@ import {
 } from "@bgd-labs/toolbox";
 import { Address, encodeFunctionData, Hash, Hex } from "viem";
 import { providerConfig } from "./common";
-import eventCache from "./cache/eventDb.json";
+import { eventDb } from "@aave-dao/aave-helpers-js";
 import { renderTenderlyReport } from "./tenderly-tooling/tenderly-report";
 import { getMdContractName } from "./tenderly-tooling/utils";
 import {
@@ -147,7 +147,7 @@ export async function simulateOnTenderly({
       config: {
         etherscanApiKey: process.env.ETHERSCAN_API_KEY!,
       },
-      eventCache: eventCache as any,
+      eventCache: eventDb,
       getContractName: (sim, address) => {
         const references = getAddressBookReferences(
           address,

@@ -12,7 +12,7 @@ src = 'zksync'
 test = 'zksync'
 script = 'zksync/script'
 libs = ['lib']
-solc = '0.8.20'
+solc = '0.8.27'
 fs_permissions = [{ access = "write", path = "./reports" }]
 ffi = true
 evm_version = 'shanghai'
