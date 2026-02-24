@@ -23,6 +23,12 @@ jobs:
       TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
     steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ secrets.UPDATE_BOT_APP_ID }}
+          private-key: ${{ secrets.UPDATE_BOT_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -84,6 +90,12 @@ jobs:
       TENDERLY_PROJECT_SLUG: ${{ secrets.TENDERLY_PROJECT_SLUG }}
       TENDERLY_ACCOUNT: ${{ secrets.TENDERLY_ACCOUNT }}
     steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ secrets.UPDATE_BOT_APP_ID }}
+          private-key: ${{ secrets.UPDATE_BOT_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
