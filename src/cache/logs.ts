@@ -43,7 +43,6 @@ export async function getCache(
           `${process.env.INDEXER_API}/gov/payloads/${address}/${payloadId}`,
         )
       ).json()) as { events: any[] };
-      if (res.status !== 200) throw new Error(`API error: ${res.message}`);
       cache = res.events;
     } catch (e) {
       console.log("api error", e);

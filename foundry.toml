@@ -63,6 +63,9 @@ evm_version = 'prague'
 [profile.mantle]
 evm_version = 'cancun'
 
+[profile.soneium]
+evm_version = 'cancun'
+
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET}"
 polygon = "${RPC_POLYGON}"
