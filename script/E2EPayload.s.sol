@@ -33,7 +33,7 @@ contract E2EPayload is Script, ProtocolV3TestBase {
 
     function run(uint40 payloadId, address payloadsController) public {
         IPool pool = _getPool();
-        if (address(pool) == address(0)) revert UnknownPool();
+        if (address(pool) == address(0) && !V4Targets.hasV4()) revert UnknownPool();
         defaultTest(
             string(
                 abi.encodePacked(
@@ -58,50 +58,51 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         address payloadsController,
         bool runE2E
     ) public returns (ReserveConfig[] memory, ReserveConfig[] memory) {
+        bool v3Active = address(pool) != address(0);
+        bool v4Active = V4Targets.hasV4();
+
         string memory beforeString = string(
             abi.encodePacked(reportName, "_before")
         );
-        ReserveConfig[] memory configBefore = createConfigurationSnapshot(
-            beforeString,
-            pool
+        string memory afterString = string(
+            abi.encodePacked(reportName, "_after")
         );
-
-        bool v4Active = V4Targets.hasV4(block.chainid);
         string memory v4ReportName = string(abi.encodePacked(reportName, "_v4"));
+
+        ReserveConfig[] memory configBefore;
+        ReserveConfig[] memory configAfter;
+
+        if (v3Active) {
+            configBefore = createConfigurationSnapshot(beforeString, pool);
+        }
         if (v4Active) {
             v4Runner = new V4SnapshotRunner();
             v4Runner.snapshotAndWrite(
                 string(abi.encodePacked(v4ReportName, "_before")),
-                V4Targets.getSpokes(block.chainid),
-                V4Targets.getHubs(block.chainid)
+                V4Targets.getSpokes(),
+                V4Targets.getHubs()
             );
         }
 
         GovV3StorageHelpers.readyPayloadId(vm, IPayloadsControllerCore(payloadsController), payloadId);
         IPayloadsControllerCore(payloadsController).executePayload(payloadId);
 
-        string memory afterString = string(
-            abi.encodePacked(reportName, "_after")
-        );
-        ReserveConfig[] memory configAfter = createConfigurationSnapshot(
-            afterString,
-            pool
-        );
-
-        _diffReports(payloadId, payloadsController, beforeString, afterString);
-
+        if (v3Active) {
+            configAfter = createConfigurationSnapshot(afterString, pool);
+            _diffReports(payloadId, payloadsController, beforeString, afterString);
+        }
         if (v4Active) {
             v4Runner.snapshotAndWrite(
                 string(abi.encodePacked(v4ReportName, "_after")),
-                V4Targets.getSpokes(block.chainid),
-                V4Targets.getHubs(block.chainid)
+                V4Targets.getSpokes(),
+                V4Targets.getHubs()
             );
-            _diffV4Reports(payloadId, payloadsController, v4ReportName);
+            _diffV4Reports(payloadId, payloadsController, v4ReportName, v3Active);
         }
 
-        configChangePlausibilityTest(pool, configBefore, configAfter);
+        if (v3Active) configChangePlausibilityTest(pool, configBefore, configAfter);
 
-        if (runE2E) e2eTest(pool);
+        if (runE2E && v3Active) e2eTest(pool);
         return (configBefore, configAfter);
     }
 
@@ -143,7 +144,8 @@ contract E2EPayload is Script, ProtocolV3TestBase {
     function _diffV4Reports(
         uint40 payloadId,
         address payloadsController,
-        string memory v4ReportName
+        string memory v4ReportName,
+        bool v3Active
     ) internal {
         string memory forgePath = string(
             abi.encodePacked(
@@ -176,12 +178,16 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         inputs[6] = v4DiffPath;
         vm.ffi(inputs);
 
-        string memory v3Body = vm.readFile(forgePath);
         string memory v4Body = vm.readFile(v4DiffPath);
-        vm.writeFile(
-            forgePath,
-            string(abi.encodePacked(v3Body, "\n\n## Aave V4 changes\n\n", v4Body))
-        );
+        if (v3Active) {
+            string memory v3Body = vm.readFile(forgePath);
+            vm.writeFile(
+                forgePath,
+                string(abi.encodePacked(v3Body, "\n\n## Aave V4 changes\n\n", v4Body))
+            );
+        } else {
+            vm.writeFile(forgePath, v4Body);
+        }
         vm.removeFile(v4DiffPath);
     }
 
