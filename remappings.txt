@@ -3,3 +3,6 @@ aave-address-book/=lib/aave-helpers/lib/aave-address-book/src/
 aave-helpers/=lib/aave-helpers/
 forge-std/=lib/aave-helpers/lib/forge-std/src/
 solidity-utils/=lib/aave-helpers/lib/aave-address-book/lib/aave-v3-origin/lib/solidity-utils/src/
+aave-v4/=lib/aave-helpers/lib/aave-address-book/lib/aave-v4/src/
+lib/aave-helpers/lib/aave-address-book/lib/aave-v4/:src/=lib/aave-helpers/lib/aave-address-book/lib/aave-v4/src/
+lib/aave-helpers/:src/=lib/aave-helpers/src/

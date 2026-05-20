@@ -6,7 +6,7 @@
       "name": "seatbelt-gov-v3",
       "dependencies": {
         "@aave-dao/aave-address-book": "^4.52.0",
-        "@aave-dao/aave-helpers-js": "^1.0.14",
+        "@aave-dao/aave-helpers-js": "^1.2.0",
         "@bgd-labs/toolbox": "^0.2.22",
         "commander": "^11.1.0",
         "dotenv": "^16.3.1",
@@ -20,7 +20,7 @@
   "packages": {
     "@aave-dao/aave-address-book": ["@aave-dao/aave-address-book@4.52.0", "", { "peerDependencies": { "viem": "^2.23.5" } }, "sha512-vsm4qKzMWUJ1vBmlaJncBlmCSzY7OGbBr9ngzc3dXvz6nOy6IK/uWnVidK7rMn4bsMwyX2sbT1s8VNGD1MpxIQ=="],
 
-    "@aave-dao/aave-helpers-js": ["@aave-dao/aave-helpers-js@1.0.14", "", { "dependencies": { "@aave-dao/aave-address-book": "^4.47.12", "@bgd-labs/toolbox": "^0.2.24", "commander": "^14.0.3", "find-object-paths": "^1.1.0", "viem": "^2.45.3", "zod": "^4.3.6" }, "bin": { "aave-helpers-js": "dist/cli.mjs" } }, "sha512-8VchiJapelQPAZYQeJftlSifVUsnEHNJQMkkQ8WU2K+92ep+YNLf2OxFIBeIvn2SaKgUPlqFqHh/M8uy6L9p/g=="],
+    "@aave-dao/aave-helpers-js": ["@aave-dao/aave-helpers-js@1.2.0", "", { "dependencies": { "@aave-dao/aave-address-book": "^4.47.12", "@bgd-labs/toolbox": "^0.2.24", "commander": "^14.0.3", "find-object-paths": "^1.1.0", "viem": "^2.45.3", "zod": "^4.3.6" }, "bin": { "aave-helpers-js": "dist/cli.mjs" } }, "sha512-lKv9bDBbHspMIBCwkpPYMPmSRx1KqO48y4qK6t8XHeIP/fPTdnrytYIuQXEhXBDkZVFBLXQ8uqU5++1xfagOfg=="],
 
     "@adraffy/ens-normalize": ["@adraffy/ens-normalize@1.11.0", "", {}, "sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg=="],
 
