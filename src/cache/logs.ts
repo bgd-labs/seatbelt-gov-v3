@@ -49,18 +49,33 @@ export async function getCache(
     }
   }
 
+  const normalize = (log: any) =>
+    log && {
+      ...log,
+      blockNumber: Number(log.blockNumber),
+      timestamp: Number(log.timestamp ?? log.blockTimestamp),
+    };
+
   return {
-    createdLog: cache.find(
-      (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadCreated",
+    createdLog: normalize(
+      cache.find(
+        (log) =>
+          log.args.payloadId === payloadId &&
+          log.eventName === "PayloadCreated",
+      ),
     )!,
-    queuedLog: cache.find(
-      (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadQueued",
+    queuedLog: normalize(
+      cache.find(
+        (log) =>
+          log.args.payloadId === payloadId && log.eventName === "PayloadQueued",
+      ),
     ),
-    executedLog: cache.find(
-      (log) =>
-        log.args.payloadId === payloadId && log.eventName === "PayloadExecuted",
+    executedLog: normalize(
+      cache.find(
+        (log) =>
+          log.args.payloadId === payloadId &&
+          log.eventName === "PayloadExecuted",
+      ),
     ),
   };
 }
