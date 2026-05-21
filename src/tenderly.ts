@@ -75,9 +75,9 @@ export async function simulateOnTenderly({
         baseChainId: chainId,
         forkChainId: chainId,
         displayName: `Seatbelt ${chainId} ${payloadId}`,
-        slug: `seatbelt_${chainId}_${payloadId}`,
+        slug: `seatbelt_${chainId}_${payloadId}_${Date.now().toString(36)}`,
         blockNumber: blockNumber === -2 ? "latest" : blockNumber,
-        force: true,
+        force: false,
       },
       tenderlyConfig,
     );
@@ -165,7 +165,7 @@ export async function simulateOnTenderly({
         return getMdContractName(sim.contracts, address);
       },
     });
-    // await vnet.delete();
+    await vnet.delete();
     return report;
   } catch (e) {
     console.log(e);
