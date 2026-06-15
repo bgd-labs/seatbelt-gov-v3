@@ -55,9 +55,9 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
           token: ${{ steps.app-token.outputs.token }}
 
-      - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
+      - uses: aave-dao/github-workflows/.github/actions/setup-node@main
 
-      - uses: bgd-labs/action-rpc-env@main
+      - uses: aave-dao/action-rpc-env@main
         with:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
 
       - name: Run Foundry setup
         if: ${{ inputs.chainId != '324' }}
-        uses: bgd-labs/github-workflows/.github/actions/foundry-setup@main
+        uses: aave-dao/github-workflows/.github/actions/foundry-setup@main
 
       - name: tree building
         run: bun run ci:tree
@@ -87,7 +87,7 @@ jobs:
             echo "tree is clean"
           else
             git config --global user.name 'Cache bot'
-            git config --global user.email 'cache-bot@bgdlabs.com'
+            git config --global user.email 'cache-bot@aave.com'
             git add reports
             git restore .
             git commit -am "fix(cache): automatic cache update :robot:"
