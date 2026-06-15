@@ -55,9 +55,9 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
           token: ${{ steps.app-token.outputs.token }}
 
-      - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
+      - uses: aave-dao/github-workflows/.github/actions/setup-node@main
 
-      - uses: bgd-labs/action-rpc-env@main
+      - uses: aave-dao/action-rpc-env@main
         with:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           QUICKNODE_TOKEN: ${{ secrets.QUICKNODE_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
 
       - name: Run Foundry setup
         if: ${{ inputs.chainId != '324' }}
-        uses: bgd-labs/github-workflows/.github/actions/foundry-setup@main
+        uses: aave-dao/github-workflows/.github/actions/foundry-setup@main
 
       - name: tree building
         run: bun run ci:tree
@@ -87,7 +87,7 @@ jobs:
             echo "tree is clean"
           else
             git config --global user.name 'Cache bot'
-            git config --global user.email 'cache-bot@bgdlabs.com'
+            git config --global user.email 'cache-bot@aave.com'
             git add reports
             git restore .
             git commit -am "fix(cache): automatic cache update :robot:"
@@ -98,12 +98,11 @@ jobs:
       - name: Post to a Slack channel
         id: slack
         if: failure()
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v3.0.3
         with:
-          # Slack channel id, channel name, or user id to post message.
-          # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: "C068J77L8JG"
-          # For posting a rich message using Block Kit
+          # Posts to the channel baked into the incoming webhook URL.
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
           payload: |
             {
               "text": "GitHub Action build result: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
@@ -117,5 +116,3 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
