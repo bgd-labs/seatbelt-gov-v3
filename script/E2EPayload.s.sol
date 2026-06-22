@@ -24,6 +24,7 @@ import {AaveV3Soneium} from "aave-address-book/AaveV3Soneium.sol";
 import {AaveV3Plasma} from "aave-address-book/AaveV3Plasma.sol";
 import {AaveV3Mantle} from "aave-address-book/AaveV3Mantle.sol";
 import {AaveV3MegaEth} from "aave-address-book/AaveV3MegaEth.sol";
+import {AaveV3Monad} from "aave-address-book/AaveV3Monad.sol";
 import {ChainIds} from "solidity-utils/contracts/utils/ChainHelpers.sol";
 
 contract E2EPayload is Script, ProtocolV3TestBase {
@@ -209,5 +210,6 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         if (block.chainid == ChainIds.PLASMA) return AaveV3Plasma.POOL;
         if (block.chainid == ChainIds.MANTLE) return AaveV3Mantle.POOL;
         if (block.chainid == ChainIds.MEGAETH) return AaveV3MegaEth.POOL;
+        if (block.chainid == ChainIds.MONAD) return AaveV3Monad.POOL;
     }
 }
