@@ -12,7 +12,7 @@ import {
   IERC20Metadata_ABI,
   IPool_ABI,
   TenderlySimulationResponse,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 
 export type AssetInfo = { symbol: string; decimals: number };
 

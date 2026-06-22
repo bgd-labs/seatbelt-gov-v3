@@ -22,7 +22,7 @@ import {
   TenderlySimulationResponse,
   HUMAN_READABLE_PAYLOAD_STATE,
   Payload,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 
 import { getMdContractName } from "./utils";
 
@@ -192,8 +192,8 @@ ${payload.actions
   }
 
   const v4Addresses = getV4Addresses(client.chain!.id);
-  const v3StateDiff: Record<Address, typeof stateDiff[Address]> = {};
-  const v4StateDiff: Record<Address, typeof stateDiff[Address]> = {};
+  const v3StateDiff: Record<Address, (typeof stateDiff)[Address]> = {};
+  const v4StateDiff: Record<Address, (typeof stateDiff)[Address]> = {};
   for (const address of Object.keys(stateDiff) as Address[]) {
     if (v4Addresses.has(address)) v4StateDiff[address] = stateDiff[address];
     else v3StateDiff[address] = stateDiff[address];
