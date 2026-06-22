@@ -5,7 +5,7 @@ import {
   IPool_ABI,
   decodeReserveConfiguration,
   decodeReserveConfigurationV2,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 import { readContract } from "viem/actions";
 
 import {

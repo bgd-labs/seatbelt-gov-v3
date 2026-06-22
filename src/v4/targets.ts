@@ -1,4 +1,4 @@
-import { ChainId } from "@bgd-labs/toolbox";
+import { ChainId } from "@aave-dao/toolbox";
 import { AaveV4Ethereum } from "@aave-dao/aave-address-book";
 import { Address, getAddress } from "viem";
 

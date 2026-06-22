@@ -3,7 +3,7 @@ import { existsSync, writeFileSync, mkdirSync } from "fs";
 import path from "path";
 import { Address, Hex, getAddress } from "viem";
 import * as addresses from "@aave-dao/aave-address-book";
-import { getClient, getNonFinalizedPayloads } from "@bgd-labs/toolbox";
+import { getClient, getNonFinalizedPayloads } from "@aave-dao/toolbox";
 import { Option, program } from "commander";
 import {
   CHAIN_NOT_SUPPORTED_ON_TENDERLY,
@@ -71,7 +71,10 @@ async function simulatePayload(
         let blockNumber = BigInt(0); // current
         if (cache.executedLog)
           blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
-        simulateViaFoundry({ chain: chainId, payloadId, payloadsController }, blockNumber);
+        simulateViaFoundry(
+          { chain: chainId, payloadId, payloadsController },
+          blockNumber,
+        );
         storeSimulationState(
           chainId,
           payloadsController,
@@ -115,7 +118,10 @@ async function simulatePayload(
           let blockNumber = BigInt(0); // current
           if (cache.executedLog)
             blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
-          simulateViaFoundry({ chain: chainId, payloadId, payloadsController }, blockNumber);
+          simulateViaFoundry(
+            { chain: chainId, payloadId, payloadsController },
+            blockNumber,
+          );
           storeSimulationState(
             chainId,
             payloadsController,

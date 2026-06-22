@@ -5,7 +5,7 @@ import {
   getHyperRPC,
   getRPCUrl,
   IPayloadsController_ABI,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 import * as addresses from "@aave-dao/aave-address-book";
 import { providerConfig } from "../common";
 import {
