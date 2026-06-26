@@ -1,4 +1,4 @@
-import { ChainId, getClient } from "@bgd-labs/toolbox";
+import { ChainId, getClient } from "@aave-dao/toolbox";
 import { execSync } from "child_process";
 import { encodeAbiParameters, Hex } from "viem";
 import { providerConfig } from "./common";

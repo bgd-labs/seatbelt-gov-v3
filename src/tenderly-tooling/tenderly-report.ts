@@ -1,4 +1,5 @@
 import { AbiEvent, Address, Client, Hash, Hex, zeroAddress } from "viem";
+import { getV4Addresses } from "../v4/targets";
 import { enhanceLogs, parseLogs } from "./logs";
 import {
   checkForSelfdestruct,
@@ -21,7 +22,7 @@ import {
   TenderlySimulationResponse,
   HUMAN_READABLE_PAYLOAD_STATE,
   Payload,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 
 import { getMdContractName } from "./utils";
 
@@ -190,9 +191,24 @@ ${payload.actions
     report += `:sos: Found selfDestruct!\n\n`;
   }
 
-  report += renderMarkdownStateDiffReport(stateDiff, (address) =>
+  const v4Addresses = getV4Addresses(client.chain!.id);
+  const v3StateDiff: Record<Address, (typeof stateDiff)[Address]> = {};
+  const v4StateDiff: Record<Address, (typeof stateDiff)[Address]> = {};
+  for (const address of Object.keys(stateDiff) as Address[]) {
+    if (v4Addresses.has(address)) v4StateDiff[address] = stateDiff[address];
+    else v3StateDiff[address] = stateDiff[address];
+  }
+
+  report += renderMarkdownStateDiffReport(v3StateDiff, (address) =>
     getContractName(sim, address),
   );
+
+  if (Object.keys(v4StateDiff).length > 0) {
+    report += `\n\n## Aave V4 changes\n\n`;
+    report += renderMarkdownStateDiffReport(v4StateDiff, (address) =>
+      getContractName(sim, address),
+    );
+  }
 
   if (verified.length) {
     report +=

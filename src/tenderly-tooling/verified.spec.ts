@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getClient, getVerificationStatus } from "@bgd-labs/toolbox";
+import { getClient, getVerificationStatus } from "@aave-dao/toolbox";
 import { MOCK_SIMULATION } from "./mocks/mockSimulation";
 
 describe.skipIf(process.env.CI)("seatbelt", () => {

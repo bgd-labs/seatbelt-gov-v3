@@ -6,7 +6,7 @@ import {
   tenderly_createVnet,
   tenderly_sim,
   IPayloadsController_ABI,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 import { Address, encodeFunctionData, Hash, Hex } from "viem";
 import { providerConfig } from "./common";
 import { eventDb } from "@aave-dao/aave-helpers-js";
@@ -19,10 +19,7 @@ import {
 import { Hook, SimulationHooks } from "./hooks";
 
 // https://docs.tenderly.co/supported-networks
-export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [
-  ChainId.zkEVM,
-  ChainId.megaeth, // vnets not supported
-];
+export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
 
 type SimulateOnTenderlyParams = {
@@ -122,9 +119,9 @@ export async function simulateOnTenderly({
         baseChainId: chainId,
         forkChainId: chainId,
         displayName: `Seatbelt ${chainId} ${payloadId}`,
-        slug: `seatbelt_${chainId}_${payloadId}`,
+        slug: `seatbelt_${chainId}_${payloadId}_${Date.now().toString(36)}`,
         blockNumber: blockNumber === -2 ? "latest" : blockNumber,
-        force: true,
+        force: false,
       },
       tenderlyConfig,
     );
@@ -216,7 +213,7 @@ export async function simulateOnTenderly({
         return getMdContractName(sim.contracts, address);
       },
     });
-    // await vnet.delete();
+    await vnet.delete();
     return report;
   } catch (e) {
     console.log(e);

@@ -4,8 +4,11 @@ out = "out"
 script = "script"
 libs = ["lib"]
 ffi = true
-fs_permissions = [{ access = "write", path = "./reports" }]
+fs_permissions = [{ access = "read-write", path = "./reports" }]
 evm_version = 'shanghai'
+
+[lint]
+lint_on_build = false
 
 [profile.zksync]
 src = 'zksync'
@@ -60,6 +63,9 @@ evm_version = 'cancun'
 [profile.megaeth]
 evm_version = 'prague'
 
+[profile.monad]
+evm_version = 'cancun'
+
 [profile.mantle]
 evm_version = 'cancun'
 
@@ -93,4 +99,5 @@ zksync = "${RPC_ZKSYNC}"
 linea = "${RPC_LINEA}"
 sonic = "${RPC_SONIC}"
 plasma = "${RPC_PLASMA}"
+monad = "${RPC_MONAD}"
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

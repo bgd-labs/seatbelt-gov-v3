@@ -6,7 +6,7 @@ import {
   isProposalFinal,
   Payload,
   IPayloadsController_ABI,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 import treeJson from "./cache/tree.json";
 import { TreeStructure } from "./cache/refreshTree";
 

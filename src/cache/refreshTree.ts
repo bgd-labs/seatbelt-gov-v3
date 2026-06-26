@@ -12,7 +12,7 @@ import {
   getRPCUrl,
   isProposalFinal,
   IGovernance_ABI,
-} from "@bgd-labs/toolbox";
+} from "@aave-dao/toolbox";
 import tree from "./tree.json";
 import { providerConfig } from "../common";
 import { refreshLogs } from "./logs";
