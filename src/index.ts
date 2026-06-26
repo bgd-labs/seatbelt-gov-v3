@@ -96,7 +96,10 @@ async function simulatePayload(
           chainId,
           payloadsController,
           payloadId: payloadId,
-          executeBefore: strategy.executeBefore,
+          executeBefore: [
+            ...strategy.executeBefore,
+            ...(hooks?.executeBefore ?? []),
+          ],
           hooks,
           cache: { payload: strategy.payload, logs: cache },
         });

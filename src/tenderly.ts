@@ -16,7 +16,7 @@ import {
   getPayloadStorageOverrides,
   makePayloadExecutableOnTestClient,
 } from "./tenderly-tooling/payloads-controller";
-import { Hook, SimulationHooks } from "./hooks";
+import { Hook, SimulationHooks, getSimulationHooks } from "./hooks";
 
 // https://docs.tenderly.co/supported-networks
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
@@ -138,6 +138,13 @@ export async function simulateOnTenderly({
           vnet.testClient,
           payloadsController,
           before,
+        );
+        // run the prerequisite payload's own pre-hooks (e.g. seed funding) so it
+        // can execute successfully on the fork.
+        await runPreHook(
+          vnet,
+          chainId,
+          getSimulationHooks(chainId, payloadsController, before)?.preHook,
         );
         await vnet.walletClient.writeContract({
           chain: { id: chainId } as any,
