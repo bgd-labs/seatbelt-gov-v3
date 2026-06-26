@@ -24,7 +24,7 @@ import {
   Payload,
 } from "@aave-dao/toolbox";
 
-import { getMdContractName } from "./utils";
+import { getMdContractName, getMaxTxGasLimit, fmtGas } from "./utils";
 
 type RenderTenderlyReportParams = {
   client: Client;
@@ -100,9 +100,18 @@ ${payload.actions
         );
         report += `- simulatedExecutionAt: ${renderUnixTime(
           timestamp,
-        )}, timestamp: ${timestamp}, block: ${sim.transaction.block_number}`;
+        )}, timestamp: ${timestamp}, block: ${sim.transaction.block_number}\n`;
       }
     }
+  }
+
+  // gas used by the executePayload tx, flagged against the network's max tx gas limit
+  const gasUsed = BigInt((sim.transaction as any).gas_used ?? 0);
+  const maxTxGasLimit = getMaxTxGasLimit(client.chain!.id);
+  if (gasUsed > maxTxGasLimit) {
+    report += `- :sos: gasUsed: ${fmtGas(gasUsed)} — **exceeds ${client.chain!.name}'s max transaction gas limit of ${fmtGas(maxTxGasLimit)}; this payload cannot be executed in a single transaction**\n`;
+  } else {
+    report += `- gasUsed: ${fmtGas(gasUsed)} (max tx gas limit: ${fmtGas(maxTxGasLimit)})\n`;
   }
 
   report += "\n";
