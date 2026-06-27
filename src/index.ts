@@ -13,6 +13,7 @@ import { generatePayloadsStrategy } from "./strategy";
 import { simulateViaFoundry } from "./foundry";
 import { storeSimulationState } from "./simulationCache";
 import { getCache } from "./cache/logs";
+import { getSimulationHooks } from "./hooks";
 
 function getPayloadFileName(
   chain: number,
@@ -60,6 +61,7 @@ async function simulatePayload(
       payloadsController,
       payloadId,
     );
+    const hooks = getSimulationHooks(chainId, payloadsController, payloadId);
 
     const forceForge = process.env.FORCE_FORGE === "true";
     const shouldUseFoundry =
@@ -72,7 +74,7 @@ async function simulatePayload(
         if (cache.executedLog)
           blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
         simulateViaFoundry(
-          { chain: chainId, payloadId, payloadsController },
+          { chain: chainId, payloadId, payloadsController, hooks },
           blockNumber,
         );
         storeSimulationState(
@@ -94,7 +96,11 @@ async function simulatePayload(
           chainId,
           payloadsController,
           payloadId: payloadId,
-          executeBefore: strategy.executeBefore,
+          executeBefore: [
+            ...strategy.executeBefore,
+            ...(hooks?.executeBefore ?? []),
+          ],
+          hooks,
           cache: { payload: strategy.payload, logs: cache },
         });
 
@@ -119,7 +125,7 @@ async function simulatePayload(
           if (cache.executedLog)
             blockNumber = BigInt(cache.executedLog.blockNumber) - BigInt(1);
           simulateViaFoundry(
-            { chain: chainId, payloadId, payloadsController },
+            { chain: chainId, payloadId, payloadsController, hooks },
             blockNumber,
           );
           storeSimulationState(

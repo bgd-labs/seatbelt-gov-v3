@@ -29,10 +29,27 @@ import {ChainIds} from "solidity-utils/contracts/utils/ChainHelpers.sol";
 
 contract E2EPayload is Script, ProtocolV3TestBase {
     error UnknownPool();
+    error HookFailed(uint256 index);
+
+    struct Hook {
+        address from;
+        address target;
+        uint256 value;
+        bytes data;
+    }
 
     V4SnapshotRunner internal v4Runner;
 
     function run(uint40 payloadId, address payloadsController) public {
+        run(payloadId, payloadsController, "", "");
+    }
+
+    function run(
+        uint40 payloadId,
+        address payloadsController,
+        bytes memory preHook,
+        bytes memory postHook
+    ) public {
         IPool pool = _getPool();
         if (address(pool) == address(0) && !V4Targets.hasV4()) revert UnknownPool();
         defaultTest(
@@ -47,7 +64,9 @@ contract E2EPayload is Script, ProtocolV3TestBase {
             pool,
             payloadId,
             payloadsController,
-            false
+            false,
+            preHook,
+            postHook
         );
     }
 
@@ -59,6 +78,20 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         address payloadsController,
         bool runE2E
     ) public returns (ReserveConfig[] memory, ReserveConfig[] memory) {
+        return defaultTest(reportName, pool, payloadId, payloadsController, runE2E, "", "");
+    }
+
+    function defaultTest(
+        string memory reportName,
+        IPool pool,
+        uint40 payloadId,
+        address payloadsController,
+        bool runE2E,
+        bytes memory preHook,
+        bytes memory postHook
+    ) public returns (ReserveConfig[] memory, ReserveConfig[] memory) {
+        _preHook(preHook);
+
         bool v3Active = address(pool) != address(0);
         bool v4Active = V4Targets.hasV4();
 
@@ -88,6 +121,8 @@ contract E2EPayload is Script, ProtocolV3TestBase {
         GovV3StorageHelpers.readyPayloadId(vm, IPayloadsControllerCore(payloadsController), payloadId);
         IPayloadsControllerCore(payloadsController).executePayload(payloadId);
 
+        _postHook(postHook);
+
         if (v3Active) {
             configAfter = createConfigurationSnapshot(afterString, pool);
             _diffReports(payloadId, payloadsController, beforeString, afterString);
@@ -105,6 +140,42 @@ contract E2EPayload is Script, ProtocolV3TestBase {
 
         if (runE2E && v3Active) e2eTest(pool);
         return (configBefore, configAfter);
+    }
+
+    function _preHook(bytes memory encoded) internal {
+        if (encoded.length == 0) return;
+        Hook[] memory calls = abi.decode(encoded, (Hook[]));
+        for (uint256 i = 0; i < calls.length; ++i) {
+            vm.deal(calls[i].from, calls[i].from.balance + 100 ether);
+            vm.prank(calls[i].from);
+            (bool ok, bytes memory ret) = calls[i].target.call{value: calls[i].value}(
+                calls[i].data
+            );
+            if (!ok) {
+                if (ret.length == 0) revert HookFailed(i);
+                assembly {
+                    revert(add(ret, 0x20), mload(ret))
+                }
+            }
+        }
+    }
+
+    function _postHook(bytes memory encoded) internal {
+        if (encoded.length == 0) return;
+        Hook[] memory calls = abi.decode(encoded, (Hook[]));
+        for (uint256 i = 0; i < calls.length; ++i) {
+            vm.deal(calls[i].from, calls[i].from.balance + 100 ether);
+            vm.prank(calls[i].from);
+            (bool ok, bytes memory ret) = calls[i].target.call{value: calls[i].value}(
+                calls[i].data
+            );
+            if (!ok) {
+                if (ret.length == 0) revert HookFailed(i);
+                assembly {
+                    revert(add(ret, 0x20), mload(ret))
+                }
+            }
+        }
     }
 
     function _diffReports(
