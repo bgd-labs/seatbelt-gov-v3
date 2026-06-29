@@ -20,6 +20,10 @@ import {
 // https://docs.tenderly.co/supported-networks
 export const CHAIN_NOT_SUPPORTED_ON_TENDERLY: number[] = [ChainId.zkEVM];
 export const NO_V_NET: number[] = [ChainId.zksync];
+export const UNCAPPED_GAS_LIMIT_CHAINS: number[] = [
+  ChainId.mantle,
+  ChainId.megaeth,
+];
 
 type SimulateOnTenderlyParams = {
   chainId: number;
@@ -121,7 +125,7 @@ export async function simulateOnTenderly({
       }),
       block_number: blockNumber,
       transaction_index: 0,
-      gas_limit: chainId !== ChainId.mantle ? 16_000_000 : 0,
+      gas_limit: UNCAPPED_GAS_LIMIT_CHAINS.includes(chainId) ? 0 : 16_000_000,
       gas_price: "0",
       value: "0",
       access_list: [],
@@ -184,6 +188,7 @@ export async function simulateOnTenderly({
         args: [payloadId],
       }),
       block_number: blockNumber,
+      gas: UNCAPPED_GAS_LIMIT_CHAINS.includes(chainId) ? 0 : 16_000_000,
       state_objects: {
         [payloadsController]: {
           storage: overrides.reduce(
