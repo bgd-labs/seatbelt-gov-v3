@@ -76,7 +76,7 @@ export async function simulateOnTenderly({
         baseChainId: chainId,
         forkChainId: chainId,
         displayName: `Seatbelt ${chainId} ${payloadId}`,
-        slug: `seatbelt_${chainId}_${payloadId}_${Date.now().toString(36)}`,
+        slug: `seatbelt-${chainId}-${payloadId}-${Date.now().toString(36)}`,
         blockNumber: blockNumber === -2 ? "latest" : blockNumber,
         force: false,
       },
