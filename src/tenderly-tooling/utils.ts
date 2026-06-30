@@ -40,6 +40,9 @@ export function getMaxTxGasLimit(chainId: number): bigint {
     // MegaETH — protocol-level compute gas limit (block limit is 10B, this is far tighter). https://docs.megaeth.com/spec
     case 4326:
       return 200_000_000n;
+    // Monad - 30M transaction gas limit. 200M block gas limit, https://docs.monad.xyz/developer-essentials/gas-pricing
+    case 143:
+      return 30_000_000n;
     // Default: 2^24 = 16,777,216 — Ethereum's EIP-7825 cap (https://eips.ethereum.org/EIPS/eip-7825).
     // Gnosis (100, Fusaka EIP-7825) and Base (8453, Azul hardfork) are also exactly
     // 2^24, and we assume this is the lowest cap across networks, so every other
