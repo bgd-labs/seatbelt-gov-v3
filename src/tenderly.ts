@@ -232,6 +232,6 @@ export async function simulateOnTenderly({
   }
 }
 
-function flagAsKnown(value: string, reference: string) {
+export function flagAsKnown(value: string, reference: string) {
   return `${value} [:ghost:](https://github.com/aave-dao/aave-address-book  "${reference}")`;
 }

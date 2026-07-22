@@ -26,16 +26,9 @@ import {
 
 import { getMdContractName, getMaxTxGasLimit, fmtGas } from "./utils";
 
-type RenderTenderlyReportParams = {
+export type RenderTenderlySimulationBodyParams = {
   client: Client;
   sim: TenderlySimulationResponse;
-  payloadId: number;
-  payload: Payload;
-  onchainLogs: {
-    createdLog: { transactionHash: Hash; blockNumber: number };
-    queuedLog?: { transactionHash: Hash; blockNumber: number };
-    executedLog?: { transactionHash: Hash; blockNumber: number };
-  };
   eventCache?: AbiEvent[];
   config: {
     etherscanApiKey: string;
@@ -44,6 +37,16 @@ type RenderTenderlyReportParams = {
     sim: TenderlySimulationResponse,
     address: Address,
   ) => string;
+};
+
+type RenderTenderlyReportParams = RenderTenderlySimulationBodyParams & {
+  payloadId: number;
+  payload: Payload;
+  onchainLogs: {
+    createdLog: { transactionHash: Hash; blockNumber: number };
+    queuedLog?: { transactionHash: Hash; blockNumber: number };
+    executedLog?: { transactionHash: Hash; blockNumber: number };
+  };
 };
 
 export async function renderTenderlyReport({
@@ -105,7 +108,26 @@ ${payload.actions
     }
   }
 
-  // gas used by the executePayload tx, flagged against the network's max tx gas limit
+  const body = await renderTenderlySimulationBody({
+    client,
+    sim,
+    eventCache,
+    config,
+    getContractName,
+  });
+  report += body.report;
+  return { report, eventCache: body.eventCache };
+}
+
+export async function renderTenderlySimulationBody({
+  client,
+  sim,
+  eventCache = [],
+  config,
+  getContractName = (sim, address) => getMdContractName(sim.contracts, address),
+}: RenderTenderlySimulationBodyParams) {
+  let report = "";
+  // gas used by the execution tx, flagged against the network's max tx gas limit
   const gasUsed = BigInt((sim.transaction as any).gas_used ?? 0);
   const maxTxGasLimit = getMaxTxGasLimit(client.chain!.id);
   if (gasUsed > maxTxGasLimit) {
